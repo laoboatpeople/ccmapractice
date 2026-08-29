@@ -60,7 +60,7 @@ export function Sidebar({ mobileOpen, onClose }: { mobileOpen?: boolean; onClose
       {/* Logo */}
       <div className="flex items-center justify-between gap-3 px-5 py-5 border-b border-border">
         <Link href="/app" className="flex items-center gap-3 group">
-          <img src="/logo/logo-main.png?v=3" alt="CCMAPractice" className="h-9 w-auto flex-shrink-0" />
+          <img src="/logo/logo-main.png?v=4" alt="CCMAPractice" className="h-9 w-auto flex-shrink-0" />
           <div>
             <p className="text-sm font-semibold text-text-primary leading-none group-hover:text-blue transition-colors">CCMAPractice</p>
             <p className="text-[10px] text-text-tertiary mt-0.5">CCMA Exam Prep</p>

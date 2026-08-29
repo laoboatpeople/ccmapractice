@@ -130,7 +130,7 @@ export default function BlogIndexPage() {
       <nav className="border-b border-white/5 bg-[#0A0E1A]/80 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
-            <img src="/logo/logo-main.png?v=3" alt="CCMAPractice" className="h-7 w-auto" />
+            <img src="/logo/logo-main.png?v=4" alt="CCMAPractice" className="h-7 w-auto" />
           </a>
           <div className="flex items-center gap-4">
             <a href="/" className="text-sm text-[#94A3B8] hover:text-white transition-colors">← Back to Home</a>
