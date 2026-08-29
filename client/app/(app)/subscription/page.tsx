@@ -51,7 +51,7 @@ const PLANS: PricingPlan[] = [
   {
     id: 'MONTHLY',
     name: 'Monthly',
-    price: '$29.99',
+    price: '$19',
     periodKey: 'perMonth',
     description: 'monthlyDesc',
     features: [
@@ -66,7 +66,7 @@ const PLANS: PricingPlan[] = [
   {
     id: 'YEARLY',
     name: 'Yearly',
-    price: '$99',
+    price: '$69',
     periodKey: 'perYear',
     description: 'yearlyDesc',
     features: [
@@ -82,7 +82,7 @@ const PLANS: PricingPlan[] = [
   {
     id: 'LIFETIME',
     name: 'Lifetime',
-    price: '$199',
+    price: '$149',
     periodKey: 'oneTime',
     description: 'lifetimeDesc',
     features: [
