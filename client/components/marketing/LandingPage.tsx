@@ -6,7 +6,7 @@ import {
   TrendingUp, MessageCircle, BookOpen, Monitor, 
   Clock, Target, Zap, ChevronRight, Play, Shield,
   Linkedin, Instagram, Check, Briefcase, LogIn, Award,
-  Mail, Loader2
+  Mail, Loader2, Menu, X
 } from "lucide-react";
 import AppMockup from "@/components/marketing/AppMockup";
 import RelatedStudyPlatforms from "@/components/marketing/RelatedStudyPlatforms";
@@ -105,6 +105,7 @@ function CcmaNewsletterSection() {
 }
 
 export default function MarketingLandingPage() {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className="min-h-screen bg-[#150A12] text-[#F8FAFC] font-sans overflow-x-hidden">
       {/* Navigation */}
@@ -124,11 +125,35 @@ export default function MarketingLandingPage() {
             <a href="#testimonials" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Testimonials</a>
           </div>
           <div className="flex items-center gap-3">
-            <a href="/auth/login" className="px-4 py-2 bg-[#DB2777] hover:bg-[#BE185D] rounded-lg text-sm font-medium transition-colors">
+            <a href="/auth/login" className="hidden sm:inline-block px-4 py-2 bg-[#DB2777] hover:bg-[#BE185D] rounded-lg text-sm font-medium transition-colors">
               Sign In
             </a>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="md:hidden p-2 rounded-lg border border-white/10 text-[#F8FAFC] hover:bg-white/5 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
           </div>
         </div>
+        {menuOpen && (
+          <div className="md:hidden border-t border-white/5 bg-[#150A12]/95 backdrop-blur-md">
+            <div className="px-6 py-4 flex flex-col gap-4">
+              <a href="#features" onClick={() => setMenuOpen(false)} className="text-sm text-[#94A3B8] hover:text-white transition-colors">Features</a>
+              <a href="#how-it-works" onClick={() => setMenuOpen(false)} className="text-sm text-[#94A3B8] hover:text-white transition-colors">How It Works</a>
+              <a href="#chapters" onClick={() => setMenuOpen(false)} className="text-sm text-[#94A3B8] hover:text-white transition-colors">Chapters</a>
+              <a href="#pricing" onClick={() => setMenuOpen(false)} className="text-sm text-[#94A3B8] hover:text-white transition-colors">Pricing</a>
+              <a href="/blog" onClick={() => setMenuOpen(false)} className="text-sm text-[#94A3B8] hover:text-white transition-colors">Blog</a>
+              <a href="/faq" onClick={() => setMenuOpen(false)} className="text-sm text-[#94A3B8] hover:text-white transition-colors">FAQ</a>
+              <a href="/contact" onClick={() => setMenuOpen(false)} className="text-sm text-[#94A3B8] hover:text-white transition-colors">Contact</a>
+              <a href="#testimonials" onClick={() => setMenuOpen(false)} className="text-sm text-[#94A3B8] hover:text-white transition-colors">Testimonials</a>
+              <a href="/auth/login" onClick={() => setMenuOpen(false)} className="sm:hidden px-4 py-2 bg-[#DB2777] hover:bg-[#BE185D] rounded-lg text-sm font-medium text-center transition-colors">
+                Sign In
+              </a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* 1. HERO SECTION */}
