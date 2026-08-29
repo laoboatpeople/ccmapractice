@@ -230,11 +230,11 @@ export default function CcmaResourcesPage() {
           { name: 'CCMA Resources', url: 'https://ccmapractice.com/ccma-resources' },
         ]}
       />
-      <div className="min-h-screen bg-[#0A0E1A] text-[#F8FAFC]">
-        <nav className="border-b border-white/5 bg-[#0A0E1A]/80 backdrop-blur-md">
+      <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
+        <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
           <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2">
-              <img src="/logo/logo-main.png?v=4" alt="CCMAPractice" className="h-7 w-auto" />
+              <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
             </a>
             <div className="flex items-center gap-4">
               <a href="/faq" className="text-sm text-[#94A3B8] hover:text-white transition-colors">← FAQ</a>
@@ -315,7 +315,7 @@ export default function CcmaResourcesPage() {
 
         {/* CTA */}
         <div className="max-w-4xl mx-auto px-6 pb-24">
-          <div className="text-center bg-gradient-to-r from-[#C8102E]/10 to-[#4C7FBF]/10 rounded-2xl p-10">
+          <div className="text-center bg-gradient-to-r from-[#DB2777]/10 to-[#A855F7]/10 rounded-2xl p-10">
             <h2 className="text-2xl font-bold mb-3">
               Ready to Start Studying?
             </h2>
@@ -326,7 +326,7 @@ export default function CcmaResourcesPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/auth/register"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-[#C8102E] hover:bg-[#2563EB] rounded-lg text-sm font-medium transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-[#DB2777] hover:bg-[#BE185D] rounded-lg text-sm font-medium transition-colors"
               >
                 Get Started Free
               </a>

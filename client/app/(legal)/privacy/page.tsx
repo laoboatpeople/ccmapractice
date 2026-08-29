@@ -41,12 +41,12 @@ export default function PrivacyPage() {
           { name: 'Privacy Policy', url: 'https://ccmapractice.com/privacy' },
         ]}
       />
-      <div className="min-h-screen bg-[#0A0E1A]">
+      <div className="min-h-screen bg-[#150A12]">
       {/* Simple nav */}
       <nav className="border-b border-white/10">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <img src="/logo/logo-main.png?v=4" alt="CCMAPractice" className="h-8 w-auto" />
+            <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-8 w-auto" />
           </Link>
           <Link
             href="/"
@@ -62,11 +62,11 @@ export default function PrivacyPage() {
       <main className="max-w-4xl mx-auto px-6 py-16">
         <div className="prose prose-invert max-w-none">
           <div className="mb-2">
-            <span className="inline-block px-3 py-1 rounded-full bg-[#C8102E]/10 border border-[#C8102E]/20 text-xs text-[#C8102E] font-medium">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#DB2777]/10 border border-[#DB2777]/20 text-xs text-[#DB2777] font-medium">
               {lastUpdated}
             </span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
+          <h1 className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
             {title}
           </h1>
           <div className="space-y-1">

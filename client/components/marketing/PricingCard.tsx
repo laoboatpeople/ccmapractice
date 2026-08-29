@@ -57,13 +57,13 @@ export default function PricingCard({ name, price, period, description, features
         {buttonHref ? (
           <Link
             href={buttonHref}
-            className="block w-full text-center py-3 px-6 rounded-lg font-semibold transition-all duration-300 bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] text-white hover:opacity-90 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]"
+            className="block w-full text-center py-3 px-6 rounded-lg font-semibold transition-all duration-300 bg-gradient-to-r from-[#DB2777] to-[#A855F7] text-white hover:opacity-90 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]"
           >
             {buttonLabel}
           </Link>
         ) : (
           <button
-            className="w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] text-white hover:opacity-90 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]"
+            className="w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 bg-gradient-to-r from-[#DB2777] to-[#A855F7] text-white hover:opacity-90 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]"
           >
             {buttonLabel}
           </button>

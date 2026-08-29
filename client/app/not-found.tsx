@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-[#0A0E1A] text-[#F8FAFC] flex flex-col">
+    <div className="min-h-screen bg-[#150A12] text-[#F8FAFC] flex flex-col">
       {/* Nav */}
-      <nav className="border-b border-white/5 bg-[#0A0E1A]/80 backdrop-blur-md">
+      <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <img src="/logo/logo-main.png?v=4" alt="CCMAPractice" className="h-7 w-auto" />
+            <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
           </Link>
         </div>
       </nav>
@@ -22,7 +22,7 @@ export default function NotFound() {
       {/* 404 Content */}
       <div className="flex-1 flex items-center justify-center px-6">
         <div className="text-center max-w-lg">
-          <div className="text-8xl font-bold bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent mb-4">
+          <div className="text-8xl font-bold bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent mb-4">
             404
           </div>
           <h1 className="text-2xl font-bold mb-3">Page Not Found</h1>
@@ -49,7 +49,7 @@ export default function NotFound() {
             </Link>
           </div>
           <div className="mt-8 flex justify-center gap-4">
-            <Link href="/auth/login" className="px-6 py-3 rounded-lg bg-[#C8102E] hover:bg-[#2563EB] text-white text-sm font-medium transition-colors">
+            <Link href="/auth/login" className="px-6 py-3 rounded-lg bg-[#DB2777] hover:bg-[#BE185D] text-white text-sm font-medium transition-colors">
               Get Started Free
             </Link>
             <Link href="/contact" className="px-6 py-3 rounded-lg border border-white/10 hover:bg-white/[0.05] text-[#F8FAFC] text-sm font-medium transition-colors">

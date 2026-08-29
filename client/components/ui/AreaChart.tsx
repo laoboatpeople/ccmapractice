@@ -25,7 +25,7 @@ export interface AreaChartProps {
   gradientId?: string;
 }
 
-const defaultColors = ['#C8102E', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#4C7FBF'];
+const defaultColors = ['#DB2777', '#10B981', '#F59E0B', '#EF4444', '#8B5CF6', '#A855F7'];
 
 const CustomTooltip: React.FC<{
   active?: boolean;

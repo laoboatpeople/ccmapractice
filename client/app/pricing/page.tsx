@@ -154,12 +154,12 @@ export default function PricingPage() {
           { name: 'Pricing', url: 'https://ccmapractice.com/pricing' },
         ]}
       />
-      <div className="min-h-screen bg-[#0A0E1A] text-[#F8FAFC]">
+      <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
         {/* Nav */}
-        <nav className="border-b border-white/5 bg-[#0A0E1A]/80 backdrop-blur-md">
+        <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
           <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2">
-              <img src="/logo/logo-main.png?v=4" alt="CCMAPractice" className="h-7 w-auto" />
+              <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
             </a>
             <a href="/" className="text-sm text-[#94A3B8] hover:text-white transition-colors">
               ← Back to Home
@@ -170,7 +170,7 @@ export default function PricingPage() {
         {/* Header */}
         <div className="max-w-6xl mx-auto px-6 pt-20 pb-16">
           <div className="text-center mb-16">
-            <span className="text-[11px] font-medium text-[#C8102E] bg-[#C8102E]/10 px-3 py-1.5 rounded-full uppercase tracking-wider">
+            <span className="text-[11px] font-medium text-[#DB2777] bg-[#DB2777]/10 px-3 py-1.5 rounded-full uppercase tracking-wider">
               Pricing
             </span>
             <h1 className="text-4xl md:text-5xl font-bold mt-6 mb-6">
@@ -189,7 +189,7 @@ export default function PricingPage() {
                 key={plan.name}
                 className={`relative rounded-2xl p-8 flex flex-col ${
                   plan.highlighted
-                    ? 'bg-gradient-to-b from-[#C8102E]/10 to-[#4C7FBF]/10 border-2 border-[#C8102E]/40'
+                    ? 'bg-gradient-to-b from-[#DB2777]/10 to-[#A855F7]/10 border-2 border-[#DB2777]/40'
                     : 'bg-white/5 border border-white/10'
                 }`}
               >
@@ -213,7 +213,7 @@ export default function PricingPage() {
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm">
                       {feature.included ? (
-                        <svg className="w-5 h-5 text-[#C8102E] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <svg className="w-5 h-5 text-[#DB2777] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                         </svg>
                       ) : (
@@ -230,7 +230,7 @@ export default function PricingPage() {
 
                 <a
                   href="/auth/login"
-                  className="inline-flex items-center justify-center w-full py-3 rounded-lg text-sm font-medium transition-colors bg-[#C8102E] hover:bg-[#2563EB] text-white"
+                  className="inline-flex items-center justify-center w-full py-3 rounded-lg text-sm font-medium transition-colors bg-[#DB2777] hover:bg-[#BE185D] text-white"
                 >
                   {plan.cta}
                 </a>
@@ -247,8 +247,8 @@ export default function PricingPage() {
                   <tr className="border-b border-white/10">
                     <th className="text-left py-4 pr-6 text-sm font-medium text-[#94A3B8]">Feature</th>
                     <th className="text-center py-4 px-4 text-sm font-medium text-[#94A3B8]">Free</th>
-                    <th className="text-center py-4 px-4 text-sm font-medium text-[#C8102E]">Monthly</th>
-                    <th className="text-center py-4 px-4 text-sm font-medium text-[#C8102E]">Yearly</th>
+                    <th className="text-center py-4 px-4 text-sm font-medium text-[#DB2777]">Monthly</th>
+                    <th className="text-center py-4 px-4 text-sm font-medium text-[#DB2777]">Yearly</th>
                     <th className="text-center py-4 px-4 text-sm font-medium text-[#94A3B8]">Lifetime</th>
                   </tr>
                 </thead>
@@ -284,7 +284,7 @@ export default function PricingPage() {
               {pricingFaqs.map((faq, i) => (
                 <details key={i} className="group py-5 cursor-pointer">
                   <summary className="flex items-start justify-between gap-4 list-none">
-                    <span className="text-base font-medium text-[#F8FAFC] group-hover:text-[#C8102E] transition-colors">
+                    <span className="text-base font-medium text-[#F8FAFC] group-hover:text-[#DB2777] transition-colors">
                       {faq.question}
                     </span>
                     <svg
@@ -305,7 +305,7 @@ export default function PricingPage() {
 
           {/* Final CTA */}
           <div className="text-center pb-20">
-            <div className="bg-gradient-to-r from-[#C8102E]/10 to-[#4C7FBF]/10 rounded-2xl p-10">
+            <div className="bg-gradient-to-r from-[#DB2777]/10 to-[#A855F7]/10 rounded-2xl p-10">
               <h2 className="text-2xl font-bold mb-3">Still Not Sure?</h2>
               <p className="text-[#94A3B8] mb-6 max-w-xl mx-auto">
                 Start with the Free plan — no credit card required. Experience CCMAPractice
@@ -313,7 +313,7 @@ export default function PricingPage() {
               </p>
               <a
                 href="/auth/login"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-[#C8102E] hover:bg-[#2563EB] rounded-lg text-sm font-medium transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-[#DB2777] hover:bg-[#BE185D] rounded-lg text-sm font-medium transition-colors"
               >
                 Get Started Free
               </a>

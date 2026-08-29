@@ -119,12 +119,12 @@ export default function FAQPage() {
           { name: 'FAQ', url: 'https://ccmapractice.com/faq' },
         ]}
       />
-      <div className="min-h-screen bg-[#0A0E1A] text-[#F8FAFC]">
+      <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
         {/* Nav */}
-        <nav className="border-b border-white/5 bg-[#0A0E1A]/80 backdrop-blur-md">
+        <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
           <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2">
-              <img src="/logo/logo-main.png?v=4" alt="CCMAPractice" className="h-7 w-auto" />
+              <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
             </a>
             <a
               href="/"
@@ -178,7 +178,7 @@ export default function FAQPage() {
             </p>
             <a
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#C8102E] hover:bg-[#2563EB] rounded-lg text-sm font-medium transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#DB2777] hover:bg-[#BE185D] rounded-lg text-sm font-medium transition-colors"
             >
               Contact Us
             </a>

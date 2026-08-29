@@ -104,7 +104,7 @@ export default function PracticeQuestionWidget() {
 
   return (
     <section className="py-20 px-6 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#4C7FBF]/5 via-transparent to-[#C8102E]/5" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#A855F7]/5 via-transparent to-[#DB2777]/5" />
       <div className="relative z-10 max-w-3xl mx-auto">
         {/* Heading */}
         <motion.div
@@ -116,7 +116,7 @@ export default function PracticeQuestionWidget() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-3">
             🔥{' '}
-            <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
               Try a Real CCMA Question
             </span>
           </h2>
@@ -131,14 +131,14 @@ export default function PracticeQuestionWidget() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
-          className="rounded-2xl border border-white/10 bg-gradient-to-br from-[#1A2035] to-[#0A0E1A] p-6 md:p-8 shadow-xl"
+          className="rounded-2xl border border-white/10 bg-gradient-to-br from-[#1A2035] to-[#150A12] p-6 md:p-8 shadow-xl"
         >
           {/* Topic badge */}
           <div className="flex items-center gap-2 mb-4">
-            <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#C8102E]/20 text-[#C8102E] text-xs font-bold">
+            <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#DB2777]/20 text-[#DB2777] text-xs font-bold">
               ?
             </span>
-            <span className="text-xs font-semibold text-[#C8102E] uppercase tracking-wider">
+            <span className="text-xs font-semibold text-[#DB2777] uppercase tracking-wider">
               {question.topic}
             </span>
           </div>
@@ -152,11 +152,11 @@ export default function PracticeQuestionWidget() {
           <div className="space-y-3">
             {question.options.map((opt, idx) => {
               let optionStyle =
-                'border border-white/10 bg-white/[0.03] hover:border-[#C8102E]/30 hover:bg-white/[0.06]';
+                'border border-white/10 bg-white/[0.03] hover:border-[#DB2777]/30 hover:bg-white/[0.06]';
 
               if (!answered) {
                 optionStyle =
-                  'border border-white/10 bg-white/[0.03] hover:border-[#C8102E]/30 hover:bg-white/[0.06] cursor-pointer';
+                  'border border-white/10 bg-white/[0.03] hover:border-[#DB2777]/30 hover:bg-white/[0.06] cursor-pointer';
               } else if (idx === question.correctIndex) {
                 optionStyle = 'border border-green bg-green/10';
               } else if (idx === selectedIndex && !isCorrect) {
@@ -232,7 +232,7 @@ export default function PracticeQuestionWidget() {
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <a
                   href="/auth/register"
-                  className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] text-white text-sm font-semibold hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#DB2777] to-[#A855F7] text-white text-sm font-semibold hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] transition-all duration-300"
                 >
                   Want to see more? → Start Free
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

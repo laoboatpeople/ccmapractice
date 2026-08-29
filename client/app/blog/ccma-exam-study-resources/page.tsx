@@ -54,11 +54,11 @@ export default function CcmaExamStudyResourcesPage() {
           { name: 'CCMA Exam Study Resources', url: 'https://ccmapractice.com/blog/ccma-exam-study-resources' },
         ]}
       />
-      <div className="min-h-screen bg-[#0A0E1A] text-[#F8FAFC]">
-        <nav className="border-b border-white/5 bg-[#0A0E1A]/80 backdrop-blur-md">
+      <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
+        <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
           <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2">
-              <img src="/logo/logo-main.png?v=4" alt="CCMAPractice" className="h-7 w-auto" />
+              <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
             </a>
             <div className="flex items-center gap-4">
               <a href="/blog" className="text-sm text-[#94A3B8] hover:text-white transition-colors">← Blog</a>

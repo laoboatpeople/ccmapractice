@@ -38,12 +38,12 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#0A0E1A] text-[#F8FAFC]">
+    <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
       {/* Nav */}
-      <nav className="border-b border-white/5 bg-[#0A0E1A]/80 backdrop-blur-md">
+      <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
-            <img src="/logo/logo-main.png?v=4" alt="CCMAPractice" className="h-7 w-auto" />
+            <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
           </a>
           <a href="/" className="text-sm text-[#94A3B8] hover:text-white transition-colors">
             ← Back to Home
@@ -54,7 +54,7 @@ export default function AboutPage() {
       {/* Header */}
       <div className="max-w-4xl mx-auto px-6 pt-20 pb-16">
         <div className="text-center mb-16">
-          <span className="text-[11px] font-medium text-[#C8102E] bg-[#C8102E]/10 px-3 py-1.5 rounded-full uppercase tracking-wider">
+          <span className="text-[11px] font-medium text-[#DB2777] bg-[#DB2777]/10 px-3 py-1.5 rounded-full uppercase tracking-wider">
             About
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mt-6 mb-6">
@@ -71,7 +71,7 @@ export default function AboutPage() {
         <section className="mb-16">
           <div className="bg-white/5 rounded-2xl p-8 md:p-10">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 rounded-lg bg-[#C8102E]/20 flex items-center justify-center text-[#C8102E]">★</span>
+              <span className="w-8 h-8 rounded-lg bg-[#DB2777]/20 flex items-center justify-center text-[#DB2777]">★</span>
               Our Mission
             </h2>
             <p className="text-[#CBD5E1] leading-relaxed mb-4">
@@ -108,7 +108,7 @@ export default function AboutPage() {
         <section className="mb-16">
           <div className="bg-white/5 rounded-2xl p-8 md:p-10">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 rounded-lg bg-[#4C7FBF]/20 flex items-center justify-center text-[#4C7FBF]">◆</span>
+              <span className="w-8 h-8 rounded-lg bg-[#A855F7]/20 flex items-center justify-center text-[#A855F7]">◆</span>
               Our Platform
             </h2>
             <p className="text-[#CBD5E1] leading-relaxed mb-4">
@@ -133,8 +133,8 @@ export default function AboutPage() {
             </p>
             <div className="grid md:grid-cols-2 gap-4 mt-8">
               <div className="bg-white/5 rounded-xl p-6">
-                <div className="w-10 h-10 rounded-lg bg-[#C8102E]/20 flex items-center justify-center mb-3">
-                  <svg className="w-5 h-5 text-[#C8102E]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <div className="w-10 h-10 rounded-lg bg-[#DB2777]/20 flex items-center justify-center mb-3">
+                  <svg className="w-5 h-5 text-[#DB2777]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 </div>
@@ -147,8 +147,8 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="bg-white/5 rounded-xl p-6">
-                <div className="w-10 h-10 rounded-lg bg-[#4C7FBF]/20 flex items-center justify-center mb-3">
-                  <svg className="w-5 h-5 text-[#4C7FBF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <div className="w-10 h-10 rounded-lg bg-[#A855F7]/20 flex items-center justify-center mb-3">
+                  <svg className="w-5 h-5 text-[#A855F7]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
@@ -199,12 +199,12 @@ export default function AboutPage() {
               Our Founder
             </h2>
             <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-[#C8102E] to-[#4C7FBF] flex items-center justify-center text-white text-4xl font-bold shrink-0">
+              <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-[#DB2777] to-[#A855F7] flex items-center justify-center text-white text-4xl font-bold shrink-0">
                 CO
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Chuck Onekeo</h3>
-                <p className="text-sm text-[#C8102E] font-medium mb-4">
+                <p className="text-sm text-[#DB2777] font-medium mb-4">
                   Programmer &amp; AI Specialist — Founder of CCMAPractice
                 </p>
                 <p className="text-[#CBD5E1] leading-relaxed mb-4">
@@ -266,27 +266,27 @@ export default function AboutPage() {
             </p>
             <ul className="space-y-3 text-[#CBD5E1]">
               <li className="flex items-start gap-3">
-                <span className="text-[#C8102E] mt-1.5">▸</span>
+                <span className="text-[#DB2777] mt-1.5">▸</span>
                 <span><strong className="text-[#F8FAFC]">Scarcity of practice questions</strong> — Most candidates report that finding enough realistic practice questions is their biggest challenge. Free resources are thin (open-exam-prep offers roughly 114 questions), while official and commercial packages are expensive. We built a bank of 1,200+ questions covering all 13 blueprint chapters.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#C8102E] mt-1.5">▸</span>
+                <span className="text-[#DB2777] mt-1.5">▸</span>
                 <span><strong className="text-[#F8FAFC]">Explanations without the why</strong> — Most question banks tell you the right answer but not why it is right. Every CCMAPractice explanation cites the actual guideline behind the answer — OSHA Bloodborne Pathogens, the HIPAA Privacy Rule, CDC Standard Precautions, AHA guidelines, CLIA-waived testing.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#C8102E] mt-1.5">▸</span>
+                <span className="text-[#DB2777] mt-1.5">▸</span>
                 <span><strong className="text-[#F8FAFC]">One-size-fits-all study materials</strong> — Every candidate learns differently. Our adaptive AI tailors the difficulty and focus of every study session to the individual&apos;s performance.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#C8102E] mt-1.5">▸</span>
+                <span className="text-[#DB2777] mt-1.5">▸</span>
                 <span><strong className="text-[#F8FAFC]">Lack of exam simulation tools</strong> — Candidates need timed, realistic practice to build confidence. Our exam mode replicates the actual NHA CCMA testing environment with 150-question timed simulations.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#C8102E] mt-1.5">▸</span>
+                <span className="text-[#DB2777] mt-1.5">▸</span>
                 <span><strong className="text-[#F8FAFC]">No visibility into progress</strong> — Without analytics, candidates don&apos;t know what to focus on. Our platform provides detailed performance metrics for every chapter and topic.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#C8102E] mt-1.5">▸</span>
+                <span className="text-[#DB2777] mt-1.5">▸</span>
                 <span><strong className="text-[#F8FAFC]">A certification that pays off</strong> — Medical assistants earn a median of $43,000+ per year (BLS), and CCMA certification improves job prospects and earning potential. Passing on the first try means starting your career sooner.</span>
               </li>
             </ul>
@@ -297,7 +297,7 @@ export default function AboutPage() {
         <section className="mb-16">
           <div className="bg-white/5 rounded-2xl p-8 md:p-10">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 rounded-lg bg-[#4C7FBF]/20 flex items-center justify-center text-[#4C7FBF]">♥</span>
+              <span className="w-8 h-8 rounded-lg bg-[#A855F7]/20 flex items-center justify-center text-[#A855F7]">♥</span>
               Our Commitment
             </h2>
             <p className="text-[#CBD5E1] leading-relaxed mb-4">
@@ -306,8 +306,8 @@ export default function AboutPage() {
             </p>
             <div className="grid md:grid-cols-3 gap-6 mt-6">
               <div className="bg-white/5 rounded-xl p-6 text-center">
-                <div className="w-12 h-12 rounded-full bg-[#C8102E]/20 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-[#C8102E] text-2xl font-bold">Q</span>
+                <div className="w-12 h-12 rounded-full bg-[#DB2777]/20 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-[#DB2777] text-2xl font-bold">Q</span>
                 </div>
                 <h3 className="font-semibold mb-2">Quality Content</h3>
                 <p className="text-sm text-[#94A3B8] leading-relaxed">
@@ -317,8 +317,8 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="bg-white/5 rounded-xl p-6 text-center">
-                <div className="w-12 h-12 rounded-full bg-[#4C7FBF]/20 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-[#4C7FBF] text-2xl font-bold">$</span>
+                <div className="w-12 h-12 rounded-full bg-[#A855F7]/20 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-[#A855F7] text-2xl font-bold">$</span>
                 </div>
                 <h3 className="font-semibold mb-2">Fair Pricing</h3>
                 <p className="text-sm text-[#94A3B8] leading-relaxed">
@@ -353,7 +353,7 @@ export default function AboutPage() {
 
         {/* CTA */}
         <div className="text-center pb-20">
-          <div className="bg-gradient-to-r from-[#C8102E]/10 to-[#4C7FBF]/10 rounded-2xl p-10">
+          <div className="bg-gradient-to-r from-[#DB2777]/10 to-[#A855F7]/10 rounded-2xl p-10">
             <h2 className="text-2xl font-bold mb-3">Ready to Pass Your NHA CCMA Exam?</h2>
             <p className="text-[#94A3B8] mb-6 max-w-xl mx-auto">
               Join thousands of medical assistant candidates preparing with
@@ -362,7 +362,7 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/auth/login"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-[#C8102E] hover:bg-[#2563EB] rounded-lg text-sm font-medium transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-[#DB2777] hover:bg-[#BE185D] rounded-lg text-sm font-medium transition-colors"
               >
                 Get Started Free
               </a>

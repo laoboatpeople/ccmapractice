@@ -46,10 +46,10 @@ export default function NewsletterSection() {
 
   return (
     <section className="py-16 px-6 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#C8102E]/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#DB2777]/5 to-transparent" />
       <div className="relative z-10 max-w-xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
-          <Mail className="w-4 h-4 text-[#C8102E]" />
+          <Mail className="w-4 h-4 text-[#DB2777]" />
           <span className="text-sm text-[#94A3B8]">{isFr ? 'Infolettre' : 'Newsletter'}</span>
         </div>
 
@@ -78,13 +78,13 @@ export default function NewsletterSection() {
                 placeholder={isFr ? 'vous@courriel.com' : 'you@email.com'}
                 required
                 disabled={status === "loading"}
-                className="w-full pl-11 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-[#F8FAFC] placeholder-[#64748B] focus:outline-none focus:border-[#C8102E]/50 focus:ring-1 focus:ring-[#C8102E]/30 transition-all duration-200 disabled:opacity-50"
+                className="w-full pl-11 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-[#F8FAFC] placeholder-[#64748B] focus:outline-none focus:border-[#DB2777]/50 focus:ring-1 focus:ring-[#DB2777]/30 transition-all duration-200 disabled:opacity-50"
               />
             </div>
             <button
               type="submit"
               disabled={status === "loading"}
-              className="px-6 py-3 bg-[#C8102E] hover:bg-[#2563EB] text-white rounded-xl font-medium transition-all duration-200 disabled:opacity-50 flex items-center justify-center gap-2 whitespace-nowrap"
+              className="px-6 py-3 bg-[#DB2777] hover:bg-[#BE185D] text-white rounded-xl font-medium transition-all duration-200 disabled:opacity-50 flex items-center justify-center gap-2 whitespace-nowrap"
             >
               {status === "loading" ? (
                 <>

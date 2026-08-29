@@ -615,12 +615,12 @@ function EmailCapture({ variant }: { variant: 'top' | 'bottom' }) {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="your@email.com"
             required
-            className="flex-1 px-4 py-2.5 rounded-lg bg-[#1A2035] border border-white/10 text-[#F8FAFC] text-sm placeholder:text-[#64748B] focus:outline-none focus:border-[#C8102E]"
+            className="flex-1 px-4 py-2.5 rounded-lg bg-[#1A2035] border border-white/10 text-[#F8FAFC] text-sm placeholder:text-[#64748B] focus:outline-none focus:border-[#DB2777]"
           />
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="px-6 py-2.5 rounded-lg bg-[#C8102E] hover:bg-[#2563EB] text-white text-sm font-medium disabled:opacity-50 transition-colors"
+            className="px-6 py-2.5 rounded-lg bg-[#DB2777] hover:bg-[#BE185D] text-white text-sm font-medium disabled:opacity-50 transition-colors"
           >
             {status === 'loading' ? 'Sending...' : 'Get PDF'}
           </button>
@@ -647,7 +647,7 @@ function WeekSection({
   return (
     <div className="mb-12">
       <div className="flex items-center gap-2 mb-2">
-        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#C8102E] text-white text-sm font-bold">
+        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#DB2777] text-white text-sm font-bold">
           {week}
         </span>
         <h2 className="text-2xl font-bold text-[#F8FAFC]">
@@ -661,7 +661,7 @@ function WeekSection({
             key={d.day}
             className="flex items-start gap-4 p-4 rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-colors"
           >
-            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-sm font-semibold text-[#C8102E]">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-sm font-semibold text-[#DB2777]">
               {d.day}
             </div>
             <div className="flex-1 min-w-0">
@@ -669,7 +669,7 @@ function WeekSection({
               <ul className="space-y-1">
                 {d.tasks.map((task, i) => (
                   <li key={i} className="flex items-start gap-2 text-xs text-[#94A3B8]">
-                    <span className="text-[#C8102E] mt-1">☐</span>
+                    <span className="text-[#DB2777] mt-1">☐</span>
                     <span>{task}</span>
                   </li>
                 ))}
@@ -684,12 +684,12 @@ function WeekSection({
 
 export default function StudyChecklistClient({ faqs }: Props) {
   return (
-    <div className="min-h-screen bg-[#0A0E1A] text-[#F8FAFC]">
+    <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
       {/* Nav */}
-      <nav className="border-b border-white/5 bg-[#0A0E1A]/80 backdrop-blur-md">
+      <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
-            <img src="/logo/logo-main.png?v=4" alt="CCMAPractice" className="h-7 w-auto" />
+            <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
           </a>
           <a href="/" className="text-sm text-[#94A3B8] hover:text-white transition-colors">
             ← Back to Home
@@ -728,7 +728,7 @@ export default function StudyChecklistClient({ faqs }: Props) {
             general patient care, infection control (OSHA, CDC), phlebotomy and
             point of care testing, EKG, administrative assisting, HIPAA, and
             full-length timed simulations. Use it alongside{' '}
-            <Link href="/" className="text-[#C8102E] hover:text-[#60A5FA]">
+            <Link href="/" className="text-[#DB2777] hover:text-[#60A5FA]">
               CCMAPractice
             </Link>{' '}
             for daily practice questions, AI Tutor explanations, and progress
@@ -736,15 +736,15 @@ export default function StudyChecklistClient({ faqs }: Props) {
           </p>
           <p className="mt-4">
             New to the exam? Read our{' '}
-            <Link href="/faq" className="text-[#C8102E] hover:text-[#60A5FA]">
+            <Link href="/faq" className="text-[#DB2777] hover:text-[#60A5FA]">
               CCMA exam FAQ
             </Link>{' '}
             to understand the format. Need the content itself? Start with the{' '}
-            <Link href="/theory" className="text-[#C8102E] hover:text-[#60A5FA]">
+            <Link href="/theory" className="text-[#DB2777] hover:text-[#60A5FA]">
               theory guides
             </Link>{' '}
             and{' '}
-            <Link href="/exams" className="text-[#C8102E] hover:text-[#60A5FA]">
+            <Link href="/exams" className="text-[#DB2777] hover:text-[#60A5FA]">
               practice exams
             </Link>
             .
@@ -814,27 +814,27 @@ export default function StudyChecklistClient({ faqs }: Props) {
           </h3>
           <ul className="space-y-3 text-sm text-[#94A3B8]">
             <li className="flex gap-3">
-              <span className="text-[#C8102E] flex-shrink-0">1.</span>
+              <span className="text-[#DB2777] flex-shrink-0">1.</span>
               <span><strong className="text-[#CBD5E1]">Consistency over intensity:</strong> Studying 2 hours every day is vastly more effective than cramming 8 hours on weekends.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-[#C8102E] flex-shrink-0">2.</span>
+              <span className="text-[#DB2777] flex-shrink-0">2.</span>
               <span><strong className="text-[#CBD5E1]">Learn the clinical skills, not just the facts:</strong> Vital signs, phlebotomy tube order, and EKG lead placement are heavily tested — drill them until automatic.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-[#C8102E] flex-shrink-0">3.</span>
+              <span className="text-[#DB2777] flex-shrink-0">3.</span>
               <span><strong className="text-[#CBD5E1]">Track your weak areas:</strong> After every quiz, log the chapters you got wrong. Spend the next day reviewing them.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-[#C8102E] flex-shrink-0">4.</span>
+              <span className="text-[#DB2777] flex-shrink-0">4.</span>
               <span><strong className="text-[#CBD5E1]">Know the guidelines:</strong> OSHA Bloodborne Pathogens, HIPAA Privacy Rule, CDC Standard Precautions, and AHA vital sign ranges show up again and again.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-[#C8102E] flex-shrink-0">5.</span>
+              <span className="text-[#DB2777] flex-shrink-0">5.</span>
               <span><strong className="text-[#CBD5E1]">Simulate real exam conditions:</strong> In Week 8, take simulations in a quiet room with no phone and a strict 3-hour timer.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-[#C8102E] flex-shrink-0">6.</span>
+              <span className="text-[#DB2777] flex-shrink-0">6.</span>
               <span><strong className="text-[#CBD5E1]">Use the CCMAPractice AI Tutor:</strong> When a concept doesn&apos;t click, ask the AI Tutor to explain it in plain language.</span>
             </li>
           </ul>
@@ -854,7 +854,7 @@ export default function StudyChecklistClient({ faqs }: Props) {
             >
               <summary className="flex items-center justify-between p-5 cursor-pointer text-[#F8FAFC] font-medium text-sm hover:bg-white/[0.06] transition-colors">
                 <span>{faq.question}</span>
-                <span className="text-[#C8102E] text-lg group-open:rotate-180 transition-transform">▼</span>
+                <span className="text-[#DB2777] text-lg group-open:rotate-180 transition-transform">▼</span>
               </summary>
               <div className="px-5 pb-5 text-sm text-[#94A3B8] leading-relaxed border-t border-white/5 pt-4">
                 {faq.answer}

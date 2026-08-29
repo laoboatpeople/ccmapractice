@@ -59,7 +59,7 @@ export default function ContactForm() {
         </p>
         <button
           onClick={() => setSuccess(false)}
-          className="text-sm text-[#C8102E] hover:text-[#60A5FA] transition-colors"
+          className="text-sm text-[#DB2777] hover:text-[#60A5FA] transition-colors"
         >
           {isFr ? 'Envoyer un autre message' : 'Send another message'}
         </button>
@@ -84,7 +84,7 @@ export default function ContactForm() {
           onChange={(e) => setName(e.target.value)}
           required
           placeholder={isFr ? 'Jean Dupont' : 'John Smith'}
-          className="w-full px-4 py-2.5 bg-[#0A0E1A] border border-white/10 rounded-lg text-sm text-[#F8FAFC] placeholder:text-[#64748B] focus:outline-none focus:border-[#C8102E]/50 transition-colors"
+          className="w-full px-4 py-2.5 bg-[#150A12] border border-white/10 rounded-lg text-sm text-[#F8FAFC] placeholder:text-[#64748B] focus:outline-none focus:border-[#DB2777]/50 transition-colors"
         />
       </div>
 
@@ -96,7 +96,7 @@ export default function ContactForm() {
           onChange={(e) => setEmail(e.target.value)}
           required
           placeholder={isFr ? 'vous@exemple.com' : 'you@example.com'}
-          className="w-full px-4 py-2.5 bg-[#0A0E1A] border border-white/10 rounded-lg text-sm text-[#F8FAFC] placeholder:text-[#64748B] focus:outline-none focus:border-[#C8102E]/50 transition-colors"
+          className="w-full px-4 py-2.5 bg-[#150A12] border border-white/10 rounded-lg text-sm text-[#F8FAFC] placeholder:text-[#64748B] focus:outline-none focus:border-[#DB2777]/50 transition-colors"
         />
       </div>
 
@@ -108,7 +108,7 @@ export default function ContactForm() {
           required
           rows={4}
           placeholder={isFr ? 'Comment pouvons-nous vous aider ?' : 'How can we help?'}
-          className="w-full px-4 py-2.5 bg-[#0A0E1A] border border-white/10 rounded-lg text-sm text-[#F8FAFC] placeholder:text-[#64748B] focus:outline-none focus:border-[#C8102E]/50 transition-colors resize-vertical"
+          className="w-full px-4 py-2.5 bg-[#150A12] border border-white/10 rounded-lg text-sm text-[#F8FAFC] placeholder:text-[#64748B] focus:outline-none focus:border-[#DB2777]/50 transition-colors resize-vertical"
         />
       </div>
 
@@ -121,7 +121,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading || !captchaToken}
-        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#C8102E] hover:bg-[#2563EB] disabled:opacity-50 disabled:cursor-not-allowed rounded-lg text-sm font-medium text-white transition-colors"
+        className="w-full inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#DB2777] hover:bg-[#BE185D] disabled:opacity-50 disabled:cursor-not-allowed rounded-lg text-sm font-medium text-white transition-colors"
       >
         {loading ? (
           <span className="flex items-center gap-2">

@@ -64,11 +64,11 @@ function CcmaNewsletterSection() {
 
   return (
     <section className="py-20 px-6 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#C8102E]/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#DB2777]/5 to-transparent" />
       <div className="relative z-10 max-w-3xl mx-auto text-center">
         <ScrollReveal>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
               Get Free CCMA Practice Questions
             </span>
           </h2>
@@ -82,12 +82,12 @@ function CcmaNewsletterSection() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
               required
-              className="flex-1 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-[#F8FAFC] placeholder:text-[#64748B] focus:outline-none focus:border-[#C8102E]/50"
+              className="flex-1 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-[#F8FAFC] placeholder:text-[#64748B] focus:outline-none focus:border-[#DB2777]/50"
             />
             <button
               type="submit"
               disabled={status === "loading"}
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] font-semibold text-white hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#DB2777] to-[#A855F7] font-semibold text-white hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50"
             >
               {status === "loading" ? <Loader2 className="w-4 h-4 animate-spin" /> : <Mail className="w-4 h-4" />}
               Subscribe
@@ -106,12 +106,12 @@ function CcmaNewsletterSection() {
 
 export default function MarketingLandingPage() {
   return (
-    <div className="min-h-screen bg-[#0A0E1A] text-[#F8FAFC] font-sans overflow-x-hidden">
+    <div className="min-h-screen bg-[#150A12] text-[#F8FAFC] font-sans overflow-x-hidden">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#0A0E1A]/80 border-b border-white/5">
+      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#150A12]/80 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src="/logo/logo-main.png?v=4" alt="CCMAPractice" className="h-9 w-auto" />
+            <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-9 w-auto" />
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Features</a>
@@ -124,7 +124,7 @@ export default function MarketingLandingPage() {
             <a href="#testimonials" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Testimonials</a>
           </div>
           <div className="flex items-center gap-3">
-            <a href="/auth/login" className="px-4 py-2 bg-[#C8102E] hover:bg-[#2563EB] rounded-lg text-sm font-medium transition-colors">
+            <a href="/auth/login" className="px-4 py-2 bg-[#DB2777] hover:bg-[#BE185D] rounded-lg text-sm font-medium transition-colors">
               Sign In
             </a>
           </div>
@@ -134,9 +134,9 @@ export default function MarketingLandingPage() {
       {/* 1. HERO SECTION */}
       <section className="relative pt-40 pb-20 px-6 overflow-hidden">
         {/* Background gradient and glow */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#C8102E]/10 via-[#0A0E1A] to-[#0A0E1A]" />
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#C8102E]/20 rounded-full blur-[120px]" />
-        <div className="absolute top-40 right-20 w-[400px] h-[400px] bg-[#4C7FBF]/10 rounded-full blur-[100px]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#DB2777]/10 via-[#150A12] to-[#150A12]" />
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#DB2777]/20 rounded-full blur-[120px]" />
+        <div className="absolute top-40 right-20 w-[400px] h-[400px] bg-[#A855F7]/10 rounded-full blur-[100px]" />
         
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -149,11 +149,11 @@ export default function MarketingLandingPage() {
                 <span className="text-sm text-[#94A3B8]">NHA CCMA Exam Prep</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
                   Pass Your NHA CCMA
                 </span>
                 <br />
-                <span className="bg-gradient-to-r from-[#4C7FBF] to-[#C8102E] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#A855F7] to-[#DB2777] bg-clip-text text-transparent">
                   Exam with Confidence
                 </span>
               </h1>
@@ -170,7 +170,7 @@ export default function MarketingLandingPage() {
                   { icon: Brain, text: "AI tutor included" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
-                    <item.icon className="w-4 h-4 text-[#C8102E]" />
+                    <item.icon className="w-4 h-4 text-[#DB2777]" />
                     <span className="text-sm text-[#94A3B8]">{item.text}</span>
                   </div>
                 ))}
@@ -180,7 +180,7 @@ export default function MarketingLandingPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
                   href="/auth/login"
-                  className="group px-8 py-4 bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] rounded-xl font-semibold text-white hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] transition-all duration-300 flex items-center justify-center gap-2"
+                  className="group px-8 py-4 bg-gradient-to-r from-[#DB2777] to-[#A855F7] rounded-xl font-semibold text-white hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   <LogIn className="w-5 h-5" />
                   Start Practicing Free
@@ -202,7 +202,7 @@ export default function MarketingLandingPage() {
             >
               <AppMockup title="Phlebotomy — Chapter 8">
                 <div className="space-y-3">
-                  <div className="text-xs text-[#C8102E] font-medium">Question 12 of 50</div>
+                  <div className="text-xs text-[#DB2777] font-medium">Question 12 of 50</div>
                   <div className="text-sm text-[#F8FAFC] font-medium leading-relaxed">
                     Which of the following is the correct order of draw for venipuncture using a standard evacuated tube system?
                   </div>
@@ -213,7 +213,7 @@ export default function MarketingLandingPage() {
                       { text: "Green, red, lavender, light blue", correct: false },
                       { text: "Lavender, green, red, light blue", correct: false },
                     ].map((opt, i) => (
-                      <div key={i} className={`p-2 rounded-lg text-xs ${opt.correct ? 'bg-[#C8102E]/20 border border-[#C8102E]/50 text-white' : 'bg-white/5 text-[#94A3B8]'}`}>
+                      <div key={i} className={`p-2 rounded-lg text-xs ${opt.correct ? 'bg-[#DB2777]/20 border border-[#DB2777]/50 text-white' : 'bg-white/5 text-[#94A3B8]'}`}>
                         {opt.text}
                       </div>
                     ))}
@@ -227,11 +227,11 @@ export default function MarketingLandingPage() {
 
       {/* 2. BUILT FOR BUSY MEDICAL ASSISTANTS */}
       <section id="why-mobile" className="py-20 px-6 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#C8102E]/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#DB2777]/5 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
                 Built for Busy Medical Assistants
               </span>
             </h2>
@@ -266,7 +266,7 @@ export default function MarketingLandingPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
                 Everything You Need to Pass the NHA CCMA Exam
               </span>
             </h2>
@@ -298,11 +298,11 @@ export default function MarketingLandingPage() {
 
       {/* 4. HOW IT WORKS */}
       <section id="how-it-works" className="py-20 px-6 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#4C7FBF]/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#A855F7]/5 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
                 How It Works
               </span>
             </h2>
@@ -313,7 +313,7 @@ export default function MarketingLandingPage() {
 
           <div className="relative flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4">
             {/* Connector line */}
-            <div className="hidden md:block absolute top-16 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-[#C8102E] via-[#4C7FBF] to-[#8B5CF6]" />
+            <div className="hidden md:block absolute top-16 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-[#DB2777] via-[#A855F7] to-[#8B5CF6]" />
             
             {[
               { num: "1", title: "Create Your Free Account", desc: "Sign up and get instant access to CCMA practice questions and your first theory chapter." },
@@ -322,7 +322,7 @@ export default function MarketingLandingPage() {
             ].map((item, i) => (
               <ScrollReveal key={i} className="relative flex-1 max-w-sm text-center">
                 <div className="relative z-10">
-                  <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-[#C8102E] to-[#4C7FBF] flex items-center justify-center text-2xl font-bold text-white shadow-[0_0_40px-rgba(59,130,246,0.3)]">
+                  <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-[#DB2777] to-[#A855F7] flex items-center justify-center text-2xl font-bold text-white shadow-[0_0_40px-rgba(59,130,246,0.3)]">
                     {item.num}
                   </div>
                   <h3 className="text-xl font-bold text-[#F8FAFC] mb-2">{item.title}</h3>
@@ -339,7 +339,7 @@ export default function MarketingLandingPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
                 The 13 Chapters of the NHA CCMA Blueprint
               </span>
             </h2>
@@ -352,14 +352,14 @@ export default function MarketingLandingPage() {
             {CCMA_CHAPTERS.map((chapter, i) => (
               <ScrollReveal
                 key={chapter.num}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#C8102E]/30 transition-all duration-300 group"
+                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#DB2777]/30 transition-all duration-300 group"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#C8102E] to-[#4C7FBF] flex items-center justify-center text-sm font-bold text-white flex-shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#DB2777] to-[#A855F7] flex items-center justify-center text-sm font-bold text-white flex-shrink-0">
                     {chapter.num}
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#F8FAFC] mb-1 group-hover:text-[#C8102E] transition-colors">
+                    <h3 className="text-lg font-bold text-[#F8FAFC] mb-1 group-hover:text-[#DB2777] transition-colors">
                       {chapter.title}
                     </h3>
                     <p className="text-xs text-[#64748B]">
@@ -397,11 +397,11 @@ export default function MarketingLandingPage() {
 
       {/* 6. STATS SECTION */}
       <section className="py-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#C8102E]/10 via-[#0A0E1A] to-[#8B5CF6]/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#DB2777]/10 via-[#150A12] to-[#8B5CF6]/10" />
         <div className="relative z-10 max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
                 Know Exactly What You Are Preparing For
               </span>
             </h2>
@@ -419,9 +419,9 @@ export default function MarketingLandingPage() {
             ].map((item, i) => (
               <ScrollReveal
                 key={i}
-                className="p-8 rounded-2xl bg-white/5 border border-white/10 text-center hover:border-[#C8102E]/30 transition-all duration-300"
+                className="p-8 rounded-2xl bg-white/5 border border-white/10 text-center hover:border-[#DB2777]/30 transition-all duration-300"
               >
-                <item.icon className="w-8 h-8 mx-auto mb-4 text-[#C8102E]" />
+                <item.icon className="w-8 h-8 mx-auto mb-4 text-[#DB2777]" />
                 <div className="text-4xl font-bold text-[#F8FAFC] mb-2">{item.value}</div>
                 <p className="text-sm text-[#94A3B8]">{item.label}</p>
               </ScrollReveal>
@@ -432,9 +432,9 @@ export default function MarketingLandingPage() {
 
       {/* 7. AI SECTION */}
       <section className="py-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#C8102E]/20 via-[#8B5CF6]/20 to-[#0A0E1A]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#DB2777]/20 via-[#8B5CF6]/20 to-[#150A12]" />
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#8B5CF6]/20 rounded-full blur-[150px]" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#C8102E]/20 rounded-full blur-[150px]" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#DB2777]/20 rounded-full blur-[150px]" />
         
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -444,7 +444,7 @@ export default function MarketingLandingPage() {
                 <span className="text-sm text-[#94A3B8]">AI-Powered Study</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-[#C8102E] to-[#8B5CF6] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#DB2777] to-[#8B5CF6] bg-clip-text text-transparent">
                   Your Personal CCMA Study Partner
                 </span>
               </h2>
@@ -474,11 +474,11 @@ export default function MarketingLandingPage() {
 
             <ScrollReveal className="flex-1 flex justify-center">
               <div className="relative w-80 h-80">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#C8102E] to-[#8B5CF6] rounded-3xl rotate-6 opacity-20" />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#4C7FBF] to-[#C8102E] rounded-3xl -rotate-3 opacity-30" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#DB2777] to-[#8B5CF6] rounded-3xl rotate-6 opacity-20" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#A855F7] to-[#DB2777] rounded-3xl -rotate-3 opacity-30" />
                 <div className="relative w-full h-full bg-[#1A2035] rounded-3xl border border-[#2D3A52] flex items-center justify-center backdrop-blur-sm">
                   <div className="text-center p-8">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-[#C8102E] to-[#8B5CF6] flex items-center justify-center">
+                    <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-[#DB2777] to-[#8B5CF6] flex items-center justify-center">
                       <Brain className="w-10 h-10 text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-[#F8FAFC] mb-2">AI Tutor</h3>
@@ -487,7 +487,7 @@ export default function MarketingLandingPage() {
                       {[0, 1, 2, 3].map((i) => (
                         <div
                           key={i}
-                          className="w-2 h-2 rounded-full bg-[#C8102E] animate-pulse"
+                          className="w-2 h-2 rounded-full bg-[#DB2777] animate-pulse"
                           style={{ animationDelay: `${i * 0.15}s` }}
                         />
                       ))}
@@ -505,7 +505,7 @@ export default function MarketingLandingPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
                 Built for Every CCMA Candidate
               </span>
             </h2>
@@ -523,10 +523,10 @@ export default function MarketingLandingPage() {
             ].map((item, i) => (
               <ScrollReveal
                 key={i}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#C8102E]/30 transition-all duration-300 group"
+                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#DB2777]/30 transition-all duration-300 group"
               >
                 <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-lg font-bold text-[#F8FAFC] mb-2 group-hover:text-[#C8102E] transition-colors">{item.title}</h3>
+                <h3 className="text-lg font-bold text-[#F8FAFC] mb-2 group-hover:text-[#DB2777] transition-colors">{item.title}</h3>
                 <p className="text-sm text-[#94A3B8]">{item.desc}</p>
               </ScrollReveal>
             ))}
@@ -536,11 +536,11 @@ export default function MarketingLandingPage() {
 
       {/* 9. TESTIMONIALS */}
       <section id="testimonials" className="py-20 px-6 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#C8102E]/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#DB2777]/5 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
                 What CCMA Candidates Say
               </span>
             </h2>
@@ -556,7 +556,7 @@ export default function MarketingLandingPage() {
               school=""
               quote="The practice questions felt just like the real exam. The explanations referencing OSHA and HIPAA guidelines made everything click."
               index={0}
-              color="#C8102E"
+              color="#DB2777"
             />
             <TestimonialCard
               name="Jasmine R."
@@ -583,7 +583,7 @@ export default function MarketingLandingPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
                 Simple, Affordable Pricing
               </span>
             </h2>
@@ -653,13 +653,13 @@ export default function MarketingLandingPage() {
 
       {/* 11. FINAL CTA */}
       <section id="final-cta" className="py-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#C8102E]/20 via-[#4C7FBF]/20 to-[#8B5CF6]/20" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#C8102E]/10 rounded-full blur-[120px]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#DB2777]/20 via-[#A855F7]/20 to-[#8B5CF6]/20" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#DB2777]/10 rounded-full blur-[120px]" />
         
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
                 Ready to Pass Your NHA CCMA Exam?
               </span>
             </h2>
@@ -670,7 +670,7 @@ export default function MarketingLandingPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/auth/login"
-                className="group px-8 py-4 bg-white text-[#0A0E1A] rounded-xl font-semibold hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all duration-300 flex items-center justify-center gap-3"
+                className="group px-8 py-4 bg-white text-[#150A12] rounded-xl font-semibold hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all duration-300 flex items-center justify-center gap-3"
               >
                 <LogIn className="w-6 h-6" />
                 Start Practicing Free
@@ -697,7 +697,7 @@ export default function MarketingLandingPage() {
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src="/logo/logo-main.png?v=4" alt="CCMAPractice" className="h-8 w-auto" />
+                <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-8 w-auto" />
               </div>
               <p className="text-sm text-[#94A3B8]">
                 AI-powered NHA CCMA exam prep — practice questions, theory guides, and an AI tutor to help you pass with confidence.

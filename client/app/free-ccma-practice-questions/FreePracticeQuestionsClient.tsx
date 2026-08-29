@@ -196,12 +196,12 @@ function EmailCapture() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="your@email.com"
             required
-            className="flex-1 px-4 py-2.5 rounded-lg bg-[#1A2035] border border-white/10 text-[#F8FAFC] text-sm placeholder:text-[#64748B] focus:outline-none focus:border-[#C8102E]"
+            className="flex-1 px-4 py-2.5 rounded-lg bg-[#1A2035] border border-white/10 text-[#F8FAFC] text-sm placeholder:text-[#64748B] focus:outline-none focus:border-[#DB2777]"
           />
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="px-6 py-2.5 rounded-lg bg-[#C8102E] hover:bg-[#2563EB] text-white text-sm font-medium disabled:opacity-50 transition-colors"
+            className="px-6 py-2.5 rounded-lg bg-[#DB2777] hover:bg-[#BE185D] text-white text-sm font-medium disabled:opacity-50 transition-colors"
           >
             {status === 'loading' ? 'Sending...' : 'Get Free Sample'}
           </button>
@@ -218,10 +218,10 @@ function QuestionCard({ q }: { q: typeof questions[0] }) {
   return (
     <div className="rounded-xl border border-white/10 bg-white/[0.03] p-6">
       <div className="flex items-center gap-2 mb-3">
-        <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#C8102E] text-white text-xs font-bold">
+        <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#DB2777] text-white text-xs font-bold">
           {q.id}
         </span>
-        <span className="text-xs font-medium text-[#C8102E] uppercase tracking-wider">{q.topic}</span>
+        <span className="text-xs font-medium text-[#DB2777] uppercase tracking-wider">{q.topic}</span>
       </div>
       <p className="text-sm text-[#F8FAFC] font-medium mb-4">{q.stem}</p>
       <ul className="space-y-2 mb-4">
@@ -229,7 +229,7 @@ function QuestionCard({ q }: { q: typeof questions[0] }) {
           <li
             key={i}
             className={`text-xs text-[#94A3B8] p-2 rounded ${
-              i === q.correctIndex ? 'border-l-2 border-[#C8102E] bg-[#C8102E]/5' : ''
+              i === q.correctIndex ? 'border-l-2 border-[#DB2777] bg-[#DB2777]/5' : ''
             }`}
           >
             {opt}
@@ -237,7 +237,7 @@ function QuestionCard({ q }: { q: typeof questions[0] }) {
         ))}
       </ul>
       <details className="group">
-        <summary className="inline-flex items-center gap-1 text-xs font-medium text-[#C8102E] hover:text-[#60A5FA] cursor-pointer list-none">
+        <summary className="inline-flex items-center gap-1 text-xs font-medium text-[#DB2777] hover:text-[#60A5FA] cursor-pointer list-none">
           <span>▶</span>
           <span>Show Answer</span>
         </summary>
@@ -255,12 +255,12 @@ function QuestionCard({ q }: { q: typeof questions[0] }) {
 
 export default function FreePracticeQuestionsClient() {
   return (
-    <div className="min-h-screen bg-[#0A0E1A] text-[#F8FAFC]">
+    <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
       {/* Nav */}
-      <nav className="border-b border-white/5 bg-[#0A0E1A]/80 backdrop-blur-md">
+      <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
-            <img src="/logo/logo-main.png?v=4" alt="CCMAPractice" className="h-7 w-auto" />
+            <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
           </a>
           <a href="/blog" className="text-sm text-[#94A3B8] hover:text-white transition-colors">
             ← Back to Blog
@@ -277,7 +277,7 @@ export default function FreePracticeQuestionsClient() {
         </p>
         <a
           href="/auth/register"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#C8102E] hover:bg-[#2563EB] text-white text-sm font-medium transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#DB2777] hover:bg-[#BE185D] text-white text-sm font-medium transition-colors"
         >
           Start Your Free Practice →
         </a>
@@ -323,7 +323,7 @@ export default function FreePracticeQuestionsClient() {
 
       {/* CTA Section */}
       <section className="max-w-4xl mx-auto px-6 mb-16">
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-[#C8102E]/10 to-[#4C7FBF]/5 p-8 text-center">
+        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-[#DB2777]/10 to-[#A855F7]/5 p-8 text-center">
           <h2 className="text-2xl font-bold text-[#F8FAFC] mb-3">
             Ready for 1,200+ Questions?
           </h2>
@@ -335,7 +335,7 @@ export default function FreePracticeQuestionsClient() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href="/auth/register"
-              className="px-6 py-3 rounded-lg bg-[#C8102E] hover:bg-[#2563EB] text-white text-sm font-medium transition-colors"
+              className="px-6 py-3 rounded-lg bg-[#DB2777] hover:bg-[#BE185D] text-white text-sm font-medium transition-colors"
             >
               Create Free Account
             </a>
