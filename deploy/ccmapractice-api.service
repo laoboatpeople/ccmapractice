@@ -1,0 +1,18 @@
+[Unit]
+Description=CCMAPractice Express API (port 4014)
+After=network.target
+
+[Service]
+Type=simple
+User=chuck
+WorkingDirectory=/home/chuck/projects/ccmapractice/server
+Environment="NODE_ENV=production"
+Environment="PORT=4014"
+EnvironmentFile=-/home/chuck/projects/ccmapractice/server/.env
+ExecStart=/usr/bin/node /home/chuck/projects/ccmapractice/server/dist/src/index.js
+Restart=on-failure
+RestartSec=5
+SyslogIdentifier=ccmapractice-api
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,18 @@
+[Unit]
+Description=CCMAPractice Client Next.js App (port 3014)
+After=network.target
+
+[Service]
+Type=simple
+User=chuck
+WorkingDirectory=/home/chuck/projects/ccmapractice/client
+Environment="NODE_ENV=production"
+Environment="PORT=3014"
+EnvironmentFile=-/home/chuck/projects/ccmapractice/client/.env.production
+ExecStart=/usr/bin/node /home/chuck/projects/ccmapractice/client/node_modules/next/dist/bin/next start -p 3014
+Restart=on-failure
+RestartSec=5
+SyslogIdentifier=ccmapractice-client
+
+[Install]
+WantedBy=multi-user.target
