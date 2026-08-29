@@ -69,7 +69,7 @@ export default function CcmaExamStudyPlanPage() {
         <article className="max-w-3xl mx-auto px-6 pt-16 pb-24">
           <header className="mb-12">
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-[11px] font-medium text-[#3B82F6] bg-[#3B82F6]/10 px-2 py-1 rounded">Study Plan</span>
+              <span className="text-[11px] font-medium text-[#DB2777] bg-[#DB2777]/10 px-2 py-1 rounded">Study Plan</span>
               <span className="text-xs text-[#64748B]">May 22, 2026 *updated August 18, 2026</span>
               <span className="text-xs text-[#64748B]">· 11 min read</span>
             </div>
@@ -83,7 +83,7 @@ export default function CcmaExamStudyPlanPage() {
 
           {/* Author byline */}
           <div className="flex items-center gap-3 mb-8 pb-6 border-b border-white/5">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#3B82F6] to-[#06B6D4] flex items-center justify-center text-white font-bold text-sm">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#DB2777] to-[#06B6D4] flex items-center justify-center text-white font-bold text-sm">
               CP
             </div>
             <div>
@@ -141,7 +141,7 @@ export default function CcmaExamStudyPlanPage() {
               CCMAPractice gives you everything this plan needs in one place: chapter-organized questions
               with guideline references, adaptive difficulty, analytics that track your chapter-level accuracy,
               and full-length timed simulations in the real exam format. Start with{' '}
-              <a href="/free-ccma-practice-questions" className="text-[#3B82F6] hover:text-[#60A5FA] transition-colors">
+              <a href="/free-ccma-practice-questions" className="text-[#DB2777] hover:text-[#60A5FA] transition-colors">
                 free CCMA practice questions
               </a>{' '}
               to build your baseline this week.

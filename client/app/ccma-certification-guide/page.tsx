@@ -131,7 +131,7 @@ export default function CcmaCertificationGuidePage() {
         <article className="max-w-3xl mx-auto px-6 pt-16 pb-24">
           <header className="mb-12">
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-[11px] font-medium text-[#3B82F6] bg-[#3B82F6]/10 px-2 py-1 rounded">Certification</span>
+              <span className="text-[11px] font-medium text-[#DB2777] bg-[#DB2777]/10 px-2 py-1 rounded">Certification</span>
               <span className="text-xs text-[#64748B]">July 7, 2026 *updated August 18, 2026</span>
               <span className="text-xs text-[#64748B]">· 12 min read</span>
             </div>
@@ -207,7 +207,7 @@ export default function CcmaCertificationGuidePage() {
             <p>
               CCMAPractice covers all 13 blueprint chapters with guideline-referenced questions, adaptive
               difficulty, and timed simulations. Start with{' '}
-              <a href="/free-ccma-practice-questions" className="text-[#3B82F6] hover:text-[#60A5FA] transition-colors">
+              <a href="/free-ccma-practice-questions" className="text-[#DB2777] hover:text-[#60A5FA] transition-colors">
                 free CCMA practice questions
               </a>{' '}
               to see the format.
@@ -225,15 +225,15 @@ export default function CcmaCertificationGuidePage() {
             <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">Ready to Start?</h2>
             <p>
               Follow the full{' '}
-              <a href="/blog/ccma-b1-certification-guide" className="text-[#3B82F6] hover:text-[#60A5FA] transition-colors">
+              <a href="/blog/ccma-b1-certification-guide" className="text-[#DB2777] hover:text-[#60A5FA] transition-colors">
                 step-by-step certification guide
               </a>,{' '}
               learn the{' '}
-              <a href="/blog/ccma-study-guide" className="text-[#3B82F6] hover:text-[#60A5FA] transition-colors">
+              <a href="/blog/ccma-study-guide" className="text-[#DB2777] hover:text-[#60A5FA] transition-colors">
                 CCMA study guide
               </a>,{' '}
               and build a{' '}
-              <a href="/blog/ccma-exam-study-plan" className="text-[#3B82F6] hover:text-[#60A5FA] transition-colors">
+              <a href="/blog/ccma-exam-study-plan" className="text-[#DB2777] hover:text-[#60A5FA] transition-colors">
                 12-week study plan
               </a>{' '}
               that fits your schedule.

@@ -69,7 +69,7 @@ export default function CcmaExamStudyResourcesPage() {
         <article className="max-w-3xl mx-auto px-6 pt-16 pb-24">
           <header className="mb-12">
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-[11px] font-medium text-[#3B82F6] bg-[#3B82F6]/10 px-2 py-1 rounded">Reference</span>
+              <span className="text-[11px] font-medium text-[#DB2777] bg-[#DB2777]/10 px-2 py-1 rounded">Reference</span>
               <span className="text-xs text-[#64748B]">May 22, 2026 *updated August 18, 2026</span>
               <span className="text-xs text-[#64748B]">· 10 min read</span>
             </div>
@@ -83,7 +83,7 @@ export default function CcmaExamStudyResourcesPage() {
 
           {/* Author byline */}
           <div className="flex items-center gap-3 mb-8 pb-6 border-b border-white/5">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#3B82F6] to-[#06B6D4] flex items-center justify-center text-white font-bold text-sm">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#DB2777] to-[#06B6D4] flex items-center justify-center text-white font-bold text-sm">
               CP
             </div>
             <div>
@@ -122,7 +122,7 @@ export default function CcmaExamStudyResourcesPage() {
             <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">4. Practice Question Platforms (Where You Should Spend Most of Your Time)</h2>
             <p>
               The highest-ROI activity for the CCMA exam is answering scenario-based clinical questions with
-              guideline-referenced explanations. <a href="/free-ccma-practice-questions" className="text-[#3B82F6] hover:text-[#60A5FA] transition-colors">CCMAPractice</a>{' '}
+              guideline-referenced explanations. <a href="/free-ccma-practice-questions" className="text-[#DB2777] hover:text-[#60A5FA] transition-colors">CCMAPractice</a>{' '}
               is purpose-built for this: 1,200+ exam-style questions across all 13 blueprint chapters, each with
               the guideline reference, adaptive difficulty, and timed simulations that mirror the real exam
               conditions.
@@ -146,7 +146,7 @@ export default function CcmaExamStudyResourcesPage() {
               Read the candidate handbook → skim the 13-chapter blueprint → drill practice questions chapter by
               chapter → review explanations (especially guideline references) → take full simulations → target
               weak chapters → retake simulations. For a week-by-week schedule, see our{' '}
-              <a href="/blog/ccma-exam-study-plan" className="text-[#3B82F6] hover:text-[#60A5FA] transition-colors">
+              <a href="/blog/ccma-exam-study-plan" className="text-[#DB2777] hover:text-[#60A5FA] transition-colors">
                 12-week CCMA study plan
               </a>.
             </p>

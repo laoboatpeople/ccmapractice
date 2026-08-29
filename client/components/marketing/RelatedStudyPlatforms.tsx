@@ -11,7 +11,7 @@ const EN_PLATFORMS = [
   },
   {
     href: 'https://metierium.com',
-    color: '#3B82F6',
+    color: '#DB2777',
     name: 'Metierium',
     desc: 'Preparing for a Quebec construction trade exam instead? Metierium covers the CMEQ, CMMTQ, QBQ, CCQ and RBQ certification exams with theory, practice exams and an AI tutor.',
   },
@@ -56,7 +56,7 @@ const FR_PLATFORMS = [
   },
   {
     href: 'https://metierium.com',
-    color: '#3B82F6',
+    color: '#DB2777',
     name: 'Metierium',
     desc: "Vous préparez plutôt un examen de métier de la construction au Québec? Metierium couvre les certifications CMEQ, CMMTQ, QBQ, CCQ et RBQ avec la théorie, des examens pratiques et un tuteur IA.",
   },

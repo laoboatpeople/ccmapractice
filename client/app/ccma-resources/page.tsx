@@ -262,9 +262,9 @@ export default function CcmaResourcesPage() {
                   <a
                     key={r.href}
                     href={r.href}
-                    className="group p-6 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-[#3B82F6]/30 transition-all"
+                    className="group p-6 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-[#DB2777]/30 transition-all"
                   >
-                    <h3 className="font-semibold text-[#F8FAFC] mb-2 group-hover:text-[#3B82F6] transition-colors">
+                    <h3 className="font-semibold text-[#F8FAFC] mb-2 group-hover:text-[#DB2777] transition-colors">
                       {r.title}
                     </h3>
                     <p className="text-sm text-[#94A3B8] leading-relaxed">{r.description}</p>

@@ -31,6 +31,32 @@ export const metadata = {
   },
 };
 
+function FaqAnswer({ text }: { text: string }) {
+  const blocks = text.split('\n\n');
+  return (
+    <div className="space-y-3">
+      {blocks.map((block, i) => {
+        const lines = block.split('\n');
+        const isList = lines.every((l) => l.trim().startsWith('•') || l.trim().startsWith('-'));
+        if (isList) {
+          const items = lines.map((l) => l.trim().replace(/^[•-]\s*/, '')).filter(Boolean);
+          return (
+            <ul key={i} className="space-y-1.5 pl-1">
+              {items.map((item, j) => (
+                <li key={j} className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#DB2777] flex-shrink-0" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          );
+        }
+        return <p key={i}>{block}</p>;
+      })}
+    </div>
+  );
+}
+
 const faqs = [
   {
     question: 'What is CCMAPractice?',
@@ -45,7 +71,7 @@ const faqs = [
   {
     question: 'What topics are covered on the NHA CCMA exam?',
     answer:
-      'The NHA CCMA exam follows an official blueprint organized into 13 chapters: Foundational Knowledge and Basic Science; Anatomy and Physiology; Patient Intake and Vitals; General Patient Care (Parts 1 and 2); Infection Control and Safety; Point of Care Testing and Laboratory Procedures; Phlebotomy; EKG and Cardiovascular Testing; Patient Care Coordination and Education; Administrative Assisting; Communication and Customer Service; and Medical Law and Ethics. Expect questions on vital signs, medical terminology, phlebotomy (order of draw and tube selection), EKG, injections, wound care, infection control (OSHA and CDC Standard Precautions), HIPAA, medical billing, and therapeutic communication.',
+      'The NHA CCMA exam follows an official blueprint organized into 13 chapters:\n\n• Foundational Knowledge and Basic Science\n• Anatomy and Physiology\n• Patient Intake and Vitals\n• General Patient Care (Parts 1 and 2)\n• Infection Control and Safety\n• Point of Care Testing and Laboratory Procedures\n• Phlebotomy\n• EKG and Cardiovascular Testing\n• Patient Care Coordination and Education\n• Administrative Assisting\n• Communication and Customer Service\n• Medical Law and Ethics\n\nYou can also expect questions on vital signs, medical terminology, phlebotomy (order of draw and tube selection), EKG, injections, wound care, infection control (OSHA and CDC Standard Precautions), HIPAA, medical billing, and therapeutic communication.',
   },
   {
     question: 'How many practice questions does CCMAPractice include?',
@@ -55,7 +81,7 @@ const faqs = [
   {
     question: 'What are the 13 theory chapters?',
     answer:
-      'Our theory guides cover all 13 chapters of the official NHA CCMA exam blueprint: Foundational Knowledge and Basic Science, Anatomy and Physiology, Patient Intake and Vitals, General Patient Care Part 1, General Patient Care Part 2, Infection Control and Safety, Point of Care Testing and Laboratory Procedures, Phlebotomy, EKG and Cardiovascular Testing, Patient Care Coordination and Education, Administrative Assisting, Communication and Customer Service, and Medical Law and Ethics. Each chapter provides structured, exam-focused study material.',
+      'Our theory guides cover all 13 chapters of the official NHA CCMA exam blueprint:\n\n• Foundational Knowledge and Basic Science\n• Anatomy and Physiology\n• Patient Intake and Vitals\n• General Patient Care (Parts 1 and 2)\n• Infection Control and Safety\n• Point of Care Testing and Laboratory Procedures\n• Phlebotomy\n• EKG and Cardiovascular Testing\n• Patient Care Coordination and Education\n• Administrative Assisting\n• Communication and Customer Service\n• Medical Law and Ethics\n\nEach chapter provides structured, exam-focused study material.',
   },
   {
     question: 'How do the exam simulations work?',
@@ -151,15 +177,15 @@ export default function FAQPage() {
           {faqs.map((faq, i) => (
             <details key={i} className="group py-6 cursor-pointer">
               <summary className="flex items-start justify-between gap-4 list-none">
-                <h2 className="text-lg font-medium text-[#F8FAFC] group-hover:text-[#3B82F6] transition-colors">
+                <h2 className="text-lg font-medium text-[#F8FAFC] group-hover:text-[#DB2777] transition-colors">
                   {faq.question}
                 </h2>
-                <span className="text-[#3B82F6] text-xl group-open:rotate-180 transition-transform flex-shrink-0">
+                <span className="text-[#DB2777] text-xl group-open:rotate-180 transition-transform flex-shrink-0">
                   ▼
                 </span>
               </summary>
               <p className="mt-4 text-sm text-[#94A3B8] leading-relaxed">
-                {faq.answer}
+                <FaqAnswer text={faq.answer} />
               </p>
             </details>
           ))}
