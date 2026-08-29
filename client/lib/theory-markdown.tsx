@@ -8,6 +8,7 @@ import React from 'react';
 
 export type TheorySegment =
   | { type: 'svg'; content: string }
+  | { type: 'image'; content: string }
   | { type: 'hr'; content: string }
   | { type: 'heading'; level: number; content: string }
   | { type: 'bullet'; content: string }
@@ -79,6 +80,12 @@ export function parseTheorySegments(content: string): TheorySegment[] {
         continue;
       }
 
+      // Markdown image: ![alt](/path/to/image.jpg)
+      if (/^!\[[^\]]*\]\([^)]+\)$/.test(trimmed)) {
+        result.push({ type: 'image', content: trimmed });
+        continue;
+      }
+
       if (trimmed === '---') {
         result.push({ type: 'hr', content: '' });
         continue;
@@ -120,6 +127,22 @@ export function TheoryContent({ content, color = 'blue' }: { content: string; co
         }
         if (seg.type === 'hr') {
           return <hr key={i} className="my-4 border-border" />;
+        }
+        if (seg.type === 'image') {
+          const m = seg.content.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+          if (m) {
+            return (
+              <figure key={i} className="my-4">
+                <img
+                  src={m[2]}
+                  alt={m[1] || 'theory diagram'}
+                  className="mx-auto max-w-full rounded-card border border-border bg-white p-2"
+                  loading="lazy"
+                />
+                {m[1] ? <figcaption className="mt-1 text-center text-xs text-text-tertiary">{m[1]}</figcaption> : null}
+              </figure>
+            );
+          }
         }
         if (seg.type === 'heading') {
           const H = `h${Math.min(seg.level + 1, 4)}` as keyof React.JSX.IntrinsicElements;

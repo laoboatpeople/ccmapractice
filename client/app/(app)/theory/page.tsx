@@ -136,6 +136,12 @@ function TheoryRenderer({ content, color }: { content: string; color: SectionCol
           continue;
         }
 
+        // Markdown image: ![alt](/path/to/image.jpg)
+        if (/^!\[[^\]]*\]\([^)]+\)$/.test(trimmed)) {
+          result.push({ type: 'image', content: trimmed });
+          continue;
+        }
+
         // Horizontal rule
         if (trimmed === '---') {
           result.push({ type: 'hr', content: '' });
@@ -165,6 +171,22 @@ function TheoryRenderer({ content, color }: { content: string; color: SectionCol
         }
         if (seg.type === 'hr') {
           return <hr key={i} className="my-4 border-border" />;
+        }
+        if (seg.type === 'image') {
+          const m = seg.content.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+          if (m) {
+            return (
+              <figure key={i} className="my-4">
+                <img
+                  src={m[2]}
+                  alt={m[1] || 'theory diagram'}
+                  className="mx-auto max-w-full rounded-card border border-border bg-white p-2"
+                  loading="lazy"
+                />
+                {m[1] ? <figcaption className="mt-1 text-center text-xs text-text-tertiary">{m[1]}</figcaption> : null}
+              </figure>
+            );
+          }
         }
         if (seg.type === 'heading') {
           const H = `h${Math.min(seg.level! + 1, 4)}` as keyof JSX.IntrinsicElements;
