@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About Inspect Practice — ICC Exam Prep Platform',
+  title: 'About CCMAPractice — NHA CCMA Exam Prep Platform',
   description:
-    'AI-powered exam prep for ICC building inspector certifications. 2,500+ code-referenced questions to help you pass your B1, B2, E1, P1 & M1 exams.',
+    'AI-powered exam prep for the NHA CCMA certification. 1,200+ guideline-referenced practice questions to help you pass the Certified Clinical Medical Assistant exam.',
   alternates: {
     canonical: 'https://ccmapractice.com/about',
     languages: {
@@ -12,9 +12,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'About Inspect Practice — ICC Exam Prep Platform',
+    title: 'About CCMAPractice — NHA CCMA Exam Prep Platform',
     description:
-      'Learn about Inspect Practice: our mission to help building inspectors pass ICC certification exams with our AI-powered platform and 2,500+ questions.',
+      'Learn about CCMAPractice: our mission to help medical assistant students pass the NHA CCMA certification exam with our AI-powered platform and 1,200+ questions.',
     url: 'https://ccmapractice.com/about',
     type: 'website',
     images: [
@@ -22,13 +22,13 @@ export const metadata: Metadata = {
         url: 'https://ccmapractice.com/images/og/about.jpg',
         width: 1200,
         height: 630,
-        alt: 'Inspect Practice ICC Exam Preparation Platform',
+        alt: 'CCMAPractice NHA CCMA Exam Preparation Platform',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Inspect Practice — ICC Exam Prep Platform',
+    title: 'About CCMAPractice — NHA CCMA Exam Prep Platform',
   },
   other: {
     'article:published_time': '2025-01-15',
@@ -43,7 +43,7 @@ export default function AboutPage() {
       <nav className="border-b border-white/5 bg-[#0A0E1A]/80 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
-            <img src="/logo/logo-main.png?v=3" alt="Inspect Practice" className="h-7 w-auto" />
+            <img src="/logo/logo-main.png?v=3" alt="CCMAPractice" className="h-7 w-auto" />
           </a>
           <a href="/" className="text-sm text-[#94A3B8] hover:text-white transition-colors">
             ← Back to Home
@@ -58,12 +58,12 @@ export default function AboutPage() {
             About
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mt-6 mb-6">
-            About Inspect Practice
+            About CCMAPractice
           </h1>
           <p className="text-lg md:text-xl text-[#94A3B8] max-w-3xl mx-auto leading-relaxed">
-            We are building the most effective study platform for ICC building
-            inspector certification exams — combining AI technology with real
-            code expertise to help candidates pass with confidence.
+            We are building the most effective study platform for the NHA CCMA
+            certification exam — combining AI technology with real clinical
+            expertise to help candidates pass with confidence.
           </p>
         </div>
 
@@ -75,28 +75,31 @@ export default function AboutPage() {
               Our Mission
             </h2>
             <p className="text-[#CBD5E1] leading-relaxed mb-4">
-              Our mission is simple: help every building inspector pass their ICC
-              certification exam on the first try. We believe preparing for ICC
-              certification should not be a guessing game. Too many candidates
-              walk into the exam unprepared — not because they lack skills, but
+              Our mission is simple: help every medical assistant student pass their
+              NHA CCMA certification exam on the first try. We believe preparing for
+              CCMA certification should not be a guessing game. Too many candidates
+              walk into the exam unprepared — not because they lack ability, but
               because they lack access to study tools that reflect the true exam
               experience.
             </p>
             <p className="text-[#CBD5E1] leading-relaxed mb-4">
-              Traditional study materials for the ICC exams are outdated, difficult
-              to navigate, and rarely offer the depth of open-book practice needed
-              to build real confidence. The codes are dense, practice questions are
-              scarce, and the IRC/IBC/NEC/IPC/IMC structure can feel overwhelming
-              without a structured approach. We set out to change that by building
-              a platform that adapts to each candidate&apos;s learning pace, identifies
-              weak points, and offers targeted practice where it matters most.
+              Traditional study materials for the CCMA exam are outdated, difficult
+              to navigate, and rarely offer the depth of practice needed to build
+              real confidence. The clinical content is dense — phlebotomy, EKGs,
+              medical terminology, infection control, HIPAA, and medical law all in
+              one exam — and quality practice questions are scarce without a
+              structured approach. We set out to change that by building a platform
+              that adapts to each candidate&apos;s learning pace, identifies weak
+              points, and offers targeted practice where it matters most.
             </p>
             <p className="text-[#CBD5E1] leading-relaxed">
-              At the heart of our mission is a commitment to public safety. Every
-              inspector who approves a construction project is responsible for the
-              safety of its occupants. By ensuring that certification candidates
-              are thoroughly prepared, we are contributing to safer buildings across
-              the United States and beyond.
+              At the heart of our mission is a commitment to patient care. Every
+              certified medical assistant plays a direct role in the safety and
+              well-being of patients — taking accurate vitals, drawing blood safely,
+              running point-of-care tests, and protecting patient privacy under
+              HIPAA. By ensuring that certification candidates are thoroughly
+              prepared, we are contributing to safer, higher-quality care across
+              clinics, hospitals, and private practices in the United States.
             </p>
           </div>
         </section>
@@ -109,21 +112,24 @@ export default function AboutPage() {
               Our Platform
             </h2>
             <p className="text-[#CBD5E1] leading-relaxed mb-4">
-              Inspect Practice is not a simple flashcard app. It is a specialized,
+              CCMAPractice is not a simple flashcard app. It is a specialized,
               AI-powered study platform engineered from the ground up around the
-              ICC certification exams: B1 (Residential Building Inspector — IRC),
-              B2 (Commercial Building Inspector — IBC), E1 (Residential Electrical
-              Inspector — NEC), P1 (Residential Plumbing Inspector — IPC), and M1
-              (Residential Mechanical Inspector — IMC). Every question, every
-              explanation, and every algorithm is designed to reflect the true
-              open-book exam experience.
+              NHA CCMA exam blueprint: 13 chapters covering foundational science,
+              anatomy and physiology, patient intake and vitals, general patient
+              care, infection control, point-of-care testing, phlebotomy, EKG,
+              patient care coordination, administrative assisting, communication,
+              and medical law and ethics. Every question, every explanation, and
+              every algorithm is designed to reflect the true exam experience.
             </p>
             <p className="text-[#CBD5E1] leading-relaxed mb-4">
-              Our question bank contains over 2,500 AI-generated, expert-reviewed
-              questions covering the relevant chapters of each code. Every question
-              is tagged by code, chapter, topic, difficulty level, and exact code
-              reference — making it easy for candidates to target their weak areas
-              and train their code-navigation speed.
+              Our question bank contains over 1,200 AI-generated, expert-reviewed
+              questions covering all 13 blueprint chapters. Every question is tagged
+              by chapter, topic, and difficulty level — and every explanation cites
+              the actual guidelines behind the correct answer: OSHA Bloodborne
+              Pathogens, the HIPAA Privacy Rule, CDC Standard Precautions, AHA
+              guidelines, and CLIA-waived testing requirements. That makes it easy
+              for candidates to target their weak areas and understand the why
+              behind each answer.
             </p>
             <div className="grid md:grid-cols-2 gap-4 mt-8">
               <div className="bg-white/5 rounded-xl p-6">
@@ -146,12 +152,12 @@ export default function AboutPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
-                <h3 className="font-semibold mb-2">Realistic Open-Book Simulations</h3>
+                <h3 className="font-semibold mb-2">Realistic Exam Simulations</h3>
                 <p className="text-sm text-[#94A3B8] leading-relaxed">
-                  Timed practice exams replicate the actual ICC testing environment.
-                  Build speed and confidence before the real exam with question
-                  formats, durations, and difficulty levels aligned to official
-                  standards.
+                  Timed 150-question practice exams replicate the actual NHA CCMA
+                  testing environment. Build speed and confidence before the real
+                  exam with question formats, durations, and difficulty levels
+                  aligned to official standards.
                 </p>
               </div>
               <div className="bg-white/5 rounded-xl p-6">
@@ -162,9 +168,9 @@ export default function AboutPage() {
                 </div>
                 <h3 className="font-semibold mb-2">AI Tutor</h3>
                 <p className="text-sm text-[#94A3B8] leading-relaxed">
-                  Get instant, plain-language explanations of complex code
-                  requirements. Ask questions naturally and receive exam-focused
-                  answers that reference the exact code sections.
+                  Get instant, plain-language explanations of complex clinical
+                  concepts. Ask questions naturally and receive exam-focused
+                  answers that reference the exact guidelines and procedures.
                 </p>
               </div>
               <div className="bg-white/5 rounded-xl p-6">
@@ -176,8 +182,9 @@ export default function AboutPage() {
                 <h3 className="font-semibold mb-2">Progress Analytics</h3>
                 <p className="text-sm text-[#94A3B8] leading-relaxed">
                   Detailed analytics show your performance in every chapter of the
-                  code. Track accuracy by chapter, monitor difficulty progression,
-                  and review your exam history — always know exactly where you stand.
+                  blueprint. Track accuracy by chapter, monitor difficulty
+                  progression, and review your exam history — always know exactly
+                  where you stand.
                 </p>
               </div>
             </div>
@@ -198,7 +205,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-xl font-bold mb-2">Chuck Onekeo</h3>
                 <p className="text-sm text-[#C8102E] font-medium mb-4">
-                  Programmer &amp; AI Specialist — Founder of Inspect Practice
+                  Programmer &amp; AI Specialist — Founder of CCMAPractice
                 </p>
                 <p className="text-[#CBD5E1] leading-relaxed mb-4">
                   Chuck Onekeo is a programmer and AI specialist with extensive
@@ -210,20 +217,20 @@ export default function AboutPage() {
                 </p>
                 <p className="text-[#CBD5E1] leading-relaxed mb-4">
                   Combining his expertise in artificial intelligence, machine
-                  learning, and full-stack development, Chuck designed Inspect
-                  Practice from the ground up as an adaptive learning system
-                  tailored specifically to the open-book ICC certification exams.
-                  The platform&apos;s AI engine dynamically adjusts question difficulty,
-                  generates contextual explanations, and provides personalized
-                  study recommendations based on individual performance.
+                  learning, and full-stack development, Chuck designed CCMAPractice
+                  from the ground up as an adaptive learning system tailored
+                  specifically to the NHA CCMA certification exam. The platform&apos;s
+                  AI engine dynamically adjusts question difficulty, generates
+                  contextual explanations, and provides personalized study
+                  recommendations based on individual performance.
                 </p>
                 <p className="text-[#CBD5E1] leading-relaxed">
-                  Chuck&apos;s vision for Inspect Practice goes beyond helping
-                  candidates pass their exams. He believes that well-prepared
-                  inspectors make buildings safer for everyone, and that technology
-                  — especially AI — has the power to dramatically improve how
-                  technical professionals prepare for high-stakes certification
-                  exams.
+                  Chuck&apos;s vision for CCMAPractice goes beyond helping candidates
+                  pass their exams. He believes that well-prepared medical
+                  assistants deliver better, safer patient care — and that
+                  technology — especially AI — has the power to dramatically
+                  improve how healthcare professionals prepare for high-stakes
+                  certification exams.
                 </p>
               </div>
             </div>
@@ -238,19 +245,21 @@ export default function AboutPage() {
               Why We Built This
             </h2>
             <p className="text-[#CBD5E1] leading-relaxed mb-4">
-              The path to ICC certification is demanding. Candidates must master
-              massive codes (IRC, IBC, NEC, IPC, IMC), pass timed open-book exams,
-              and develop the navigation speed that makes the difference on exam
-              day. Despite the high stakes, most candidates rely on dense manuals,
-              scattered PDFs, and word-of-mouth advice to prepare.
+              The path to NHA CCMA certification is demanding. Candidates must
+              master 13 chapters of clinical and administrative content — anatomy,
+              vital signs, phlebotomy, EKGs, infection control, HIPAA, medical
+              billing, and therapeutic communication — then sit a 3-hour,
+              180-question exam with a passing score of 390/500. Despite the high
+              stakes, most candidates rely on dense textbooks, scattered PDFs, and
+              word-of-mouth advice to prepare.
             </p>
             <p className="text-[#CBD5E1] leading-relaxed mb-4">
               We saw a gap that technology could fill. The same AI techniques that
               power recommendation systems, language models, and adaptive tutoring
-              platforms could be applied to inspection exam preparation — and the
-              result is a study experience that is more effective, more engaging,
-              and more performant than anything currently available to ICC
-              candidates.
+              platforms could be applied to medical assistant exam preparation —
+              and the result is a study experience that is more effective, more
+              engaging, and more performant than anything currently available to
+              CCMA candidates.
             </p>
             <p className="text-[#CBD5E1] leading-relaxed mb-4">
               Key problems we set out to solve:
@@ -258,7 +267,11 @@ export default function AboutPage() {
             <ul className="space-y-3 text-[#CBD5E1]">
               <li className="flex items-start gap-3">
                 <span className="text-[#C8102E] mt-1.5">▸</span>
-                <span><strong className="text-[#F8FAFC]">Scarcity of practice questions</strong> — Most candidates report that finding enough realistic practice questions is their biggest challenge. We built a bank of 2,500+ questions covering all five ICC certifications.</span>
+                <span><strong className="text-[#F8FAFC]">Scarcity of practice questions</strong> — Most candidates report that finding enough realistic practice questions is their biggest challenge. Free resources are thin (open-exam-prep offers roughly 114 questions), while official and commercial packages are expensive. We built a bank of 1,200+ questions covering all 13 blueprint chapters.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-[#C8102E] mt-1.5">▸</span>
+                <span><strong className="text-[#F8FAFC]">Explanations without the why</strong> — Most question banks tell you the right answer but not why it is right. Every CCMAPractice explanation cites the actual guideline behind the answer — OSHA Bloodborne Pathogens, the HIPAA Privacy Rule, CDC Standard Precautions, AHA guidelines, CLIA-waived testing.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#C8102E] mt-1.5">▸</span>
@@ -266,7 +279,7 @@ export default function AboutPage() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#C8102E] mt-1.5">▸</span>
-                <span><strong className="text-[#F8FAFC]">Lack of exam simulation tools</strong> — Candidates need timed, realistic practice to build confidence. Our exam mode replicates the actual open-book ICC testing environment.</span>
+                <span><strong className="text-[#F8FAFC]">Lack of exam simulation tools</strong> — Candidates need timed, realistic practice to build confidence. Our exam mode replicates the actual NHA CCMA testing environment with 150-question timed simulations.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#C8102E] mt-1.5">▸</span>
@@ -274,7 +287,7 @@ export default function AboutPage() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[#C8102E] mt-1.5">▸</span>
-                <span><strong className="text-[#F8FAFC]">No mobile study options</strong> — Inspectors are busy professionals. Inspect Practice is available on mobile, tablet, and desktop so you can study anytime, anywhere.</span>
+                <span><strong className="text-[#F8FAFC]">A certification that pays off</strong> — Medical assistants earn a median of $43,000+ per year (BLS), and CCMA certification improves job prospects and earning potential. Passing on the first try means starting your career sooner.</span>
               </li>
             </ul>
           </div>
@@ -288,7 +301,7 @@ export default function AboutPage() {
               Our Commitment
             </h2>
             <p className="text-[#CBD5E1] leading-relaxed mb-4">
-              We are committed to building a platform that genuinely helps ICC
+              We are committed to building a platform that genuinely helps CCMA
               candidates succeed. That means:
             </p>
             <div className="grid md:grid-cols-3 gap-6 mt-6">
@@ -298,9 +311,9 @@ export default function AboutPage() {
                 </div>
                 <h3 className="font-semibold mb-2">Quality Content</h3>
                 <p className="text-sm text-[#94A3B8] leading-relaxed">
-                  Every question is reviewed against current codes. We regularly
-                  update our question bank to stay aligned with new code editions
-                  and ICC exam bulletins.
+                  Every question is reviewed against current clinical guidelines.
+                  We regularly update our question bank to stay aligned with the
+                  NHA CCMA exam blueprint and evolving standards of care.
                 </p>
               </div>
               <div className="bg-white/5 rounded-xl p-6 text-center">
@@ -310,7 +323,7 @@ export default function AboutPage() {
                 <h3 className="font-semibold mb-2">Fair Pricing</h3>
                 <p className="text-sm text-[#94A3B8] leading-relaxed">
                   We offer a free tier so every candidate can try the platform,
-                  plus affordable monthly and lifetime plans. No hidden fees, no
+                  plus affordable plans from $19/month. No hidden fees, no
                   surprises.
                 </p>
               </div>
@@ -329,11 +342,11 @@ export default function AboutPage() {
             <p className="text-[#CBD5E1] leading-relaxed mt-8">
               We are just getting started. The platform evolves constantly with new
               features, more questions, and improved AI capabilities. Our long-term
-              vision is to become the go-to study resource for every ICC candidate
+              vision is to become the go-to study resource for every CCMA candidate
               in the United States — and eventually extend our support to related
-              inspection certifications worldwide. Whether you are just beginning
-              your B1 journey or adding E1, P1, or M1 to your profile, Inspect
-              Practice is built for you.
+              allied health certifications. Whether you are just beginning your
+              medical assistant journey or renewing your certification, CCMAPractice
+              is built for you.
             </p>
           </div>
         </section>
@@ -341,10 +354,10 @@ export default function AboutPage() {
         {/* CTA */}
         <div className="text-center pb-20">
           <div className="bg-gradient-to-r from-[#C8102E]/10 to-[#4C7FBF]/10 rounded-2xl p-10">
-            <h2 className="text-2xl font-bold mb-3">Ready to Pass Your ICC Exam?</h2>
+            <h2 className="text-2xl font-bold mb-3">Ready to Pass Your NHA CCMA Exam?</h2>
             <p className="text-[#94A3B8] mb-6 max-w-xl mx-auto">
-              Join thousands of inspectors preparing with Inspect Practice. Start
-              free, upgrade when you are ready.
+              Join thousands of medical assistant candidates preparing with
+              CCMAPractice. Start free, upgrade when you are ready.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a

@@ -70,9 +70,12 @@ function looksMemorizationOnly(question: string): boolean {
 function hasScenarioSignal(question: string): boolean {
   const q = question.toLowerCase();
   const signals = [
-    'during', 'after', 'while', 'inspection', 'defect', 'violation', 'deficiency',
-    'code', 'building', 'foundation', 'framing', 'egress', 'fire', 'electrical',
-    'plumbing', 'mechanical', 'install', 'noncompliant'
+    'during', 'after', 'while', 'patient', 'presents', 'vital', 'temperature',
+    'pulse', 'respiration', 'blood', 'pressure', 'spo2', 'heart rate', 'medication',
+    'administer', 'venipuncture', 'phlebotomy', 'tube', 'specimen', 'urine',
+    'glucose', 'ekg', 'ecg', 'electrocardiogram', 'injection', 'wound', 'dressing',
+    'ppe', 'sterile', 'hipaa', 'consent', 'insurance', 'appointment', 'chart',
+    'documentation', 'precautions', 'sanitize', 'autoclave'
   ];
   return signals.some((s) => q.includes(s));
 }
@@ -91,8 +94,8 @@ function passesQualityGuards(item: Record<string, unknown>, type: QType): boolea
   if (looksMemorizationOnly(question)) return false;
   if (!hasScenarioSignal(question)) return false;
 
-  const hasRefSignal = /IRC\s?R\d{3}|IBC\s?\d{3}|NEC\s?\d{2}\.\d{2}|IPC\s?\d{3}|IMC\s?\d{3}/i.test(explanation);
-  if (!hasRefSignal) return false;
+  const hasGuidelineSignal = /\b(OSHA|HIPAA|CDC|AHA|CLIA)\b|Standard Precautions|Bloodborne Pathogens|waived testing/i.test(explanation);
+  if (!hasGuidelineSignal) return false;
 
   return true;
 }
@@ -107,40 +110,40 @@ CRITICAL — MCQ FORMAT: You MUST return a JSON ARRAY where each element is:
   "question": "string",
   "options": ["real option 1", "real option 2", "real option 3", "real option 4"],
   "correctAnswer": "exact text of one option",
-  "explanation": "detailed explanation with IRC/IBC/NEC/IPC/IMC reference cue"
+  "explanation": "detailed explanation citing a US healthcare guideline (OSHA, HIPAA, CDC, AHA, CLIA)"
 }
 Rules:
 - MUST return a JSON ARRAY (not an object, not wrapped in { questions: [] })
 - options MUST be exactly 4 plausible full-text distractors
 - NEVER use placeholder options like "A", "B", "C", "D"
 - correctAnswer MUST match one option text exactly
-- explanation MUST be non-empty, practical, and include at least one code reference cue (e.g., IRC R302, IBC 1005, NEC 210.8, IPC 903, IMC 601)
-- Every question MUST be scenario-based (field inspection/code enforcement context), not memorization-only
+- explanation MUST be non-empty, practical, and include at least one US guideline reference cue (e.g., OSHA Bloodborne Pathogens Standard, HIPAA Privacy Rule, CDC Standard Precautions, AHA CPR guidelines, CLIA waived testing requirements)
+- Every question MUST be scenario-based (clinical/patient care context), not memorization-only
 - Return ONLY the array — no markdown, no preamble, no commentary.`;
 
-  const base = `You are an International Code Council (ICC) building inspector examination generator AI.
+  const base = `You are an NHA CCMA (Certified Clinical Medical Assistant) examination generator AI.
 
-Your goal is to generate extremely realistic ICC certification exam questions based on the official ICC exam catalog and the current International Codes: the International Residential Code (IRC), International Building Code (IBC), National Electrical Code (NEC), International Plumbing Code (IPC), and International Mechanical Code (IMC).
+Your goal is to generate extremely realistic NHA CCMA certification exam questions based on the official NHA CCMA exam blueprint and current US healthcare guidelines: the OSHA Bloodborne Pathogens Standard, the HIPAA Privacy Rule, CDC Standard Precautions, AHA CPR guidelines, and CLIA waived testing requirements.
 
 IMPORTANT:
-The questions must simulate REAL ICC exam logic and philosophy, not generic textbook quizzes.
+The questions must simulate REAL NHA CCMA exam logic and philosophy, not generic textbook quizzes.
 
 The exam style MUST prioritize:
 
 * scenario-based reasoning
-* code interpretation
-* field inspection judgment
-* code compliance decision making
+* clinical judgment
+* patient care decision making
 * “best answer” logic
 * practical application
-* real building inspection environments
-* inspection report situations
-* inspection findings
-* defect analysis
+* real medical office and clinical environments
+* patient intake situations
+* clinical findings
+* vital sign interpretation
+* infection control judgment
 * human factors
-* code exceptions
-* minimum code requirements
-* safety implications
+* guideline exceptions
+* minimum safety requirements
+* patient safety implications
 
 The questions must test UNDERSTANDING, not memorization.
 
@@ -148,7 +151,7 @@ The questions must test UNDERSTANDING, not memorization.
 EXAM STYLE REQUIREMENTS
 =======================
 
-Generate questions similar to real ICC certification exams:
+Generate questions similar to real NHA CCMA certification exams:
 
 * Multiple choice
 * 4 answer choices
@@ -156,24 +159,24 @@ Generate questions similar to real ICC certification exams:
 * Distractors must be plausible
 * Questions should often contain:
 
-  * building inspection scenarios
-  * inspector field reports
-  * defect symptoms
-  * code compliance situations
-  * code interpretations
-  * inspection records
-  * plan review procedures
-  * inspection findings
+  * clinical patient scenarios ("A patient presents with...")
+  * medical assistant daily tasks
+  * abnormal vital sign findings
+  * medication administration situations
+  * phlebotomy and specimen handling situations
+  * EKG lead placement and tracing situations
+  * infection control situations
+  * patient education situations
+  * administrative and front-office situations
 
 Questions should frequently require:
 
-* interpreting IRC/IBC/NEC/IPC/IMC provisions
-* determining code compliance
-* identifying the correct inspection action
-* determining proper inspection steps
+* applying OSHA, HIPAA, CDC, AHA, and CLIA guidelines
+* determining the correct clinical action
+* identifying the correct procedure steps
 * determining correct documentation
-* identifying applicable code sections
-* analyzing inspection situations
+* identifying the appropriate tube or draw order
+* analyzing patient care situations
 
 DO NOT generate simple memorization-only questions unless necessary.
 
@@ -181,25 +184,22 @@ DO NOT generate simple memorization-only questions unless necessary.
 QUESTION DISTRIBUTION
 =====================
 
-Distribute questions according to realistic ICC emphasis:
+Distribute questions according to realistic NHA CCMA blueprint emphasis:
 
 HIGH PRIORITY:
 
-* code administration
-* building planning
-* footings and foundations
-* floor framing
-* wall framing
-* roof and ceiling framing
-* means of egress
-* fire safety
-* electrical systems
-* plumbing systems
-* mechanical systems
-* inspection procedures
-* code compliance
-* safety hazards
-* inspector responsibilities
+* Patient Intake and Vitals
+* General Patient Care
+* Infection Control and Safety
+* Phlebotomy
+* EKG and Cardiovascular Testing
+* Point of Care Testing and Laboratory Procedures
+* Medical Law and Ethics
+* Patient Care Coordination and Education
+* Administrative Assisting
+* Communication and Customer Service
+* Foundational Knowledge and Basic Science
+* Anatomy and Physiology
 
 MEDIUM PRIORITY:
 
@@ -212,115 +212,134 @@ MEDIUM PRIORITY:
 SUBJECTS TO COVER
 =================
 
-Use the ICC exam catalog topics exhaustively.
+Use the NHA CCMA exam blueprint topics exhaustively.
 
 Generate questions for ALL applicable topics:
 
 ---
 
-## Code Administration
+## Foundational Knowledge and Basic Science
 
-* permit requirements
-* inspections required
-* inspection authority
-* right of entry
-* notice of violation
-* stop-work orders
-* certificate of occupancy
-* records and reports
-* liability and immunity
-* enforcement procedures
-* scope and applicability
-* definitions
-* IRC Chapter 1 administration
+* medical terminology (prefixes, suffixes, root words)
+* body systems overview
+* basic pharmacology
+* common abbreviations and symbols
 
 ---
 
-## Building Planning
+## Anatomy and Physiology
 
-* occupancy and use
-* light and ventilation
-* minimum room areas
-* ceiling heights
-* glazing and safety glass
-* means of egress
-* egress doors
-* egress windows
-* stairways
-* ramps
-* guards
-* smoke alarms
-* emergency escape and rescue openings
-* IRC Chapter 3 building planning
+* major organs and their functions
+* cardiovascular, respiratory, and musculoskeletal systems
+* normal versus abnormal findings
 
 ---
 
-## Footings & Foundations
+## Patient Intake and Vitals
 
-* soil bearing capacity
-* footing sizes and reinforcement
-* foundation walls
-* concrete and masonry
-* dampproofing and waterproofing
-* termite protection
-* wood foundations
-* frost-protected shallow foundations
-* foundation drainage
-* anchoring requirements
-* IRC Chapter 4 foundations
+* patient intake process
+* measuring and recording vital signs
+* normal vital sign ranges
+* identifying abnormal vital signs
+* patient history and chief complaint documentation
 
 ---
 
-## Floors
+## General Patient Care
 
-* floor framing
-* floor joists
-* cantilevers
-* girders
-* floor sheathing
-* concrete slabs on grade
-* vapor barriers
-* under-floor inspection
-* IRC Chapter 5 floors
+* assisting with examinations and procedures
+* preparing the examination room
+* patient positioning
+* wound care and dressings
+* specimen collection
+* patient preparation for procedures
 
 ---
 
-## Walls
+## Infection Control and Safety
 
-* wall framing
-* studs and headers
-* wall bracing
-* shear walls
-* exterior wall coverings
-* interior wall coverings
-* fire separation
-* IRC Chapter 6 wall construction
-
----
-
-## Roof / Ceiling
-
-* roof framing
-* ceiling joists and rafters
-* roof sheathing
-* hip and valley framing
-* roof ventilation
-* attic access
-* IRC Chapters 7-8 roof-ceiling construction
+* CDC Standard Precautions
+* OSHA Bloodborne Pathogens Standard
+* hand hygiene
+* PPE use
+* sanitization, disinfection, and sterilization
+* medical asepsis versus surgical asepsis
+* sharps safety and disposal
+* exposure control plan
 
 ---
 
-## Public Safety & Means of Egress
+## Point of Care Testing and Laboratory Procedures
 
-* exit access
-* egress width and capacity
-* stair construction
-* handrails and guards
-* emergency lighting
-* fire resistance
-* smoke control
-* occupant safety
-* IRC Chapter 3 / IBC Chapter 10
+* CLIA waived testing
+* glucose testing
+* urine testing (dipstick, pregnancy)
+* rapid strep, flu, and COVID-19 tests
+* quality control and documentation
+
+---
+
+## Phlebotomy
+
+* venipuncture procedure
+* order of draw
+* tube types, additives, and stopper colors
+* needle and syringe selection
+* pediatric and geriatric considerations
+* specimen labeling and handling
+* complications of venipuncture
+
+---
+
+## EKG and Cardiovascular Testing
+
+* EKG lead placement (limb and precordial leads)
+* preparing the patient for an EKG
+* artifact recognition
+* normal sinus rhythm versus abnormalities
+* Holter monitor patient instructions
+
+---
+
+## Patient Care Coordination and Education
+
+* patient education techniques
+* discharge instructions
+* coordination of care and referrals
+* barriers to learning
+* culturally competent care
+
+---
+
+## Administrative Assisting
+
+* scheduling appointments
+* medical records management
+* insurance and billing basics (ICD-10, CPT)
+* telephone etiquette and message taking
+* patient registration
+
+---
+
+## Communication and Customer Service
+
+* therapeutic communication
+* active listening
+* handling difficult patients
+* professional boundaries
+* patient confidentiality
+
+---
+
+## Medical Law and Ethics
+
+* HIPAA Privacy Rule
+* informed consent
+* patient rights
+* scope of practice
+* advance directives
+* mandatory reporting
+* professional ethics and liability
 
 ==================================================
 OFFICIAL SOURCE LINKS
@@ -330,28 +349,28 @@ Use these official references as primary source material when generating questio
 
 ---
 
-## ICC SOURCES
+## NHA CCMA SOURCES
 
-ICC Certification Exam Catalog (B1 Residential Building Inspector, B2 Commercial Building Inspector, E1 Electrical, P1 Plumbing, M1 Mechanical):
-https://www.iccsafe.org/certification/exam-catalog/
+NHA CCMA Exam — 150 scored + 30 pretest questions, 3 hours, passing score 390/500:
+https://www.nhanow.com/certifications/certified-clinical-medical-assistant
 
-International Residential Code (IRC) — official code:
-https://codes.iccsafe.org/content/IRC2021P1
+NHA CCMA Candidate Handbook:
+https://www.nhanow.com/candidate-handbook
 
-International Building Code (IBC) — official code:
-https://codes.iccsafe.org/content/IBC2021P1
+OSHA Bloodborne Pathogens Standard (29 CFR 1910.1030):
+https://www.osha.gov/bloodborne-pathogens
 
-National Electrical Code (NEC) — official code:
-https://codes.iccsafe.org/content/NFPA702020
+HIPAA Privacy Rule (45 CFR Part 160 and 164):
+https://www.hhs.gov/hipaa/for-professionals/privacy/index.html
 
-International Plumbing Code (IPC) — official code:
-https://codes.iccsafe.org/content/IPC2021P1
+CDC Standard Precautions:
+https://www.cdc.gov/infection-control/hcp/basics/standard-precautions.html
 
-International Mechanical Code (IMC) — official code:
-https://codes.iccsafe.org/content/IMC2021P1
+AHA CPR and ECC Guidelines:
+https://cpr.heart.org/
 
-ICC Certification Candidate Handbook:
-https://www.iccsafe.org/certification/candidate-handbook/
+CLIA Waived Testing (CMS):
+https://www.cms.gov/medicare/quality/clinical-laboratory-improvement-amendments
 
 ==================================================
 SOURCE USAGE RULES
@@ -359,21 +378,50 @@ SOURCE USAGE RULES
 
 When generating questions:
 
-* Prefer ICC codes and terminology first.
-* Use IRC for residential building inspection content (B1).
-* Use IBC for commercial building inspection content (B2).
-* Use NEC for electrical inspection content (E1).
-* Use IPC for plumbing inspection content (P1).
-* Use IMC for mechanical inspection content (M1).
-* Use ICC exam catalog outlines for subject weighting.
+* Prefer US healthcare guidelines and clinical terminology first.
+* Use the OSHA Bloodborne Pathogens Standard for infection control and sharps safety content.
+* Use the HIPAA Privacy Rule for confidentiality and privacy content.
+* Use CDC Standard Precautions for infection control content.
+* Use AHA CPR guidelines for emergency response and CPR content.
+* Use CLIA waived testing requirements for point of care testing content.
+* Use the NHA CCMA exam blueprint for subject weighting.
 
 Questions must combine:
 
-* code provisions
-* real-world building inspection
-* practical compliance judgment
-* inspector operational context
-* ICC exam philosophy
+* guideline provisions
+* real-world clinical practice
+* practical clinical judgment
+* medical assistant operational context
+* NHA CCMA exam philosophy
+
+==================================================
+CLINICAL REFERENCE VALUES
+=========================
+
+Use these exact values when generating questions and explanations:
+
+Normal adult vital signs:
+
+* Temperature: 97.8-99.1°F (36.5-37.3°C) oral
+* Pulse: 60-100 beats per minute
+* Respirations: 12-20 breaths per minute
+* Blood pressure: <120/80 mmHg
+* Oxygen saturation (SpO2): 95-100%
+
+Phlebotomy order of draw (venipuncture):
+
+1. Light blue (sodium citrate, coagulation studies)
+2. Red (no additive, serum chemistry)
+3. SST / gold or tiger top (serum separator tube, clot activator)
+4. Green (heparin, plasma chemistry)
+5. Lavender (EDTA, CBC and hematology)
+6. Gray (sodium fluoride, glucose testing)
+
+Medication administration:
+
+* The 5 rights: right patient, right medication, right dose, right route, right time
+* Common injection routes: intradermal (ID), subcutaneous (SQ/SC), intramuscular (IM), intravenous (IV)
+* Common intramuscular sites: deltoid, vastus lateralis, ventrogluteal
 
 ==================================================
 QUESTION FORMATTING
@@ -388,9 +436,9 @@ For each generated question provide:
 5. Correct answer
 6. Detailed explanation
 7. Why the other answers are wrong
-8. Code reference if applicable
-9. Inspection reasoning
-10. Real-world inspection context
+8. Guideline reference if applicable
+9. Clinical reasoning
+10. Real-world clinical context
 
 ==================================================
 DIFFICULTY LEVELS
@@ -401,15 +449,15 @@ Generate:
 * Beginner
 * Intermediate
 * Advanced
-* ICC certification exam difficulty
+* NHA CCMA certification exam difficulty
 
 Advanced questions should:
 
-* combine multiple code provisions
+* combine multiple guideline provisions
 * include partial symptoms
 * require elimination logic
-* involve code interpretation
-* require “best/most compliant” inspection decisions
+* involve clinical interpretation
+* require “best/most appropriate” clinical decisions
 
 ==================================================
 SCENARIO EXAMPLES
@@ -418,16 +466,16 @@ SCENARIO EXAMPLES
 Examples of desired style:
 
 GOOD:
-“During a footing inspection, concrete is poured before the required inspection is performed. What is the MOST appropriate action for the inspector?”
+“A patient presents with dizziness and a blood pressure reading of 88/56 mmHg. What is the MOST appropriate action for the medical assistant?”
 
 GOOD:
-“An inspector finds an opening in a load-bearing wall framed without a header over a 6-foot span. Which IRC provision applies?”
+“A medical assistant must collect a CBC and a PT/INR for the same patient. In which order should the tubes be drawn?”
 
 GOOD:
-“An inspector observes an egress window installed with a sill height above the maximum allowed by the IRC. What is the correct determination?”
+“A medical assistant notices a coworker discussing a patient's diagnosis in the waiting room where other patients can hear. Which rule has been violated?”
 
 BAD:
-“What does EGRESS stand for?”
+“What does BP stand for?”
 
 ==================================================
 OUTPUT REQUIREMENTS
@@ -438,11 +486,11 @@ Generate:
 * highly varied questions
 * no duplicates
 * realistic distractors
-* professional code terminology
-* authentic inspection context
+* professional clinical terminology
+* authentic medical office context
 * American terminology where applicable
 
-Questions must feel indistinguishable from actual ICC preparation material.
+Questions must feel indistinguishable from actual NHA CCMA preparation material.
 
 Prioritize:
 UNDERSTANDING > MEMORIZATION.`;
@@ -470,11 +518,11 @@ function buildUserPrompt(
 - Output format: JSON array as specified in the schema.
 
 Hard constraints for this batch:
-1) Use ICC certification exam style (scenario-based, code interpretation, compliance judgment, best/most compliant action).
-2) Use realistic field-inspection context and professional code terminology.
+1) Use NHA CCMA certification exam style (scenario-based, guideline application, clinical judgment, best/most appropriate action).
+2) Use realistic clinical and medical office context with professional healthcare terminology.
 3) For MCQ, provide 4 full-text plausible options (NO placeholders like A/B/C/D).
 4) correctAnswer must be the exact text of one option.
-5) explanation must include practical inspection reasoning + at least one reference cue (IRC R302, IBC 1005, NEC 210.8, IPC 903, IMC 601).
+5) explanation must include practical clinical reasoning + at least one US guideline reference cue (OSHA Bloodborne Pathogens Standard, HIPAA Privacy Rule, CDC Standard Precautions, AHA CPR guidelines, CLIA waived testing).
 6) Avoid pure definition/memorization stems.
 7) Questions must be meaningfully varied (no duplicates/rephrasings).
 
@@ -573,12 +621,12 @@ async function generateForType(
  * Uses plain, simple language (2-3 sentences).
  */
 async function tutorExplain(question: string, explanation: string): Promise<string> {
-  const prompt = `Explique cette question d'examen ICC (inspecteur en bâtiment) en termes simples comme si tu expliquais à un étudiant qui a de la difficulté. Question: ${question}. Réponse correcte: ${explanation}. Donne une explication courte (2-3 phrases) en langage très simple.`;
+  const prompt = `Explain this NHA CCMA (Certified Clinical Medical Assistant) exam question in simple terms, as if you were explaining it to a student who is struggling. Question: ${question}. Correct answer / explanation: ${explanation}. Give a short explanation (2-3 sentences) in very simple language.`;
 
   const response = await openai.chat.completions.create({
     model: process.env.OPENAI_MODEL || 'deepseek-chat',
     messages: [
-      { role: 'system', content: 'Tu es un tuteur ICC qui explique des concepts de code du bâtiment en langage très simple et accessible.' },
+      { role: 'system', content: 'You are a CCMA tutor who explains clinical concepts and US healthcare guidelines in very simple, accessible language.' },
       { role: 'user', content: prompt },
     ],
     temperature: 0.5,
@@ -586,13 +634,13 @@ async function tutorExplain(question: string, explanation: string): Promise<stri
   });
 
   const content = response.choices[0]?.message?.content?.trim() ?? '';
-  return content || 'Désolé, je n\'ai pas pu générer une explication simplifiée pour le moment.';
+  return content || 'Sorry, I could not generate a simplified explanation at the moment.';
 }
 
 export const aiService = {
   /**
    * Simplify an exam question explanation for the tutor feature.
-   * Returns a short plain-language explanation (2-3 sentences) in French.
+   * Returns a short plain-language explanation (2-3 sentences) in English (EN-US).
    */
   async tutorExplain(question: string, explanation: string): Promise<string> {
     return tutorExplain(question, explanation);
@@ -687,7 +735,7 @@ export const aiService = {
     ).join('\n---\n');
 
     // Generate English theory
-    const enPrompt = `You are an ICC building inspector textbook author. Based on the following exam questions and their explanations for chapter "${chapterName}" of exam "${examCode}", write comprehensive, well-structured theory/study material. 
+    const enPrompt = `You are an NHA CCMA (Certified Clinical Medical Assistant) textbook author. Based on the following exam questions and their explanations for chapter "${chapterName}" of exam "${examCode}", write comprehensive, well-structured theory/study material. 
 
 The goal is NOT to list the questions and answers. Instead, synthesize the KNOWLEDGE behind them into proper textbook-style reference material.
 
@@ -697,13 +745,13 @@ Structure your response with:
 3. Important formulas, regulations, or procedures
 4. Common relationships between concepts
 
-Write in clear, professional English suitable for ICC certification exam preparation. Use markdown formatting with headings (##, ###), bullet points, and emphasis where appropriate.
+Write in clear, professional English suitable for NHA CCMA certification exam preparation. Use markdown formatting with headings (##, ###), bullet points, and emphasis where appropriate.
 
 CRITICAL: Respond directly with the theory content. No preamble, no introductory phrases like "Absolutely", "Here is", "Certainly", or "Of course". Start immediately with the first heading.
 
 Here are the source questions and explanations:\n\n${enMaterial}`;
 
-    const frPrompt = `Tu es un auteur de manuel de préparation aux examens d'inspecteur en bâtiment ICC. À partir des questions d'examen et leurs explications pour le chapitre "${chapter.name_fr || chapterName}" de l'examen "${examCode}", rédige un contenu théorique / matériel d'étude complet et bien structuré.
+    const frPrompt = `Tu es un auteur de manuel de préparation à l'examen NHA CCMA (Certified Clinical Medical Assistant). À partir des questions d'examen et leurs explications pour le chapitre "${chapter.name_fr || chapterName}" de l'examen "${examCode}", rédige un contenu théorique / matériel d'étude complet et bien structuré.
 
 Le but N'EST PAS de lister les questions et réponses. Tu dois plutôt synthétiser les CONNAISSANCES derrière ces questions en un véritable contenu de référence de type manuel.
 
@@ -713,7 +761,7 @@ Structure ta réponse avec :
 3. Les formules, règlements ou procédures importantes
 4. Les relations entre les concepts
 
-Écris en français clair et professionnel adapté à la préparation aux examens ICC. Utilise le format markdown avec des titres (##, ###), listes à puces et emphase où approprié.
+Écris en français clair et professionnel adapté à la préparation à l'examen NHA CCMA. Utilise le format markdown avec des titres (##, ###), listes à puces et emphase où approprié.
 
 CRITIQUE : Réponds directement avec le contenu théorique. Aucun préambule, aucune phrase d'introduction comme "Absolument", "Voici", "D'accord", "Bien sûr". Commence immédiatement par le premier titre.
 
@@ -723,7 +771,7 @@ Voici les questions et explications sources :\n\n${frMaterial}`;
       openai.chat.completions.create({
         model: process.env.OPENAI_MODEL || 'deepseek-chat',
         messages: [
-          { role: 'system', content: 'You are an expert ICC textbook author creating study material for building inspectors.' },
+          { role: 'system', content: 'You are an expert NHA CCMA textbook author creating study material for medical assistants.' },
           { role: 'user', content: enPrompt },
         ],
         temperature: 0.4,
@@ -732,7 +780,7 @@ Voici les questions et explications sources :\n\n${frMaterial}`;
       openai.chat.completions.create({
         model: process.env.OPENAI_MODEL || 'deepseek-chat',
         messages: [
-          { role: 'system', content: 'Tu es un auteur expert de manuel ICC créant du matériel d\'étude pour les inspecteurs en bâtiment.' },
+          { role: 'system', content: 'Tu es un auteur expert de manuel NHA CCMA créant du matériel d\'étude pour les assistants médicaux certifiés.' },
           { role: 'user', content: frPrompt },
         ],
         temperature: 0.4,

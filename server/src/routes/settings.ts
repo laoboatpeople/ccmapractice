@@ -62,7 +62,7 @@ interface PlatformSettings {
 
 const defaultSettings: PlatformSettings = {
   organization: {
-    name: 'Inspect Practice Inc.',
+    name: 'CCMAPractice Inc.',
     email: 'admin@ccmapractice.ca',
     timezone: 'America/Toronto',
   },
@@ -180,7 +180,7 @@ router.get('/export', async (_req: Request, res: Response): Promise<void> => {
 
   const exportData = {
     exportedAt: new Date().toISOString(),
-    platform: 'Inspect Practice',
+    platform: 'CCMAPractice',
     version: '1.0.0',
     settings,
     data: {

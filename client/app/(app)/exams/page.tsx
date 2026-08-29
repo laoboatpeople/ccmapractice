@@ -12,11 +12,6 @@ import {
   Clock,
   Target,
   Lock,
-  Wrench,
-  Cpu,
-  Shield,
-  HardHat,
-  Info,
 } from 'lucide-react';
 import { getStudentExamCategories } from '@/lib/student-api';
 import type { StudentExamCategory } from '@/types/student';
@@ -116,75 +111,17 @@ export default function StudentExamsPage() {
       icon: <BookOpen size={16} />,
       iconBig: <BookOpen size={22} />,
       color: 'blue',
-      codeFilter: (code: string) => code.startsWith('ICC-B1'),
-    },
-    {
-      key: 'm',
-      title: t('licenseM'),
-      subtitle: t('licenseMSub'),
-      icon: <Wrench size={16} />,
-      iconBig: <Wrench size={22} />,
-      color: 'amber',
-      codeFilter: (code: string) => code.startsWith('ICC-B2'),
-    },
-    {
-      key: 'e',
-      title: t('licenseE'),
-      subtitle: t('licenseESub'),
-      icon: <Cpu size={16} />,
-      iconBig: <Cpu size={22} />,
-      color: 'cyan',
-      codeFilter: (code: string) => code.startsWith('ICC-E1'),
-    },
-    {
-      key: 's',
-      title: t('licenseS'),
-      subtitle: t('licenseSSub'),
-      icon: <Shield size={16} />,
-      iconBig: <Shield size={22} />,
-      color: 'purple',
-      codeFilter: (code: string) => code.startsWith('ICC-P1') || code.startsWith('ICC-M1'),
+      codeFilter: (code: string) => code.startsWith('CCMA'),
     },
   ] as const;
 
   useEffect(() => {
-    document.title = `${t('examCategories')} | Inspect Practice`;
+    document.title = `${t('examCategories')} | CCMAPractice`;
   }, [t]);
 
   const [categories, setCategories] = useState<StudentExamCategory[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [ratingFilter, setRatingFilter] = useState<'ALL' | 'B1' | 'B2' | 'E1' | 'P1' | 'M1'>(() => {
-    if (typeof window !== 'undefined') {
-      const p = new URLSearchParams(window.location.search).get('rating');
-      if (p && ['B1', 'B2', 'E1', 'P1', 'M1', 'ALL'].includes(p)) return p as any;
-      const s = sessionStorage.getItem('exams_rating');
-      if (s && ['B1', 'B2', 'E1', 'P1', 'M1'].includes(s)) return s as any;
-    }
-    return 'ALL';
-  });
-
-  // Persist rating filter in URL (?rating=) + sessionStorage so it survives back-navigation
-  const selectRating = (r: 'ALL' | 'B1' | 'B2' | 'E1' | 'P1' | 'M1') => {
-    setRatingFilter(r);
-    if (r === 'ALL') sessionStorage.removeItem('exams_rating');
-    else sessionStorage.setItem('exams_rating', r);
-    const url = new URL(window.location.href);
-    if (r === 'ALL') url.searchParams.delete('rating');
-    else url.searchParams.set('rating', r);
-    window.history.replaceState(null, '', url.toString());
-  };
-
-  // Official exam path per ICC certification: B1/B2/E1/P1/M1 map to their ICC-* exam code
-  const matchesRating = useCallback((code: string): boolean => {
-    if (ratingFilter === 'ALL') return true;
-    if (ratingFilter === 'B1') return code.startsWith('ICC-B1');
-    if (ratingFilter === 'B2') return code.startsWith('ICC-B2');
-    if (ratingFilter === 'E1') return code.startsWith('ICC-E1');
-    if (ratingFilter === 'P1') return code.startsWith('ICC-P1');
-    if (ratingFilter === 'M1') return code.startsWith('ICC-M1');
-    return true;
-  }, [ratingFilter]);
 
   const fetchCategories = useCallback(async () => {
     try {
@@ -203,22 +140,9 @@ export default function StudentExamsPage() {
     fetchCategories();
   }, [fetchCategories]);
 
-  function getExamColor(code: string): SectionColor {
-    if (code.startsWith('ICC-B2')) return 'amber';
-    if (code.startsWith('ICC-E1')) return 'cyan';
-    if (code.startsWith('ICC-P1') || code.startsWith('ICC-M1')) return 'purple';
-    return 'blue';
-  }
-
   function getExamIcon(code: string, size = 18) {
-    if (code.startsWith('ICC-B1')) return <HardHat size={size} />;
-
-    if (code.startsWith('ICC-E1')) return <Cpu size={size} />;
-    if (code.startsWith('ICC-P1') || code.startsWith('ICC-M1')) return <Shield size={size} />;
     return <BookOpen size={size} />;
   }
-
-  // Icons: HardHat for B1, Cpu for E1, Shield for P1/M1
 
   function renderExamCard(category: StudentExamCategory, sectionColor: SectionColor) {
     const colors = SECTION_STYLES[sectionColor];
@@ -325,52 +249,6 @@ export default function StudentExamsPage() {
         </p>
       </div>
 
-      {/* Rating path selector — ICC certification structure */}
-      {!loading && !error && categories.length > 0 && (
-        <div className="mb-8">
-          <div className="flex flex-wrap items-center gap-2 mb-4">
-            {(['ALL', 'B1', 'B2', 'E1', 'P1', 'M1'] as const).map((r) => (
-              <button
-                key={r}
-                onClick={() => selectRating(r)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold transition-all ${
-                  ratingFilter === r
-                    ? 'bg-blue text-white shadow-md shadow-blue/25'
-                    : 'bg-card border border-border text-text-secondary hover:border-blue/40 hover:text-text-primary'
-                }`}
-              >
-                {r === 'ALL' ? t('ratingAll') : r}
-              </button>
-            ))}
-          </div>
-
-          <div className="p-5 rounded-card bg-card border border-blue/20 bg-gradient-to-br from-blue/[0.06] to-transparent">
-            <h2 className="text-sm font-semibold text-text-primary mb-2 flex items-center gap-2">
-              <Info size={15} className="text-blue" />
-              {t('examPathTitle')}
-            </h2>
-            <p className="text-xs text-text-secondary mb-3">{t('examPathNote')}</p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
-              <span className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-blue/10 border border-blue/20 text-text-primary">
-                <span className="font-bold text-blue">B1</span> {t('examPathB1')}
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-amber/10 border border-amber/20 text-text-primary">
-                <span className="font-bold text-amber">B2</span> {t('examPathB2')}
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-cyan/10 border border-cyan/20 text-text-primary">
-                <span className="font-bold text-cyan">E1</span> {t('examPathE1')}
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-green/10 border border-green/20 text-text-primary">
-                <span className="font-bold text-green">P1</span> {t('examPathP1')}
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-purple/10 border border-purple/20 text-text-primary">
-                <span className="font-bold text-purple">M1</span> {t('examPathM1')}
-              </span>
-            </div>
-          </div>
-        </div>
-      )}
-
       {/* Error state */}
       {error && (
         <div className="mb-6 flex items-center gap-3 px-4 py-3 bg-red/10 border border-red/20 rounded-card text-sm text-red">
@@ -416,8 +294,8 @@ export default function StudentExamsPage() {
         LICENSE_SECTIONS.map((section) => {
           const colors = SECTION_STYLES[section.color];
           const filtered = section.codeFilter
-            ? categories.filter(c => section.codeFilter(c.code) && matchesRating(c.code))
-            : categories.filter(c => matchesRating(c.code));
+            ? categories.filter(c => section.codeFilter(c.code))
+            : categories;
 
           // Skip empty sections (no placeholder needed when all sections have data)
           if (filtered.length === 0) return null;

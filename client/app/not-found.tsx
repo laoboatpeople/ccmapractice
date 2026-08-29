@@ -2,8 +2,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '404 — Page Not Found — Inspect Practice',
-  description: 'The page you are looking for does not exist. Browse our ICC exam resources, practice questions, and study guides.',
+  title: '404 — Page Not Found — CCMAPractice',
+  description: 'The page you are looking for does not exist. Browse our NHA CCMA exam resources, practice questions, and study guides.',
   robots: { index: false },
 };
 
@@ -14,7 +14,7 @@ export default function NotFound() {
       <nav className="border-b border-white/5 bg-[#0A0E1A]/80 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <img src="/logo/logo-main.png?v=3" alt="Inspect Practice" className="h-7 w-auto" />
+            <img src="/logo/logo-main.png?v=3" alt="CCMAPractice" className="h-7 w-auto" />
           </Link>
         </div>
       </nav>
@@ -33,19 +33,19 @@ export default function NotFound() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left">
             <Link href="/" className="p-4 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
               <h3 className="font-semibold text-sm mb-1">🏠 Home</h3>
-              <p className="text-xs text-[#64748B]">Back to the Inspect Practice homepage</p>
+              <p className="text-xs text-[#64748B]">Back to the CCMAPractice homepage</p>
             </Link>
-            <Link href="/free-icc-practice-questions" className="p-4 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
+            <Link href="/free-ccma-practice-questions" className="p-4 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
               <h3 className="font-semibold text-sm mb-1">📝 Practice Questions</h3>
-              <p className="text-xs text-[#64748B]">Free ICC-style open-book code questions</p>
+              <p className="text-xs text-[#64748B]">Free NHA CCMA-style practice questions</p>
             </Link>
-            <Link href="/blog" className="p-4 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
-              <h3 className="font-semibold text-sm mb-1">📚 Blog & Resources</h3>
-              <p className="text-xs text-[#64748B]">Certification guides, code navigation, and tips</p>
+            <Link href="/ccma-certification-guide" className="p-4 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
+              <h3 className="font-semibold text-sm mb-1">📚 Certification Guide</h3>
+              <p className="text-xs text-[#64748B]">How to earn your CCMA certification</p>
             </Link>
-            <Link href="/study-checklist" className="p-4 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
-              <h3 className="font-semibold text-sm mb-1">📋 Study Checklist</h3>
-              <p className="text-xs text-[#64748B]">30-day printable ICC exam prep plan</p>
+            <Link href="/theory" className="p-4 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
+              <h3 className="font-semibold text-sm mb-1">📋 Theory Guides</h3>
+              <p className="text-xs text-[#64748B]">All 13 CCMA blueprint chapters</p>
             </Link>
           </div>
           <div className="mt-8 flex justify-center gap-4">

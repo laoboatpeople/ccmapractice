@@ -520,7 +520,7 @@ export default function DashboardPage() {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    document.title = `${t('dashboard')} | Inspect Practice`;
+    document.title = `${t('dashboard')} | CCMAPractice`;
   }, [t]);
 
   // ── Loading state ────────────────────────────────────────

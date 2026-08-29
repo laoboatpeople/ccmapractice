@@ -312,7 +312,7 @@ export default function QuizPage() {
   }, [loadQuiz, examId, searchParams, resolvedExamId]);
 
   useEffect(() => {
-    document.title = `${t('quiz_score')} | Inspect Practice`;
+    document.title = `${t('quiz_score')} | CCMAPractice`;
   }, [t]);
 
   // ── Exam mode: countdown timer ─────────────────────────────

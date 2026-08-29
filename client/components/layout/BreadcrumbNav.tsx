@@ -14,9 +14,9 @@ const routes: Record<string, string> = {
   '/privacy': 'Privacy Policy',
   '/terms': 'Terms of Service',
   '/study-checklist': 'Study Checklist',
-  '/free-icc-practice-questions': 'Free Practice Questions',
-  '/icc-resources': 'Resources',
-  '/icc-certification-guide': 'ICC Certification Guide',
+  '/free-ccma-practice-questions': 'Free Practice Questions',
+  '/ccma-resources': 'Resources',
+  '/ccma-certification-guide': 'CCMA Certification Guide',
   // French
   '/fr': 'Accueil',
   '/fr/faq': 'FAQ',

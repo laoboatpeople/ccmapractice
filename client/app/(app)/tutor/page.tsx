@@ -337,7 +337,7 @@ export default function TutorPage() {
   }, [loadSessions]);
 
   useEffect(() => {
-    document.title = `${t('tutorTitle')} | Inspect Practice`;
+    document.title = `${t('tutorTitle')} | CCMAPractice`;
   }, [t]);
 
   // ── Auto-send initial question from URL param ──────────────

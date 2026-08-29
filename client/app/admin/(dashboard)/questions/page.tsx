@@ -868,8 +868,8 @@ export default function AIQuestionsPage() {
               </div>
               <h2 className="text-lg font-semibold text-text-primary mb-2">Générateur de Questions IA</h2>
               <p className="text-sm text-text-secondary text-center max-w-md mb-6">
-                Téléversez des documents PDF et Word (codes ICC, manuels de référence, manuels scolaires) et discutez avec l'IA
-                pour générer des questions d'examen de style ICC. Révisez, confirmez et enregistrez-les.
+                Téléversez des documents PDF et Word (manuels médicaux, guides de référence clinique, manuels scolaires) et discutez avec l'IA
+                pour générer des questions d'examen de style CCMA. Révisez, confirmez et enregistrez-les.
               </p>
 
               {/* Upload area */}

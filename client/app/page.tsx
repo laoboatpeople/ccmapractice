@@ -3,8 +3,8 @@ import MarketingLandingPage from "@/components/marketing/LandingPage";
 import { VideoObjectJsonLd, BreadcrumbListJsonLd, FAQPageJsonLd, LearningResourceJsonLd, HowToJsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Inspect Practice — Pass Your ICC Building Inspector Exam',
-  description:    'AI-curated ICC exam prep for building inspector certifications — B1, B2, E1, P1 & M1. Open-book code navigation drills matched to your weak areas from 2,500+ practice questions.',
+  title: 'CCMAPractice — Pass Your NHA CCMA Exam',
+  description: 'AI-powered NHA CCMA exam prep for Certified Clinical Medical Assistants — 1,200+ practice questions, complete theory guides for the 13-chapter blueprint, and an AI tutor. Master phlebotomy, EKG, vitals, infection control, and more.',
   alternates: {
     canonical: 'https://ccmapractice.com',
     languages: {
@@ -12,27 +12,27 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Inspect Practice — Pass Your ICC Building Inspector Exam',
+    title: 'CCMAPractice — Pass Your NHA CCMA Exam',
     description:
-      'AI-curated ICC exam prep platform covering B1, B2, E1, P1 & M1. Open-book code navigation questions matched to your weak areas for smarter studying.',
+      'AI-powered NHA CCMA exam prep platform with 1,200+ practice questions, complete theory guides, and an AI tutor. Master all 13 chapters of the CCMA blueprint and pass with confidence.',
     url: 'https://ccmapractice.com',
     type: 'website',
     locale: 'en_US',
-    siteName: 'Inspect Practice',
+    siteName: 'CCMAPractice',
     images: [
       {
         url: 'https://ccmapractice.com/images/og/home.jpg',
         width: 1200,
         height: 630,
-        alt: 'Inspect Practice ICC Exam Preparation Platform',
+        alt: 'CCMAPractice NHA CCMA Exam Prep Platform',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Inspect Practice — Pass Your ICC Building Inspector Exam',
+    title: 'CCMAPractice — Pass Your NHA CCMA Exam',
     description:
-      'AI-curated ICC exam prep platform covering B1, B2, E1, P1 & M1. Questions matched to your weak areas for smarter studying.',
+      'AI-powered NHA CCMA exam prep platform with 1,200+ practice questions, theory guides, and an AI tutor. Questions matched to your weak areas for smarter studying.',
     images: ['https://ccmapractice.com/images/og/home.jpg'],
   },
 };
@@ -41,10 +41,10 @@ export default function RootPage() {
   return (
     <>
       <VideoObjectJsonLd
-        name="Inspect Practice ICC Exam Platform Demo"
-        description="See how Inspect Practice uses AI-powered adaptive learning to help building inspectors pass ICC certification exams."
+        name="CCMAPractice NHA CCMA Exam Platform Demo"
+        description="See how CCMAPractice uses AI-powered adaptive learning to help medical assistants pass the NHA CCMA exam."
         thumbnailUrl="https://ccmapractice.com/images/og/home.jpg"
-        contentUrl="https://ccmapractice.com/videos/sky-licence-demo-en-mature.mp4"
+        contentUrl="https://ccmapractice.com/videos/ccma-demo-en.mp4"
         embedUrl="https://ccmapractice.com/"
         uploadDate="2026-05-01T00:00:00Z"
         duration="PT30S"
@@ -57,57 +57,57 @@ export default function RootPage() {
       <FAQPageJsonLd
         questions={[
           {
-            question: 'How do I get an ICC building inspector certification?',
-            answer: 'To get an ICC certification, choose your certification (B1 — Residential/IRC, B2 — Commercial/IBC, E1 — Electrical/NEC, P1 — Plumbing/IPC, M1 — Mechanical/IMC), get the current edition of the applicable code, master code navigation, and register for the exam through the International Code Council. Inspect Practice provides AI-powered practice questions covering all five certifications to help you prepare efficiently.',
+            question: 'How do I get the NHA CCMA certification?',
+            answer: 'To earn the Certified Clinical Medical Assistant (CCMA) credential from the National Healthcareer Association (NHA), complete a medical assistant training program, then register for and pass the NHA CCMA exam. The computer-based exam follows a 13-chapter blueprint and requires a passing score of 390 out of 500. CCMAPractice prepares you with 1,200+ practice questions, complete theory guides, and an AI tutor.',
           },
           {
-            question: 'What is the difference between ICC B1, B2, E1, P1, and M1 certifications?',
-            answer: 'B1 (Residential Building Inspector) covers one- and two-family dwellings under the International Residential Code (IRC). B2 (Commercial Building Inspector) covers commercial buildings under the International Building Code (IBC). E1 covers residential electrical (NEC + IRC electrical chapters), P1 covers residential plumbing (IPC + IRC plumbing chapters), and M1 covers residential mechanical (IMC + IRC mechanical chapters). Each has its own open-book exam administered by the ICC.',
+            question: 'What is the format of the NHA CCMA exam?',
+            answer: 'The NHA CCMA exam is computer-based and lasts 3 hours. It contains 180 questions total: 150 scored questions plus 30 unscored pretest questions. You take it at a PSI test center or through online proctoring, and you need a score of 390 out of 500 (~78%) to pass.',
           },
           {
-            question: 'Are ICC exams open book?',
-            answer: 'Yes. All ICC inspector certification exams are open book, multiple-choice exams. You bring the current edition of the applicable code and are tested on your ability to find and apply its requirements. Success depends on code navigation — knowing which chapter covers which system, using the index efficiently, and reading sections including their exceptions.',
+            question: 'What is the passing score for the NHA CCMA exam?',
+            answer: 'The passing score for the NHA CCMA exam is 390 out of 500 (~78%). The exam fee is $155–165. CCMAPractice helps you build toward that target with 1,200+ exam-style practice questions and full-length timed simulations.',
           },
           {
-            question: 'How long does it take to get an ICC certification?',
-            answer: 'Most candidates earn their first ICC certification (typically B1) in 4-8 weeks of focused preparation. You do not need a degree, and you can register for the exam directly through the International Code Council. Each additional certification builds on the same code-navigation skills.',
+            question: 'How much do medical assistants earn?',
+            answer: 'Medical assistants earn a median of $43,000+ per year (U.S. Bureau of Labor Statistics), and earning the CCMA certification increases job prospects in clinics, hospitals, and physician offices.',
           },
           {
-            question: 'What is the passing score for ICC exams?',
-            answer: 'Most ICC inspector certification exams require a passing score of 75%. For example, the B1 exam has 60 questions with a 2-hour time limit, and you need 45 correct answers to pass. Always verify the exact numbers in the official ICC exam bulletin for your certification and code edition.',
+            question: 'Can I study for the CCMA exam online?',
+            answer: 'Yes. CCMAPractice is fully online and works on desktop and mobile browsers. You get 1,200+ CCMA practice questions with explanations that cite the relevant guidelines (OSHA, HIPAA, CDC, AHA), complete theory guides for all 13 blueprint chapters, and an AI tutor that explains every question.',
           },
           {
-            question: 'How much do building inspectors earn?',
-            answer: 'Certified building inspectors in the United States earn salaries that vary by state, employer, and experience, with median earnings typically in the $50,000–$80,000+ range. Municipal, county, and private inspection roles all value ICC certifications, and adding certifications (B1 → B2, E1, P1, M1) unlocks higher-level positions.',
+            question: 'What are the pass rates for the NHA CCMA exam?',
+            answer: 'The NHA CCMA exam pass rate was 81.4% in 2024. Structured preparation with 1,200+ practice questions, concept-by-concept theory review, and adaptive practice gives you the best chance of joining the 81.4% of candidates who pass.',
           },
           {
-            question: 'Can I study for the ICC exam online?',
-            answer: 'Yes! Inspect Practice is fully optimized for mobile and desktop browsers. You can practice with ICC-style open-book questions that cite the exact code section, take timed simulations, and use AI-powered adaptive learning that focuses on your weak areas.',
+            question: 'What topics are covered on the NHA CCMA exam?',
+            answer: 'The NHA CCMA exam follows the official 13-chapter blueprint: Foundational Knowledge and Basic Science; Anatomy and Physiology; Patient Intake and Vitals; General Patient Care (Parts 1 and 2); Infection Control and Safety; Point of Care Testing and Laboratory Procedures; Phlebotomy; EKG and Cardiovascular Testing; Patient Care Coordination and Education; Administrative Assisting; Communication and Customer Service; and Medical Law and Ethics. Expect questions on vital signs, medical terminology, phlebotomy (order of draw and tubes), EKG, injections, wound care, infection control (OSHA and CDC standard precautions), HIPAA, medical billing, and therapeutic communication.',
           },
           {
-            question: 'What are the pass rates for ICC exams?',
-            answer: 'ICC exam pass rates vary by certification and code edition. Using structured practice with platforms like Inspect Practice significantly improves your chances by building code-navigation speed and identifying knowledge gaps before exam day.',
+            question: 'How often do I need to renew my CCMA certification?',
+            answer: 'The CCMA credential must be renewed every 2 years by completing 10 continuing education (CE) credits. The renewal fee is $179.',
           },
         ]}
       />
       <HowToJsonLd
-        name="How to Get Your ICC Building Inspector Certification"
-        description="Step-by-step guide to becoming ICC-certified as a building inspector in the United States."
+        name="How to Get Your NHA CCMA Certification"
+        description="Step-by-step guide to becoming NHA-certified as a Clinical Medical Assistant (CCMA) in the United States."
         totalTime="P2M"
         steps={[
-          { name: 'Choose Your Certification', text: 'Select your path: B1 (Residential, IRC), B2 (Commercial, IBC), E1 (Electrical, NEC), P1 (Plumbing, IPC), or M1 (Mechanical, IMC). Most inspectors start with B1.' },
-          { name: 'Get the Code', text: 'Purchase the current edition of the applicable code (e.g., the 2024 IRC for B1) specified in the official ICC exam bulletin.' },
-          { name: 'Learn Code Navigation', text: 'Because the exam is open book, master the chapter map, section numbering, and index-first lookup strategies before drilling questions.' },
-          { name: 'Practice with Exam-Style Questions', text: 'Drill practice questions with the code open, review every explanation and its code reference, and take full-length timed simulations.' },
-          { name: 'Register for the Exam', text: 'Register through the ICC and take the exam at a computer-based testing center or via ICC remote proctoring.' },
-          { name: 'Pass and Add Certifications', text: 'Pass with 75% or better, then expand your credential set — B1 candidates often go on to B2, E1, P1, and M1.' },
+          { name: 'Complete a Medical Assistant Training Program', text: 'Finish a medical assistant training program covering clinical procedures, phlebotomy, EKG, and medical office administration — the foundations tested on the NHA CCMA exam.' },
+          { name: 'Review the CCMA Exam Blueprint', text: 'Study the official 13-chapter blueprint, from Foundational Knowledge and Basic Science to Medical Law and Ethics, so you know exactly what the exam covers.' },
+          { name: 'Study the Theory', text: 'Master the core content: vital signs, anatomy and physiology, phlebotomy (order of draw and tubes), EKG, injections, wound care, infection control, HIPAA, and medical billing.' },
+          { name: 'Practice with Exam-Style Questions', text: 'Drill 1,200+ CCMA practice questions with detailed explanations that cite OSHA, HIPAA, CDC, and AHA guidelines, and use the AI tutor to clarify anything you miss.' },
+          { name: 'Register for the NHA CCMA Exam', text: 'Register for the computer-based exam ($155–165) and schedule it at a PSI test center or via online proctoring.' },
+          { name: 'Pass and Maintain Your Certification', text: 'Score 390 out of 500 (~78%) to pass, then renew your credential every 2 years with 10 continuing education credits ($179).' },
         ]}
       />
       <LearningResourceJsonLd
-        name="ICC Building Inspector Certification Guide"
-        description="Complete guide to becoming an ICC-certified building inspector in the United States. Covers B1, B2, E1, P1, and M1 certifications, the International Codes, and career outlook."
+        name="NHA CCMA Certification Guide"
+        description="Complete guide to the NHA Certified Clinical Medical Assistant (CCMA) exam. Covers the 13-chapter exam blueprint, exam format, passing score, career outlook for medical assistants, and study strategies."
         educationalLevel="Professional"
-        teaches={['ICC B1 Certification', 'ICC B2 Certification', 'ICC E1 Certification', 'ICC P1 Certification', 'ICC M1 Certification', 'International Codes']}
+        teaches={['Clinical Medical Assisting', 'Phlebotomy', 'EKG and Cardiovascular Testing', 'Anatomy and Physiology', 'Infection Control and Safety', 'Medical Law and Ethics', 'Patient Intake and Vitals']}
         resourceType="Guide"
       />
       <MarketingLandingPage />

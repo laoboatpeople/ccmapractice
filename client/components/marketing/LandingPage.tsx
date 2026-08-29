@@ -1,52 +1,131 @@
 "use client";
 
 import { useState } from "react";
-import en from "../../messages/en.json";
-import PracticeQuestionWidget from "@/components/marketing/PracticeQuestionWidget";
 import { 
-  Sparkles, FileText, BarChart3, Brain, Users, 
-  TrendingUp, MessageCircle, Plane, Smartphone, Monitor, 
+  Sparkles, FileText, BarChart3, Brain, 
+  TrendingUp, MessageCircle, BookOpen, Monitor, 
   Clock, Target, Zap, ChevronRight, Play, Shield,
-  Linkedin, Instagram, Check, Briefcase, LogIn, X
+  Linkedin, Instagram, Check, Briefcase, LogIn, Award,
+  Mail, Loader2
 } from "lucide-react";
 import AppMockup from "@/components/marketing/AppMockup";
-import NewsletterSection from "@/components/marketing/NewsletterSection";
 import RelatedStudyPlatforms from "@/components/marketing/RelatedStudyPlatforms";
 import ScrollReveal from "@/components/ScrollReveal";
 import FeatureCard from "@/components/marketing/FeatureCard";
 import TestimonialCard from "@/components/marketing/TestimonialCard";
 import PricingCard from "@/components/marketing/PricingCard";
 
-export default function MarketingLandingPage() {
-  const msgs: Record<string, unknown> = en;
-  const tm = (key: string) => {
-    const keys = key.split('.');
-    let val: any = msgs;
-    for (const k of keys) { val = val?.[k]; }
-    return val || key;
+const CCMA_CHAPTERS = [
+  { num: "01", title: "Foundational Knowledge and Basic Science" },
+  { num: "02", title: "Anatomy and Physiology" },
+  { num: "03", title: "Patient Intake and Vitals" },
+  { num: "04", title: "General Patient Care Part 1" },
+  { num: "05", title: "General Patient Care Part 2" },
+  { num: "06", title: "Infection Control and Safety" },
+  { num: "07", title: "Point of Care Testing and Laboratory Procedures" },
+  { num: "08", title: "Phlebotomy" },
+  { num: "09", title: "EKG and Cardiovascular Testing" },
+  { num: "10", title: "Patient Care Coordination and Education" },
+  { num: "11", title: "Administrative Assisting" },
+  { num: "12", title: "Communication and Customer Service" },
+  { num: "13", title: "Medical Law and Ethics" },
+];
+
+function CcmaNewsletterSection() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+    setStatus("loading");
+    setMessage("");
+    try {
+      const res = await fetch("/api/newsletter/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim(), locale: "en" }),
+      });
+      const data = await res.json();
+      if (res.ok && data.success) {
+        setStatus("success");
+        setMessage("You have been subscribed! Check your inbox for free CCMA practice questions.");
+        setEmail("");
+      } else {
+        setStatus("error");
+        setMessage(data.error || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setStatus("error");
+      setMessage("Something went wrong. Please try again.");
+    }
   };
 
+  return (
+    <section className="py-20 px-6 relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#C8102E]/5 to-transparent" />
+      <div className="relative z-10 max-w-3xl mx-auto text-center">
+        <ScrollReveal>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
+              Get Free CCMA Practice Questions
+            </span>
+          </h2>
+          <p className="text-[#94A3B8] max-w-2xl mx-auto mb-8">
+            Subscribe and get free NHA CCMA practice questions, exam tips, and study resources delivered to your inbox.
+          </p>
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              required
+              className="flex-1 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-[#F8FAFC] placeholder:text-[#64748B] focus:outline-none focus:border-[#C8102E]/50"
+            />
+            <button
+              type="submit"
+              disabled={status === "loading"}
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] font-semibold text-white hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50"
+            >
+              {status === "loading" ? <Loader2 className="w-4 h-4 animate-spin" /> : <Mail className="w-4 h-4" />}
+              Subscribe
+            </button>
+          </form>
+          {message && (
+            <p className={`mt-4 text-sm ${status === "success" ? "text-[#10B981]" : "text-[#EF4444]"}`}>
+              {message}
+            </p>
+          )}
+        </ScrollReveal>
+      </div>
+    </section>
+  );
+}
+
+export default function MarketingLandingPage() {
   return (
     <div className="min-h-screen bg-[#0A0E1A] text-[#F8FAFC] font-sans overflow-x-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#0A0E1A]/80 border-b border-white/5">
-        {/* Mini top banner — exam selector modal (Europe EASA / USA FAA cross-promo) */}
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src="/logo/logo-main.png?v=3" alt="Inspect Practice" className="h-9 w-auto" />
+            <img src="/logo/logo-main.png?v=3" alt="CCMAPractice" className="h-9 w-auto" />
           </div>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-sm text-[#94A3B8] hover:text-white transition-colors">{tm("nav.features")}</a>
-            <a href="#how-it-works" className="text-sm text-[#94A3B8] hover:text-white transition-colors">{tm("nav.howItWorks")}</a>
-            <a href="#pricing" className="text-sm text-[#94A3B8] hover:text-white transition-colors">{tm("nav.pricing")}</a>
+            <a href="#features" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Features</a>
+            <a href="#how-it-works" className="text-sm text-[#94A3B8] hover:text-white transition-colors">How It Works</a>
+            <a href="#chapters" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Chapters</a>
+            <a href="#pricing" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Pricing</a>
             <a href="/blog" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Blog</a>
             <a href="/faq" className="text-sm text-[#94A3B8] hover:text-white transition-colors">FAQ</a>
             <a href="/contact" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Contact</a>
-            <a href="#testimonials" className="text-sm text-[#94A3B8] hover:text-white transition-colors">{tm("nav.testimonials")}</a>
+            <a href="#testimonials" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Testimonials</a>
           </div>
           <div className="flex items-center gap-3">
             <a href="/auth/login" className="px-4 py-2 bg-[#C8102E] hover:bg-[#2563EB] rounded-lg text-sm font-medium transition-colors">
-              {tm("nav.signIn")}
+              Sign In
             </a>
           </div>
         </div>
@@ -61,34 +140,34 @@ export default function MarketingLandingPage() {
         
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12">
-            {/* Hero left content - CSS animated (no JS dependency) */}
+            {/* Hero left content */}
             <div 
               className="animate-fade-in-up flex-1 text-center lg:text-left"
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
                 <Sparkles className="w-4 h-4 text-[#F59E0B]" />
-                <span className="text-sm text-[#94A3B8]">{tm("hero.badge")}</span>
+                <span className="text-sm text-[#94A3B8]">NHA CCMA Exam Prep</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
-                  {tm("hero.headline1")}
+                  Pass Your NHA CCMA
                 </span>
                 <br />
                 <span className="bg-gradient-to-r from-[#4C7FBF] to-[#C8102E] bg-clip-text text-transparent">
-                  {tm("hero.headline2")}
+                  Exam with Confidence
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-[#94A3B8] mb-8 max-w-xl mx-auto lg:mx-0">
-                {tm("hero.subheadline")}
+                Master the 13-chapter NHA CCMA blueprint with 1,200+ practice questions, complete theory guides, and an AI tutor that explains every answer.
               </p>
               
               {/* Feature bullets */}
               <div className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8">
                 {[
-                  { icon: Sparkles, text: tm("hero.bullets.aiExams") },
-                  { icon: Monitor, text: tm("hero.bullets.anywhere") },
-                  { icon: Smartphone, text: tm("hero.bullets.platforms") },
-                  { icon: Shield, text: tm("hero.bullets.transportCanada") },
+                  { icon: Sparkles, text: "1,200+ practice questions" },
+                  { icon: Monitor, text: "Study anywhere" },
+                  { icon: Shield, text: "390/500 passing score" },
+                  { icon: Brain, text: "AI tutor included" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
                     <item.icon className="w-4 h-4 text-[#C8102E]" />
@@ -104,7 +183,7 @@ export default function MarketingLandingPage() {
                   className="group px-8 py-4 bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] rounded-xl font-semibold text-white hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   <LogIn className="w-5 h-5" />
-                  {tm("hero.downloadApp")}
+                  Start Practicing Free
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
@@ -112,25 +191,30 @@ export default function MarketingLandingPage() {
                   className="px-8 py-4 rounded-xl font-semibold text-white border border-white/20 hover:bg-white/5 transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   <Play className="w-5 h-5" />
-                  {tm("hero.watchDemo")}
+                  See How It Works
                 </a>
               </div>
             </div>
 
-            {/* Right - App mockup placeholder */}
+            {/* Right - App mockup */}
             <div
               className="animate-fade-in-right flex-1 flex justify-center lg:justify-end"
             >
-              <AppMockup title={tm("appPreview.mockupChapter")}>
+              <AppMockup title="Phlebotomy — Chapter 8">
                 <div className="space-y-3">
-                  <div className="text-xs text-[#C8102E] font-medium">{tm("appPreview.questionLabel").replace("{current}", "12").replace("{total}", "50")}</div>
+                  <div className="text-xs text-[#C8102E] font-medium">Question 12 of 50</div>
                   <div className="text-sm text-[#F8FAFC] font-medium leading-relaxed">
-                    {tm("appPreview.mockupQuestion")}
+                    Which of the following is the correct order of draw for venipuncture using a standard evacuated tube system?
                   </div>
                   <div className="space-y-2 mt-3">
-                    {['a', 'b', 'c', 'd'].map((key, i) => (
-                      <div key={i} className={`p-2 rounded-lg text-xs ${i === 0 ? 'bg-[#C8102E]/20 border border-[#C8102E]/50 text-white' : 'bg-white/5 text-[#94A3B8]'}`}>
-                        {tm(`appPreview.answers.${key}`)}
+                    {[
+                      { text: "Light blue, red, green, lavender", correct: true },
+                      { text: "Red, lavender, light blue, green", correct: false },
+                      { text: "Green, red, lavender, light blue", correct: false },
+                      { text: "Lavender, green, red, light blue", correct: false },
+                    ].map((opt, i) => (
+                      <div key={i} className={`p-2 rounded-lg text-xs ${opt.correct ? 'bg-[#C8102E]/20 border border-[#C8102E]/50 text-white' : 'bg-white/5 text-[#94A3B8]'}`}>
+                        {opt.text}
                       </div>
                     ))}
                   </div>
@@ -141,35 +225,35 @@ export default function MarketingLandingPage() {
         </div>
       </section>
 
-      {/* 2. WHY MOBILE SECTION */}
+      {/* 2. BUILT FOR BUSY MEDICAL ASSISTANTS */}
       <section id="why-mobile" className="py-20 px-6 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#C8102E]/5 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
-                {tm("whyMobile.title")}
+                Built for Busy Medical Assistants
               </span>
             </h2>
             <p className="text-[#94A3B8] max-w-2xl mx-auto">
-              {tm("whyMobile.subtitle")}
+              Study in short sessions between patients, on your commute, or at home — every session syncs to your progress.
             </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: Monitor, titleKey: "anywhere", descKey: "anywhere" },
-              { icon: Clock, titleKey: "fastSessions", descKey: "fastSessions" },
-              { icon: Sparkles, titleKey: "aiGeneration", descKey: "aiGeneration" },
-              { icon: Target, titleKey: "tracking", descKey: "tracking" },
-              { icon: Briefcase, titleKey: "shifts", descKey: "shifts" },
-              { icon: Brain, titleKey: "retention", descKey: "retention" },
+              { icon: Monitor, title: "Study Anywhere", desc: "Practice on your phone, tablet, or laptop — your progress syncs across every device." },
+              { icon: Clock, title: "Short Sessions", desc: "Fit a 10-minute practice session between shifts and stay consistent without burning out." },
+              { icon: Brain, title: "AI Tutor", desc: "Ask the AI tutor to explain any question, guideline, or concept in plain language." },
+              { icon: Target, title: "Adaptive Practice", desc: "Questions adapt to your weak areas so every session targets exactly what you need." },
+              { icon: Briefcase, title: "Career-Ready Skills", desc: "Clinical procedures, medical terminology, and guidelines — knowledge you use on the job." },
+              { icon: TrendingUp, title: "Better Retention", desc: "Concept-by-concept theory review and repeated practice lock in what you learn." },
             ].map((item, i) => (
               <FeatureCard 
                 key={i} 
                 icon={item.icon} 
-                title={tm(`whyMobile.cards.${item.titleKey}.title`)} 
-                description={tm(`whyMobile.cards.${item.descKey}.desc`)} 
+                title={item.title} 
+                description={item.desc} 
                 index={i} 
               />
             ))}
@@ -183,28 +267,28 @@ export default function MarketingLandingPage() {
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
-                {tm("features.title")}
+                Everything You Need to Pass the NHA CCMA Exam
               </span>
             </h2>
             <p className="text-[#94A3B8] max-w-2xl mx-auto">
-              {tm("features.subtitle")}
+              A complete CCMA study system — theory, practice, and AI support in one place.
             </p>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: FileText, titleKey: "exams.title", descKey: "exams.desc" },
-              { icon: BarChart3, titleKey: "analytics.title", descKey: "analytics.desc" },
-              { icon: Brain, titleKey: "studySystem.title", descKey: "studySystem.desc" },
-              { icon: TrendingUp, titleKey: "difficulty.title", descKey: "difficulty.desc" },
-              { icon: MessageCircle, titleKey: "explanations.title", descKey: "explanations.desc" },
-              { icon: Zap, titleKey: "curation.title", descKey: "curation.desc" },
+              { icon: FileText, title: "1,200+ Practice Questions", desc: "Exam-style questions covering all 13 blueprint chapters, each with a detailed explanation that cites OSHA, HIPAA, CDC, and AHA guidelines." },
+              { icon: BookOpen, title: "Complete Theory Guides", desc: "Structured study guides for all 13 chapters — anatomy, phlebotomy, EKG, infection control, medical law and ethics, and more." },
+              { icon: Brain, title: "AI Tutor", desc: "Stuck on a question? The AI tutor explains every answer and every concept in plain, easy-to-understand language." },
+              { icon: Target, title: "Adaptive Practice", desc: "The platform focuses your practice on your weak areas so you study smarter, not longer." },
+              { icon: MessageCircle, title: "Guideline-Backed Explanations", desc: "Every question includes an explanation grounded in the real guidelines — OSHA Bloodborne Pathogens, HIPAA, CDC Standard Precautions, and AHA CPR." },
+              { icon: BarChart3, title: "Progress Analytics", desc: "Track accuracy, speed, and coverage of the 13-chapter blueprint to know exactly when you are exam-ready." },
             ].map((item, i) => (
               <FeatureCard 
                 key={i} 
                 icon={item.icon} 
-                title={tm(`features.${item.titleKey}`)} 
-                description={tm(`features.${item.descKey}`)} 
+                title={item.title} 
+                description={item.desc} 
                 index={i} 
               />
             ))}
@@ -219,11 +303,11 @@ export default function MarketingLandingPage() {
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
-                {tm("howItWorks.title")}
+                How It Works
               </span>
             </h2>
             <p className="text-[#94A3B8] max-w-2xl mx-auto">
-              {tm("howItWorks.subtitle")}
+              Three steps from your first practice session to your passing score.
             </p>
           </ScrollReveal>
 
@@ -232,17 +316,17 @@ export default function MarketingLandingPage() {
             <div className="hidden md:block absolute top-16 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-[#C8102E] via-[#4C7FBF] to-[#8B5CF6]" />
             
             {[
-              { num: "1", titleKey: "step1", descKey: "step1Desc" },
-              { num: "2", titleKey: "step2", descKey: "step2Desc" },
-              { num: "3", titleKey: "step3", descKey: "step3Desc" },
+              { num: "1", title: "Create Your Free Account", desc: "Sign up and get instant access to CCMA practice questions and your first theory chapter." },
+              { num: "2", title: "Practice and Review", desc: "Work through exam-style questions, read guideline-backed explanations, and let the AI tutor fill the gaps." },
+              { num: "3", title: "Pass Your CCMA Exam", desc: "Take full-length timed simulations and walk into the NHA CCMA exam ready to score 390+." },
             ].map((item, i) => (
               <ScrollReveal key={i} className="relative flex-1 max-w-sm text-center">
                 <div className="relative z-10">
                   <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-[#C8102E] to-[#4C7FBF] flex items-center justify-center text-2xl font-bold text-white shadow-[0_0_40px-rgba(59,130,246,0.3)]">
                     {item.num}
                   </div>
-                  <h3 className="text-xl font-bold text-[#F8FAFC] mb-2">{tm(`howItWorks.${item.titleKey}`)}</h3>
-                  <p className="text-sm text-[#94A3B8] leading-relaxed">{tm(`howItWorks.${item.descKey}`)}</p>
+                  <h3 className="text-xl font-bold text-[#F8FAFC] mb-2">{item.title}</h3>
+                  <p className="text-sm text-[#94A3B8] leading-relaxed">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -250,66 +334,103 @@ export default function MarketingLandingPage() {
         </div>
       </section>
 
-      {/* 4.5 INTERACTIVE ICC PRACTICE QUESTION */}
-      <PracticeQuestionWidget />
+      {/* 5. CHAPTERS SECTION — the 13-chapter NHA CCMA blueprint */}
+      <section id="chapters" className="py-20 px-6 relative">
+        <div className="max-w-7xl mx-auto">
+          <ScrollReveal className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
+                The 13 Chapters of the NHA CCMA Blueprint
+              </span>
+            </h2>
+            <p className="text-[#94A3B8] max-w-2xl mx-auto">
+              Every topic on the official NHA CCMA exam, covered in depth by our theory guides and practice questions.
+            </p>
+          </ScrollReveal>
 
-      {/* 5. APP PREVIEW SECTION */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {CCMA_CHAPTERS.map((chapter, i) => (
+              <ScrollReveal
+                key={chapter.num}
+                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#C8102E]/30 transition-all duration-300 group"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#C8102E] to-[#4C7FBF] flex items-center justify-center text-sm font-bold text-white flex-shrink-0">
+                    {chapter.num}
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-[#F8FAFC] mb-1 group-hover:text-[#C8102E] transition-colors">
+                      {chapter.title}
+                    </h3>
+                    <p className="text-xs text-[#64748B]">
+                      {i === 0 ? "Medical terminology and basic science foundations" :
+                       i === 1 ? "Body systems and how they work together" :
+                       i === 2 ? "Patient intake, history, and vital signs" :
+                       i === 3 ? "Assisting with exams, procedures, and patient care" :
+                       i === 4 ? "Injections, wound care, and continued patient support" :
+                       i === 5 ? "OSHA and CDC standard precautions, safety" :
+                       i === 6 ? "CLIA-waived testing and lab procedures" :
+                       i === 7 ? "Order of draw, tubes, and venipuncture technique" :
+                       i === 8 ? "EKG lead placement and cardiovascular testing" :
+                       i === 9 ? "Patient education and care coordination" :
+                       i === 10 ? "Scheduling, billing, and medical records" :
+                       i === 11 ? "Therapeutic communication and customer service" :
+                       "HIPAA, consent, and professional ethics"}
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <a
+              href="/ccma-certification-guide"
+              className="inline-flex items-center gap-2 text-sm text-[#94A3B8] hover:text-white transition-colors group"
+            >
+              Read the full CCMA certification guide
+              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 6. STATS SECTION */}
       <section className="py-20 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#C8102E]/10 via-[#0A0E1A] to-[#8B5CF6]/10" />
         <div className="relative z-10 max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
-                {tm("appPreview.title")}
+                Know Exactly What You Are Preparing For
               </span>
             </h2>
             <p className="text-[#94A3B8] max-w-2xl mx-auto">
-              {tm("appPreview.subtitle")}
+              The NHA CCMA exam, by the numbers — so there are no surprises on exam day.
             </p>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <AppMockup title={tm("appPreview.quizTitle")}>
-              <div className="space-y-2">
-                <div className="text-xs text-[#10B981] font-medium">{tm("appPreview.correct")}</div>
-                <div className="text-sm text-[#F8FAFC] font-medium">{tm("appPreview.wingSparExplanation")}</div>
-              </div>
-            </AppMockup>
-            
-            <AppMockup title={tm("appPreview.aiTitle")}>
-              <div className="space-y-2">
-                <div className="text-xs text-[#F59E0B] mb-2">{tm("appPreview.generating")}</div>
-                <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                  <div className="h-full w-3/4 bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] rounded-full" />
-                </div>
-                <div className="text-xs text-[#94A3B8] mt-2">{tm("appPreview.chapterLabel")}</div>
-              </div>
-            </AppMockup>
-            
-            <AppMockup title={tm("appPreview.analyticsTitle")}>
-              <div className="space-y-2">
-                <div className="text-xs text-[#94A3B8] mb-2">{tm("appPreview.yourProgress")}</div>
-                <div className="text-2xl font-bold text-[#F8FAFC]">78%</div>
-                <div className="text-xs text-[#10B981]">{tm("appPreview.plusTwelve")}</div>
-                <div className="mt-3 space-y-1">
-                  <div className="flex justify-between text-xs"><span className="text-[#94A3B8]">{tm("appPreview.accuracy")}</span><span className="text-white">82%</span></div>
-                  <div className="flex justify-between text-xs"><span className="text-[#94A3B8]">{tm("appPreview.speed")}</span><span className="text-white">{tm("appPreview.good")}</span></div>
-                </div>
-              </div>
-            </AppMockup>
-            
-            <AppMockup title={tm("appPreview.reviewTitle")}>
-              <div className="space-y-2">
-                <div className="text-xs text-[#EF4444] font-medium">{tm("appPreview.needsReview")}</div>
-                <div className="text-sm text-[#F8FAFC]">{tm("appPreview.hydraulicExplanation")}</div>
-                <div className="text-xs text-[#94A3B8]">{tm("appPreview.tapToReview")}</div>
-              </div>
-            </AppMockup>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: FileText, value: "150", label: "Scored questions on the CCMA exam" },
+              { icon: Clock, value: "3 hours", label: "Exam duration" },
+              { icon: Target, value: "390/500", label: "NHA passing score (~78%)" },
+              { icon: Award, value: "81.4%", label: "NHA CCMA pass rate (2024)" },
+            ].map((item, i) => (
+              <ScrollReveal
+                key={i}
+                className="p-8 rounded-2xl bg-white/5 border border-white/10 text-center hover:border-[#C8102E]/30 transition-all duration-300"
+              >
+                <item.icon className="w-8 h-8 mx-auto mb-4 text-[#C8102E]" />
+                <div className="text-4xl font-bold text-[#F8FAFC] mb-2">{item.value}</div>
+                <p className="text-sm text-[#94A3B8]">{item.label}</p>
+              </ScrollReveal>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 6. AI SECTION */}
+      {/* 7. AI SECTION */}
       <section className="py-20 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#C8102E]/20 via-[#8B5CF6]/20 to-[#0A0E1A]" />
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#8B5CF6]/20 rounded-full blur-[150px]" />
@@ -320,31 +441,31 @@ export default function MarketingLandingPage() {
             <ScrollReveal className="flex-1">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
                 <Zap className="w-4 h-4 text-[#8B5CF6]" />
-                <span className="text-sm text-[#94A3B8]">{tm("ai.title")}</span>
+                <span className="text-sm text-[#94A3B8]">AI-Powered Study</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-[#C8102E] to-[#8B5CF6] bg-clip-text text-transparent">
-                  {tm("ai.title")}
+                  Your Personal CCMA Study Partner
                 </span>
               </h2>
               <p className="text-[#94A3B8] mb-8 text-lg">
-                {tm("ai.subtitle")}
+                The AI tutor works alongside you through every chapter of the CCMA blueprint — explaining, adapting, and keeping you on track.
               </p>
               
               <div className="space-y-4">
                 {[
-                  { titleKey: "gpt" },
-                  { titleKey: "adaptive" },
-                  { titleKey: "explanations" },
-                  { titleKey: "personalized" },
-                  { titleKey: "curated" },
+                  "Explain any question in plain language, step by step",
+                  "Adapt your practice to focus on your weak areas",
+                  "Break down guidelines — OSHA, HIPAA, CDC, AHA — into clear takeaways",
+                  "Build a personalized study plan across all 13 chapters",
+                  "Review your performance to keep you consistent",
                 ].map((item, i) => (
                   <ScrollReveal key={i} className="flex items-start gap-3">
                     <div className="w-6 h-6 rounded-full bg-[#8B5CF6]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                       <Check className="w-4 h-4 text-[#8B5CF6]" />
                     </div>
                     <div>
-                      <h4 className="text-[#F8FAFC] font-medium">{tm(`ai.${item.titleKey}`)}</h4>
+                      <h4 className="text-[#F8FAFC] font-medium">{item}</h4>
                     </div>
                   </ScrollReveal>
                 ))}
@@ -360,8 +481,8 @@ export default function MarketingLandingPage() {
                     <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-[#C8102E] to-[#8B5CF6] flex items-center justify-center">
                       <Brain className="w-10 h-10 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-[#F8FAFC] mb-2">{tm("ai.title")}</h3>
-                    <p className="text-sm text-[#94A3B8]">{tm("ai.subtitle")}</p>
+                    <h3 className="text-xl font-bold text-[#F8FAFC] mb-2">AI Tutor</h3>
+                    <p className="text-sm text-[#94A3B8]">Your personal CCMA study partner</p>
                     <div className="mt-4 flex justify-center gap-1">
                       {[0, 1, 2, 3].map((i) => (
                         <div
@@ -379,77 +500,77 @@ export default function MarketingLandingPage() {
         </div>
       </section>
 
-      {/* 7. BUILT FOR MODERN BUILDING INSPECTORS */}
+      {/* 8. BUILT FOR CCMA CANDIDATES */}
       <section className="py-20 px-6 relative">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
-                {tm("builtFor.title")}
+                Built for Every CCMA Candidate
               </span>
             </h2>
             <p className="text-[#94A3B8] max-w-2xl mx-auto">
-              {tm("builtFor.subtitle")}
+              Whether you are finishing your training or already working in a clinic, CCMAPractice fits your study routine.
             </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { titleKey: "student", descKey: "studentDesc", icon: "🎓" },
-              { titleKey: "apprentice", descKey: "apprenticeDesc", icon: "🔧" },
-              { titleKey: "schools", descKey: "schoolsDesc", icon: "🏫" },
-              { titleKey: "tc", descKey: "tcDesc", icon: "✈️" },
+              { title: "Students", desc: "Finish your medical assistant program with exam-ready knowledge of every blueprint chapter.", icon: "🎓" },
+              { title: "Working Assistants", desc: "Refresh clinical procedures, phlebotomy, EKG, and guidelines in short daily sessions.", icon: "🩺" },
+              { title: "Training Programs", desc: "A structured curriculum of theory and practice for schools preparing CCMA candidates.", icon: "🏫" },
+              { title: "Career Changers", desc: "A clear path from zero to a passing score — no prior healthcare experience required.", icon: "📈" },
             ].map((item, i) => (
               <ScrollReveal
                 key={i}
                 className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#C8102E]/30 transition-all duration-300 group"
               >
                 <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-lg font-bold text-[#F8FAFC] mb-2 group-hover:text-[#C8102E] transition-colors">{tm(`builtFor.${item.titleKey}`)}</h3>
-                <p className="text-sm text-[#94A3B8]">{tm(`builtFor.${item.descKey}`)}</p>
+                <h3 className="text-lg font-bold text-[#F8FAFC] mb-2 group-hover:text-[#C8102E] transition-colors">{item.title}</h3>
+                <p className="text-sm text-[#94A3B8]">{item.desc}</p>
               </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 8. TESTIMONIALS */}
+      {/* 9. TESTIMONIALS */}
       <section id="testimonials" className="py-20 px-6 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#C8102E]/5 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
-                {tm("testimonials.title")}
+                What CCMA Candidates Say
               </span>
             </h2>
             <p className="text-[#94A3B8] max-w-2xl mx-auto">
-              {tm("testimonials.subtitle")}
+              Candidates preparing for the NHA CCMA exam use CCMAPractice to study smarter.
             </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-3 gap-6">
             <TestimonialCard
-              name={tm("testimonials.cards.t1.name")}
-              role={tm("testimonials.cards.t1.role")}
+              name="Alexis M."
+              role="CCMA Candidate"
               school=""
-              quote={tm("testimonials.cards.t1.quote")}
+              quote="The practice questions felt just like the real exam. The explanations referencing OSHA and HIPAA guidelines made everything click."
               index={0}
               color="#C8102E"
             />
             <TestimonialCard
-              name={tm("testimonials.cards.t2.name")}
-              role={tm("testimonials.cards.t2.role")}
+              name="Jasmine R."
+              role="Passed the NHA CCMA"
               school=""
-              quote={tm("testimonials.cards.t2.quote")}
+              quote="I studied in 15-minute sessions between shifts. The AI tutor explained every question I missed, and I walked into the exam confident."
               index={1}
               color="#10B981"
             />
             <TestimonialCard
-              name={tm("testimonials.cards.t3.name")}
-              role={tm("testimonials.cards.t3.role")}
+              name="Danielle K."
+              role="Medical Assistant Student"
               school=""
-              quote={tm("testimonials.cards.t3.quote")}
+              quote="The theory guides and 13-chapter structure gave me a clear study plan. I knew exactly what to review each week."
               index={2}
               color="#8B5CF6"
             />
@@ -457,60 +578,60 @@ export default function MarketingLandingPage() {
         </div>
       </section>
 
-      {/* 9. PRICING PREVIEW */}
+      {/* 10. PRICING */}
       <section id="pricing" className="py-20 px-6 relative">
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
-                {tm("pricing.title")}
+                Simple, Affordable Pricing
               </span>
             </h2>
             <p className="text-[#94A3B8] max-w-2xl mx-auto">
-              {tm("pricing.subtitle")}
+              Start free. Upgrade when you are ready to go all-in on passing the NHA CCMA exam.
             </p>
           </ScrollReveal>
 
           <div className="grid md:grid-cols-4 gap-8 max-w-7xl mx-auto">
             <PricingCard
-              name={tm("pricing.free.name")}
-              price={tm("pricing.free.price")}
-              period={tm("pricing.free.period")}
-              description={tm("pricing.free.desc")}
-              features={[tm("pricing.free.feature1"), tm("pricing.free.feature2"), tm("pricing.free.feature3"), tm("pricing.free.feature4")]}
-              buttonLabel={tm("nav.getStarted")}
+              name="Free"
+              price="$0"
+              period=""
+              description="Try CCMA practice questions and one theory chapter."
+              features={["25 practice questions", "1 theory chapter", "Basic progress tracking", "Community support"]}
+              buttonLabel="Get Started"
               buttonHref="/auth/login"
               index={0}
             />
             <PricingCard
-              name={tm("pricing.pro.name")}
-              price={tm("pricing.pro.price")}
-              period={tm("pricing.pro.period")}
-              description={tm("pricing.pro.desc")}
-              features={[tm("pricing.pro.feature1"), tm("pricing.pro.feature2"), tm("pricing.pro.feature3"), tm("pricing.pro.feature4")]}
-              buttonLabel={tm("nav.getStarted")}
+              name="Monthly"
+              price="$19"
+              period="/month"
+              description="Full access, month by month. Cancel anytime."
+              features={["1,200+ practice questions", "All 13 theory guides", "AI tutor", "Full-length exam simulations"]}
+              buttonLabel="Get Started"
               buttonHref="/auth/login"
               isFeatured={false}
               index={1}
             />
             <PricingCard
-              name={tm("pricing.yearly.name")}
-              price={tm("pricing.yearly.price")}
-              period={tm("pricing.yearly.period")}
-              description={tm("pricing.yearly.desc")}
-              features={[tm("pricing.yearly.feature1"), tm("pricing.yearly.feature2"), tm("pricing.yearly.feature3"), tm("pricing.yearly.feature4")]}
-              buttonLabel={tm("nav.getStarted")}
+              name="Yearly"
+              price="$69"
+              period="/year"
+              description="Two months free versus monthly. For serious candidates."
+              features={["Everything in Monthly", "Adaptive practice", "Priority support", "Best value for exam prep"]}
+              buttonLabel="Get Started"
               buttonHref="/auth/login"
               isFeatured={true}
               index={2}
             />
             <PricingCard
-              name={tm("pricing.lifetime.name")}
-              price={tm("pricing.lifetime.price")}
-              period={tm("pricing.lifetime.period")}
-              description={tm("pricing.lifetime.desc")}
-              features={[tm("pricing.lifetime.feature1"), tm("pricing.lifetime.feature2"), tm("pricing.lifetime.feature3")]}
-              buttonLabel={tm("nav.getStarted")}
+              name="Lifetime"
+              price="$149"
+              period="one-time"
+              description="Pay once, keep access for life — including future updates."
+              features={["Everything in Yearly", "All future questions & guides", "Lifetime access"]}
+              buttonLabel="Get Started"
               buttonHref="/auth/login"
               isFeatured={false}
               index={3}
@@ -530,7 +651,7 @@ export default function MarketingLandingPage() {
         </div>
       </section>
 
-      {/* 10. FINAL CTA */}
+      {/* 11. FINAL CTA */}
       <section id="final-cta" className="py-20 px-6 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#C8102E]/20 via-[#4C7FBF]/20 to-[#8B5CF6]/20" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#C8102E]/10 rounded-full blur-[120px]" />
@@ -539,11 +660,11 @@ export default function MarketingLandingPage() {
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
               <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
-                {tm("finalCta.headline")}
+                Ready to Pass Your NHA CCMA Exam?
               </span>
             </h2>
             <p className="text-lg md:text-xl text-[#94A3B8] mb-10 max-w-2xl mx-auto">
-              {tm("finalCta.subheadline")}
+              Join medical assistant candidates preparing with 1,200+ practice questions, complete theory guides, and an AI tutor.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -552,7 +673,7 @@ export default function MarketingLandingPage() {
                 className="group px-8 py-4 bg-white text-[#0A0E1A] rounded-xl font-semibold hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all duration-300 flex items-center justify-center gap-3"
               >
                 <LogIn className="w-6 h-6" />
-                {tm("finalCta.startFree")}
+                Start Practicing Free
               </a>
               <a
                 href="/pricing"
@@ -566,58 +687,57 @@ export default function MarketingLandingPage() {
         </div>
       </section>
 
-      <NewsletterSection />
+      <CcmaNewsletterSection />
 
       <RelatedStudyPlatforms />
 
-      {/* 11. FOOTER */}
+      {/* 12. FOOTER */}
       <footer className="py-12 px-6 border-t border-white/10">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src="/logo/logo-main.png?v=3" alt="Inspect Practice" className="h-8 w-auto" />
+                <img src="/logo/logo-main.png?v=3" alt="CCMAPractice" className="h-8 w-auto" />
               </div>
               <p className="text-sm text-[#94A3B8]">
-                {tm("footer.tagline")}
+                AI-powered NHA CCMA exam prep — practice questions, theory guides, and an AI tutor to help you pass with confidence.
               </p>
             </div>
             
             <div>
-              <h4 className="font-semibold text-[#F8FAFC] mb-4">{tm("footer.product")}</h4>
+              <h4 className="font-semibold text-[#F8FAFC] mb-4">Product</h4>
               <ul className="space-y-2">
-                {[tm("footer.features"), tm("footer.home"), tm("footer.pricing")].map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-sm text-[#94A3B8] hover:text-white transition-colors">{item}</a>
-                  </li>
-                ))}
+                <li><a href="#features" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Features</a></li>
+                <li><a href="/" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Home</a></li>
+                <li><a href="/pricing" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Pricing</a></li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold text-[#F8FAFC] mb-4">{tm("footer.company")}</h4>
+              <h4 className="font-semibold text-[#F8FAFC] mb-4">Resources</h4>
               <ul className="space-y-2">
-                <li><a href="/blog" className="text-sm text-[#94A3B8] hover:text-white transition-colors">{tm("footer.blog")}</a></li>
-                <li><a href="/faq" className="text-sm text-[#94A3B8] hover:text-white transition-colors">{tm("footer.faq")}</a></li>
+                <li><a href="/blog" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Blog</a></li>
+                <li><a href="/ccma-certification-guide" className="text-sm text-[#94A3B8] hover:text-white transition-colors">CCMA Certification Guide</a></li>
+                <li><a href="/free-ccma-practice-questions" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Free CCMA Practice Questions</a></li>
+                <li><a href="/blog/ccma-exam-structure" className="text-sm text-[#94A3B8] hover:text-white transition-colors">CCMA Exam Structure</a></li>
+                <li><a href="/blog/ccma-study-plan" className="text-sm text-[#94A3B8] hover:text-white transition-colors">CCMA Study Plan</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="font-semibold text-[#F8FAFC] mb-4">Company</h4>
+              <ul className="space-y-2">
+                <li><a href="/faq" className="text-sm text-[#94A3B8] hover:text-white transition-colors">FAQ</a></li>
                 <li><a href="/contact" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Contact</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold text-[#F8FAFC] mb-4">{tm("footer.legal")}</h4>
-              <ul className="space-y-2">
-                {[{key: "privacy", href: "/privacy"}, {key: "terms", href: "/terms"}].map((item) => (
-                  <li key={item.key}>
-                    <a href={item.href} className="text-sm text-[#94A3B8] hover:text-white transition-colors">{tm(`footer.${item.key}`)}</a>
-                  </li>
-                ))}
+                <li><a href="/privacy" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="/terms" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Terms of Service</a></li>
               </ul>
             </div>
           </div>
           
           <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-sm text-[#94A3B8]">
-              {tm("footer.copyright")}
+              © 2026 CCMAPractice. All rights reserved.
             </div>
             
             <div className="flex items-center gap-4">
@@ -638,21 +758,19 @@ export default function MarketingLandingPage() {
                 className="px-3 py-1.5 bg-blue/10 rounded-lg flex items-center gap-2 hover:bg-blue/20 transition-colors"
               >
                 <LogIn className="w-4 h-4 text-blue" />
-                <span className="text-xs text-blue font-medium">{tm("finalCta.startFree")}</span>
+                <span className="text-xs text-blue font-medium">Start Free</span>
               </a>
               <a
                 href="#pricing"
                 className="px-3 py-1.5 bg-white/5 rounded-lg flex items-center gap-2 hover:bg-white/10 transition-colors"
               >
                 <ChevronRight className="w-4 h-4 text-[#94A3B8]" />
-                <span className="text-xs text-[#94A3B8]">{tm("finalCta.viewPricing")}</span>
+                <span className="text-xs text-[#94A3B8]">View Pricing</span>
               </a>
             </div>
           </div>
         </div>
       </footer>
-
-      {/* Video Demo Modal */}
     </div>
   );
 }

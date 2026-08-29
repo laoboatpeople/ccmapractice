@@ -5,9 +5,9 @@ import NewsletterSection from '@/components/marketing/NewsletterSection';
 import BlogFilter from './BlogFilter';
 
 export const metadata: Metadata = {
-  title: 'ICC Exam Guide Blog — Inspect Practice',
+  title: 'CCMA Exam Guide Blog — CCMAPractice',
   description:
-    'Expert guides for ICC building inspector exam prep. B1, B2, E1, P1 & M1 certification guides, IRC/IBC code navigation, open-book study techniques, and exam structure breakdowns.',
+    'Expert guides for NHA CCMA exam prep. Certification guides, clinical procedures, phlebotomy, EKG, study techniques, and exam structure breakdowns.',
   alternates: {
     canonical: 'https://ccmapractice.com/blog',
     languages: {
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'ICC Exam Guide Blog — Inspect Practice',
+    title: 'CCMA Exam Guide Blog — CCMAPractice',
     description:
-      'Expert guides and resources for ICC building inspector exam prep. B1, B2, E1, P1 & M1 certifications, code navigation, and study techniques.',
+      'Expert guides and resources for NHA CCMA exam prep. Certification guides, clinical procedures, and study techniques.',
     url: 'https://ccmapractice.com/blog',
     type: 'website',
     images: [
@@ -25,90 +25,90 @@ export const metadata: Metadata = {
         url: 'https://ccmapractice.com/images/og/home.jpg',
         width: 1200,
         height: 630,
-        alt: 'Inspect Practice Blog',
+        alt: 'CCMAPractice Blog',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ICC Exam Guide Blog — Inspect Practice',
+    title: 'CCMA Exam Guide Blog — CCMAPractice',
   },
   other: {
-    'article:published_time': '2025-03-01',
-    'article:modified_time': '2026-08-18',
+    'article:published_time': '2026-08-01',
+    'article:modified_time': '2026-08-29',
   },
 };
 
 const posts = [
   {
-    slug: 'icc-b1-certification-guide',
-    title: 'How to Get Your ICC B1 Residential Building Inspector Certification',
+    slug: 'ccma-b1-certification-guide',
+    title: 'How to Get Your NHA CCMA Certification',
     description:
-      'A complete step-by-step guide to earning your ICC B1 Residential Building Inspector certification, including eligibility, the open-book IRC exam format, and study strategy.',
-    date: 'March 15, 2025 *updated August 18, 2026',
+      'A complete step-by-step guide to earning your Certified Clinical Medical Assistant (CCMA) certification, including eligibility, the 150-question exam format, and study strategy.',
+    date: 'August 1, 2026 *updated August 29, 2026',
     readTime: '10 min read',
     category: 'Certification',
   },
   {
-    slug: 'irc-study-guide',
-    title: 'IRC Study Guide: How to Navigate the International Residential Code',
+    slug: 'ccma-study-guide',
+    title: 'CCMA Study Guide: 13 Chapters of the NHA Exam Blueprint',
     description:
-      'Master the International Residential Code for your ICC B1 exam. Chapter-by-chapter map, section-numbering system, index strategies, and open-book lookup drills.',
-    date: 'April 2, 2025 *updated August 18, 2026',
+      'Master the NHA CCMA exam blueprint. Chapter-by-chapter map covering vital signs, phlebotomy, EKG, infection control, HIPAA, and clinical procedures.',
+    date: 'August 3, 2026 *updated August 29, 2026',
     readTime: '8 min read',
-    category: 'Code Navigation',
+    category: 'Study Guide',
   },
   {
-    slug: 'ai-icc-exam-preparation',
-    title: 'How AI Is Changing ICC Exam Preparation',
+    slug: 'ai-ccma-exam-preparation',
+    title: 'How AI Is Changing CCMA Exam Preparation',
     description:
-      'Discover how artificial intelligence is transforming ICC exam preparation. Adaptive learning, personalized study paths, instant code-referenced explanations, and AI tutoring.',
-    date: 'May 16, 2026 *updated August 18, 2026',
+      'Discover how artificial intelligence is transforming CCMA exam preparation. Adaptive learning, personalized study paths, instant guideline-referenced explanations, and AI tutoring.',
+    date: 'August 5, 2026 *updated August 29, 2026',
     readTime: '9 min read',
     category: 'Technology',
   },
   {
-    slug: 'icc-exam-structure',
-    title: 'ICC Exam Structure: B1, B2, E1, P1 & M1 — Questions, Time & Passing Scores',
+    slug: 'ccma-exam-structure',
+    title: 'CCMA Exam Structure: Questions, Time & Passing Score',
     description:
-      'Complete comparison of all 5 ICC certification exams with a detailed table showing question counts, time limits, passing scores, and reference codes.',
-    date: 'May 20, 2026 *updated August 18, 2026',
+      'Complete breakdown of the NHA CCMA exam: 150 scored questions + 30 pretest, 3 hours, passing score 390/500, and the 7 blueprint domains.',
+    date: 'August 6, 2026 *updated August 29, 2026',
     readTime: '14 min read',
     category: 'Exams',
   },
   {
-    slug: 'icc-exam-study-resources',
-    title: 'ICC Exam Study Resources: Best Codes, Books & Tools',
+    slug: 'ccma-exam-study-resources',
+    title: 'CCMA Exam Study Resources: Best Books, Practice Tests & Tools',
     description:
-      'The definitive list of ICC exam study resources: official codes (IRC, IBC, NEC, IPC, IMC), ICC training materials, practice tests, and AI-powered study tools.',
-    date: 'May 22, 2026 *updated August 18, 2026',
+      'The definitive list of CCMA exam study resources: NHA official materials, practice tests, flashcards, and AI-powered study tools.',
+    date: 'August 8, 2026 *updated August 29, 2026',
     readTime: '10 min read',
     category: 'Reference',
   },
   {
-    slug: 'icc-exam-study-plan',
-    title: '12-Week ICC Exam Study Plan: A Step-by-Step Schedule',
+    slug: 'ccma-exam-study-plan',
+    title: '8-Week CCMA Exam Study Plan: A Step-by-Step Schedule',
     description:
-      'A proven 12-week study plan for ICC certification exams. Week-by-week schedule covering code navigation, practice questions, and timed simulations.',
-    date: 'May 22, 2026 *updated August 18, 2026',
+      'A proven 8-week study plan for the NHA CCMA exam. Week-by-week schedule covering vitals, phlebotomy, EKG, medications, and timed simulations.',
+    date: 'August 10, 2026 *updated August 29, 2026',
     readTime: '11 min read',
     category: 'Study Plan',
   },
   {
-    slug: 'icc-study-mistakes',
-    title: 'Top 10 Mistakes ICC Exam Candidates Make (And How to Avoid Them)',
+    slug: 'ccma-study-mistakes',
+    title: 'Top 10 Mistakes CCMA Exam Candidates Make (And How to Avoid Them)',
     description:
-      'The most common mistakes ICC exam candidates make — from ignoring the exam bulletin to memorizing instead of navigating. Learn how to pass on your first try.',
-    date: 'May 22, 2026 *updated August 18, 2026',
+      'The most common mistakes CCMA exam candidates make — from memorizing without understanding to skipping the order of draw. Learn how to pass on your first try.',
+    date: 'August 12, 2026 *updated August 29, 2026',
     readTime: '9 min read',
     category: 'Exam Strategy',
   },
   {
-    slug: 'icc-study-techniques',
-    title: 'How to Study for ICC Open-Book Exams: 10 Proven Techniques',
+    slug: 'ccma-study-techniques',
+    title: 'How to Study for the CCMA Exam: 10 Proven Techniques',
     description:
-      'Discover 10 proven study techniques for ICC open-book exams. From code navigation drills and index-first lookups to timed simulations — techniques that actually work.',
-    date: 'May 23, 2026 *updated August 18, 2026',
+      'Discover 10 proven study techniques for the NHA CCMA exam. From clinical scenario drills and vital sign mastery to timed simulations — techniques that actually work.',
+    date: 'August 14, 2026 *updated August 29, 2026',
     readTime: '12 min read',
     category: 'Study Skills',
   },
@@ -130,7 +130,7 @@ export default function BlogIndexPage() {
       <nav className="border-b border-white/5 bg-[#0A0E1A]/80 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
-            <img src="/logo/logo-main.png?v=3" alt="Inspect Practice" className="h-7 w-auto" />
+            <img src="/logo/logo-main.png?v=3" alt="CCMAPractice" className="h-7 w-auto" />
           </a>
           <div className="flex items-center gap-4">
             <a href="/" className="text-sm text-[#94A3B8] hover:text-white transition-colors">← Back to Home</a>
@@ -140,11 +140,11 @@ export default function BlogIndexPage() {
 
       {/* Header */}
       <div className="max-w-4xl mx-auto px-6 pt-16 pb-8">
-        <h1 className="text-4xl font-bold mb-4">ICC Exam Guide</h1>
+        <h1 className="text-4xl font-bold mb-4">CCMA Exam Guide</h1>
         <p className="text-lg text-[#94A3B8] max-w-2xl">
-          Expert resources to help you prepare for ICC building inspector exams.
-          Each guide covers the B1, B2, E1, P1 &amp; M1 certifications and the open-book
-          code navigation skills the exams reward.
+          Expert resources to help you prepare for the NHA CCMA exam.
+          Each guide covers the clinical procedures, guidelines, and study
+          skills the exam rewards.
         </p>
       </div>
 

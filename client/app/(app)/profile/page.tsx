@@ -150,7 +150,7 @@ export default function ProfilePage() {
   }, [router]);
 
   useEffect(() => {
-    document.title = `${t('profile')} | Inspect Practice`;
+    document.title = `${t('profile')} | CCMAPractice`;
   }, [t]);
 
   async function loadData() {

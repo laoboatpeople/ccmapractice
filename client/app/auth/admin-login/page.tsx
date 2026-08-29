@@ -16,7 +16,7 @@ export default function AdminLoginPage() {
   const router = useRouter();
 
   useEffect(() => {
-    document.title = `${t('auth_adminSignIn')} | Inspect Practice`;
+    document.title = `${t('auth_adminSignIn')} | CCMAPractice`;
   }, [t]);
 
   const [email, setEmail] = useState('');
@@ -98,7 +98,7 @@ export default function AdminLoginPage() {
             </div>
             <span className="text-xl font-bold text-text-primary">{t('auth_adminPortal')}</span>
           </Link>
-          <p className="text-sm text-text-secondary mt-1">Inspect Practice — {t('auth_adminSignIn')}</p>
+          <p className="text-sm text-text-secondary mt-1">CCMAPractice — {t('auth_adminSignIn')}</p>
         </div>
 
         <div className="bg-card border border-border rounded-card p-8">

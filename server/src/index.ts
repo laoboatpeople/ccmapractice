@@ -182,7 +182,7 @@ app.use((err: Error, _req: express.Request, res: express.Response, _next: expres
 const PORT = parseInt(env.PORT, 10);
 
 const server = app.listen(PORT, () => {
-  console.log(`Inspect Practice API running on port ${PORT}`);
+  console.log(`CCMAPractice API running on port ${PORT}`);
   console.log(`Environment: ${env.NODE_ENV}`);
 });
 

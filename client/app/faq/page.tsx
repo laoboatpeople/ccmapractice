@@ -2,9 +2,9 @@ import { FAQPageJsonLd, BreadcrumbListJsonLd } from '@/components/seo/JsonLd';
 import RelatedStudyPlatforms from '@/components/marketing/RelatedStudyPlatforms';
 
 export const metadata = {
-  title: 'FAQ — Inspect Practice ICC Exam Preparation',
+  title: 'FAQ — CCMAPractice NHA CCMA Exam Preparation',
   description:
-    'Frequently asked questions about ICC building inspector certifications, the Inspect Practice platform, pricing, and how AI-powered exam preparation works.',
+    'Frequently asked questions about the NHA CCMA certification exam, the CCMAPractice platform, pricing, and how AI-powered exam preparation works.',
   alternates: {
     canonical: 'https://ccmapractice.com/faq',
     languages: {
@@ -12,9 +12,9 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'Inspect Practice FAQ — ICC Exam Preparation',
+    title: 'CCMAPractice FAQ — NHA CCMA Exam Preparation',
     description:
-      'Find answers to common questions about ICC certification, the International Codes, and our AI-powered study platform.',
+      'Find answers to common questions about the NHA CCMA certification exam, the exam blueprint, and our AI-powered study platform.',
     url: 'https://ccmapractice.com/faq',
     type: 'website',
     images: [
@@ -22,80 +22,85 @@ export const metadata = {
         url: 'https://ccmapractice.com/images/og/home.jpg',
         width: 1200,
         height: 630,
-        alt: 'Inspect Practice FAQ - ICC Exam Preparation',
+        alt: 'CCMAPractice FAQ - NHA CCMA Exam Preparation',
       },
     ],
   },
   twitter: {
-    title: 'FAQ — Inspect Practice ICC Exam Preparation',
+    title: 'FAQ — CCMAPractice NHA CCMA Exam Preparation',
   },
 };
 
 const faqs = [
   {
-    question: 'What is Inspect Practice?',
+    question: 'What is CCMAPractice?',
     answer:
-      'Inspect Practice is an AI-powered web application designed to help building inspectors prepare for International Code Council (ICC) certification exams. It covers B1 (Residential Building Inspector — IRC), B2 (Commercial Building Inspector — IBC), E1 (Residential Electrical Inspector — NEC), P1 (Residential Plumbing Inspector — IPC), and M1 (Residential Mechanical Inspector — IMC) with adaptive difficulty, open-book exam simulations, and code-referenced explanations.',
+      'CCMAPractice is an AI-powered web application designed to help candidates prepare for the NHA CCMA (Certified Clinical Medical Assistant) certification exam. It combines 1,200+ practice questions with detailed, guideline-referenced explanations, complete theory guides for all 13 chapters of the official exam blueprint, an AI tutor that explains any question, and realistic 150-question exam simulations.',
   },
   {
-    question: 'Which ICC certifications does Inspect Practice cover?',
+    question: 'What is the NHA CCMA exam?',
     answer:
-      'Inspect Practice covers all five core ICC inspector certifications: B1 (IRC — one- and two-family dwellings), B2 (IBC — commercial buildings), E1 (NEC + IRC electrical chapters), P1 (IPC + IRC plumbing chapters), and M1 (IMC + IRC mechanical chapters).',
+      'The NHA CCMA exam is the Certified Clinical Medical Assistant certification exam from the National Healthcareer Association (NHA). It consists of 180 multiple-choice questions — 150 scored questions and 30 unscored pretest questions — and you have 3 hours to complete it. The exam is taken on a computer at a PSI testing center or via online proctoring. You need a score of 390 out of 500 (~78%) to pass, and the exam fee is $155–165. In 2024, 81.4% of candidates passed on their first attempt — solid preparation makes the difference.',
   },
   {
-    question: 'Are ICC exams open book?',
+    question: 'What topics are covered on the NHA CCMA exam?',
     answer:
-      'Yes. All ICC inspector certification exams are open book, multiple-choice exams. You bring the current edition of the applicable code and are tested on your ability to find and apply its requirements. Success depends on code navigation — knowing which chapter covers which system, using the index efficiently, and reading sections including their exceptions. Inspect Practice questions are designed to build exactly that skill.',
+      'The NHA CCMA exam follows an official blueprint organized into 13 chapters: Foundational Knowledge and Basic Science; Anatomy and Physiology; Patient Intake and Vitals; General Patient Care (Parts 1 and 2); Infection Control and Safety; Point of Care Testing and Laboratory Procedures; Phlebotomy; EKG and Cardiovascular Testing; Patient Care Coordination and Education; Administrative Assisting; Communication and Customer Service; and Medical Law and Ethics. Expect questions on vital signs, medical terminology, phlebotomy (order of draw and tube selection), EKG, injections, wound care, infection control (OSHA and CDC Standard Precautions), HIPAA, medical billing, and therapeutic communication.',
   },
   {
-    question: 'How does the AI adaptive difficulty work?',
+    question: 'How many practice questions does CCMAPractice include?',
     answer:
-      'Inspect Practice adjusts question difficulty based on your performance. Score 80% or higher on a set of questions, and the system increases difficulty (EASY → MEDIUM → HARD). Score below 50%, and the difficulty decreases. This ensures you are always studying at the right level to maximize learning efficiency.',
+      'CCMAPractice includes a question bank of over 1,200 practice questions. Every question comes with a detailed explanation that cites the actual guidelines and standards behind the correct answer — including OSHA Bloodborne Pathogens, the HIPAA Privacy Rule, CDC Standard Precautions, AHA guidelines, and CLIA-waived testing requirements. New questions are added regularly to stay aligned with the current NHA CCMA blueprint.',
   },
   {
-    question: 'Is Inspect Practice available on mobile?',
+    question: 'What are the 13 theory chapters?',
     answer:
-      'Inspect Practice is a web application optimized for desktop and mobile browsers. You can study anywhere, anytime from your phone, tablet, or computer — no app download required. The responsive design adapts to any screen size.',
+      'Our theory guides cover all 13 chapters of the official NHA CCMA exam blueprint: Foundational Knowledge and Basic Science, Anatomy and Physiology, Patient Intake and Vitals, General Patient Care Part 1, General Patient Care Part 2, Infection Control and Safety, Point of Care Testing and Laboratory Procedures, Phlebotomy, EKG and Cardiovascular Testing, Patient Care Coordination and Education, Administrative Assisting, Communication and Customer Service, and Medical Law and Ethics. Each chapter provides structured, exam-focused study material.',
+  },
+  {
+    question: 'How do the exam simulations work?',
+    answer:
+      'Our exam simulations replicate the real NHA CCMA testing experience: 150 scored-style questions to answer in a timed session, mirroring the actual exam format. You build speed, stamina, and confidence before exam day, then review your performance question by question with detailed explanations of every answer.',
   },
   {
     question: 'What is the AI Tutor and how does it work?',
     answer:
-      'The AI Tutor is an interactive chat feature that helps you understand difficult concepts. When you encounter a question you do not understand, you can ask the AI Tutor for a simplified explanation. It uses AI to break down complex code requirements into clear, digestible answers, citing the relevant sections.',
+      'The AI Tutor is an interactive chat feature that helps you understand difficult concepts. When you encounter a question you do not understand, you can ask the AI Tutor for a simplified explanation. It breaks down complex clinical procedures, medical terminology, and guideline requirements into clear, digestible answers, citing the relevant standards.',
+  },
+  {
+    question: 'How does the AI adaptive difficulty work?',
+    answer:
+      'CCMAPractice adjusts question difficulty based on your performance. Score 80% or higher on a set of questions, and the system increases difficulty (EASY → MEDIUM → HARD). Score below 50%, and the difficulty decreases. This ensures you are always studying at the right level to maximize learning efficiency.',
   },
   {
     question: 'What plans are available?',
     answer:
-      'Inspect Practice offers four plans: FREE (limited access to one exam category), MONTHLY ($29.99 per month with full access to all exams and features), YEARLY ($99 per year — 2 months free vs Monthly), and LIFETIME ($199 one-time payment for permanent access to all current and future content).',
+      'CCMAPractice offers four plans: FREE (limited access to one practice category), MONTHLY ($19 per month with full access to everything), YEARLY ($69 per year — 2 months free vs Monthly), and LIFETIME ($149 one-time payment for permanent access to all current and future content).',
   },
   {
-    question: 'How many questions are in the question bank?',
+    question: 'Is CCMAPractice available on mobile?',
     answer:
-      'Inspect Practice includes a comprehensive question bank of over 2,500 questions covering B1, B2, E1, P1, and M1. Questions are scenario-based with exact code references (IRC R-section numbers, NEC articles, IPC/IMC chapters). New questions are regularly added and updated to stay aligned with current code editions. FREE users have access to a subset of questions, while paid subscribers get the full bank.',
+      'CCMAPractice is a web application optimized for desktop and mobile browsers. You can study anywhere, anytime from your phone, tablet, or computer — no app download required. The responsive design adapts to any screen size.',
   },
   {
-    question: 'What is covered in the B1 (Residential Building Inspector) certification?',
+    question: 'How does CCMAPractice compare to free resources?',
     answer:
-      'The B1 certification covers one- and two-family dwellings and townhouses up to three stories, based on the International Residential Code (IRC). The question bank covers code administration, building planning, foundations, floors, wall construction, wall covering, roof-ceiling construction, roofing, chimneys and fireplaces, and energy efficiency.',
+      'Free resources like open-exam-prep offer a limited set of NHA CCMA practice questions (roughly 114 questions) with minimal explanations. CCMAPractice gives you 1,200+ questions, complete theory guides for all 13 blueprint chapters, an AI tutor, and realistic exam simulations — every explanation citing the actual guidelines behind the answer. Compared to the official NHA study guide and practice tests (~$99) or Mometrix (~$50–60), CCMAPractice offers deeper content and adaptive study tools starting at $19 per month.',
   },
   {
-    question: 'What is covered in the B2 (Commercial Building Inspector) certification?',
+    question: 'Is CCMAPractice affiliated with the NHA?',
     answer:
-      'The B2 certification covers commercial buildings based on the International Building Code (IBC). The question bank covers occupancy classification, types of construction, fire protection systems, means of egress, accessibility, and structural provisions.',
+      'No. CCMAPractice is an independent exam preparation platform and is not affiliated with, endorsed by, or sponsored by the National Healthcareer Association (NHA). The NHA CCMA exam, its blueprint, and its passing standards are the property of the NHA; CCMAPractice simply builds study tools aligned to the publicly available exam blueprint.',
   },
   {
-    question: 'What is covered in E1, P1, and M1?',
+    question: 'Do I need to renew my CCMA certification?',
     answer:
-      'E1 (Residential Electrical Inspector) covers the National Electrical Code plus IRC electrical chapters: services, branch circuits, wiring methods, grounding and bonding. P1 (Residential Plumbing Inspector) covers the IPC plus IRC plumbing chapters: fixtures, water supply, drainage and venting. M1 (Residential Mechanical Inspector) covers the IMC plus IRC mechanical chapters: HVAC equipment, duct systems, combustion air, and venting.',
+      'Yes. The NHA CCMA certification must be renewed every 2 years. Renewal requires completing 10 continuing education (CE) credits and paying the renewal fee, which is $179. CCMAPractice is a great way to refresh your clinical knowledge and stay sharp between renewals.',
   },
   {
-    question: 'Which certification should I choose — B1, B2, E1, P1, or M1?',
+    question: 'Can I track my progress across topics?',
     answer:
-      'Most inspectors start with B1 (Residential Building Inspector), the entry point for residential inspection careers. From there, B2 adds commercial work, while E1, P1, and M1 add trade-specific credentials (electrical, plumbing, and mechanical). The right choice depends on your jurisdiction and career goals — many inspectors build a portfolio of certifications over time. Inspect Practice covers all five so you can study for multiple certifications on one platform.',
-  },
-  {
-    question: 'Can I track my progress across exams?',
-    answer:
-      'Yes, Inspect Practice provides detailed analytics including accuracy by chapter, difficulty progression, exam history, and performance trends. This helps you identify weak areas and focus your study time effectively.',
+      'Yes, CCMAPractice provides detailed analytics including accuracy by chapter, difficulty progression, exam history, and performance trends. This helps you identify weak areas — whether it is phlebotomy, EKG, or medical law and ethics — and focus your study time effectively.',
   },
   {
     question: 'How do I get started?',
@@ -119,7 +124,7 @@ export default function FAQPage() {
         <nav className="border-b border-white/5 bg-[#0A0E1A]/80 backdrop-blur-md">
           <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2">
-              <img src="/logo/logo-main.png?v=3" alt="Inspect Practice" className="h-7 w-auto" />
+              <img src="/logo/logo-main.png?v=3" alt="CCMAPractice" className="h-7 w-auto" />
             </a>
             <a
               href="/"
@@ -136,7 +141,7 @@ export default function FAQPage() {
             Frequently Asked Questions
           </h1>
           <p className="text-lg text-[#94A3B8] max-w-2xl">
-            Everything you need to know about Inspect Practice, ICC certification,
+            Everything you need to know about CCMAPractice, NHA CCMA certification,
             and how our AI-powered platform works.
           </p>
         </div>

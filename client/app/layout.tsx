@@ -5,7 +5,7 @@ import Providers from './providers';
 import { OrganizationJsonLd, WebSiteJsonLd, ProductJsonLd, CourseJsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Inspect Practice',
+  title: 'CCMAPractice',
   metadataBase: new URL('https://ccmapractice.com'),
   alternates: {
     canonical: 'https://ccmapractice.com',

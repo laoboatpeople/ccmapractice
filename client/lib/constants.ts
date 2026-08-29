@@ -1,12 +1,8 @@
-export const APP_NAME = 'Inspect Practice';
-export const APP_DESCRIPTION = 'AI-Powered ICC Building Inspector Exam Prep';
+export const APP_NAME = 'CCMAPractice';
+export const APP_DESCRIPTION = 'AI-Powered NHA CCMA Exam Prep';
 
 export const EXAMS = [
-  { code: 'ICC-B1', name: 'B1 - Residential Building Inspector (IRC)', country: 'US', licenseType: 'ICC' },
-  { code: 'ICC-B2', name: 'B2 - Commercial Building Inspector (IBC)', country: 'US', licenseType: 'ICC' },
-  { code: 'ICC-E1', name: 'E1 - Residential Electrical Inspector (NEC)', country: 'US', licenseType: 'ICC' },
-  { code: 'ICC-P1', name: 'P1 - Residential Plumbing Inspector (IPC)', country: 'US', licenseType: 'ICC' },
-  { code: 'ICC-M1', name: 'M1 - Residential Mechanical Inspector (IMC)', country: 'US', licenseType: 'ICC' },
+  { code: 'CCMA', name: 'CCMA - Certified Clinical Medical Assistant (NHA)', country: 'US', licenseType: 'CCMA' },
 ];
 
 export const QUESTION_TYPES = [
@@ -23,9 +19,9 @@ export const DIFFICULTY_LEVELS = [
 
 export const PLANS = [
   { value: 'FREE', label: 'Free', price: 0 },
-  { value: 'MONTHLY', label: 'Monthly', price: 29.99 },
-  { value: 'YEARLY', label: 'Yearly', price: 99 },
-  { value: 'LIFETIME', label: 'Lifetime', price: 199 },
+  { value: 'MONTHLY', label: 'Monthly', price: 19 },
+  { value: 'YEARLY', label: 'Yearly', price: 69 },
+  { value: 'LIFETIME', label: 'Lifetime', price: 149 },
 ];
 
 export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api';

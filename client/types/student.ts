@@ -1,4 +1,4 @@
-// Inspect Practice — Student-facing types (web app)
+// CCMAPractice — Student-facing types (web app)
 
 export interface StudentExamCategory {
   id: string;

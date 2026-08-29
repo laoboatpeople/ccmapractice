@@ -21,16 +21,16 @@ function getBody(userName: string, lang: string): string {
     `Bonjour ${userName},`,
     '',
     'Merci de vous être inscrit sur ccmapractice !',
-    "Vous avez désormais accès à votre compte et pouvez commencer à vous entraîner pour l'examen de certification ICC.",
+    "Vous avez désormais accès à votre compte et pouvez commencer à vous entraîner pour l'examen de certification CCMA.",
     '',
     '── Votre abonnement actuel ──',
     'Forfait : Gratuit',
-    'Examen inclus : ICC B1 (résidentiel)',
+    'Examen inclus : CCMA B1 (résidentiel)',
     '',
     '── Prochaines étapes ──',
     "• Téléchargez l'application pour étudier où que vous soyez",
-    '• Commencez par les examens ICC B1',
-    "• Passez à Pro pour débloquer tous les examens ICC",
+    '• Commencez par les examens CCMA B1',
+    "• Passez à Pro pour débloquer tous les examens CCMA",
     "• Activez les simulations chronométrées pour vous préparer en conditions réelles",
     '',
     '── Contact et assistance ──',
@@ -46,16 +46,16 @@ function getBody(userName: string, lang: string): string {
     `Hello ${userName},`,
     '',
     'Thank you for signing up for ccmapractice!',
-    'Your account is now active and you can start preparing for your ICC certification exam.',
+    'Your account is now active and you can start preparing for your CCMA certification exam.',
     '',
     '── Your Current Plan ──',
     'Plan: Free',
-    'Included exam: ICC B1 (Residential)',
+    'Included exam: CCMA B1 (Residential)',
     '',
     '── Next Steps ──',
     '• Download the app to study anywhere',
-    '• Start with the ICC B1 exam',
-    '• Upgrade to Pro to unlock all ICC certification exams',
+    '• Start with the CCMA B1 exam',
+    '• Upgrade to Pro to unlock all CCMA certification exams',
     '• Enable timed simulations to prepare under real exam conditions',
     '',
     '── Contact & Support ──',
@@ -71,16 +71,16 @@ function getBody(userName: string, lang: string): string {
     `Hola ${userName},`,
     '',
     '¡Gracias por registrarte en ccmapractice!',
-    'Tu cuenta ya está activa y puedes empezar a prepararte para el examen de certificación ICC.',
+    'Tu cuenta ya está activa y puedes empezar a prepararte para el examen de certificación CCMA.',
     '',
     '── Tu Plan Actual ──',
     'Plan: Gratuito',
-    'Examen incluido: ICC B1 (Residencial)',
+    'Examen incluido: CCMA B1 (Residencial)',
     '',
     '── Próximos Pasos ──',
     '• Descarga la app para estudiar desde cualquier lugar',
-    '• Empieza con los exámenes ICC',
-    '• Actualiza a Pro para desbloquear todos los exámenes ICC',
+    '• Empieza con los exámenes CCMA',
+    '• Actualiza a Pro para desbloquear todos los exámenes CCMA',
     '• Activa las simulaciones cronometradas para prepararte en condiciones reales',
     '',
     '── Contacto y Soporte ──',
@@ -104,40 +104,40 @@ function getHtmlBody(userName: string, lang: string): string {
     fr: {
       btn: 'Commencer mon premier quiz',
       hero: 'Bienvenue sur ccmapractice,',
-      sub: 'Votre compte est prêt. Vous pouvez dès maintenant vous entraîner pour l\'examen ICC avec des questions réalistes générées par IA.',
+      sub: 'Votre compte est prêt. Vous pouvez dès maintenant vous entraîner pour l\'examen CCMA avec des questions réalistes générées par IA.',
       steps: [
         'Connectez-vous à votre tableau de bord',
         'Choisissez un examen (B1, B2, E1, P1 ou M1)',
         'Répondez à 10 questions — sans pression',
         'Consultez vos résultats et identifiez vos points faibles',
       ],
-      upsell: '💡 Le forfait gratuit inclut un examen. Débloquez tous les examens ICC pour maximiser vos chances de réussite.',
+      upsell: '💡 Le forfait gratuit inclut un examen. Débloquez tous les examens CCMA pour maximiser vos chances de réussite.',
       footer: 'L\'équipe ccmapractice',
     },
     en: {
       btn: 'Start My First Quiz',
       hero: 'Welcome to ccmapractice,',
-      sub: 'Your account is ready. Start practicing with AI-powered ICC certification exam questions immediately.',
+      sub: 'Your account is ready. Start practicing with AI-powered CCMA certification exam questions immediately.',
       steps: [
         'Log in to your dashboard',
         'Choose an exam (B1, B2, E1, P1, or M1)',
         'Answer 10 questions — no pressure',
         'Review your results and identify weak areas',
       ],
-      upsell: '💡 The free plan includes one exam. Unlock all ICC certification exams to maximize your chances of passing.',
+      upsell: '💡 The free plan includes one exam. Unlock all CCMA certification exams to maximize your chances of passing.',
       footer: 'The ccmapractice Team',
     },
     es: {
       btn: 'Comenzar mi primer quiz',
       hero: 'Bienvenido a ccmapractice,',
-      sub: 'Tu cuenta está lista. Empieza a practicar con preguntas realistas al estilo ICC generadas por IA.',
+      sub: 'Tu cuenta está lista. Empieza a practicar con preguntas realistas al estilo CCMA generadas por IA.',
       steps: [
         'Inicia sesión en tu panel',
         'Elige un examen (B1, B2, E1, P1 o M1)',
         'Responde 10 preguntas — sin presión',
         'Revisa tus resultados e identifica áreas débiles',
       ],
-      upsell: '💡 El plan gratuito incluye un examen. Desbloquea todos los exámenes ICC para maximizar tus posibilidades de éxito.',
+      upsell: '💡 El plan gratuito incluye un examen. Desbloquea todos los exámenes CCMA para maximizar tus posibilidades de éxito.',
       footer: 'El equipo de ccmapractice',
     },
   };
@@ -410,16 +410,16 @@ const PLAN_LABELS: Record<string, { fr: string; en: string }> = {
 
 const PLAN_FEATURES: Record<string, { fr: string[]; en: string[] }> = {
   FREE: {
-    fr: ['Accès à l\'examen ICC B1', 'Questions d\'entraînement limitées'],
-    en: ['ICC B1 exam access', 'Limited practice questions'],
+    fr: ['Accès à l\'examen CCMA B1', 'Questions d\'entraînement limitées'],
+    en: ['CCMA B1 exam access', 'Limited practice questions'],
   },
   MONTHLY: {
-    fr: ['Accès aux tous les examens ICC', 'Questions illimitées', 'Simulations chronométrées', 'Tuteur IA', 'Annulable en tout temps'],
-    en: ['All ICC certification exams', 'Unlimited questions', 'Timed simulations', 'AI Tutor', 'Cancel anytime'],
+    fr: ['Accès aux tous les examens CCMA', 'Questions illimitées', 'Simulations chronométrées', 'Tuteur IA', 'Annulable en tout temps'],
+    en: ['All CCMA certification exams', 'Unlimited questions', 'Timed simulations', 'AI Tutor', 'Cancel anytime'],
   },
   LIFETIME: {
-    fr: ['Accès aux tous les examens ICC', 'Questions illimitées', 'Simulations chronométrées', 'Tuteur IA', 'Accès à vie — paiement unique'],
-    en: ['All ICC certification exams', 'Unlimited questions', 'Timed simulations', 'AI Tutor', 'Lifetime access — one-time payment'],
+    fr: ['Accès aux tous les examens CCMA', 'Questions illimitées', 'Simulations chronométrées', 'Tuteur IA', 'Accès à vie — paiement unique'],
+    en: ['All CCMA certification exams', 'Unlimited questions', 'Timed simulations', 'AI Tutor', 'Lifetime access — one-time payment'],
   },
 };
 
@@ -578,8 +578,8 @@ export async function sendNewsletterConfirmation(email: string, locale: 'en' | '
     : 'https://ccmapractice.com/study-checklist-30-day.pdf';
 
   const subject = isFr
-    ? 'Checklist de préparation aux examens ICC 30 jours — Inspect Practice'
-    : 'Your 30-Day ICC Exam Prep Checklist — Inspect Practice';
+    ? 'Checklist de préparation aux examens CCMA 30 jours — CCMAPractice'
+    : 'Your 30-Day CCMA Exam Prep Checklist — CCMAPractice';
 
   const html = `
 <!DOCTYPE html>
@@ -590,24 +590,24 @@ export async function sendNewsletterConfirmation(email: string, locale: 'en' | '
     <tr>
       <td style="text-align: center; padding-bottom: 24px;">
         <div style="display: inline-block; width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #3B82F6, #06B6D4); text-align: center; line-height: 48px; font-size: 24px;">🏠</div>
-        <h1 style="font-size: 24px; margin: 16px 0 4px;">Inspect Practice</h1>
+        <h1 style="font-size: 24px; margin: 16px 0 4px;">CCMAPractice</h1>
       </td>
     </tr>
     <tr>
       <td style="background: #1A2035; border: 1px solid #2D3A52; border-radius: 16px; padding: 32px;">
-        <h2 style="font-size: 20px; margin: 0 0 12px; color: #F8FAFC;">${isFr ? 'Votre checklist ICC 30 jours' : 'Your 30-Day ICC Checklist'}</h2>
+        <h2 style="font-size: 20px; margin: 0 0 12px; color: #F8FAFC;">${isFr ? 'Votre checklist CCMA 30 jours' : 'Your 30-Day CCMA Checklist'}</h2>
         <p style="font-size: 15px; line-height: 1.6; color: #94A3B8; margin: 0 0 20px;">
           ${isFr
-            ? 'Merci de vous être abonné à l\'infolettre Inspect Practice ! Voici votre checklist de préparation aux examens ICC de 30 jours.'
-            : 'Thanks for subscribing to the Inspect Practice newsletter! Here\'s your 30-day ICC exam prep checklist.'}
+            ? 'Merci de vous être abonné à l\'infolettre CCMAPractice ! Voici votre checklist de préparation aux examens CCMA de 30 jours.'
+            : 'Thanks for subscribing to the CCMAPractice newsletter! Here\'s your 30-day CCMA exam prep checklist.'}
         </p>
         <p style="font-size: 15px; line-height: 1.6; color: #94A3B8; margin: 0 0 20px;">
           ${isFr
-            ? 'Cette checklist couvre le programme ICC B1 — administration du code, planification du bâtiment, fondations, charpente et simulations chronométrées. Suivez une tâche par jour pour rester sur la bonne voie.'
-            : 'This checklist covers the ICC B1 Residential Building Inspector curriculum — IRC code administration, building planning, foundations, framing, and timed simulations. Follow one task per day to stay on track.'}
+            ? 'Cette checklist couvre le programme CCMA — signes vitaux, contrôle des infections, phlébotomie, EKG, terminologie médicale, HIPAA et simulations chronométrées. Suivez une tâche par jour pour rester sur la bonne voie.'
+            : 'This checklist covers the CCMA curriculum — vital signs, infection control, phlebotomy, EKG, medical terminology, HIPAA, and timed simulations. Follow one task per day to stay on track.'}
         </p>
         <div style="text-align: center; margin: 24px 0;">
-          <a href="${pdfUrl}" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #3B82F6, #06B6D4); color: #fff; text-decoration: none; border-radius: 12px; font-size: 15px; font-weight: 600;">
+          <a href="${pdfUrl}" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #0D9488, #06B6D4); color: #fff; text-decoration: none; border-radius: 12px; font-size: 15px; font-weight: 600;">
             ${isFr ? '📄 Télécharger votre PDF gratuit' : '📄 Download Your Free PDF Checklist'}
           </a>
         </div>
@@ -620,7 +620,7 @@ export async function sendNewsletterConfirmation(email: string, locale: 'en' | '
     </tr>
     <tr>
       <td style="text-align: center; padding-top: 24px; font-size: 12px; color: #64748B;">
-        <p style="margin: 0;">${isFr ? 'Inspect Practice — Préparation aux examens ICC' : 'Inspect Practice &mdash; ICC Building Inspector Exam Prep'}</p>
+        <p style="margin: 0;">${isFr ? 'CCMAPractice — Préparation à l\'examen CCMA (NHA)' : 'CCMAPractice &mdash; NHA CCMA Exam Prep'}</p>
         <p style="margin: 4px 0 0;"><a href="https://ccmapractice.com" style="color: #3B82F6; text-decoration: none;">ccmapractice.com</a></p>
       </td>
     </tr>
@@ -630,26 +630,26 @@ export async function sendNewsletterConfirmation(email: string, locale: 'en' | '
 
   const text = isFr
     ? [
-        'Checklist de préparation aux examens ICC 30 jours — Inspect Practice',
+        'Checklist de préparation aux examens CCMA 30 jours — CCMAPractice',
         '',
-        'Merci de vous être abonné à l\'infolettre Inspect Practice !',
+        'Merci de vous être abonné à l\'infolettre CCMAPractice !',
         '',
         'Consultez et imprimez votre checklist ici :',
         'https://ccmapractice.com/study-checklist-30-day-fr.pdf',
         '',
         'Vous recevrez également des conseils d\'examen, des ressources d\'étude et des mises à jour.',
-        '— L\'équipe Inspect Practice',
+        '— L\'équipe CCMAPractice',
       ].join('\n')
     : [
-        'Your 30-Day ICC Exam Prep Checklist — Inspect Practice',
+        'Your 30-Day CCMA Exam Prep Checklist — CCMAPractice',
         '',
-        'Thanks for subscribing to the Inspect Practice newsletter!',
+        'Thanks for subscribing to the CCMAPractice newsletter!',
         '',
         'View and print your checklist here:',
         'https://ccmapractice.com/study-checklist-30-day.pdf',
         '',
         'You\'ll also receive exam tips, study resources, and feature updates.',
-        '— Inspect Practice Team',
+        '— CCMAPractice Team',
       ].join('\n');
 
   return sendEmail(email, subject, text, html);
@@ -658,8 +658,8 @@ export async function sendNewsletterConfirmation(email: string, locale: 'en' | '
 export async function sendSampleQuestionsConfirmation(email: string, locale: 'en' | 'fr' = 'en'): Promise<boolean> {
   const isFr = locale === 'fr';
   const subject = isFr
-    ? 'Questions pratiques ICC gratuites — Inspect Practice'
-    : 'Your Free ICC Sample Questions — Inspect Practice';
+    ? 'Questions pratiques CCMA gratuites — CCMAPractice'
+    : 'Your Free CCMA Sample Questions — CCMAPractice';
   const pdfUrl = isFr
     ? 'https://ccmapractice.com/icc-sample-questions-fr.pdf'
     : 'https://ccmapractice.com/icc-sample-questions.pdf';
@@ -673,21 +673,21 @@ export async function sendSampleQuestionsConfirmation(email: string, locale: 'en
     <tr>
       <td style="text-align: center; padding-bottom: 24px;">
         <div style="display: inline-block; width: 48px; height: 48px; border-radius: 12px; background: linear-gradient(135deg, #3B82F6, #06B6D4); text-align: center; line-height: 48px; font-size: 24px;">🏠</div>
-        <h1 style="font-size: 24px; margin: 16px 0 4px;">Inspect Practice</h1>
+        <h1 style="font-size: 24px; margin: 16px 0 4px;">CCMAPractice</h1>
       </td>
     </tr>
     <tr>
       <td style="background: #1A2035; border: 1px solid #2D3A52; border-radius: 16px; padding: 32px;">
-        <h2 style="font-size: 20px; margin: 0 0 12px; color: #F8FAFC;">${isFr ? 'Vos questions pratiques ICC gratuites' : 'Your Free ICC Sample Questions'}</h2>
+        <h2 style="font-size: 20px; margin: 0 0 12px; color: #F8FAFC;">${isFr ? 'Vos questions pratiques CCMA gratuites' : 'Your Free CCMA Sample Questions'}</h2>
         <p style="font-size: 15px; line-height: 1.6; color: #94A3B8; margin: 0 0 20px;">
           ${isFr
-            ? 'Merci de vous être abonné à l\'infolettre Inspect Practice ! Voici 10 questions pratiques ICC gratuites avec explications détaillées.'
-            : 'Thanks for subscribing to the Inspect Practice newsletter! Here are your 10 free ICC sample practice questions with detailed explanations.'}
+            ? 'Merci de vous être abonné à l\'infolettre CCMAPractice ! Voici 10 questions pratiques CCMA gratuites avec explications détaillées.'
+            : 'Thanks for subscribing to the CCMAPractice newsletter! Here are your 10 free CCMA sample practice questions with detailed explanations.'}
         </p>
         <p style="font-size: 15px; line-height: 1.6; color: #94A3B8; margin: 0 0 20px;">
           ${isFr
-            ? 'Ces questions couvrent les codes IRC et IBC — administration du code, planification du bâtiment, fondations, charpente, égress et sécurité incendie — le même style que vous verrez aux examens ICC.'
-            : 'These questions cover IRC and IBC topics — code administration, building planning, foundations, framing, egress, and fire safety — the same style you\'ll see on ICC certification exams.'}
+            ? 'Ces questions couvrent le programme CCMA — signes vitaux, contrôle des infections, phlébotomie, EKG, HIPAA et communication — le même style que vous verrez à l\'examen CCMA (NHA).'
+            : 'These questions cover the CCMA curriculum — vital signs, infection control, phlebotomy, EKG, HIPAA, and communication — the same style you\'ll see on the NHA CCMA exam.'}
         </p>
         <div style="text-align: center; margin: 24px 0;">
           <a href="${pdfUrl}" style="display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, #3B82F6, #06B6D4); color: #fff; text-decoration: none; border-radius: 12px; font-size: 15px; font-weight: 600;">
@@ -696,14 +696,14 @@ export async function sendSampleQuestionsConfirmation(email: string, locale: 'en
         </div>
         <p style="font-size: 14px; line-height: 1.5; color: #64748B; margin: 24px 0 0;">
           ${isFr
-            ? 'Vous voulez l\'ensemble complet ? Inspect Practice propose 2 500+ questions avec difficulté adaptative, examens chronométrés et explications par l\'IA. <a href="https://ccmapractice.com/fr/auth/register" style="color: #3B82F6; text-decoration: underline;">Créez votre compte gratuit</a> pour commencer.'
-            : 'Want the full set? Inspect Practice has 2,500+ questions with adaptive difficulty, timed exams, and AI Tutor explanations. <a href="https://ccmapractice.com/auth/register" style="color: #3B82F6; text-decoration: underline;">Create your free account</a> to get started.'}
+            ? 'Vous voulez l\'ensemble complet ? CCMAPractice propose 2 500+ questions avec difficulté adaptative, examens chronométrés et explications par l\'IA. <a href="https://ccmapractice.com/fr/auth/register" style="color: #3B82F6; text-decoration: underline;">Créez votre compte gratuit</a> pour commencer.'
+            : 'Want the full set? CCMAPractice has 2,500+ questions with adaptive difficulty, timed exams, and AI Tutor explanations. <a href="https://ccmapractice.com/auth/register" style="color: #3B82F6; text-decoration: underline;">Create your free account</a> to get started.'}
         </p>
       </td>
     </tr>
     <tr>
       <td style="text-align: center; padding-top: 24px; font-size: 12px; color: #64748B;">
-        <p style="margin: 0;">${isFr ? 'Inspect Practice — Préparation aux examens ICC' : 'Inspect Practice &mdash; ICC Building Inspector Exam Prep'}</p>
+        <p style="margin: 0;">${isFr ? 'CCMAPractice — Préparation aux examens CCMA' : 'CCMAPractice &mdash; CCMA Building Inspector Exam Prep'}</p>
         <p style="margin: 4px 0 0;"><a href="https://ccmapractice.com" style="color: #3B82F6; text-decoration: none;">ccmapractice.com</a></p>
       </td>
     </tr>
@@ -713,26 +713,26 @@ export async function sendSampleQuestionsConfirmation(email: string, locale: 'en
 
   const text = isFr
     ? [
-        'Questions pratiques ICC gratuites — Inspect Practice',
+        'Questions pratiques CCMA gratuites — CCMAPractice',
         '',
-        'Merci de vous être abonné à l\'infolettre Inspect Practice !',
+        'Merci de vous être abonné à l\'infolettre CCMAPractice !',
         '',
-        'Téléchargez vos 10 questions pratiques ICC gratuites ici :',
+        'Téléchargez vos 10 questions pratiques CCMA gratuites ici :',
         'https://ccmapractice.com/icc-sample-questions-fr.pdf',
         '',
         'Vous voulez l\'ensemble complet ? Créez votre compte gratuit sur https://ccmapractice.com/fr/auth/register',
-        '— L\'équipe Inspect Practice',
+        '— L\'équipe CCMAPractice',
       ].join('\n')
     : [
-        'Your Free ICC Sample Questions — Inspect Practice',
+        'Your Free CCMA Sample Questions — CCMAPractice',
         '',
-        'Thanks for subscribing to the Inspect Practice newsletter!',
+        'Thanks for subscribing to the CCMAPractice newsletter!',
         '',
-        'Download your 10 free ICC sample practice questions here:',
+        'Download your 10 free CCMA sample practice questions here:',
         'https://ccmapractice.com/icc-sample-questions.pdf',
         '',
         'Want the full set? Create your free account at https://ccmapractice.com/auth/register',
-        '— Inspect Practice Team',
+        '— CCMAPractice Team',
       ].join('\n');
 
   return sendEmail(email, subject, text, html);

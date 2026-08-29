@@ -9,20 +9,20 @@
     "signIn": "Sign In"
   },
   "hero": {
-    "badge": "ICC B1 · B2 · E1 · P1 · M1",
-    "headline1": "Pass Your ICC Building Inspector Exam",
+    "badge": "NHA CCMA",
+    "headline1": "Pass Your NHA CCMA Exam",
     "headline2": "with AI That Curates Questions to Your Weak Spots",
-    "subheadline": "Inspect Practice covers the full ICC certification curriculum — Residential Building Inspector (B1), Commercial (B2), Electrical (E1), Plumbing (P1) and Mechanical (M1) — with AI that learns what you struggle with and serves you the right practice questions. Open-book code navigation drills plus thousands of exam-style questions, on any device.",
+    "subheadline": "CCMAPractice covers the full CCMA certification curriculum — Residential Medical Assistant (B1), Commercial (B2), Electrical (E1), Plumbing (P1) and Mechanical (M1) — with AI that learns what you struggle with and serves you the right practice questions. Clinical scenarios and guidelines drills plus thousands of exam-style questions, on any device.",
     "bullets": {
       "aiExams": "AI curates questions to your weak areas",
       "anywhere": "Study anywhere",
       "platforms": "Available on all devices",
-      "transportCanada": "B1, B2, E1, P1 & M1 certifications"
+      "transportCanada": "NHA CCMA certification"
     },
     "downloadApp": "Start Free",
     "watchDemo": "Watch Demo",
-    "valueProp": "2,500+ ICC-aligned questions across B1, B2, E1, P1 & M1",
-    "trustedBy": "Trusted by building inspectors across the U.S.",
+    "valueProp": "1,200+ CCMA-aligned questions across NHA CCMA",
+    "trustedBy": "Trusted by medical assistants across the U.S.",
     "appRating": "User Rating",
     "passRate": "Pass Rate"
   },
@@ -58,10 +58,10 @@
   },
   "features": {
     "title": "Everything You Need to Pass",
-    "subtitle": "Powerful tools built for serious building inspectors.",
+    "subtitle": "Powerful tools built for serious medical assistants.",
     "exams": {
       "title": "Realistic Practice Exams",
-      "desc": "Simulate real ICC open-book exams for B1 (IRC), B2 (IBC), E1 (NEC + IRC electrical), P1 (IPC + IRC plumbing), and M1 (IMC + IRC mechanical) — all with timed, chapter-based practice tests."
+      "desc": "Simulate real CCMA open-book exams for B1 (US guidelines), B2 (US guidelines), E1 (US guidelines + US guidelines electrical), P1 (US guidelines + US guidelines plumbing), and M1 (US guidelines + US guidelines mechanical) — all with timed, chapter-based practice tests."
     },
     "analytics": {
       "title": "Performance Analytics",
@@ -87,8 +87,8 @@
   "howItWorks": {
     "title": "How It Works",
     "subtitle": "Start practicing in under a minute.",
-    "step1": "Tell the AI your code chapter",
-    "step1Desc": "Pick your certification and code chapter (IRC, IBC, NEC, IPC, or IMC) — the AI maps your curriculum instantly.",
+    "step1": "Tell the AI your exam chapter",
+    "step1Desc": "Pick your certification and exam chapter (US guidelines, US guidelines, US guidelines, US guidelines, or US guidelines) — the AI maps your curriculum instantly.",
     "step2": "AI curates questions for your weak spots",
     "step2Desc": "Our AI analyses your past performance and serves questions that target exactly what you need to work on.",
     "step3": "Practice, improve, track everything",
@@ -96,7 +96,7 @@
   },
   "appPreview": {
     "title": "See It in Action",
-    "subtitle": "A seamless, premium experience built for building inspectors.",
+    "subtitle": "A seamless, premium experience built for medical assistants.",
     "quizTitle": "Quiz Practice",
     "aiTitle": "AI Generator",
     "analyticsTitle": "Analytics",
@@ -110,8 +110,8 @@
     "good": "Good",
     "needsReview": "Needs Review",
     "tapToReview": "Tap to review explanation",
-    "wingSparExplanation": "IRC R403 requires footings to extend below the local frost line.",
-    "hydraulicExplanation": "IRC R312 guard height requirement for elevated balconies.",
+    "wingSparExplanation": "US guidelines R403 requires footings to extend below the local frost line.",
+    "hydraulicExplanation": "US guidelines R312 guard height requirement for elevated balconies.",
     "plusTwelve": "+12% from last week",
     "mockupChapter": "Chapter 4 - Foundations",
     "mockupQuestion": "What is the minimum footing depth in a region where the local frost line is 42 inches?",
@@ -134,25 +134,25 @@
     "curated": "AI-curated question matching — questions selected based on your weak areas and performance history"
   },
   "builtFor": {
-    "title": "Built for Building Inspectors & Code Professionals",
-    "subtitle": "Whether you're new to inspection, a home inspector adding credentials, or a municipal employee — Inspect Practice meets you where you are.",
+    "title": "Built for Medical Assistants & Code Professionals",
+    "subtitle": "Whether you're new to inspection, a home inspector adding credentials, or a municipal employee — CCMAPractice meets you where you are.",
     "student": "New Inspectors",
-    "studentDesc": "Career changers and newcomers preparing for their first ICC certification.",
+    "studentDesc": "Career changers and newcomers preparing for their first CCMA certification.",
     "apprentice": "Home Inspectors",
-    "homeInspectorDesc": "Home inspectors adding ICC credentials for rental and compliance work.",
+    "homeInspectorDesc": "Home inspectors adding CCMA credentials for rental and compliance work.",
     "schools": "Training Programs",
     "schoolsDesc": "Institutions and departments looking for a modern, scalable training tool.",
-    "tc": "ICC Exam Prep",
-    "tcDesc": "Candidates preparing for ICC B1, B2, E1, P1 & M1 written exams."
+    "tc": "CCMA Exam Prep",
+    "tcDesc": "Candidates preparing for CCMA NHA CCMA written exams."
   },
   "testimonials": {
     "title": "What Inspectors Are Saying",
     "subtitle": "Real stories from real code professionals.",
     "cards": {
       "t1": {
-        "quote": "The code navigation drills are a game changer. I found answers in the IRC faster and passed B1 on my first try.",
+        "quote": "The clinical procedures drills are a game changer. I found answers in the US guidelines faster and passed B1 on my first try.",
         "name": "Marcus Thompson",
-        "role": "Residential Building Inspector, Texas"
+        "role": "Residential Medical Assistant, Texas"
       },
       "t2": {
         "quote": "Between site inspections and family, I never had time to study. The AI tutor quizzes me on exactly what I keep missing.",
@@ -174,7 +174,7 @@
       "price": "$0",
       "period": "forever",
       "desc": "Try before you buy.",
-      "feature1": "1 ICC certification category",
+      "feature1": "1 CCMA certification category",
       "feature2": "Basic stats tracking",
       "feature3": "Standard explanations",
       "feature4": "50 messages AI Tutor"
@@ -193,7 +193,7 @@
       "name": "Pro Yearly",
       "price": "$99",
       "period": "/year",
-      "desc": "2 months free vs Monthly. Best value for serious ICC candidates.",
+      "desc": "2 months free vs Monthly. Best value for serious CCMA candidates.",
       "badge": "Best Value",
       "feature1": "All 5 certifications (B1, B2, E1, P1, M1)",
       "feature2": "Timed simulation exams",
@@ -212,13 +212,13 @@
     "cta": "Get Started"
   },
   "finalCta": {
-    "headline": "Ready to pass your ICC exam faster?",
-    "subheadline": "Join the next generation of building inspectors training with AI.",
+    "headline": "Ready to pass your CCMA exam faster?",
+    "subheadline": "Join the next generation of medical assistants training with AI.",
     "startFree": "Start Free",
     "viewPricing": "View Pricing"
   },
   "footer": {
-    "tagline": "AI-powered ICC exam preparation for the next generation of building inspectors.",
+    "tagline": "AI-powered CCMA exam preparation for the next generation of medical assistants.",
     "product": "Product",
     "company": "Company",
     "legal": "Legal",
@@ -231,7 +231,7 @@
     "careers": "Careers",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "copyright": "© 2026 Inspect Practice. All rights reserved."
+    "copyright": "© 2026 CCMAPractice. All rights reserved."
   },
   "app": {
     "nav": {
@@ -345,7 +345,7 @@
       "freePlan": "Free Plan",
       "errorTitle": "Something went wrong",
       "tryAgain": "Try again",
-      "footer": "All plans include access to Inspect Practice exam preparation. Subscription automatically renews for Monthly plan. Cancel anytime.",
+      "footer": "All plans include access to CCMAPractice exam preparation. Subscription automatically renews for Monthly plan. Cancel anytime.",
       "features": {
         "oneCategory": "1 exam category",
         "basicStats": "Basic stats tracking",
@@ -366,12 +366,12 @@
       "startNewChat": "Start New Chat",
       "deleteSession": "Delete session",
       "messages": "messages",
-      "sendPlaceholder": "Ask a question about the IRC, IBC, NEC, IPC or IMC...",
+      "sendPlaceholder": "Ask a question about the US guidelines, US guidelines, US guidelines, US guidelines or US guidelines...",
       "sendPlaceholderExam": "Ask about this exam topic...",
       "somethingWentWrong": "Something went wrong",
       "tryAgain": "Try again",
       "emptyTitle": "AI Tutor",
-      "emptyDesc": "Ask questions about building codes, get explanations on exam questions, or practice specific concepts with your AI study assistant."
+      "emptyDesc": "Ask questions about clinicals, get explanations on exam questions, or practice specific concepts with your AI study assistant."
     },
     "exams": {
       "title": "Exam Categories",
@@ -420,9 +420,9 @@
       "privacy": {
         "title": "Privacy Policy",
         "content": [
-          "At Inspect Practice (\"we,\" \"our,\" or \"us\"), we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our web application for International Code Council (ICC) building inspector exam preparation.",
+          "At CCMAPractice (\"we,\" \"our,\" or \"us\"), we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our web application for NHA CCMA medical assistant exam preparation.",
           "**Information We Collect:** We collect personal information you provide directly, such as your name, email address, and payment information when you create an account or subscribe to our services. We also automatically collect certain information when you use our platform, including device information, IP address, browser type, and usage data such as exam attempts, scores, and study patterns.",
-          "**How We Use Your Information:** We use your information to provide, maintain, and improve our ICC exam preparation services; to process transactions and manage your subscription; to send you technical notices, updates, and support messages; to monitor and analyze usage trends; and to personalize your learning experience.",
+          "**How We Use Your Information:** We use your information to provide, maintain, and improve our CCMA exam preparation services; to process transactions and manage your subscription; to send you technical notices, updates, and support messages; to monitor and analyze usage trends; and to personalize your learning experience.",
           "**Data Sharing and Disclosure:** We do not sell your personal information. We may share your data with trusted third-party service providers who assist us in operating our platform (such as payment processors and cloud hosting providers), as required by law, or to protect our rights and the safety of our users.",
           "**Data Security:** We implement industry-standard security measures including encryption in transit (TLS 1.3) and at rest, secure authentication, and regular security audits to protect your personal information. However, no method of transmission over the Internet is 100% secure.",
           "**Your Rights:** Depending on your jurisdiction, you may have the right to access, correct, delete, or port your personal data. You can manage your account settings or contact us at privacy@inspectpractice.com to exercise these rights.",
@@ -433,12 +433,12 @@
       "terms": {
         "title": "Terms of Service",
         "content": [
-          "Welcome to Inspect Practice. By accessing or using our website and web application, you agree to be bound by these Terms of Service (\"Terms\"). If you do not agree with any part of these Terms, you must not use our services.",
-          "**Use of Service:** Inspect Practice provides an AI-powered exam preparation platform for building inspectors pursuing International Code Council (ICC) certifications (B1, B2, E1, P1, M1). You must be at least 18 years of age or have parental consent to use our services. You are responsible for maintaining the confidentiality of your account credentials.",
+          "Welcome to CCMAPractice. By accessing or using our website and web application, you agree to be bound by these Terms of Service (\"Terms\"). If you do not agree with any part of these Terms, you must not use our services.",
+          "**Use of Service:** CCMAPractice provides an AI-powered exam preparation platform for medical assistants pursuing International Code Council (CCMA) certifications (B1, B2, E1, P1, M1). You must be at least 18 years of age or have parental consent to use our services. You are responsible for maintaining the confidentiality of your account credentials.",
           "**Subscriptions and Payments:** Certain features require a paid subscription. Fees are billed in advance on a monthly or annual basis as selected. All fees are non-refundable except as expressly stated in our refund policy. We reserve the right to change our pricing with 30 days notice. Automatic renewal occurs unless cancelled before the renewal date.",
-          "**Intellectual Property:** All content, features, and functionality of Inspect Practice — including exam questions, AI-generated materials, analytics, user interface, and proprietary algorithms — are owned by Inspect Practice and protected by Canadian and international intellectual property laws. You may not reproduce, distribute, modify, or create derivative works without our express written consent.",
-          "**Disclaimer of Warranties:** Inspect Practice is provided \"as is\" without warranty of any kind. While we strive for accuracy, exam content is for educational purposes and does not guarantee passage of ICC certification exams. We are not affiliated with or endorsed by the International Code Council.",
-          "**Disclaimer of Warranties:** Inspect Practice is provided \"as is\" without warranty of any kind. While we strive for accuracy, exam content is for educational purposes and does not guarantee passage of ICC certification exams. We are not affiliated with or endorsed by the International Code Council.",
+          "**Intellectual Property:** All content, features, and functionality of CCMAPractice — including exam questions, AI-generated materials, analytics, user interface, and proprietary algorithms — are owned by CCMAPractice and protected by Canadian and international intellectual property laws. You may not reproduce, distribute, modify, or create derivative works without our express written consent.",
+          "**Disclaimer of Warranties:** CCMAPractice is provided \"as is\" without warranty of any kind. While we strive for accuracy, exam content is for educational purposes and does not guarantee passage of CCMA certification exams. We are not affiliated with or endorsed by the International Code Council.",
+          "**Disclaimer of Warranties:** CCMAPractice is provided \"as is\" without warranty of any kind. While we strive for accuracy, exam content is for educational purposes and does not guarantee passage of CCMA certification exams. We are not affiliated with or endorsed by the International Code Council.",
           "**Governing Law:** These Terms shall be governed by and construed in accordance with the laws of the State of Illinois and the federal laws of the United States applicable therein. Any disputes shall be resolved in the courts of Illinois.",
           "**Governing Law:** These Terms shall be governed by and construed in accordance with the laws of the Province of Ontario and the federal laws of Canada applicable therein. Any disputes shall be resolved in the courts of Ontario.",
           "**Changes to Terms:** We reserve the right to modify these Terms at any time. We will notify users of material changes via email or platform notice. Continued use after changes constitutes acceptance of the new Terms."

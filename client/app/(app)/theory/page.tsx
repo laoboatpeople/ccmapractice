@@ -964,7 +964,7 @@ export default function TheoryPage() {
   }, []);
 
   useEffect(() => {
-    document.title = `${t('theory')} | Inspect Practice`;
+    document.title = `${t('theory')} | CCMAPractice`;
   }, [t]);
 
   async function fetchTheory() {
@@ -994,39 +994,11 @@ export default function TheoryPage() {
 
   const LICENSE_SECTIONS = [
     {
-      key: 'b1',
-      title: t('licenseM'),
-      subtitle: t('licenseMSub'),
+      key: 'common',
+      title: t('licenseCommon'),
+      subtitle: t('licenseCommonSub'),
       color: 'blue' as SectionColor,
-      codeFilter: (code: string) => code.startsWith('ICC-B1'),
-    },
-    {
-      key: 'b2',
-      title: t('licenseE'),
-      subtitle: t('licenseESub'),
-      color: 'cyan' as SectionColor,
-      codeFilter: (code: string) => code.startsWith('ICC-B2'),
-    },
-    {
-      key: 'e1',
-      title: t('licenseS'),
-      subtitle: t('licenseSSub'),
-      color: 'amber' as SectionColor,
-      codeFilter: (code: string) => code.startsWith('ICC-E1'),
-    },
-    {
-      key: 'p1',
-      title: t('licenseP1'),
-      subtitle: t('licenseP1Sub'),
-      color: 'green' as SectionColor,
-      codeFilter: (code: string) => code.startsWith('ICC-P1'),
-    },
-    {
-      key: 'm1',
-      title: t('licenseM1'),
-      subtitle: t('licenseM1Sub'),
-      color: 'purple' as SectionColor,
-      codeFilter: (code: string) => code.startsWith('ICC-M1'),
+      codeFilter: (code: string) => code.startsWith('CCMA'),
     },
   ];
 
@@ -1070,7 +1042,7 @@ export default function TheoryPage() {
       {/* Licence rating filter — same pattern as /exams */}
       {!loading && categories.length > 0 && (
         <div className="flex flex-wrap items-center gap-2 mt-4">
-          {(['ALL', 'B1', 'B2', 'E1', 'P1', 'M1'] as const).map((r) => (
+          {(['ALL'] as const).map((r) => (
             <button
               key={r}
               onClick={() => selectLicense(r)}

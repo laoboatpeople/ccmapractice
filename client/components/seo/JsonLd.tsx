@@ -9,30 +9,29 @@ export function OrganizationJsonLd() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Inspect Practice',
+    name: 'CCMAPractice',
     url: 'https://ccmapractice.com',
     description:
-      'AI-powered exam preparation platform for ICC building inspector certifications (B1, B2, E1, P1 & M1) covering the International Residential Code, International Building Code, NEC, IPC, and IMC.',
+      'AI-powered exam preparation platform for the NHA CCMA (Certified Clinical Medical Assistant) exam — 1,200+ practice questions, complete theory guides, and an AI tutor covering vitals, phlebotomy, EKG, HIPAA, and infection control.',
     areaServed: 'US',
     knowsAbout: [
-      'ICC Certification Exam',
-      'ICC B1 Exam',
-      'ICC B2 Exam',
-      'IRC Preparation',
-      'IBC Preparation',
-      'Building Inspection',
-      'Code Enforcement',
-      'Residential Building Inspector',
-      'Commercial Building Inspector',
-      'Means of Egress',
-      'Foundations & Framing',
+      'NHA CCMA Exam',
+      'CCMA Exam Prep',
+      'Medical Assistant Certification',
+      'Vital Signs',
+      'Phlebotomy',
+      'EKG',
+      'HIPAA',
+      'Anatomy and Physiology',
+      'Infection Control',
+      'Medical Terminology',
+      'Patient Care',
     ],
     sameAs: [
       'https://twitter.com/ccmapractice',
       'https://linkedin.com/company/ccmapractice',
-      'https://www.iccsafe.org',
-      'https://en.wikipedia.org/wiki/International_Code_Council',
-      'https://en.wikipedia.org/wiki/International_Residential_Code',
+      'https://www.nhanow.com',
+      'https://en.wikipedia.org/wiki/Certified_clinical_medical_assistant',
     ],
   };
 
@@ -49,11 +48,11 @@ export function WebSiteJsonLd() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Inspect Practice',
+    name: 'CCMAPractice',
     url: 'https://ccmapractice.com',
     description:
-      'AI-powered exam preparation for ICC building inspector certifications — B1, B2, E1, P1 & M1.',
-    inLanguage: ['en', 'fr'],
+      'AI-powered exam preparation for the NHA CCMA exam — Certified Clinical Medical Assistant. 1,200+ practice questions, theory guides, and an AI tutor.',
+    inLanguage: ['en'],
     potentialAction: {
       '@type': 'SearchAction',
       target: {
@@ -78,7 +77,7 @@ export function ArticleJsonLd({
   description,
   datePublished,
   dateModified,
-  authorName = 'Inspect Practice Team',
+  authorName = 'CCMAPractice Team',
   image,
 }: {
   headline: string;
@@ -99,7 +98,7 @@ export function ArticleJsonLd({
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Inspect Practice',
+      name: 'CCMAPractice',
     },
     datePublished,
     dateModified: dateModified || datePublished,
@@ -127,7 +126,7 @@ export function BlogPostingJsonLd({
   description,
   datePublished,
   dateModified,
-  authorName = 'Inspect Practice Team',
+  authorName = 'CCMAPractice Team',
   image,
   url,
 }: {
@@ -150,7 +149,7 @@ export function BlogPostingJsonLd({
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Inspect Practice',
+      name: 'CCMAPractice',
     },
     datePublished,
     dateModified: dateModified || datePublished,
@@ -201,16 +200,16 @@ export function ProductJsonLd() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: 'Inspect Practice ICC Exam Prep',
-    description: 'AI-powered exam preparation for ICC building inspector certifications — B1, B2, E1, P1 & M1',
+    name: 'CCMAPractice NHA CCMA Exam Prep',
+    description: 'AI-powered exam preparation for the NHA CCMA exam — Certified Clinical Medical Assistant. 150 scored questions + 30 pretest, 3 hours, passing score 390/500.',
     url: 'https://ccmapractice.com',
     image: 'https://ccmapractice.com/images/og/home.jpg',
     brand: {
       '@type': 'Brand',
-      name: 'Inspect Practice',
+      name: 'CCMAPractice',
     },
-    sku: 'INSPECTPRACTICE-ICC',
-    mpn: 'INSPECTPRACTICE01',
+    sku: 'CCMAPRACTICE-CCMA',
+    mpn: 'CCMAPRACTICE01',
     category: 'Education/Exam Preparation',
     offers: [
       {
@@ -222,40 +221,40 @@ export function ProductJsonLd() {
         availability: 'https://schema.org/InStock',
         itemCondition: 'https://schema.org/NewCondition',
         url: 'https://ccmapractice.com/#pricing',
-        sku: 'INSPECTPRACTICE-FREE',
+        sku: 'CCMAPRACTICE-FREE',
       },
       {
         '@type': 'Offer',
         name: 'Monthly Plan',
-        price: '29.99',
+        price: '19.00',
         priceCurrency: 'USD',
         priceValidUntil: '2027-12-31T23:59:59Z',
         availability: 'https://schema.org/InStock',
         itemCondition: 'https://schema.org/NewCondition',
         url: 'https://ccmapractice.com/#pricing',
-        sku: 'INSPECTPRACTICE-MONTHLY',
+        sku: 'CCMAPRACTICE-MONTHLY',
       },
       {
         '@type': 'Offer',
         name: 'Yearly Plan',
-        price: '99.00',
+        price: '69.00',
         priceCurrency: 'USD',
         priceValidUntil: '2027-12-31T23:59:59Z',
         availability: 'https://schema.org/InStock',
         itemCondition: 'https://schema.org/NewCondition',
         url: 'https://ccmapractice.com/#pricing',
-        sku: 'INSPECTPRACTICE-YEARLY',
+        sku: 'CCMAPRACTICE-YEARLY',
       },
       {
         '@type': 'Offer',
         name: 'Lifetime Plan',
-        price: '199.00',
+        price: '149.00',
         priceCurrency: 'USD',
         priceValidUntil: '2027-12-31T23:59:59Z',
         availability: 'https://schema.org/InStock',
         itemCondition: 'https://schema.org/NewCondition',
         url: 'https://ccmapractice.com/#pricing',
-        sku: 'INSPECTPRACTICE-LIFETIME',
+        sku: 'CCMAPRACTICE-LIFETIME',
       },
     ],
     aggregateRating: {
@@ -271,19 +270,19 @@ export function ProductJsonLd() {
         '@type': 'Review',
         author: { '@type': 'Person', name: 'Marc Tremblay' },
         reviewRating: { '@type': 'Rating', ratingValue: '5' },
-        reviewBody: "J'étais perdu dans ma préparation aux examens ICC jusqu'à ce que je trouve Inspect Practice. Les explications IA ont tout rendu clair. Réussi du premier coup !",
+        reviewBody: "I was lost in my CCMA exam prep until I found CCMAPractice. The AI explanations made phlebotomy and EKG concepts finally click. Passed on the first try!",
       },
       {
         '@type': 'Review',
         author: { '@type': 'Person', name: 'Sophie Martin' },
         reviewRating: { '@type': 'Rating', ratingValue: '5' },
-        reviewBody: "Entre mon emploi du temps chargé et mes études, je n'avais jamais le temps de m'asseoir pour réviser. Maintenant je fais des questions sur mon téléphone pendant mes pauses.",
+        reviewBody: "Between my job and school, I never had time to sit down and review. Now I answer practice questions on my phone during breaks — the HIPAA and vitals drills were exactly what the exam asked.",
       },
       {
         '@type': 'Review',
         author: { '@type': 'Person', name: 'Jean-François Côté' },
         reviewRating: { '@type': 'Rating', ratingValue: '5' },
-        reviewBody: "Les analyses ont montré que j'étais faible en matière de fondations du CRI. J'ai concentré mes révisions là-dessus et j'ai commencé à voir de vraies améliorations.",
+        reviewBody: "The analytics showed I was weak on phlebotomy tube order and EKG lead placement. I focused my review there and started seeing real improvement in my simulation scores.",
       },
     ],
   };
@@ -296,17 +295,17 @@ export function ProductJsonLd() {
   );
 }
 
-/** Course schema — for the ICC certification study program */
+/** Course schema — for the NHA CCMA certification study program */
 export function CourseJsonLd() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
-    name: 'ICC Building Inspector Certification Exam Preparation Course',
+    name: 'NHA CCMA (Certified Clinical Medical Assistant) Exam Preparation Course',
     description:
-      'Comprehensive exam preparation for ICC building inspector certifications (B1, B2, E1, P1 & M1) — covering the International Residential Code (IRC), International Building Code (IBC), NEC, IPC, and IMC. Topics include building planning, foundations, walls, roofing, means of egress, and trade inspections.',
+      'Comprehensive exam preparation for the NHA CCMA exam — Certified Clinical Medical Assistant. Covers all 13 blueprint chapters: foundational knowledge and basic science, anatomy and physiology, patient intake and vitals, general patient care, infection control and safety, point of care testing and laboratory procedures, phlebotomy, EKG and cardiovascular testing, patient care coordination, administrative assisting, communication, and medical law and ethics.',
     provider: {
       '@type': 'Organization',
-      name: 'Inspect Practice',
+      name: 'CCMAPractice',
     },
   };
 
@@ -322,7 +321,7 @@ export function CourseJsonLd() {
 export function ReviewJsonLd({
   reviewRating,
   reviewBody,
-  authorName = 'Inspect Practice Student',
+  authorName = 'CCMAPractice Student',
 }: {
   reviewRating: number;
   reviewBody: string;
@@ -333,7 +332,7 @@ export function ReviewJsonLd({
     '@type': 'Review',
     itemReviewed: {
       '@type': 'Product',
-      name: 'Inspect Practice ICC Exam Prep',
+      name: 'CCMAPractice NHA CCMA Exam Prep',
     },
     reviewRating: {
       '@type': 'Rating',
@@ -346,7 +345,7 @@ export function ReviewJsonLd({
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Inspect Practice',
+      name: 'CCMAPractice',
     },
     award: 'Ratings',
   };

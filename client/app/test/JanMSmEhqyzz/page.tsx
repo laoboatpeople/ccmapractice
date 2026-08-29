@@ -55,7 +55,7 @@ export default function TestLoginPage() {
         <div className="flex flex-col items-center mb-8">
           <div className="flex items-center gap-2 mb-2">
             <Plane size={28} className="text-blue" />
-            <h1 className="text-2xl font-bold text-white">Inspect Practice</h1>
+            <h1 className="text-2xl font-bold text-white">CCMAPractice</h1>
           </div>
           <p className="text-sm text-gray-400">Test Login (no captcha, no rate limit)</p>
         </div>

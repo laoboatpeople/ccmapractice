@@ -54,9 +54,9 @@ export function StickyCtaBanner() {
       <div className="bg-[#0F172A] border-t border-[#1E293B] px-4 py-3 shadow-2xl">
         <div className="max-w-5xl mx-auto flex items-center justify-between gap-4">
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-white">🏗️ <strong>{isFr ? "Questions d'entraînement ICC gratuites" : 'Free ICC practice questions'}</strong></p>
+            <p className="text-sm font-medium text-white">🏗️ <strong>{isFr ? "Questions d'entraînement CCMA gratuites" : 'Free CCMA practice questions'}</strong></p>
             <p className="text-xs text-[#94A3B8] hidden sm:block mt-0.5">
-              {isFr ? 'Testez vos connaissances avec de vraies questions de style ICC à livre ouvert' : 'Test your knowledge with real ICC-style open-book code questions'}
+              {isFr ? 'Testez vos connaissances avec de vraies questions de style CCMA' : 'Test your knowledge with real CCMA-style clinical questions'}
             </p>
           </div>
 

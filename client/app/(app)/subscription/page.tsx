@@ -317,7 +317,7 @@ export default function SubscriptionPage() {
   };
 
   useEffect(() => {
-    document.title = `${t('subscriptionTitle')} | Inspect Practice`;
+    document.title = `${t('subscriptionTitle')} | CCMAPractice`;
     loadUser();
   }, [t]);
 

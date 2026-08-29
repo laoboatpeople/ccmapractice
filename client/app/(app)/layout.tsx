@@ -139,7 +139,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
               <div className="w-8 h-8 rounded-lg bg-blue flex items-center justify-center">
                 <Plane size={16} className="text-white" />
               </div>
-              <span className="text-lg font-bold text-text-primary">Inspect Practice</span>
+              <span className="text-lg font-bold text-text-primary">CCMAPractice</span>
             </Link>
             <button
               className="lg:hidden text-text-secondary hover:text-text-primary"

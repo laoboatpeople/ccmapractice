@@ -14,7 +14,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
 export default function RegisterPage() {
   const { t, locale } = useLocale();
   const router = useRouter();
-  useEffect(() => { document.title = `${t('auth_createAccount')} | Inspect Practice`; }, [t]);
+  useEffect(() => { document.title = `${t('auth_createAccount')} | CCMAPractice`; }, [t]);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -84,7 +84,7 @@ export default function RegisterPage() {
             <div className="w-10 h-10 rounded-lg bg-blue flex items-center justify-center">
               <Plane size={20} className="text-white" />
             </div>
-            <span className="text-xl font-bold text-text-primary font-inter">Inspect Practice</span>
+            <span className="text-xl font-bold text-text-primary font-inter">CCMAPractice</span>
           </Link>
           <p className="text-sm text-text-secondary mt-1">{t('auth_createStudentAccount')}</p>
         </div>

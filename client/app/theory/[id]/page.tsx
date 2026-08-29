@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const chapter = chapters.find((ch) => ch.id === id);
   if (!chapter) return {};
-  const title = `${chapter.name} — ICC Study Guide | ccmapractice`;
+  const title = `${chapter.name} — NHA CCMA Study Guide | ccmapractice`;
   const description = excerpt(chapter.content);
   return {
     title,

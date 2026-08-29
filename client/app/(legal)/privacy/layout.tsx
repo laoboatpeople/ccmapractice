@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Inspect Practice',
+  title: 'Privacy Policy — CCMAPractice',
   description:
-    'Inspect Practice privacy policy. Learn how we collect, use, and protect your personal information when you use our ICC exam preparation platform.',
+    'CCMAPractice privacy policy. Learn how we collect, use, and protect your personal information when you use our CCMA exam preparation platform.',
   alternates: {
     canonical: 'https://ccmapractice.com/privacy',
     languages: {
@@ -11,14 +11,14 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Privacy Policy — Inspect Practice',
+    title: 'Privacy Policy — CCMAPractice',
     description:
-      'Inspect Practice privacy policy. Learn how we collect, use, and protect your personal information when you use our ICC exam preparation platform.',
+      'CCMAPractice privacy policy. Learn how we collect, use, and protect your personal information when you use our CCMA exam preparation platform.',
     url: 'https://ccmapractice.com/privacy',
     type: 'website',
   },
   twitter: {
-    title: 'Privacy Policy — Inspect Practice',
+    title: 'Privacy Policy — CCMAPractice',
   },
 };
 

@@ -21,7 +21,7 @@ export default function ResultsPage() {
   }, [attemptId, router]);
 
   useEffect(() => {
-    document.title = `${t('results_title')} | Inspect Practice`;
+    document.title = `${t('results_title')} | CCMAPractice`;
   }, [t]);
 
   return (

@@ -3,171 +3,90 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import { usePathname } from "next/navigation";
 
-// ─── Practice Questions Data (FR) ────────────────────────
+// ─── Practice Questions Data (EN) ────────────────────────
 
-const frQuestions = [
+const questions = [
   {
     id: 1,
-    topic: 'IRC — Planning du bâtiment',
-    stem: 'Selon l\'IRC (International Residential Code), quelle est la hauteur minimale d\'une garde (garde-corps) sur un balcon résidentiel au-dessus du niveau du sol?',
+    topic: 'Vital Signs',
+    stem: 'Which of the following is within the normal adult range for resting respiratory rate?',
     options: [
-      '30 pouces (762 mm)',
-      '36 pouces (914 mm)',
-      '42 pouces (1067 mm)',
-      '48 pouces (1219 mm)',
+      '8–10 breaths per minute',
+      '12–20 breaths per minute',
+      '24–30 breaths per minute',
+      '32–40 breaths per minute',
     ],
     correctIndex: 1,
     explanation:
-      'L\'IRC R312 exige une garde de 36 pouces (914 mm) minimum au-dessus du niveau de la surface de marche pour les balcons, porches et mezzanines situés à plus de 30 pouces au-dessus du sol.',
-    ref: 'IRC R312',
+      'The normal adult respiratory rate is 12–20 breaths per minute. Rates below 12 suggest bradypnea; rates above 20 suggest tachypnea and warrant reassessment.',
+    ref: 'NHA CCMA Blueprint Ch. 3 (Patient Intake and Vitals)',
   },
   {
     id: 2,
-    topic: 'IRC — Fondations',
-    stem: 'Quelle est la profondeur minimale de gel pour les fondations en béton coulé dans une région où la ligne de gel locale est de 42 pouces?',
+    topic: 'Phlebotomy — Order of Draw',
+    stem: 'When collecting blood with the evacuated tube system, which tube should be drawn FIRST?',
     options: [
-      'La profondeur minimale de gel locale, soit 42 pouces, à moins qu\'une dalle isolée approuvée ne soit utilisée',
-      '24 pouces dans tous les cas',
-      '36 pouces indépendamment de la ligne de gel',
-      'Aucune exigence — la profondeur est laissée à la discrétion de l\'inspecteur',
-    ],
-    correctIndex: 0,
-    explanation:
-      'L\'IRC R403.1.4 exige que les fondations descendent sous la ligne de gel locale. La protection contre le gel (R403.3) permet une alternative approuvée pour les dalles.',
-    ref: 'IRC R403.1.4, R403.3',
-  },
-  {
-    id: 3,
-    topic: 'IRC — Toiture',
-    stem: 'Quelle est la pente minimale pour un revêtement de toiture en bardeaux d\'asphalte?',
-    options: [
-      '1:12',
-      '2:12',
-      '3:12',
-      '4:12',
-    ],
-    correctIndex: 1,
-    explanation:
-      'L\'IRC R905.2.2 exige une pente minimale de 2:12 pour les bardeaux d\'asphalte. En dessous de cette pente, un revêtement de toiture à faible pente (type membrane) est requis.',
-    ref: 'IRC R905.2.2',
-  },
-  {
-    id: 4,
-    topic: 'IRC — Murs',
-    stem: 'Quelle est la hauteur maximale d\'une ouverture non protégée (fenêtre) dans un mur coupe-feu entre deux maisons jumelées?',
-    options: [
-      'Aucune ouverture n\'est autorisée dans un mur coupe-feu',
-      '3 pieds',
-      'La surface totale ne doit pas excéder 25% de la surface du mur',
-      'Les ouvertures sont autorisées si elles sont protégées par des fenêtres à verre armé',
-    ],
-    correctIndex: 0,
-    explanation:
-      'L\'IRC R302.2 interdit les ouvertures dans le mur coupe-feu entre logements. C\'est une exigence clé de sécurité incendie pour les bâtiments multifamiliaux.',
-    ref: 'IRC R302.2',
-  },
-  {
-    id: 5,
-    topic: 'IRC — Sécurité publique',
-    stem: 'Un escalier intérieur desservant un seul niveau résidentiel doit avoir une largeur minimale de passage de?',
-    options: [
-      '24 pouces',
-      '30 pouces',
-      '36 pouces',
-      '44 pouces',
+      'Lavender-top (EDTA) tube',
+      'Light blue-top (sodium citrate) tube',
+      'Blood culture bottles',
+      'Red-top (serum) tube',
     ],
     correctIndex: 2,
     explanation:
-      'L\'IRC R311.7.1 exige une largeur minimale de 36 pouces pour les escaliers résidentiels, mesurée entre les mains courantes ou les parois.',
-    ref: 'IRC R311.7.1',
-  },
-];
-const enQuestions = [
-  {
-    id: 1,
-    topic: 'IRC — Building Planning',
-    stem: 'Under the IRC, what is the minimum required height for a guard (guardrail) on a residential balcony above grade?',
-    options: [
-      '30 inches (762 mm)',
-      '36 inches (914 mm)',
-      '42 inches (1067 mm)',
-      '48 inches (1219 mm)',
-    ],
-    correctIndex: 1,
-    explanation:
-      'IRC R312 requires guards to be at least 36 inches (914 mm) above the walking surface for balconies, porches and mezzanines located more than 30 inches above grade.',
-    ref: 'IRC R312',
-  },
-  {
-    id: 2,
-    topic: 'IRC — Foundations',
-    stem: 'What is the minimum depth for cast-in-place concrete footings in a region where the local frost line is 42 inches?',
-    options: [
-      'The local frost line depth of 42 inches, unless an approved frost-protected shallow foundation is used',
-      '24 inches in all cases',
-      '36 inches regardless of the frost line',
-      'No requirement — depth is at the inspector\'s discretion',
-    ],
-    correctIndex: 0,
-    explanation:
-      'IRC R403.1.4 requires footings to extend below the local frost line. Frost-protected shallow foundation alternatives are permitted under R403.3.',
-    ref: 'IRC R403.1.4, R403.3',
+      'The order of draw begins with blood culture bottles to prevent contamination from additives in other tubes. The standard sequence is: blood cultures, light blue, red/SST, green, lavender, gray.',
+    ref: 'NHA CCMA Blueprint Ch. 8 (Phlebotomy)',
   },
   {
     id: 3,
-    topic: 'IRC — Roofing',
-    stem: 'What is the minimum slope for asphalt shingle roof covering?',
+    topic: 'Medication Administration',
+    stem: 'Which of the following is NOT one of the five rights of medication administration?',
     options: [
-      '1:12',
-      '2:12',
-      '3:12',
-      '4:12',
-    ],
-    correctIndex: 1,
-    explanation:
-      'IRC R905.2.2 requires a minimum 2:12 slope for asphalt shingles. Below this slope, low-slope (membrane-type) roof covering is required.',
-    ref: 'IRC R905.2.2',
-  },
-  {
-    id: 4,
-    topic: 'IRC — Walls',
-    stem: 'What is the maximum height of an unprotected opening (window) in the fire wall between two attached dwelling units?',
-    options: [
-      'No openings are permitted in the fire wall',
-      '3 feet',
-      'The total area must not exceed 25% of the wall area',
-      'Openings are allowed if protected by wired glass windows',
-    ],
-    correctIndex: 0,
-    explanation:
-      'IRC R302.2 prohibits openings in the wall separating dwelling units. This is a key fire-safety requirement for multi-family buildings.',
-    ref: 'IRC R302.2',
-  },
-  {
-    id: 5,
-    topic: 'IRC — Public Safety',
-    stem: 'An interior stair serving a single residential level must have a minimum clear width of?',
-    options: [
-      '24 inches',
-      '30 inches',
-      '36 inches',
-      '44 inches',
+      'Right patient',
+      'Right medication',
+      'Right diagnosis',
+      'Right dose',
     ],
     correctIndex: 2,
     explanation:
-      'IRC R311.7.1 requires a minimum width of 36 inches for residential stairways, measured between handrails or walls.',
-    ref: 'IRC R311.7.1',
+      'The five rights are right patient, right medication, right dose, right route, and right time. "Right diagnosis" is not one of the five rights.',
+    ref: 'NHA CCMA Blueprint Ch. 4 (General Patient Care Part 1)',
+  },
+  {
+    id: 4,
+    topic: 'HIPAA',
+    stem: 'A patient\u2019s friend calls and asks for the patient\u2019s lab results. The patient has not authorized this disclosure. What should the medical assistant do?',
+    options: [
+      'Provide the results since the caller is a close friend',
+      'Politely explain that protected health information cannot be shared without the patient\u2019s authorization',
+      'Provide the results if the caller identifies the patient by name',
+      'Ask the caller to send a written request by email',
+    ],
+    correctIndex: 1,
+    explanation:
+      'Under the HIPAA Privacy Rule, protected health information may only be disclosed with the patient\u2019s written authorization (or another permitted exception). Family and friends are not automatically entitled to PHI.',
+    ref: 'HIPAA Privacy Rule; NHA CCMA Blueprint Ch. 13 (Medical Law and Ethics)',
+  },
+  {
+    id: 5,
+    topic: 'Infection Control',
+    stem: 'According to CDC standard precautions, how should a medical assistant treat all blood and body fluids?',
+    options: [
+      'As non-infectious unless the patient has a known diagnosis',
+      'As potentially infectious in every patient encounter',
+      'As infectious only during procedures that draw blood',
+      'As a hazard only when the patient reports symptoms',
+    ],
+    correctIndex: 1,
+    explanation:
+      'CDC standard precautions require treating ALL blood and body fluids as potentially infectious in every patient encounter, regardless of diagnosis. This is the foundation of infection control in ambulatory settings.',
+    ref: 'CDC Standard Precautions; NHA CCMA Blueprint Ch. 6 (Infection Control and Safety)',
   },
 ];
 
 // ─── Practice Question Widget Component ──────────────────
 
 export default function PracticeQuestionWidget() {
-  const pathname = usePathname();
-  const isFr = pathname.startsWith('/fr');
-  const questions = isFr ? frQuestions : enQuestions;
   const [question] = useState(
     () => questions[Math.floor(Math.random() * questions.length)]
   );
@@ -198,13 +117,11 @@ export default function PracticeQuestionWidget() {
           <h2 className="text-3xl md:text-4xl font-bold mb-3">
             🔥{' '}
             <span className="bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] bg-clip-text text-transparent">
-              {isFr ? 'Essayez une vraie question ICC' : 'Try a Real ICC Question'}
+              Try a Real CCMA Question
             </span>
           </h2>
           <p className="text-[#94A3B8] max-w-xl mx-auto">
-            {isFr
-              ? 'Découvrez comment Inspect Practice vous prépare aux examens ICC à livre ouvert. Sélectionnez votre réponse ci-dessous pour tester vos connaissances.'
-              : 'See how Inspect Practice prepares you for ICC open-book exams. Select your answer below to test your knowledge.'}
+            See how CCMAPractice prepares you for the NHA CCMA exam. Select your answer below to test your clinical knowledge.
           </p>
         </motion.div>
 
@@ -299,16 +216,14 @@ export default function PracticeQuestionWidget() {
                 }`}
               >
                 <p className={`font-semibold text-sm mb-1 ${isCorrect ? 'text-green' : 'text-red'}`}>
-                  {isCorrect
-                    ? (isFr ? '✅ Correct !' : '✅ Correct!')
-                    : (isFr ? '❌ Pas tout à fait.' : '❌ Not quite.')}
+                  {isCorrect ? '✅ Correct!' : '❌ Not quite.'}
                 </p>
                 <p className="text-xs md:text-sm text-[#94A3B8] leading-relaxed">
                   {question.explanation}
                 </p>
                 {question.ref && (
                   <p className="text-xs text-[#64748B] mt-2 italic">
-                    {isFr ? 'Référence : ' : 'Reference: '}{question.ref}
+                    Reference: {question.ref}
                   </p>
                 )}
               </div>
@@ -319,14 +234,14 @@ export default function PracticeQuestionWidget() {
                   href="/auth/register"
                   className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#C8102E] to-[#4C7FBF] text-white text-sm font-semibold hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] transition-all duration-300"
                 >
-                  {isFr ? 'Envie d\'en voir plus ? → Commencer gratuitement' : 'Want to see more? → Start Free'}
+                  Want to see more? → Start Free
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
-                  href={isFr ? '/fr/blog' : 'https://ccmapractice.com/free-icc-practice-questions'}
+                  href="https://ccmapractice.com/free-ccma-practice-questions"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-white/10 hover:bg-white/5 text-[#94A3B8] hover:text-white text-sm font-medium transition-all duration-300"
                 >
-                  📄 {isFr ? 'Télécharger les questions ICC gratuites' : 'Download Free ICC questions'}
+                  📄 Download Free CCMA questions
                 </a>
               </div>
             </motion.div>

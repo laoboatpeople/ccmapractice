@@ -73,7 +73,7 @@ export default function StudentExamDetailPage() {
   }, [examId]);
 
   useEffect(() => {
-    document.title = `${t('app.exams.title')} | Inspect Practice`;
+    document.title = `${t('app.exams.title')} | CCMAPractice`;
   }, [t]);
 
   const fetchData = useCallback(async () => {
@@ -130,10 +130,10 @@ export default function StudentExamDetailPage() {
       return;
     }
     sessionStorage.removeItem(`quiz_results_${examId}`);
-    // Official format: questionsPerSimulation (50 REGS / 90 technical), mode=exam
+    // Official format: 150 scored questions + 30 pretest (180 total), mode=exam
     // -> quiz page applies the official timer (exam.timeLimit x 60) automatically.
     const params = new URLSearchParams({
-      count: String(exam.questionsPerSimulation ?? (exam.code === 'ICC-B2' ? 80 : 60)),
+      count: String(exam.questionsPerSimulation ?? 150),
       mode: 'exam',
       difficulty: 'ALL',
     });

@@ -1,4 +1,4 @@
-// Inspect Practice — Shared Types
+// CCMAPractice — Shared Types
 
 export type Role = 'ADMIN' | 'INSTRUCTOR' | 'STUDENT';
 export type Plan = 'FREE' | 'MONTHLY' | 'YEARLY' | 'LIFETIME';

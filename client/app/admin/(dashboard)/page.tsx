@@ -338,7 +338,7 @@ export default function DashboardPage() {
         <div>
           <h1 className="text-2xl font-semibold text-text-primary">Tableau de bord</h1>
           <p className="text-sm text-text-secondary mt-1">
-            Vue d'ensemble de Inspect Practice
+            Vue d'ensemble de CCMAPractice
           </p>
         </div>
         <div className="flex items-center gap-2 bg-card border border-border rounded-btn p-1">

@@ -2,9 +2,9 @@ import { FAQPageJsonLd, BreadcrumbListJsonLd } from '@/components/seo/JsonLd';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Pricing — Inspect Practice ICC Exam Prep',
+  title: 'Pricing — CCMAPractice NHA CCMA Exam Prep',
   description:
-    'Choose your Inspect Practice plan: Free (basic stats), Monthly $29.99/mo, Yearly $99/yr, or Lifetime $199 (everything). Start ICC prep today.',
+    'Choose your CCMAPractice plan: Free (basic stats), Monthly $19/mo, Yearly $69/yr, or Lifetime $149 (everything). Start NHA CCMA prep today.',
   alternates: {
     canonical: 'https://ccmapractice.com/pricing',
     languages: {
@@ -12,9 +12,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Pricing — Inspect Practice ICC Exam Prep',
+    title: 'Pricing — CCMAPractice NHA CCMA Exam Prep',
     description:
-      'Flexible plans for ICC exam prep: Free, Monthly $29.99/mo, Yearly $99/yr, or Lifetime $199. AI-powered study with 2,500+ questions. Start free, upgrade anytime.',
+      'Flexible plans for NHA CCMA exam prep: Free, Monthly $19/mo, Yearly $69/yr, or Lifetime $149. AI-powered study with 1,200+ questions. Start free, upgrade anytime.',
     url: 'https://ccmapractice.com/pricing',
     type: 'website',
     images: [
@@ -22,12 +22,12 @@ export const metadata: Metadata = {
         url: 'https://ccmapractice.com/images/og/pricing.jpg',
         width: 1200,
         height: 630,
-        alt: 'Inspect Practice ICC Exam Prep Pricing Plans',
+        alt: 'CCMAPractice NHA CCMA Exam Prep Pricing Plans',
       },
     ],
   },
   twitter: {
-    title: 'Pricing — Inspect Practice ICC Exam Prep',
+    title: 'Pricing — CCMAPractice NHA CCMA Exam Prep',
   },
   other: {
     'article:published_time': '2025-01-15',
@@ -42,11 +42,11 @@ const plans = [
     period: 'forever',
     description: 'Try before you commit. Get a feel for the platform with limited access.',
     features: [
-      { included: true, text: '1 exam category' },
+      { included: true, text: '1 practice exam category' },
       { included: true, text: 'Basic progress stats' },
       { included: true, text: 'Limited question pool' },
-      { included: false, text: 'All exam categories' },
-      { included: false, text: 'AI adaptive difficulty' },
+      { included: false, text: 'Full 1,200+ question bank' },
+      { included: false, text: 'All 13 theory chapters' },
       { included: false, text: 'Unlimited practice exams' },
       { included: true, text: '50 messages AI Tutor' },
       { included: false, text: 'Detailed analytics' },
@@ -57,17 +57,17 @@ const plans = [
   },
   {
     name: 'Monthly',
-    price: '$29.99',
+    price: '$19',
     period: '/month',
-    description: 'Full access to everything Inspect Practice offers. Cancel anytime.',
+    description: 'Full access to everything CCMAPractice offers. Cancel anytime.',
     features: [
-      { included: true, text: 'All exam categories' },
-      { included: true, text: 'AI adaptive difficulty' },
-      { included: true, text: 'Unlimited practice exams' },
+      { included: true, text: 'Full 1,200+ question bank' },
+      { included: true, text: 'All 13 theory chapters' },
+      { included: true, text: '150-question exam simulations' },
       { included: true, text: 'Unlimited AI Tutor' },
-      { included: true, text: 'Detailed analytics' },
-      { included: true, text: 'Full question bank (2,500+)' },
+      { included: true, text: 'Guideline-referenced explanations (OSHA, HIPAA, CDC)' },
       { included: true, text: 'Progress tracking' },
+      { included: true, text: 'Detailed analytics' },
       { included: false, text: 'Lifetime updates' },
     ],
     cta: 'Start Monthly',
@@ -75,17 +75,17 @@ const plans = [
   },
   {
     name: 'Yearly',
-    price: '$99',
+    price: '$69',
     period: '/year',
-    description: '2 months free vs Monthly. Best value for serious ICC candidates.',
+    description: '2 months free vs Monthly. Best value for serious CCMA candidates.',
     features: [
-      { included: true, text: 'All exam categories' },
-      { included: true, text: 'AI adaptive difficulty' },
-      { included: true, text: 'Unlimited practice exams' },
+      { included: true, text: 'Full 1,200+ question bank' },
+      { included: true, text: 'All 13 theory chapters' },
+      { included: true, text: '150-question exam simulations' },
       { included: true, text: 'Unlimited AI Tutor' },
-      { included: true, text: 'Detailed analytics' },
-      { included: true, text: 'Full question bank (2,500+)' },
+      { included: true, text: 'Guideline-referenced explanations (OSHA, HIPAA, CDC)' },
       { included: true, text: 'Progress tracking' },
+      { included: true, text: 'Detailed analytics' },
       { included: false, text: 'Lifetime updates' },
     ],
     cta: 'Start Yearly',
@@ -93,17 +93,17 @@ const plans = [
   },
   {
     name: 'Lifetime',
-    price: '$199',
+    price: '$149',
     period: 'one-time',
     description: 'Pay once, own forever.',
     features: [
-      { included: true, text: 'All exam categories' },
-      { included: true, text: 'AI adaptive difficulty' },
-      { included: true, text: 'Unlimited practice exams' },
+      { included: true, text: 'Full 1,200+ question bank' },
+      { included: true, text: 'All 13 theory chapters' },
+      { included: true, text: '150-question exam simulations' },
       { included: true, text: 'Unlimited AI Tutor' },
-      { included: true, text: 'Detailed analytics' },
-      { included: true, text: 'Full question bank (2,500+)' },
+      { included: true, text: 'Guideline-referenced explanations (OSHA, HIPAA, CDC)' },
       { included: true, text: 'Progress tracking' },
+      { included: true, text: 'Detailed analytics' },
       { included: true, text: 'All future updates' },
     ],
     cta: 'Get Lifetime Access',
@@ -120,7 +120,7 @@ const pricingFaqs = [
   {
     question: 'Is there a free trial for paid plans?',
     answer:
-      'The Free plan is our trial. You can use it indefinitely with access to one exam category and basic features. When you are ready for full access, upgrade to Monthly, Yearly, or Lifetime. No credit card is required to start with the Free plan.',
+      'The Free plan is our trial. You can use it indefinitely with access to one practice category and basic features. When you are ready for full access, upgrade to Monthly, Yearly, or Lifetime. No credit card is required to start with the Free plan.',
   },
   {
     question: 'What payment methods are accepted?',
@@ -130,17 +130,17 @@ const pricingFaqs = [
   {
     question: 'Can I get a refund?',
     answer:
-      'Yes. If you are not satisfied with Inspect Practice, contact us within 14 days of your purchase for a full refund. We stand behind our platform and want you to be confident in your investment.',
+      'Yes. If you are not satisfied with CCMAPractice, contact us within 14 days of your purchase for a full refund. We stand behind our platform and want you to be confident in your investment.',
   },
   {
     question: 'Does the Lifetime plan include all future updates?',
     answer:
-      'Yes. The Lifetime plan includes all current content and all future updates. As we add new questions, features, and exam categories, your Lifetime access covers everything. This is the best value for candidates who plan to study over an extended period.',
+      'Yes. The Lifetime plan includes all current content and all future updates. As we add new questions, features, and theory chapters, your Lifetime access covers everything. This is the best value for candidates who plan to study over an extended period.',
   },
   {
-    question: 'Is there a discount for students or groups?',
+    question: 'How does CCMAPractice compare to the official NHA study materials?',
     answer:
-      'We occasionally offer promotional pricing. Contact us if you are representing an educational institution or a group of students — we can discuss custom pricing for bulk or institutional licenses.',
+      'The official NHA study guide with practice tests costs around $99. CCMAPractice gives you 1,200+ practice questions, complete theory guides for all 13 blueprint chapters, an AI tutor, and realistic 150-question exam simulations starting at $19 per month — with detailed explanations that cite the actual guidelines (OSHA, HIPAA, CDC, AHA) behind every answer.',
   },
 ];
 
@@ -159,7 +159,7 @@ export default function PricingPage() {
         <nav className="border-b border-white/5 bg-[#0A0E1A]/80 backdrop-blur-md">
           <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2">
-              <img src="/logo/logo-main.png?v=3" alt="Inspect Practice" className="h-7 w-auto" />
+              <img src="/logo/logo-main.png?v=3" alt="CCMAPractice" className="h-7 w-auto" />
             </a>
             <a href="/" className="text-sm text-[#94A3B8] hover:text-white transition-colors">
               ← Back to Home
@@ -178,7 +178,7 @@ export default function PricingPage() {
             </h1>
             <p className="text-lg md:text-xl text-[#94A3B8] max-w-2xl mx-auto leading-relaxed">
               Start free, upgrade when you are ready. No hidden fees, no surprise charges.
-              Every plan gives you access to Inspect Practice&apos;s AI-powered ICC exam preparation platform.
+              Every plan gives you access to CCMAPractice&apos;s AI-powered NHA CCMA exam preparation platform.
             </p>
           </div>
 
@@ -254,12 +254,12 @@ export default function PricingPage() {
                 </thead>
                 <tbody className="divide-y divide-white/5">
                   {[
-                    { feature: 'Exam categories', free: '1', monthly: 'All', yearly: 'All', lifetime: 'All' },
-                    { feature: 'Question bank access', free: 'Limited', monthly: '2,500+', yearly: '2,500+', lifetime: '2,500+' },
-                    { feature: 'AI adaptive difficulty', free: '—', monthly: '✓', yearly: '✓', lifetime: '✓' },
+                    { feature: 'CCMA practice questions', free: 'Limited', monthly: '1,200+', yearly: '1,200+', lifetime: '1,200+' },
+                    { feature: 'Theory guides (13 chapters)', free: '1 chapter', monthly: 'All', yearly: 'All', lifetime: 'All' },
+                    { feature: '150-question exam simulations', free: '—', monthly: '✓', yearly: '✓', lifetime: '✓' },
                     { feature: 'Unlimited practice exams', free: '—', monthly: '✓', yearly: '✓', lifetime: '✓' },
                     { feature: 'AI Tutor', free: '50 msgs', monthly: 'Unlimited', yearly: 'Unlimited', lifetime: 'Unlimited' },
-                    { feature: 'Detailed analytics', free: 'Basic', monthly: 'Full', yearly: 'Full', lifetime: 'Full' },
+                    { feature: 'Guideline-referenced explanations', free: 'Basic', monthly: 'Full', yearly: 'Full', lifetime: 'Full' },
                     { feature: 'Progress tracking', free: 'Basic', monthly: 'Full', yearly: 'Full', lifetime: 'Full' },
                     { feature: 'Priority support', free: '—', monthly: '✓', yearly: '✓', lifetime: '✓' },
                     { feature: 'Future updates', free: '—', monthly: 'While subscribed', yearly: 'While subscribed', lifetime: '✓' },
@@ -308,7 +308,7 @@ export default function PricingPage() {
             <div className="bg-gradient-to-r from-[#C8102E]/10 to-[#4C7FBF]/10 rounded-2xl p-10">
               <h2 className="text-2xl font-bold mb-3">Still Not Sure?</h2>
               <p className="text-[#94A3B8] mb-6 max-w-xl mx-auto">
-                Start with the Free plan — no credit card required. Experience Inspect Practice
+                Start with the Free plan — no credit card required. Experience CCMAPractice
                 for yourself and upgrade when you are ready.
               </p>
               <a

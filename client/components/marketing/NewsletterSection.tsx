@@ -57,7 +57,7 @@ export default function NewsletterSection() {
           {isFr ? 'Restez informé' : 'Stay in the loop'}
         </h3>
         <p className="text-[#94A3B8] mb-8 text-sm md:text-base">
-          {isFr ? 'Abonnez-vous et recevez gratuitement la checklist de préparation ICC 30 jours, des conseils d\'examen et des ressources d\'étude.' : 'Subscribe and get the free 30-Day ICC Exam Prep Checklist, exam tips, and study resources delivered to your inbox.'}
+          {isFr ? 'Abonnez-vous et recevez gratuitement la checklist de préparation CCMA 30 jours, des conseils d\'examen et des ressources d\'étude.' : 'Subscribe and get the free 30-Day CCMA Exam Prep Checklist, exam tips, and study resources delivered to your inbox.'}
         </p>
 
         {status === "success" ? (

@@ -9,17 +9,17 @@ interface Props {
   en?: boolean;
 }
 
-export function BlogLearningResource({ category = 'ICC Building Inspector Certification', en = true }: Props) {
+export function BlogLearningResource({ category = 'CCMA (NHA) Certification', en = true }: Props) {
   const label = en ? 'Guide' : 'Guide';
   const name = en
-    ? 'ICC Building Inspector Certification Guide'
-    : 'Guide des certifications ICC d\'inspecteur en bâtiment';
+    ? 'CCMA (NHA) Certification Guide'
+    : 'Guide de la certification CCMA (NHA)';
   const desc = en
-    ? `Complete guide to ICC building inspector certification covering ${category}. International Codes (IRC, IBC, NEC, IPC, IMC), open-book exam strategy, and preparation.`
-    : `Guide complet des certifications ICC d'inspecteur en bâtiment couvrant ${category}. Codes internationaux (CRI, IBC, NEC, IPC, IMC), stratégie d'examen à livre ouvert et préparation.`;
+    ? `Complete guide to the NHA CCMA certification covering ${category}. Clinical procedures, guidelines (OSHA, HIPAA, CDC), exam strategy, and preparation.`
+    : `Guide complet de la certification CCMA (NHA) couvrant ${category}. Procédures cliniques, directives (OSHA, HIPAA, CDC), stratégie d'examen et préparation.`;
   const teaches = en
-    ? ['ICC B1 Certification', 'ICC B2 Certification', 'IRC/IBC Code Navigation', 'Open-Book Exam Strategy', 'Building Inspection', category]
-    : ['Certification ICC B1', 'Certification ICC B2', 'Navigation dans les codes', "Stratégie d'examen à livre ouvert", "Inspection de bâtiments", category];
+    ? ['CCMA Certification', 'Clinical Procedures', 'Vital Signs & Phlebotomy', 'EKG & Patient Care', 'Medical Law & Ethics', category]
+    : ['Certification CCMA', 'Procédures cliniques', 'Signes vitaux et phlébotomie', 'EKG et soins aux patients', 'Droit et éthique médicale', category];
 
   return (
     <LearningResourceJsonLd

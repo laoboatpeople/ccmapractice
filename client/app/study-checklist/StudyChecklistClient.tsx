@@ -15,61 +15,61 @@ interface Props {
 const weeks = [
   {
     week: 1,
-    title: 'Assessment & Code Map',
-    subtitle: 'Review the exam bulletin, take a diagnostic quiz, and learn the IRC chapter map.',
+    title: 'Assessment & Foundational Knowledge',
+    subtitle: 'Review the NHA CCMA exam blueprint, take a diagnostic quiz, and build your medical terminology and anatomy foundation.',
     days: [
       {
         day: 1,
-        title: 'Download & Review the ICC Exam Bulletin',
+        title: 'Download & Review the NHA CCMA Exam Blueprint',
         tasks: [
-          "Download the official ICC exam bulletin from the ICC website for your certification (B1, B2, E1, P1, or M1).",
-          'Read the content areas, question count, time limit, and passing score (usually 75%).',
-          'Note the code edition your exam is based on (e.g., 2024 IRC for B1).',
+          'Download the official NHA CCMA exam blueprint from the NHA website (nhanow.com).',
+          'Review the 13 content areas, question count (150 scored + 30 pretest), time limit (3 hours), and passing score (390/500).',
+          'Note which domains carry the most weight — clinical patient care is the largest.',
         ],
       },
       {
         day: 2,
         title: 'Take a Full Diagnostic Quiz',
         tasks: [
-          'Log in to Inspect Practice and take one full diagnostic quiz spanning all chapters.',
+          'Log in to CCMAPractice and take one full diagnostic quiz spanning all chapters.',
           'Record your scores per chapter to identify weak areas.',
-          'Review every wrong answer and read the provided code references.',
+          'Review every wrong answer and read the provided explanations.',
         ],
       },
       {
         day: 3,
-        title: 'Organize Your Study Materials',
+        title: 'Medical Terminology Bootcamp',
         tasks: [
-          'Gather your references: the current edition of your code (IRC, IBC, NEC, IPC, or IMC).',
-          'Tab every chapter and add a few tabs for high-weight sections.',
-          'Set up a study tracker — print or save this checklist to mark progress.',
+          'Review common prefixes, suffixes, and root words (e.g., tachy-, hypo-, -ectomy, -itis).',
+          'Make flashcards for 50 must-know terms: tachycardia, hypertension, dyspnea, bradycardia, and more.',
+          'Take a 20-question medical terminology quiz.',
         ],
       },
       {
         day: 4,
-        title: 'IRC Chapter Map — Part 1',
+        title: 'Anatomy & Physiology — Part 1',
         tasks: [
-          'Skim IRC Chapters 1–4: Scope & Administration, Definitions, Building Planning, Foundations.',
-          'Write one line per chapter about what it covers.',
-          'Read the definitions chapter carefully — many exam questions hinge on defined terms.',
+          'Review the cardiovascular, respiratory, and musculoskeletal systems.',
+          'Focus on the structures you will touch clinically: heart, lungs, veins, and injection landmarks.',
+          'Complete 20 anatomy practice questions.',
         ],
       },
       {
         day: 5,
-        title: 'IRC Chapter Map — Part 2',
+        title: 'Anatomy & Physiology — Part 2',
         tasks: [
-          'Skim IRC Chapters 5–8: Floors, Wall Construction, Wall Covering, Roof-Ceiling Construction.',
-          'Note the section-numbering pattern (R + chapter + section, e.g., R602).',
-          'Take a 15-question building-planning quiz on Inspect Practice.',
+          'Review the digestive, urinary, reproductive, and integumentary systems.',
+          'Connect anatomy to common exam scenarios (e.g., injection sites, specimen collection).',
+          'Take a 15-question anatomy quiz.',
         ],
       },
       {
         day: 6,
-        title: 'IRC Chapter Map — Part 3',
+        title: 'Foundational Knowledge & Basic Science',
         tasks: [
-          'Skim IRC Chapters 9–11: Roof Assemblies, Chimneys & Fireplaces, Energy Efficiency.',
-          'Practice index-first lookups: find 10 random subjects in the index, then flip to the section.',
-          'Take a mixed 25-question quiz covering the chapters you mapped this week.',
+          'Study cell biology basics and the principles of body organization.',
+          'Practice medical math: temperature conversion and basic dosage calculations.',
+          'Take a mixed 25-question quiz covering this week\u2019s topics.',
         ],
       },
       {
@@ -85,70 +85,69 @@ const weeks = [
   },
   {
     week: 2,
-    title: 'Deep Study: High-Weight Chapters',
-    subtitle: 'Focus on foundations, walls, roofing, and fire-safety sections — the heaviest exam territory.',
+    title: 'Patient Intake & Vital Signs',
+    subtitle: 'Master patient intake, documentation, and accurate vital sign measurement — the highest-frequency clinical skill on the exam.',
     days: [
       {
         day: 8,
-        title: 'Foundations (IRC Ch. 4)',
+        title: 'Patient Intake & History',
         tasks: [
-          'Read R401–R408: footings, foundation walls, frost protection, dampproofing, waterproofing.',
-          'Know R403.1.4 (frost line depth) and R403.3 (frost-protected shallow foundations).',
-          'Complete 20 foundation practice questions with the code open.',
+          'Study the patient interview: chief complaint, medical history, medication list, and allergies.',
+          'Review documentation formats (SOAP) and accurate charting.',
+          'Complete 20 patient-intake practice questions.',
         ],
       },
       {
         day: 9,
-        title: 'Building Planning & Fire Safety (IRC Ch. 3)',
+        title: 'Temperature',
         tasks: [
-          'Study R302 (fire-resistant construction), R310 (emergency escape), R311 (egress & stairs), R312 (guards).',
-          'Learn the prohibition on openings in walls separating dwelling units (R302.2).',
-          'Take a 15-question quiz focused on fire safety and egress.',
+          'Learn the routes (oral, rectal, axillary, tympanic, temporal), normal ranges, and when each is used.',
+          'Know fever vs hypothermia thresholds and how to document.',
+          'Take a 15-question vitals quiz on temperature.',
         ],
       },
       {
         day: 10,
-        title: 'Wall Construction (IRC Ch. 6)',
+        title: 'Pulse & Respiration',
         tasks: [
-          'Review R601–R611: stud walls, headers, bracing, wall sheathing.',
-          'Practice interpreting bracing requirements and header spans.',
-          'Complete 20 wall-construction practice questions.',
+          'Study pulse sites (radial, carotid, apical), normal rates by age, and rhythm/quality descriptors.',
+          'Review respiratory rate, depth, and normal ranges.',
+          'Complete 15 pulse and respiration practice questions.',
         ],
       },
       {
         day: 11,
-        title: 'Roof Assemblies (IRC Ch. 9)',
+        title: 'Blood Pressure',
         tasks: [
-          'Study R901–R908: roof covering materials, minimum slopes, underlayment.',
-          'Know R905.2.2 (asphalt shingle minimum slope 2:12).',
-          'Take a mixed 20-question quiz on roofing and ceiling construction.',
+          'Study auscultation technique, Korotkoff sounds, and proper cuff sizing.',
+          'Know AHA blood pressure categories (normal, elevated, stage 1/2 hypertension).',
+          'Complete 20 blood pressure practice questions.',
         ],
       },
       {
         day: 12,
-        title: 'Floors & Wall Covering (IRC Ch. 5 & 7)',
+        title: 'Height, Weight & BMI',
         tasks: [
-          'Review floor framing (R501–R509) and wall covering/veneers (R701–R707).',
-          'Note inspection checkpoints for floor joists, girders, and sheathing.',
-          'Complete 20 questions on floors and wall covering.',
+          'Practice accurate height and weight measurement technique.',
+          'Learn BMI calculation and categories (underweight, normal, overweight, obese).',
+          'Complete 10 measurement practice questions.',
         ],
       },
       {
         day: 13,
-        title: 'Trade Chapters (E1/P1/M1 candidates)',
+        title: 'Vital Signs Practice Lab',
         tasks: [
-          'E1: study NEC services (230), feeders & branch circuits (210), grounding (250).',
-          'P1: study IPC fixtures, water supply, drainage & venting.',
-          'M1: study IMC combustion air (Ch. 7), duct systems, and venting.',
-          'B1/B2 candidates: continue drilling IRC building planning and add chimney/fireplace sections.',
+          'Run timed vital signs scenarios on 5 mock patients (temperature, pulse, respirations, blood pressure).',
+          'Document all four vitals accurately for each patient.',
+          'Take a 25-question vital signs quiz.',
         ],
       },
       {
         day: 14,
         title: 'Week 2 Review & Mixed Quiz',
         tasks: [
-          'Take a 50-question mixed exam covering foundations, walls, roofing, and fire safety.',
-          'Log every missed question and its code reference.',
+          'Take a 50-question mixed exam covering intake and vital signs.',
+          'Log every missed question and its explanation.',
           'Spend 1 hour on your weakest sub-topic from this week.',
         ],
       },
@@ -156,159 +155,420 @@ const weeks = [
   },
   {
     week: 3,
-    title: 'Practice Mode',
-    subtitle: 'Shift from reading to active recall with daily quizzes, AI Tutor sessions, and timed drills.',
+    title: 'General Patient Care',
+    subtitle: 'Patient positioning, wound care, injections, and assisting with exams — the General Patient Care blueprint domains.',
     days: [
       {
         day: 15,
-        title: 'Index-First Lookup Drills',
+        title: 'Patient Positioning & Mobility',
         tasks: [
-          'Do 20 timed lookups: read a subject, find it in the index, flip to the section, read the exact language.',
-          'Target under 45 seconds per lookup.',
-          'Record which chapters you know cold and which slow you down.',
+          'Study positions: supine, prone, Fowler\u2019s, lithotomy, Sims, and Trendelenburg.',
+          'Review transfer techniques, gait belts, and fall prevention.',
+          'Complete 15 positioning practice questions.',
         ],
       },
       {
         day: 16,
-        title: 'Chapter-by-Chapter Drills (Weak Chapters)',
+        title: 'Assisting with Examinations',
         tasks: [
-          'Re-drill your three weakest chapters from Week 2 with the code open.',
-          'Focus on reading sections including their exceptions ("unless," "except").',
-          'Complete 30 questions across your weak chapters.',
+          'Learn exam room preparation, draping, and patient privacy.',
+          'Review the provider\u2019s exam flow and common instruments.',
+          'Take a 15-question assisting quiz.',
         ],
       },
       {
         day: 17,
-        title: 'Definitions & Terminology Day',
+        title: 'Wound Care & Dressings',
         tasks: [
-          'Re-read the definitions chapter of your code.',
-          'Quiz yourself: 20 questions that hinge on defined terms.',
-          'Use the AI Tutor to explain any term that is still fuzzy.',
+          'Study wound types, cleaning with sterile technique, and dressing changes.',
+          'Review bandage application and when to escalate to the provider.',
+          'Complete 20 wound care practice questions.',
         ],
       },
       {
         day: 18,
-        title: 'Timed Chapter Drills',
+        title: 'Injections — Part 1',
         tasks: [
-          'Take three 20-question timed drills (10 minutes each) across different chapters.',
-          'Simulate exam pacing: about 2 minutes per question.',
-          'Review every miss and log the reference.',
+          'Learn the injection types: intradermal (ID), subcutaneous (SC), and intramuscular (IM).',
+          'Study the sites: deltoid, vastus lateralis, ventrogluteal — and needle gauge/length selection.',
+          'Complete 20 injection practice questions.',
         ],
       },
       {
         day: 19,
-        title: 'AI Tutor Review Session',
+        title: 'Injections — Part 2',
         tasks: [
-          'Ask the AI Tutor to explain your three most-missed topics in plain language.',
-          'Generate 10 follow-up questions on those topics and answer them with the code open.',
-          'Update your weak-area list.',
+          'Review drawing medication, aspiration, angle of insertion, and the Z-track technique.',
+          'Study sharps safety and OSHA bloodborne pathogen precautions.',
+          'Take a 25-question injection safety quiz.',
         ],
       },
       {
         day: 20,
-        title: 'Trade-Chapter Drills (E1/P1/M1)',
+        title: 'Patient Education & General Care',
         tasks: [
-          'E1: drill NEC grounding, bonding, and service-entrance requirements.',
-          'P1: drill IPC venting and trap-seal protection.',
-          'M1: drill IMC combustion air sizing and appliance venting.',
-          'B1/B2: drill building planning and means-of-egress requirements.',
+          'Study pre- and post-procedure patient teaching.',
+          'Review assisting with specimen collection and patient comfort measures.',
+          'Complete 15 general patient care questions.',
         ],
       },
       {
         day: 21,
-        title: 'Week 3 Review & Timed Mixed Exam',
+        title: 'Week 3 Review & Skills Check',
         tasks: [
-          'Take a 60-question timed exam (90 minutes) spanning all chapters.',
-          'Review every wrong answer and its code reference.',
-          'Update your weak-chapter priority list for Week 4.',
+          'Take a 60-question mixed exam on general patient care.',
+          'Review every wrong answer and its explanation.',
+          'Practice injection site landmarks from memory.',
         ],
       },
     ],
   },
   {
     week: 4,
-    title: 'Exam Simulation',
-    subtitle: 'Full-length, timed, open-book simulations under exam conditions — then target weak areas.',
+    title: 'Infection Control & Safety',
+    subtitle: 'CDC Standard Precautions, OSHA Bloodborne Pathogens, hand hygiene, PPE, and medical asepsis — a high-yield domain.',
     days: [
       {
         day: 22,
-        title: 'Simulation 1 — Full Length',
+        title: 'Medical Asepsis & Hand Hygiene',
         tasks: [
-          'Take a full-length simulation: 60 questions (80 for B2), 2 hours (3.5 for B2), open book, no interruptions.',
-          'Mark questions you guessed on.',
-          'Afterwards, review every miss and log the code reference.',
+          'Study when and how to perform hand hygiene (soap vs alcohol-based sanitizer).',
+          'Review CDC Standard Precautions and transmission-based precautions.',
+          'Complete 20 infection control practice questions.',
         ],
       },
       {
         day: 23,
-        title: 'Weak-Chapter Focus',
+        title: 'PPE & Sterile Technique',
         tasks: [
-          'Re-drill your bottom two chapters from Simulation 1.',
-          'Complete 30 targeted questions with the code open.',
-          'Read the full sections (including exceptions) for your most-missed topics.',
+          'Learn the PPE donning and doffing order.',
+          'Review sterile field setup, sterile gloves, and surgical asepsis.',
+          'Take a 15-question PPE quiz.',
         ],
       },
       {
         day: 24,
-        title: 'Simulation 2 — Full Length',
+        title: 'OSHA Bloodborne Pathogens Standard',
         tasks: [
-          'Take a second full-length simulation under exam conditions.',
-          'Focus on pacing — you should finish with time to spare now.',
-          'Review every miss; note whether the cause was navigation speed or content gaps.',
+          'Study the exposure control plan and universal/standard precautions.',
+          'Review the post-exposure protocol for needle sticks and blood splashes.',
+          'Complete 15 OSHA practice questions.',
         ],
       },
       {
         day: 25,
-        title: 'Speed & Accuracy Day',
+        title: 'Disinfection & Sterilization',
         tasks: [
-          'Do 30 rapid index-first lookups, timing each one.',
-          'Take three 15-question timed drills (7 minutes each).',
-          'Target 85%+ accuracy with lookups under 40 seconds.',
+          'Learn the levels: cleaning, disinfection, and sterilization.',
+          'Review EPA-registered disinfectants and instrument processing (autoclave basics).',
+          'Complete 15 practice questions on disinfection.',
         ],
       },
       {
         day: 26,
-        title: 'Simulation 3 — Full Length',
+        title: 'Sharps Safety & Waste Disposal',
         tasks: [
-          'Take a third full-length simulation. Score target: 80%+.',
-          'Identify any remaining weak chapters and drill them for 1 hour.',
-          'Update your mistake log with the references you keep missing.',
+          'Study safe sharps handling and the no-recapping rule.',
+          'Review biohazard waste segregation and spill cleanup (OSHA).',
+          'Take a 20-question safety quiz.',
         ],
       },
       {
         day: 27,
-        title: 'Final Weak-Area Attack',
+        title: 'Safety & Emergency Preparedness',
         tasks: [
-          'Spend 2 hours on your single weakest chapter.',
-          'Read the definitions chapter one more time.',
-          'Take a 30-question mixed quiz on your former weak areas — aim for 85%+.',
+          'Review fire safety (RACE/PASS) and office emergencies (syncope, anaphylaxis).',
+          'Study SDS (Safety Data Sheets) and chemical safety.',
+          'Complete 15 safety practice questions.',
         ],
       },
       {
         day: 28,
-        title: 'Final Review — Code Map & High-Weight Sections',
+        title: 'Week 4 Review & Infection Control Drill',
         tasks: [
-          'Quick-scan the chapters you studied: R302, R310, R311, R312, R403, R602, R905 (B1); IBC Ch. 3, 6, 9, 10 (B2).',
-          'Review the 10 most common question types you encountered.',
-          'Final 30-question mixed quiz. Score target: 85%+.',
+          'Take a 50-question mixed quiz on infection control and safety.',
+          'Review every missed CDC/OSHA detail.',
+          'Spend 1 hour on your weakest area from this week.',
         ],
       },
+    ],
+  },
+  {
+    week: 5,
+    title: 'Phlebotomy & Laboratory Procedures',
+    subtitle: 'Venipuncture, order of draw, specimen handling, and CLIA-waived point of care testing — a major clinical domain.',
+    days: [
       {
         day: 29,
-        title: 'Rest & Light Review',
+        title: 'Venipuncture — Preparation',
         tasks: [
-          'NO new content. Light review only — skim notes, revisit your strongest topics.',
-          'Prepare your exam materials: ID, exam confirmation, code book, tabs.',
-          'Go to bed early. Aim for 8 hours of sleep.',
+          'Study equipment: needles, collection tubes, tourniquet, and antiseptics.',
+          'Review vein selection (antecubital fossa: median cubital, cephalic, basilic).',
+          'Complete 20 phlebotomy preparation questions.',
         ],
       },
       {
         day: 30,
+        title: 'Venipuncture — Technique',
+        tasks: [
+          'Learn the steps of the draw: position, tourniquet, palpate, cleanse, insert, fill tubes, release, withdraw.',
+          'Study complications: hematoma, hemolysis, and how to avoid them.',
+          'Complete 20 technique practice questions.',
+        ],
+      },
+      {
+        day: 31,
+        title: 'Order of Draw & Tube Additives',
+        tasks: [
+          'Memorize the order of draw: blood culture, light blue, red, gold/SST, green, lavender, gray.',
+          'Learn each tube\u2019s additive and what it is used for.',
+          'Run a timed order-of-draw drill until it is automatic.',
+        ],
+      },
+      {
+        day: 32,
+        title: 'Capillary Puncture',
+        tasks: [
+          'Study fingerstick and heelstick technique and collection site selection.',
+          'Review microcollection tubes and newborn screening basics.',
+          'Complete 15 capillary puncture questions.',
+        ],
+      },
+      {
+        day: 33,
+        title: 'Specimen Handling & Processing',
+        tasks: [
+          'Learn labeling, transport, centrifugation, and storage requirements.',
+          'Review chain of custody for forensic specimens.',
+          'Complete 15 handling practice questions.',
+        ],
+      },
+      {
+        day: 34,
+        title: 'Point of Care Testing (CLIA-Waived)',
+        tasks: [
+          'Study glucose monitoring, urinalysis (dipstick), and pregnancy tests.',
+          'Review fecal occult blood and rapid tests (strep, flu).',
+          'Complete 20 POCT practice questions.',
+        ],
+      },
+      {
+        day: 35,
+        title: 'Week 5 Review & Lab Practical',
+        tasks: [
+          'Take a 60-question mixed lab exam.',
+          'Run a timed order-of-draw drill again — aim for zero errors.',
+          'Review every miss and its explanation.',
+        ],
+      },
+    ],
+  },
+  {
+    week: 6,
+    title: 'EKG & Cardiovascular Testing',
+    subtitle: 'EKG lead placement, tracing quality, and rhythm basics — plus patient care coordination and education.',
+    days: [
+      {
+        day: 36,
+        title: 'Cardiovascular Basics & EKG Waves',
+        tasks: [
+          'Study cardiac conduction and what the P, QRS, and T waves represent.',
+          'Learn normal intervals and rates.',
+          'Complete 20 EKG theory questions.',
+        ],
+      },
+      {
+        day: 37,
+        title: '12-Lead EKG — Lead Placement',
+        tasks: [
+          'Learn precordial leads V1\u2013V6 and limb lead placement.',
+          'Practice correct landmarks: 4th intercostal space, 5th intercostal space, midclavicular and midaxillary lines.',
+          'Run a timed lead-placement drill.',
+        ],
+      },
+      {
+        day: 38,
+        title: 'Performing an EKG',
+        tasks: [
+          'Study patient preparation and skin prep.',
+          'Learn artifact troubleshooting: muscle tremor, wandering baseline, AC interference.',
+          'Complete 20 EKG performance questions.',
+        ],
+      },
+      {
+        day: 39,
+        title: 'Rhythm Recognition Basics',
+        tasks: [
+          'Review normal sinus rhythm and common arrhythmias (bradycardia, tachycardia, atrial fibrillation).',
+          'Know when to notify the provider of an abnormal tracing.',
+          'Take a 15-question rhythm quiz.',
+        ],
+      },
+      {
+        day: 40,
+        title: 'Other Cardiovascular Testing',
+        tasks: [
+          'Study Holter monitor and stress test assistance.',
+          'Review pulse oximetry and patient education for each test.',
+          'Complete 15 cardiovascular testing questions.',
+        ],
+      },
+      {
+        day: 41,
+        title: 'Patient Care Coordination & Education',
+        tasks: [
+          'Study care plans, referrals, and discharge instructions.',
+          'Review patient teaching techniques and the teach-back method.',
+          'Complete 25 coordination questions.',
+        ],
+      },
+      {
+        day: 42,
+        title: 'Week 6 Review & EKG Drill',
+        tasks: [
+          'Take a 50-question mixed quiz on EKG and coordination.',
+          'Run a timed lead-placement drill again.',
+          'Log every mistake and review the explanation.',
+        ],
+      },
+    ],
+  },
+  {
+    week: 7,
+    title: 'Administrative Assisting, Communication & Law/Ethics',
+    subtitle: 'Scheduling, medical billing, HIPAA compliance, therapeutic communication, and legal responsibilities.',
+    days: [
+      {
+        day: 43,
+        title: 'Scheduling & Patient Records',
+        tasks: [
+          'Study appointment types, scheduling guidelines, and cancellation procedures.',
+          'Review EMR/EHR basics and chart organization.',
+          'Complete 20 scheduling practice questions.',
+        ],
+      },
+      {
+        day: 44,
+        title: 'Medical Billing & Coding Basics',
+        tasks: [
+          'Learn ICD-10, CPT, and HCPCS coding basics.',
+          'Review the CMS-1500 claim form and insurance verification.',
+          'Complete 20 billing practice questions.',
+        ],
+      },
+      {
+        day: 45,
+        title: 'HIPAA Privacy & Security',
+        tasks: [
+          'Study protected health information (PHI) and permitted disclosures.',
+          'Review the minimum necessary rule and patient rights under the HIPAA Privacy Rule.',
+          'Complete 25 HIPAA practice questions.',
+        ],
+      },
+      {
+        day: 46,
+        title: 'Communication & Customer Service',
+        tasks: [
+          'Study therapeutic communication techniques: active listening, open-ended questions, reflection.',
+          'Review barriers to communication and telephone etiquette.',
+          'Complete 20 communication questions.',
+        ],
+      },
+      {
+        day: 47,
+        title: 'Medical Law & Ethics',
+        tasks: [
+          'Study scope of practice, informed vs implied consent, and negligence.',
+          'Review mandated reporting and advance directives.',
+          'Complete 25 law and ethics questions.',
+        ],
+      },
+      {
+        day: 48,
+        title: 'Patient Education & Cultural Competence',
+        tasks: [
+          'Practice the teach-back method and health-literacy-friendly explanations.',
+          'Study cultural sensitivity and working with interpreters.',
+          'Complete 15 patient education questions.',
+        ],
+      },
+      {
+        day: 49,
+        title: 'Week 7 Review & Administrative Drill',
+        tasks: [
+          'Take a 60-question mixed quiz on administrative assisting, communication, and law/ethics.',
+          'Review every HIPAA scenario you missed.',
+          'Spend 1 hour on your weakest area from this week.',
+        ],
+      },
+    ],
+  },
+  {
+    week: 8,
+    title: 'Exam Simulation & Final Review',
+    subtitle: 'Full-length, timed, 150-question simulations under exam conditions — then target your remaining weak areas.',
+    days: [
+      {
+        day: 50,
+        title: 'Simulation 1 — Full Length',
+        tasks: [
+          'Take a full-length simulation: 150 scored questions, 3 hours, no interruptions.',
+          'Mark the questions you guessed on.',
+          'Afterwards, review every miss and its explanation.',
+        ],
+      },
+      {
+        day: 51,
+        title: 'Weak-Chapter Focus',
+        tasks: [
+          'Re-drill your bottom two chapters from Simulation 1.',
+          'Complete 30 targeted questions with explanations open.',
+          'Re-read the explanations for your most-missed topics.',
+        ],
+      },
+      {
+        day: 52,
+        title: 'Simulation 2 — Full Length',
+        tasks: [
+          'Take a second full-length simulation under exam conditions.',
+          'Focus on pacing — about 72 seconds per question.',
+          'Review every miss; note whether the cause was knowledge gaps or timing.',
+        ],
+      },
+      {
+        day: 53,
+        title: 'Speed & Accuracy Day',
+        tasks: [
+          'Take three 30-question timed drills (36 minutes each).',
+          'Target 85%+ accuracy.',
+          'Review every wrong answer the same day.',
+        ],
+      },
+      {
+        day: 54,
+        title: 'Simulation 3 — Full Length',
+        tasks: [
+          'Take a third full-length simulation. Score target: 390/500 or higher.',
+          'Identify any remaining weak chapters and drill them for 1 hour.',
+          'Update your mistake log with the topics you keep missing.',
+        ],
+      },
+      {
+        day: 55,
+        title: 'Rest & Light Review',
+        tasks: [
+          'NO new content. Light review only — skim notes and flashcards.',
+          'Prepare your exam materials: ID, exam confirmation, and a quiet testing space if testing online.',
+          'Go to bed early. Aim for 8 hours of sleep.',
+        ],
+      },
+      {
+        day: 56,
         title: 'Exam Day!',
         tasks: [
-          'Eat a good breakfast. Arrive 30 minutes early.',
+          'Eat a good breakfast. Arrive early (or log in early for online proctoring).',
           'Trust your preparation — you have put in the work.',
-          'Read each question twice, watch for qualifiers ("minimum," "maximum," "unless"), and manage your time.',
+          'Read each question twice, watch for qualifiers ("except," "not," "best"), and manage your time.',
         ],
       },
     ],
@@ -343,7 +603,7 @@ function EmailCapture({ variant }: { variant: 'top' | 'bottom' }) {
         📥 {variant === 'top' ? 'Subscribe to Our Newsletter' : 'Subscribe for the Free PDF'}
       </h3>
       <p className="text-sm text-[#94A3B8] mb-4">
-        Subscribe to the Inspect Practice newsletter and we&apos;ll send you the printable PDF version of this 30-day checklist.
+        Subscribe to the CCMAPractice newsletter and we&apos;ll send you the printable PDF version of this 8-week checklist.
       </p>
       {status === 'success' ? (
         <p className="text-green-400 text-sm font-medium">✅ You&apos;re subscribed! Check your email for the PDF.</p>
@@ -386,7 +646,7 @@ function WeekSection({
 }) {
   return (
     <div className="mb-12">
-      <div className="flex items-center gap-3 mb-2">
+      <div className="flex items-center gap-2 mb-2">
         <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#C8102E] text-white text-sm font-bold">
           {week}
         </span>
@@ -429,7 +689,7 @@ export default function StudyChecklistClient({ faqs }: Props) {
       <nav className="border-b border-white/5 bg-[#0A0E1A]/80 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
-            <img src="/logo/logo-main.png?v=3" alt="Inspect Practice" className="h-7 w-auto" />
+            <img src="/logo/logo-main.png?v=3" alt="CCMAPractice" className="h-7 w-auto" />
           </a>
           <a href="/" className="text-sm text-[#94A3B8] hover:text-white transition-colors">
             ← Back to Home
@@ -440,11 +700,11 @@ export default function StudyChecklistClient({ faqs }: Props) {
       {/* Header */}
       <header className="max-w-4xl mx-auto px-6 pt-16 pb-8 text-center">
         <h1 className="text-4xl font-bold mb-4">
-          30-Day ICC Exam Prep Checklist
+          8-Week CCMA Exam Prep Checklist
         </h1>
         <p className="text-lg text-[#94A3B8] max-w-2xl mx-auto mb-6">
-          A day-by-day study plan to prepare for your ICC building inspector
-          certification exams. Print it, check it, pass it.
+          A week-by-week study plan to prepare for the NHA CCMA (Certified Clinical Medical
+          Assistant) exam. Print it, check it, pass it.
         </p>
       </header>
 
@@ -457,59 +717,77 @@ export default function StudyChecklistClient({ faqs }: Props) {
       <section className="max-w-4xl mx-auto px-6 mb-12">
         <div className="prose prose-invert max-w-none text-sm text-[#94A3B8] leading-relaxed">
           <p>
-            Passing your ICC certification exam requires more than just
-            reading the code. You need a structured plan that covers every
-            chapter, tests your navigation speed under exam conditions, and helps you
+            Passing your NHA CCMA exam requires more than just reading
+            textbooks. You need a structured plan that covers every blueprint
+            chapter, drills the clinical skills examiners test, and helps you
             identify weak areas before test day.
           </p>
           <p className="mt-4">
-            This 30-day checklist is built around open-book code navigation and
-            covers the IRC chapter map, index-first lookups, chapter drills, and
-            full-length timed simulations. Whether you are pursuing B1 (IRC), B2
-            (IBC), E1 (NEC + IRC electrical), P1 (IPC + IRC plumbing), or M1
-            (IMC + IRC mechanical), this plan provides the foundation you need.
-            Use it alongside{' '}
+            This 8-week checklist is built around the NHA CCMA exam blueprint and
+            covers medical terminology, anatomy, patient intake and vital signs,
+            general patient care, infection control (OSHA, CDC), phlebotomy and
+            point of care testing, EKG, administrative assisting, HIPAA, and
+            full-length timed simulations. Use it alongside{' '}
             <Link href="/" className="text-[#C8102E] hover:text-[#60A5FA]">
-              Inspect Practice
+              CCMAPractice
             </Link>{' '}
             for daily practice questions, AI Tutor explanations, and progress
             tracking.
           </p>
           <p className="mt-4">
-            Not sure which certification is right for you? Read our{' '}
-            <Link href="/blog/icc-b1-certification-guide" className="text-[#C8102E] hover:text-[#60A5FA]">
-              ICC B1 certification guide
-            </Link>
-            . Need a refresher on the code&apos;s structure? Check the{' '}
-            <Link href="/blog/irc-study-guide" className="text-[#C8102E] hover:text-[#60A5FA]">
-              IRC study guide
+            New to the exam? Read our{' '}
+            <Link href="/faq" className="text-[#C8102E] hover:text-[#60A5FA]">
+              CCMA exam FAQ
+            </Link>{' '}
+            to understand the format. Need the content itself? Start with the{' '}
+            <Link href="/theory" className="text-[#C8102E] hover:text-[#60A5FA]">
+              theory guides
+            </Link>{' '}
+            and{' '}
+            <Link href="/exams" className="text-[#C8102E] hover:text-[#60A5FA]">
+              practice exams
             </Link>
             .
           </p>
 
           <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">
-            The Four-Week Structure
+            The Eight-Week Structure
           </h2>
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              <strong className="text-[#F8FAFC]">Week 1: Assessment &amp; Code Map</strong> — Review the
-              exam bulletin, take a diagnostic quiz, identify your weak
-              areas, and build a solid mental map of the code&apos;s chapters.
+              <strong className="text-[#F8FAFC]">Week 1: Assessment &amp; Foundational Knowledge</strong> — Review the
+              exam blueprint, take a diagnostic quiz, and build your medical
+              terminology and anatomy foundation.
             </li>
             <li>
-              <strong className="text-[#F8FAFC]">Week 2: Deep Study</strong> — Dive into the high-weight
-              chapters (foundations, walls, roofing, fire safety) and the
-              trade chapters for your certification.
+              <strong className="text-[#F8FAFC]">Week 2: Patient Intake &amp; Vital Signs</strong> — Master patient intake,
+              documentation, and accurate vital sign measurement (temperature, pulse,
+              respirations, blood pressure).
             </li>
             <li>
-              <strong className="text-[#F8FAFC]">Week 3: Practice Mode</strong> — Shift from passive reading
-              to active recall with daily quizzes, index-first lookup drills,
-              and timed practice questions at mixed difficulty levels.
+              <strong className="text-[#F8FAFC]">Week 3: General Patient Care</strong> — Positioning, wound care,
+              injections, and assisting with examinations.
             </li>
             <li>
-              <strong className="text-[#F8FAFC]">Week 4: Exam Simulation</strong> — Take full-length,
-              timed, open-book simulations, review every wrong answer, target weak
-              areas, and arrive on exam day fully prepared.
+              <strong className="text-[#F8FAFC]">Week 4: Infection Control &amp; Safety</strong> — OSHA Bloodborne
+              Pathogens, CDC Standard Precautions, PPE, and sterilization.
+            </li>
+            <li>
+              <strong className="text-[#F8FAFC]">Week 5: Phlebotomy &amp; Laboratory Procedures</strong> — Venipuncture,
+              order of draw, specimen handling, and CLIA-waived point of care testing.
+            </li>
+            <li>
+              <strong className="text-[#F8FAFC]">Week 6: EKG &amp; Cardiovascular Testing</strong> — Lead placement,
+              tracing quality, rhythm basics, and patient care coordination.
+            </li>
+            <li>
+              <strong className="text-[#F8FAFC]">Week 7: Administrative, Communication &amp; Law/Ethics</strong> —
+              Scheduling, billing, HIPAA, therapeutic communication, and legal responsibilities.
+            </li>
+            <li>
+              <strong className="text-[#F8FAFC]">Week 8: Exam Simulation</strong> — Take full-length, timed, 150-question
+              simulations, review every wrong answer, target weak areas, and arrive on exam
+              day fully prepared.
             </li>
           </ul>
         </div>
@@ -541,7 +819,7 @@ export default function StudyChecklistClient({ faqs }: Props) {
             </li>
             <li className="flex gap-3">
               <span className="text-[#C8102E] flex-shrink-0">2.</span>
-              <span><strong className="text-[#CBD5E1]">Always study with the code open:</strong> The exam is open book — every practice question is a navigation drill.</span>
+              <span><strong className="text-[#CBD5E1]">Learn the clinical skills, not just the facts:</strong> Vital signs, phlebotomy tube order, and EKG lead placement are heavily tested — drill them until automatic.</span>
             </li>
             <li className="flex gap-3">
               <span className="text-[#C8102E] flex-shrink-0">3.</span>
@@ -549,11 +827,15 @@ export default function StudyChecklistClient({ faqs }: Props) {
             </li>
             <li className="flex gap-3">
               <span className="text-[#C8102E] flex-shrink-0">4.</span>
-              <span><strong className="text-[#CBD5E1]">Simulate real exam conditions:</strong> In Week 4, take simulations in a quiet room with no phone, a strict timer, and only your code book.</span>
+              <span><strong className="text-[#CBD5E1]">Know the guidelines:</strong> OSHA Bloodborne Pathogens, HIPAA Privacy Rule, CDC Standard Precautions, and AHA vital sign ranges show up again and again.</span>
             </li>
             <li className="flex gap-3">
               <span className="text-[#C8102E] flex-shrink-0">5.</span>
-              <span><strong className="text-[#CBD5E1]">Use the Inspect Practice AI Tutor:</strong> When a code requirement doesn&apos;t click, ask the AI Tutor to explain it in plain language.</span>
+              <span><strong className="text-[#CBD5E1]">Simulate real exam conditions:</strong> In Week 8, take simulations in a quiet room with no phone and a strict 3-hour timer.</span>
+            </li>
+            <li className="flex gap-3">
+              <span className="text-[#C8102E] flex-shrink-0">6.</span>
+              <span><strong className="text-[#CBD5E1]">Use the CCMAPractice AI Tutor:</strong> When a concept doesn&apos;t click, ask the AI Tutor to explain it in plain language.</span>
             </li>
           </ul>
         </div>
@@ -591,21 +873,21 @@ export default function StudyChecklistClient({ faqs }: Props) {
       <section className="max-w-4xl mx-auto px-6 pb-20">
         <h2 className="text-xl font-bold text-[#F8FAFC] mb-6">📚 Related Resources</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <a href="/blog/icc-b1-certification-guide" className="p-5 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
-            <h3 className="font-semibold text-[#F8FAFC] mb-1 text-sm">The Complete ICC B1 Certification Guide</h3>
-            <p className="text-xs text-[#64748B]">Proven strategies, eligibility, exam format, and code navigation tips.</p>
+          <a href="/theory" className="p-5 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
+            <h3 className="font-semibold text-[#F8FAFC] mb-1 text-sm">NHA CCMA Theory Guides</h3>
+            <p className="text-xs text-[#64748B]">Complete study guides for all 13 blueprint chapters — anatomy, vitals, phlebotomy, EKG, and more.</p>
           </a>
-          <a href="/blog/irc-study-guide" className="p-5 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
-            <h3 className="font-semibold text-[#F8FAFC] mb-1 text-sm">IRC Study Guide</h3>
-            <p className="text-xs text-[#64748B]">Complete breakdown of the International Residential Code structure.</p>
+          <a href="/exams" className="p-5 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
+            <h3 className="font-semibold text-[#F8FAFC] mb-1 text-sm">NHA CCMA Practice Exams</h3>
+            <p className="text-xs text-[#64748B]">1,200+ practice questions with detailed explanations and full-length simulations.</p>
           </a>
-          <a href="/blog/icc-exam-structure" className="p-5 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
-            <h3 className="font-semibold text-[#F8FAFC] mb-1 text-sm">ICC Exam Structure</h3>
-            <p className="text-xs text-[#64748B]">Questions, time limits, and passing scores for all 5 certifications.</p>
+          <a href="/faq" className="p-5 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
+            <h3 className="font-semibold text-[#F8FAFC] mb-1 text-sm">CCMA Exam FAQ</h3>
+            <p className="text-xs text-[#64748B]">Format, scoring, fees, renewal, and everything else about the NHA CCMA exam.</p>
           </a>
-          <a href="/blog/icc-study-techniques" className="p-5 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
-            <h3 className="font-semibold text-[#F8FAFC] mb-1 text-sm">Open-Book Study Techniques</h3>
-            <p className="text-xs text-[#64748B]">10 proven techniques for open-book code exams.</p>
+          <a href="/pricing" className="p-5 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
+            <h3 className="font-semibold text-[#F8FAFC] mb-1 text-sm">CCMAPractice Plans</h3>
+            <p className="text-xs text-[#64748B]">Unlock unlimited practice questions, AI Tutor sessions, and full exam simulations.</p>
           </a>
         </div>
       </section>
@@ -626,7 +908,7 @@ export default function StudyChecklistClient({ faqs }: Props) {
             <span className="mx-2">·</span>
             <a href="/terms" className="hover:text-[#94A3B8] transition-colors">Terms</a>
           </p>
-          <p>&copy; {new Date().getFullYear()} Inspect Practice. All rights reserved. Inspect Practice is not affiliated with the International Code Council.</p>
+          <p>&copy; {new Date().getFullYear()} CCMAPractice. All rights reserved. CCMAPractice is not affiliated with the National Healthcareer Association (NHA).</p>
         </div>
       </footer>
     </div>

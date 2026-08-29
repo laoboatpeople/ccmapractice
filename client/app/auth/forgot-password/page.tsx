@@ -79,7 +79,7 @@ export default function ForgotPasswordPage() {
             <div className="w-12 h-12 rounded-lg bg-accent-blue flex items-center justify-center">
               <span className="text-white text-lg font-bold">SL</span>
             </div>
-            <span className="text-2xl font-bold text-text-primary">Inspect Practice</span>
+            <span className="text-2xl font-bold text-text-primary">CCMAPractice</span>
           </Link>
           <p className="text-sm text-text-secondary mt-1">{t('auth_tcAmePlatform')}</p>
         </div>
