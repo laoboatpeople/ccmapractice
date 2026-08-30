@@ -106,6 +106,7 @@ function CcmaNewsletterSection() {
 
 export default function MarketingLandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showDemo, setShowDemo] = useState(false);
   return (
     <div
       className="min-h-screen bg-[#031428] text-[#F5F8FA] font-sans overflow-x-hidden"
@@ -214,13 +215,13 @@ export default function MarketingLandingPage() {
                   Start Practicing Free
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <a
-                  href="#how-it-works"
-                  className="px-8 py-4 rounded-xl font-semibold text-white border border-[#14506B]/60 hover:bg-[#0B2038] transition-all duration-300 flex items-center justify-center gap-2"
+                <button
+                  onClick={() => setShowDemo(true)}
+                  className="px-8 py-4 rounded-xl font-semibold text-white border border-[#20C7C9]/50 hover:bg-[#0B2038] hover:border-[#20C7C9] transition-all duration-300 flex items-center justify-center gap-2"
                 >
-                  <Play className="w-5 h-5" />
-                  See How It Works
-                </a>
+                  <Play className="w-5 h-5 text-[#20C7C9]" />
+                  Watch Demo
+                </button>
               </div>
             </div>
 
@@ -805,6 +806,41 @@ export default function MarketingLandingPage() {
           </div>
         </div>
       </footer>
+
+      {/* Video Demo Modal */}
+      {showDemo && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm"
+          onClick={() => setShowDemo(false)}
+        >
+          <div 
+            className="relative w-full max-w-[400px] mx-4 bg-[#031428] rounded-2xl overflow-hidden border border-[#14506B]/60"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setShowDemo(false)}
+              className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-black/50 flex items-center justify-center hover:bg-black/70 transition-colors"
+            >
+              <X className="w-4 h-4 text-white" />
+            </button>
+            <video
+              className="w-full aspect-[9/16]"
+              controls
+              autoPlay
+              playsInline
+              key={'en'}
+              src={'/videos/ccma-demo-en.mp4?v=3'}
+            >
+              Your browser does not support the video tag.
+            </video>
+            <div className="px-4 pb-3 pt-2 text-center">
+              <span className="text-xs text-[#A8B7C9]">
+                {'CCMAPractice — story demo'}
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
