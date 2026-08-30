@@ -51,6 +51,50 @@ const itemVariants = {
   },
 } as const;
 
+/** Renders inline markdown-lite: **bold** segments. */
+function renderInline(text: string, baseKey: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((p, i) =>
+    p.startsWith('**') && p.endsWith('**') ? (
+      <strong key={`${baseKey}-b${i}`} className="font-semibold text-text-primary">
+        {p.slice(2, -2)}
+      </strong>
+    ) : (
+      <span key={`${baseKey}-${i}`}>{p}</span>
+    )
+  );
+}
+
+/** Structured exam description: **bold** titles, • bullets, paragraphs. */
+function ExamDescription({ text }: { text: string }) {
+  const lines = text.split('\n');
+  return (
+    <div className="text-sm text-text-secondary mt-2 max-w-2xl space-y-1.5">
+      {lines.map((line, i) => {
+        const trimmed = line.trim();
+        if (!trimmed) return null;
+        if (trimmed.startsWith('•')) {
+          return (
+            <div key={i} className="flex gap-2 leading-relaxed">
+              <span className="text-cyan shrink-0 mt-px">•</span>
+              <span className="text-text-secondary">{renderInline(trimmed.slice(1).trim(), `l${i}`)}</span>
+            </div>
+          );
+        }
+        const isTitle = trimmed.startsWith('**') && trimmed.endsWith('**');
+        return (
+          <p
+            key={i}
+            className={isTitle ? 'text-[13px] font-semibold text-text-primary pt-1' : 'leading-relaxed'}
+          >
+            {renderInline(trimmed, `l${i}`)}
+          </p>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function StudentExamDetailPage() {
   const { t } = useLocale();
   const router = useRouter();
@@ -233,7 +277,7 @@ export default function StudentExamDetailPage() {
         </div>
         <h1 className="text-2xl font-semibold text-text-primary">{displayName}</h1>
         {exam?.description && (
-          <p className="text-sm text-text-secondary mt-1 max-w-2xl">{exam.description}</p>
+          <ExamDescription text={exam.description} />
         )}
 
         {/* Info chips */}

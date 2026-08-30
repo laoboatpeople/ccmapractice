@@ -17,6 +17,15 @@ import { getStudentExamCategories } from '@/lib/student-api';
 import type { StudentExamCategory } from '@/types/student';
 import { useLocale } from '@/src/contexts/LocaleContext';
 
+/** Strip markdown-lite (bold markers, bullets) for compact card previews. */
+function stripMd(text: string): string {
+  return text
+    .replace(/\*\*/g, '')
+    .replace(/^•\s*/gm, '')
+    .replace(/\n+/g, ' ')
+    .trim();
+}
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -201,7 +210,7 @@ export default function StudentExamsPage() {
         </h3>
         {category.description && (
           <p className="text-xs text-text-secondary line-clamp-2 mb-4 leading-relaxed">
-            {category.description}
+            {stripMd(category.description)}
           </p>
         )}
         {!category.description && (
