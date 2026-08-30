@@ -829,7 +829,7 @@ export default function MarketingLandingPage() {
               autoPlay
               playsInline
               key={'en'}
-              src={'/videos/ccma-demo-en.mp4?v=3'}
+              src={'/videos/ccma-demo-en.mp4?v=4'}
             >
               Your browser does not support the video tag.
             </video>
