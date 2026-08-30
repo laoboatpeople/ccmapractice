@@ -410,7 +410,10 @@
       "noChapters": "No chapters available",
       "noChaptersDesc": "Chapters are being configured for this exam.",
       "chapterNum": "Chapter {number}",
-      "failedToLoad": "Failed to load exam details"
+      "failedToLoad": "Failed to load exam details",
+      "upgradeForAll": "Upgrade",
+      "practiceLocked": "All-chapter practice quiz requires an upgrade",
+      "testChapterLocked": "This chapter requires an upgrade"
     }
   },
   "legal": {

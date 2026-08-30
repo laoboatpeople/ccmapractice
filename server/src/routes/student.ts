@@ -2,7 +2,7 @@ import { Router, Request, Response } from 'express';
 import { z } from 'zod';
 import { prisma } from '../config/database';
 import { Difficulty, QStatus } from '@prisma/client';
-import { authenticate } from '../middleware/auth';
+import { authenticate, optionalAuth } from '../middleware/auth';
 import { aiService } from '../services/ai.service';
 
 const router = Router();
@@ -108,6 +108,8 @@ router.get('/exam-categories', authenticate, async (req: Request, res: Response)
     locked: isFreePlan && index > 0,
     // Official exam simulation (mode=exam) is always paid for FREE users
     simulationLocked: isFreePlan,
+    // Cross-chapter practice quiz is premium: FREE plan = first chapter only
+    practiceLocked: isFreePlan,
   }));
 
   res.json({ data });
@@ -120,10 +122,22 @@ router.get('/exam-categories', authenticate, async (req: Request, res: Response)
  * List all active chapters for a specific exam.
  * Returns: { data: Chapter[] }
  */
-router.get('/exam-categories/:examId/chapters', async (req: Request, res: Response): Promise<void> => {
+router.get('/exam-categories/:examId/chapters', optionalAuth, async (req: Request, res: Response): Promise<void> => {
   const { examId } = req.params;
   const locale = (req.query.locale as string) || 'en';
   const useFr = locale === 'fr';
+
+  // Plan-aware: FREE users unlock only the first chapter (number 1)
+  let isFreePlan = false;
+  if (req.user) {
+    const subscription = await prisma.subscription.findFirst({
+      where: { userId: req.user.id, status: 'ACTIVE' },
+      orderBy: { createdAt: 'desc' },
+      select: { plan: true },
+    });
+    const isAdmin = req.user.role === 'ADMIN' || req.user.role === 'INSTRUCTOR';
+    isFreePlan = !isAdmin && (subscription?.plan ?? 'FREE') === 'FREE';
+  }
 
   const exam = await prisma.exam.findUnique({ where: { id: examId } });
   if (!exam) {
@@ -154,6 +168,8 @@ router.get('/exam-categories/:examId/chapters', async (req: Request, res: Respon
     questionCount: chapter._count.questions,
     syllabusRef: chapter.syllabusRef ?? null,
     licenseScope: chapter.licenseScope ?? 'SHARED',
+    // FREE plan: only chapter 1 is unlocked
+    locked: isFreePlan && chapter.number > 1,
   }));
 
   res.json({ data });
@@ -234,6 +250,22 @@ router.get('/exams/:examId/quiz', authenticate, async (req: Request, res: Respon
     const examIndex = allExams.findIndex(e => e.id === examId);
     if (examIndex > 0) {
       res.status(403).json({ message: 'Upgrade to access this exam category' });
+      return;
+    }
+    // FREE plan = first chapter only:
+    // - chapter-scoped quiz: only chapter 1 is allowed
+    // - cross-chapter practice quiz (no chapterId): premium
+    if (chapterId) {
+      const chapter = await prisma.chapter.findFirst({
+        where: { id: chapterId, examId },
+        select: { number: true },
+      });
+      if (!chapter || chapter.number > 1) {
+        res.status(403).json({ message: 'Upgrade to access this chapter' });
+        return;
+      }
+    } else {
+      res.status(403).json({ message: 'Upgrade to access the full practice quiz' });
       return;
     }
   }
@@ -399,6 +431,22 @@ router.post('/exam-attempts', authenticate, async (req: Request, res: Response):
     const examIndex = allExams.findIndex(e => e.id === examId);
     if (examIndex > 0) {
       res.status(403).json({ message: 'Upgrade to access this exam category' });
+      return;
+    }
+    // FREE plan = first chapter only: every submitted question must belong
+    // to the first chapter of this exam (number = min chapter number).
+    const firstChapter = await prisma.chapter.findFirst({
+      where: { examId },
+      orderBy: { number: 'asc' },
+      select: { id: true, number: true },
+    });
+    const submitted = await prisma.question.findMany({
+      where: { id: { in: answers.map(a => a.questionId) } },
+      select: { chapterId: true },
+    });
+    const allFromFirstChapter = submitted.length > 0 && submitted.every(q => q.chapterId === firstChapter?.id);
+    if (!allFromFirstChapter) {
+      res.status(403).json({ message: 'Upgrade to access this chapter' });
       return;
     }
   }

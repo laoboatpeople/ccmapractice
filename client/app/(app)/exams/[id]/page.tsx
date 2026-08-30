@@ -385,11 +385,25 @@ export default function StudentExamDetailPage() {
             {/* Start button */}
             <div className="flex flex-wrap items-center gap-2">
               <button
-                onClick={handleStartQuiz}
-                className="flex items-center justify-center gap-2 px-5 py-2.5 bg-blue text-white rounded-btn text-sm font-medium hover:bg-blue/90 transition-colors active:scale-[0.98] whitespace-nowrap w-full sm:w-auto"
+                onClick={exam?.practiceLocked ? () => router.push('/subscription') : handleStartQuiz}
+                className={`flex items-center justify-center gap-2 px-5 py-2.5 rounded-btn text-sm font-medium transition-colors active:scale-[0.98] whitespace-nowrap w-full sm:w-auto ${
+                  exam?.practiceLocked
+                    ? 'bg-hover text-text-tertiary hover:text-red hover:bg-red/10 border border-border'
+                    : 'bg-blue text-white hover:bg-blue/90'
+                }`}
+                title={exam?.practiceLocked ? t('app.examDetail.practiceLocked') : undefined}
               >
-                <Play size={15} />
-                {t('app.examDetail.startPractice')}
+                {exam?.practiceLocked ? (
+                  <>
+                    <Lock size={15} />
+                    {t('app.examDetail.upgradeForAll')}
+                  </>
+                ) : (
+                  <>
+                    <Play size={15} />
+                    {t('app.examDetail.startPractice')}
+                  </>
+                )}
               </button>
             </div>
           </div>
@@ -479,12 +493,25 @@ export default function StudentExamDetailPage() {
                   </span>
                   {chapter.questionCount > 0 && (
                     <button
-                      onClick={() => handleSelectChapter(chapter.id, chapter.questionCount)}
-                      className="flex items-center justify-center gap-1.5 px-3 py-2 bg-cyan/10 border border-cyan/20 text-cyan rounded-btn text-xs font-medium hover:bg-cyan/20 transition-colors whitespace-nowrap"
-                      title={t('app.examDetail.testChapterDesc')}
+                      onClick={chapter.locked ? () => router.push('/subscription') : () => handleSelectChapter(chapter.id, chapter.questionCount)}
+                      className={`flex items-center justify-center gap-1.5 px-3 py-2 rounded-btn text-xs font-medium transition-colors whitespace-nowrap ${
+                        chapter.locked
+                          ? 'bg-hover text-text-tertiary hover:text-red hover:bg-red/10 border border-border'
+                          : 'bg-cyan/10 border border-cyan/20 text-cyan hover:bg-cyan/20'
+                      }`}
+                      title={chapter.locked ? t('app.examDetail.testChapterLocked') : t('app.examDetail.testChapterDesc')}
                     >
-                      <Play size={12} />
-                      {t('app.examDetail.testChapter')}
+                      {chapter.locked ? (
+                        <>
+                          <Lock size={12} />
+                          {t('app.examDetail.upgradeForAll')}
+                        </>
+                      ) : (
+                        <>
+                          <Play size={12} />
+                          {t('app.examDetail.testChapter')}
+                        </>
+                      )}
                     </button>
                   )}
                 </div>

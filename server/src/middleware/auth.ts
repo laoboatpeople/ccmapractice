@@ -38,3 +38,22 @@ export function authenticate(req: Request, res: Response, next: NextFunction): v
     res.status(401).json({ message: 'Invalid or expired token' });
   }
 }
+
+/**
+ * Like authenticate, but never rejects: decodes a valid Bearer token when
+ * present (public routes that become plan-aware for logged-in users).
+ */
+export function optionalAuth(req: Request, res: Response, next: NextFunction): void {
+  const authHeader = req.headers.authorization;
+  if (authHeader && authHeader.startsWith('Bearer ')) {
+    const parts = authHeader.split(' ');
+    if (parts.length === 2) {
+      try {
+        req.user = jwt.verify(parts[1], env.JWT_SECRET) as JwtPayload;
+      } catch {
+        // invalid/expired token — treat as anonymous
+      }
+    }
+  }
+  next();
+}
