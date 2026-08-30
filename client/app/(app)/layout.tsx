@@ -9,7 +9,7 @@ import {
   BookMarked,
   MessageSquare,
   CreditCard,
-  Plane,
+  HeartPulse,
   LogOut,
   User,
   ChevronRight,
@@ -107,7 +107,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
     return (
       <div className="min-h-screen bg-primary flex items-center justify-center">
         <div className="flex flex-col items-center gap-3">
-          <Plane size={32} className="text-blue animate-pulse" />
+          <HeartPulse size={32} className="text-blue animate-pulse" />
           <p className="text-text-secondary text-sm">{t('loading')}</p>
         </div>
       </div>
@@ -137,7 +137,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           <div className="flex items-center justify-between px-6 py-5 border-b border-border">
             <Link href="/app" className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg bg-blue flex items-center justify-center">
-                <Plane size={16} className="text-white" />
+                <HeartPulse size={16} className="text-white" />
               </div>
               <span className="text-lg font-bold text-text-primary">CCMAPractice</span>
             </Link>

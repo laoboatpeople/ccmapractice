@@ -81,7 +81,8 @@ export async function submitExamAttempt(
   answers: { questionId: string; userAnswer: string }[],
   timeSpent?: number,
   totalQuestions?: number,
-  mode?: 'practice' | 'exam'
+  mode?: 'practice' | 'exam',
+  pretestIds?: string[]
 ): Promise<ExamAttemptResult> {
   return request<ExamAttemptResult>('/api/student/exam-attempts', {
     method: 'POST',
@@ -91,6 +92,7 @@ export async function submitExamAttempt(
       ...(timeSpent != null ? { timeSpent } : {}),
       ...(totalQuestions != null ? { totalQuestions } : {}),
       ...(mode != null ? { mode } : {}),
+      ...(pretestIds != null ? { pretestIds } : {}),
     }),
   });
 }

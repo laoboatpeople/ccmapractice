@@ -38,6 +38,8 @@ export interface QuizQuestion {
   explanation: string;
   chapterId: string | null;
   chapter: string | null;
+  /** Official exam simulation only: true for unscored pretest items (30 of 180). */
+  isPretest?: boolean;
 }
 
 export interface QuizResponse {

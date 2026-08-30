@@ -285,6 +285,31 @@ router.get('/exams/:examId/quiz', authenticate, async (req: Request, res: Respon
   const COMBINED_SOURCES: Record<string, string[]> = {
     'ICC-B5': ['ICC-B1', 'ICC-B2'],
   };
+
+  // ── Official exam simulation: stratified blueprint selection ──
+  // NHA CCMA official blueprint (150 scored questions) + 30 unscored pretest.
+  // Chapter numbers are stable per exam (see chapters table ordering).
+  const EXAM_BLUEPRINTS: Record<string, { chapters: number[]; count: number }[]> = {
+    CCMA: [
+      { chapters: [1], count: 15 }, // Foundational Knowledge and Basic Science
+      { chapters: [2], count: 8 }, // Anatomy and Physiology
+      { chapters: [3, 4, 5, 6, 7, 8, 9], count: 84 }, // Clinical Patient Care
+      { chapters: [10], count: 12 }, // Patient Care Coordination and Education
+      { chapters: [11], count: 12 }, // Administrative Assisting
+      { chapters: [12], count: 12 }, // Communication and Customer Service
+      { chapters: [13], count: 7 }, // Medical Law and Ethics
+    ],
+  };
+  const EXAM_PRETEST_COUNT = 30;
+
+  function shuffleArray<T>(arr: T[]): T[] {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
   const sourceCodes = COMBINED_SOURCES[exam.code];
   let combinedWhere: { examId: { in: string[] } } | undefined;
   if (sourceCodes) {
@@ -315,9 +340,51 @@ router.get('/exams/:examId/quiz', authenticate, async (req: Request, res: Respon
 
   if (questions.length === 0) { res.json({ data: [], exam: { id: exam.id, name: exam.name, passingScore: exam.passingScore } }); return; }
 
-  // Shuffle and pick
-  const shuffled = questions.sort(() => Math.random() - 0.5);
-  const selected = shuffled.slice(0, Math.min(count, shuffled.length));
+  // ── Select questions ──
+  // Official exam simulation (mode=exam) follows the exam's blueprint:
+  // stratified pick per domain + 30 unscored pretest items mixed in.
+  let selected: typeof questions = [];
+  let pretestIds = new Set<string>();
+
+  if (mode === 'exam' && EXAM_BLUEPRINTS[exam.code]) {
+    const chapters = await prisma.chapter.findMany({
+      where: { examId },
+      select: { id: true, number: true },
+    });
+    const chapterNumberById = new Map(chapters.map(c => [c.id, c.number]));
+    const blueprint = EXAM_BLUEPRINTS[exam.code];
+
+    // Group questions by chapter number (stable ordering per exam)
+    const byChapter = new Map<number, typeof questions>();
+    for (const q of questions) {
+      const num = q.chapterId ? chapterNumberById.get(q.chapterId) : undefined;
+      if (num === undefined) continue;
+      if (!byChapter.has(num)) byChapter.set(num, []);
+      byChapter.get(num)!.push(q);
+    }
+
+    // Stratified pick per blueprint domain
+    const usedIds = new Set<string>();
+    for (const domain of blueprint) {
+      const pool = domain.chapters.flatMap(n => byChapter.get(n) ?? []);
+      const shuffledPool = shuffleArray(pool);
+      const take = Math.min(domain.count, shuffledPool.length);
+      for (const q of shuffledPool.slice(0, take)) {
+        selected.push(q);
+        usedIds.add(q.id);
+      }
+    }
+
+    // 30 unscored pretest items from the remaining pool (not told which)
+    const remaining = questions.filter(q => !usedIds.has(q.id));
+    const shuffledRemaining = shuffleArray(remaining);
+    const pretest = shuffledRemaining.slice(0, EXAM_PRETEST_COUNT);
+    pretestIds = new Set(pretest.map(q => q.id));
+    selected = shuffleArray([...selected, ...pretest]);
+  } else {
+    const shuffled = questions.sort(() => Math.random() - 0.5);
+    selected = shuffled.slice(0, Math.min(count, shuffled.length));
+  }
 
   // Transform to mobile format (include correctAnswer for practice grading)
   const data = selected.map(q => {
@@ -337,6 +404,7 @@ router.get('/exams/:examId/quiz', authenticate, async (req: Request, res: Respon
       explanation: useFr && q.explanation_fr ? q.explanation_fr : q.explanation,
       chapterId: q.chapterId,
       chapter: q.chapter ? (useFr && q.chapter.name_fr ? q.chapter.name_fr : q.chapter.name) : null,
+      ...(mode === 'exam' ? { isPretest: pretestIds.has(q.id) } : {}),
     };
   });
 
@@ -401,6 +469,7 @@ router.post('/exam-attempts', authenticate, async (req: Request, res: Response):
     totalQuestions: z.number().int().min(1).optional(),
     timeSpent: z.number().min(0).max(36000).optional(),
     mode: z.enum(['practice', 'exam']).optional(),
+    pretestIds: z.array(z.string().uuid()).optional(),
   });
 
   const parsed = schema.safeParse(req.body);
@@ -409,7 +478,7 @@ router.post('/exam-attempts', authenticate, async (req: Request, res: Response):
     return;
   }
 
-  const { examId, answers, totalQuestions: clientTotalQuestions, timeSpent: clientTimeSpent, mode = 'practice' } = parsed.data;
+  const { examId, answers, totalQuestions: clientTotalQuestions, timeSpent: clientTimeSpent, mode = 'practice', pretestIds } = parsed.data;
 
   // Verify exam exists and is active
   const exam = await prisma.exam.findUnique({ where: { id: examId } });
@@ -491,11 +560,13 @@ router.post('/exam-attempts', authenticate, async (req: Request, res: Response):
     return;
   }
 
-  // Calculate results
+  // Calculate results (pretest/unscored items are excluded from the score)
   let correctCount = 0;
   const attemptAnswers: { questionId: string; userAnswer: string; isCorrect: boolean }[] = [];
+  const pretestSet = new Set(pretestIds ?? []);
 
   for (const answer of answers) {
+    if (pretestSet.has(answer.questionId)) continue; // unscored pretest item
     const correctIdx = questionMap.get(answer.questionId);
     const isCorrect = answer.userAnswer !== '' && answer.userAnswer === correctIdx;
     if (isCorrect) correctCount++;

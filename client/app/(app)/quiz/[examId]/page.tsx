@@ -416,7 +416,13 @@ export default function QuizPage() {
         };
       });
       const timeSpent = examStartTime ? Math.round((Date.now() - examStartTime) / 1000) : undefined;
-      const data = await submitExamAttempt(resolvedExamId!, answerPayload, timeSpent, questions.length, mode);
+      // Official exam simulation: score is computed on the 150 scored items only
+      // (the 30 pretest items are answered but never count toward the score).
+      const pretestIds = mode === 'exam'
+        ? questions.filter((q) => q.isPretest).map((q) => q.id)
+        : undefined;
+      const scoredTotal = mode === 'exam' ? questions.length - (pretestIds?.length ?? 0) : questions.length;
+      const data = await submitExamAttempt(resolvedExamId!, answerPayload, timeSpent, scoredTotal, mode, pretestIds);
       setResult(data);
       setQuizState('results');
 

@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { Eye, EyeOff, Mail, Lock, AlertCircle, Plane, HelpCircle } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, AlertCircle, HeartPulse, HelpCircle } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import Captcha from '@/components/Captcha';
@@ -90,7 +90,7 @@ export default function LoginPage() {
         <div className="flex flex-col items-center mb-8">
           <Link href="/" className="flex items-center gap-3 mb-4">
             <div className="w-10 h-10 rounded-lg bg-blue flex items-center justify-center">
-              <Plane size={20} className="text-white" />
+              <HeartPulse size={20} className="text-white" />
             </div>
             <span className="text-xl font-bold text-text-primary font-inter">CCMAPractice</span>
           </Link>
