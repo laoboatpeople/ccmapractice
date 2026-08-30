@@ -30,7 +30,7 @@ import {
   Lock,
 } from 'lucide-react';
 import { useLocale } from '@/src/contexts/LocaleContext';
-import { submitTheoryFeedback, getTheoryFeedback, getStudentExamChapters } from '@/lib/student-api';
+import { submitTheoryFeedback, getTheoryFeedback } from '@/lib/student-api';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || '';
 
@@ -839,7 +839,6 @@ export default function TheoryPage() {
   const [error, setError] = useState<string | null>(null);
   const [preselectedChapterId, setPreselectedChapterId] = useState<string | null>(null);
   const [preselectedSection, setPreselectedSection] = useState<string | null>(null);
-  const [lockedChapterIds, setLockedChapterIds] = useState<Set<string> | null>(null);
 
   // Read chapterId / section from URL params or localStorage
   useEffect(() => {
@@ -1025,21 +1024,6 @@ export default function TheoryPage() {
   useEffect(() => {
     fetchTheory();
   }, [locale]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  // FREE plan = first chapter only: fetch the locked status per chapter so
-  // the UI shows a lock on chapters 2-13 (practice + theory stays public on
-  // the SSG pages for SEO, but the app shows premium gating).
-  useEffect(() => {
-    if (categories.length === 0) return;
-    const examId = categories[0]?.chapters?.find((ch) => ch.examId)?.examId;
-    if (!examId) return;
-    getStudentExamChapters(examId)
-      .then((chapters) => {
-        const locked = new Set(chapters.filter((c) => c.locked).map((c) => c.id));
-        setLockedChapterIds(locked);
-      })
-      .catch(() => {});
-  }, [categories]);
 
   const LICENSE_SECTIONS = [
     {
@@ -1305,7 +1289,7 @@ export default function TheoryPage() {
             {/* Category cards */}
             <div className="space-y-3">
               {filtered.map((cat) => (
-                <CategoryCard key={cat.id} category={cat} displayName={getCategoryDisplayName(cat)} preselectedChapterId={preselectedChapterId || undefined} onChapterContentLoaded={handleChapterContentLoaded} lockedChapters={lockedChapterIds} />
+                <CategoryCard key={cat.id} category={cat} displayName={getCategoryDisplayName(cat)} preselectedChapterId={preselectedChapterId || undefined} onChapterContentLoaded={handleChapterContentLoaded} />
               ))}
             </div>
           </section>
