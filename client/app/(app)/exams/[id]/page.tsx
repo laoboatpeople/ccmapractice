@@ -385,25 +385,12 @@ export default function StudentExamDetailPage() {
             {/* Start button */}
             <div className="flex flex-wrap items-center gap-2">
               <button
-                onClick={exam?.practiceLocked ? () => router.push('/subscription') : handleStartQuiz}
-                className={`flex items-center justify-center gap-2 px-5 py-2.5 rounded-btn text-sm font-medium transition-colors active:scale-[0.98] whitespace-nowrap w-full sm:w-auto ${
-                  exam?.practiceLocked
-                    ? 'bg-red/10 text-red hover:bg-red/20 border border-red/30'
-                    : 'bg-blue text-white hover:bg-blue/90'
-                }`}
-                title={exam?.practiceLocked ? t('app.examDetail.practiceLocked') : undefined}
+                onClick={handleStartQuiz}
+                className={`flex items-center justify-center gap-2 px-5 py-2.5 rounded-btn text-sm font-medium transition-colors active:scale-[0.98] whitespace-nowrap w-full sm:w-auto bg-blue text-white hover:bg-blue/90`}
+                title={t('app.examDetail.practiceDesc', { count: chapters.length })}
               >
-                {exam?.practiceLocked ? (
-                  <>
-                    <Lock size={15} />
-                    {t('app.examDetail.upgradeForAll')}
-                  </>
-                ) : (
-                  <>
-                    <Play size={15} />
-                    {t('app.examDetail.startPractice')}
-                  </>
-                )}
+                <Play size={15} />
+                {t('app.examDetail.startPractice')}
               </button>
             </div>
           </div>

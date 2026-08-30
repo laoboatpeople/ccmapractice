@@ -108,8 +108,8 @@ router.get('/exam-categories', authenticate, async (req: Request, res: Response)
     locked: isFreePlan && index > 0,
     // Official exam simulation (mode=exam) is always paid for FREE users
     simulationLocked: isFreePlan,
-    // Cross-chapter practice quiz is premium: FREE plan = first chapter only
-    practiceLocked: isFreePlan,
+    // Practice quiz is FREE for everyone (FREE users get chapter-1-scoped questions)
+    practiceLocked: false,
   }));
 
   res.json({ data });
@@ -127,8 +127,9 @@ router.get('/exam-categories/:examId/chapters', optionalAuth, async (req: Reques
   const locale = (req.query.locale as string) || 'en';
   const useFr = locale === 'fr';
 
-  // Plan-aware: FREE users unlock only the first chapter (number 1)
-  let isFreePlan = false;
+  // Plan-aware: FREE users unlock only the first chapter (number 1).
+  // Fail-closed: anonymous visitors are treated as FREE (they see the locks too).
+  let isFreePlan = true;
   if (req.user) {
     const subscription = await prisma.subscription.findFirst({
       where: { userId: req.user.id, status: 'ACTIVE' },
@@ -220,7 +221,7 @@ router.get('/exams/:examId/quiz', authenticate, async (req: Request, res: Respon
     ? (req.query.difficulty as string).toUpperCase() as Difficulty
     : undefined;
   // Optional chapter-scoped quiz (e.g. "Test my knowledge" from the theory page)
-  const chapterId = (req.query.chapterId as string) || undefined;
+  let chapterId = (req.query.chapterId as string) || undefined;
   // Official exam simulation mode (official question count + timer + pass mark)
   const mode = (req.query.mode as string) === 'exam' ? 'exam' : 'practice';
 
@@ -254,7 +255,7 @@ router.get('/exams/:examId/quiz', authenticate, async (req: Request, res: Respon
     }
     // FREE plan = first chapter only:
     // - chapter-scoped quiz: only chapter 1 is allowed
-    // - cross-chapter practice quiz (no chapterId): premium
+    // - cross-chapter practice quiz (no chapterId): FREE but scoped to chapter 1
     if (chapterId) {
       const chapter = await prisma.chapter.findFirst({
         where: { id: chapterId, examId },
@@ -265,8 +266,17 @@ router.get('/exams/:examId/quiz', authenticate, async (req: Request, res: Respon
         return;
       }
     } else {
-      res.status(403).json({ message: 'Upgrade to access the full practice quiz' });
-      return;
+      // Practice quiz stays free: for FREE users it draws only from chapter 1.
+      const firstChapter = await prisma.chapter.findFirst({
+        where: { examId, isActive: true },
+        orderBy: { number: 'asc' },
+        select: { id: true },
+      });
+      if (!firstChapter) {
+        res.status(404).json({ message: 'No chapter available' });
+        return;
+      }
+      chapterId = firstChapter.id;
     }
   }
 
