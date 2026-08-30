@@ -388,7 +388,7 @@ export default function StudentExamDetailPage() {
                 onClick={exam?.practiceLocked ? () => router.push('/subscription') : handleStartQuiz}
                 className={`flex items-center justify-center gap-2 px-5 py-2.5 rounded-btn text-sm font-medium transition-colors active:scale-[0.98] whitespace-nowrap w-full sm:w-auto ${
                   exam?.practiceLocked
-                    ? 'bg-hover text-text-tertiary hover:text-red hover:bg-red/10 border border-border'
+                    ? 'bg-red/10 text-red hover:bg-red/20 border border-red/30'
                     : 'bg-blue text-white hover:bg-blue/90'
                 }`}
                 title={exam?.practiceLocked ? t('app.examDetail.practiceLocked') : undefined}
@@ -456,7 +456,7 @@ export default function StudentExamDetailPage() {
                 <div className="flex items-center gap-3 min-w-0 flex-1 w-full">
                   <span className={`flex items-center justify-center w-8 h-8 rounded-lg border flex-shrink-0 ${
                     chapter.locked
-                      ? 'bg-hover border-border text-text-tertiary'
+                      ? 'bg-red/10 border-red/30 text-red'
                       : 'bg-blue/10 border-blue/20 text-blue'
                   }`}>
                     {chapter.locked ? <Lock size={14} /> : (
@@ -504,7 +504,7 @@ export default function StudentExamDetailPage() {
                       onClick={chapter.locked ? () => router.push('/subscription') : () => handleSelectChapter(chapter.id, chapter.questionCount)}
                       className={`flex items-center justify-center gap-1.5 px-3 py-2 rounded-btn text-xs font-medium transition-colors whitespace-nowrap ${
                         chapter.locked
-                          ? 'bg-hover text-text-tertiary hover:text-red hover:bg-red/10 border border-border'
+                          ? 'bg-red/10 text-red hover:bg-red/20 border border-red/30'
                           : 'bg-cyan/10 border border-cyan/20 text-cyan hover:bg-cyan/20'
                       }`}
                       title={chapter.locked ? t('app.examDetail.testChapterLocked') : t('app.examDetail.testChapterDesc')}

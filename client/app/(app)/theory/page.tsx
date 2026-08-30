@@ -391,8 +391,8 @@ function ChapterSection({ chapter, color, preselected, locked, onContentLoaded }
         aria-expanded={expanded}
         className="w-full text-left px-4 py-3.5 flex items-center gap-3 hover:bg-hover/50 transition-colors"
       >
-        <div className={`h-8 w-8 rounded-lg ${locked ? 'bg-hover' : colors.bg} flex items-center justify-center shrink-0`}>
-          {locked ? <Lock size={14} className="text-text-tertiary" /> : <Layers size={14} className={colors.text} />}
+        <div className={`h-8 w-8 rounded-lg ${locked ? 'bg-red/10 text-red' : colors.bg} flex items-center justify-center shrink-0`}>
+          {locked ? <Lock size={14} /> : <Layers size={14} className={colors.text} />}
         </div>
         <div className="flex-1 min-w-0">
           <p className={`text-sm font-medium ${locked ? 'text-text-tertiary' : 'text-text-primary'}`}>
@@ -419,7 +419,7 @@ function ChapterSection({ chapter, color, preselected, locked, onContentLoaded }
           </div>
         </div>
         {locked ? (
-          <Lock size={16} className="shrink-0 text-text-tertiary" />
+          <Lock size={16} className="shrink-0 text-red" />
         ) : expanded ? (
           <ChevronDown size={16} className="shrink-0 text-text-tertiary" />
         ) : (

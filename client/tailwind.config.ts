@@ -30,10 +30,10 @@ const config: Config = {
         'accent-red': '#DB2777',
         'accent-purple': '#8B5CF6',
         // Aliases for pages using bg- prefix on color names
-        'bg-primary': '#0A0E1A',
-        'bg-secondary': '#111827',
-        'bg-card': '#1A2035',
-        'bg-hover': '#243047',
+        'bg-primary': '#150A12',
+        'bg-secondary': '#1C0F18',
+        'bg-card': '#221324',
+        'bg-hover': '#2C1830',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
