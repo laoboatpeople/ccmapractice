@@ -47,9 +47,13 @@ IMAGES = {
     ],
     4: [
         ("hospital patient bed position", "Patient positioning"),
+        ("gait belt ambulation patient", "Assisted ambulation with gait belt"),
+        ("wound dressing bandage change", "Wound care and dressing"),
     ],
     5: [
         ("intramuscular injection deltoid", "Intramuscular injection sites"),
+        ("subcutaneous injection sites abdomen", "Subcutaneous injection sites"),
+        ("intradermal injection technique", "Intradermal injection"),
     ],
     6: [
         ("hand washing hygiene steps", "Hand hygiene"),
@@ -57,6 +61,8 @@ IMAGES = {
     ],
     7: [
         ("glucometer blood glucose meter", "Blood glucose testing"),
+        ("urine dipstick test", "Urinalysis dipstick"),
+        ("microscope laboratory urinalysis", "Microscopic urinalysis"),
     ],
     8: [
         ("drawing blood venipuncture phlebotomy", "Venipuncture procedure"),
@@ -65,18 +71,27 @@ IMAGES = {
     9: [
         ("ekg electrocardiogram setup", "EKG setup and waveform"),
         ("precordial leads ecg", "Precordial lead placement"),
+        ("holter monitor", "Holter monitor"),
     ],
     10: [
         ("patient education nurse", "Patient education"),
+        ("medication administration nurse", "Medication administration"),
+        ("patient appointment scheduling", "Appointment scheduling"),
     ],
     11: [
         ("electronic health record computer", "Electronic health record"),
+        ("medical office reception desk", "Medical office reception"),
+        ("medical billing documents", "Medical billing and coding"),
     ],
     12: [
         ("doctor patient communication", "Therapeutic communication"),
+        ("active listening nurse patient", "Active listening"),
+        ("sign language interpreter healthcare", "Interpreter services"),
     ],
     13: [
         ("hipaa privacy", "HIPAA privacy"),
+        ("informed consent form signing", "Informed consent"),
+        ("medical records confidentiality", "Confidential medical records"),
     ],
 }
 
