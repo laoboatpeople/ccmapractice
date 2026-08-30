@@ -27,9 +27,10 @@ import {
   ThumbsUp,
   ThumbsDown,
   Droplets,
+  Lock,
 } from 'lucide-react';
 import { useLocale } from '@/src/contexts/LocaleContext';
-import { submitTheoryFeedback, getTheoryFeedback } from '@/lib/student-api';
+import { submitTheoryFeedback, getTheoryFeedback, getStudentExamChapters } from '@/lib/student-api';
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || '';
 
@@ -252,7 +253,7 @@ function SkeletonPage() {
 
 // ─── Chapter Section ──────────────────────────────────────
 
-function ChapterSection({ chapter, color, preselected, onContentLoaded }: { chapter: TheoryChapter; color: SectionColor; preselected?: boolean; onContentLoaded?: (chapterId: string, content: string) => void }) {
+function ChapterSection({ chapter, color, preselected, locked, onContentLoaded }: { chapter: TheoryChapter; color: SectionColor; preselected?: boolean; locked?: boolean; onContentLoaded?: (chapterId: string, content: string) => void }) {
   const [expanded, setExpanded] = useState(preselected || false);
   const [content, setContent] = useState<string | null>(chapter.theoryContent);
   const [contentLoading, setContentLoading] = useState(false);
@@ -382,23 +383,31 @@ function ChapterSection({ chapter, color, preselected, onContentLoaded }: { chap
     <div className="bg-card border border-border rounded-card overflow-hidden">
       <button
         ref={headerRef}
-        onClick={() => setExpanded(!expanded)}
+        onClick={() => {
+          if (locked) { router.push('/subscription'); return; }
+          setExpanded(!expanded);
+        }}
         data-chapter-id={chapter.id}
         aria-expanded={expanded}
         className="w-full text-left px-4 py-3.5 flex items-center gap-3 hover:bg-hover/50 transition-colors"
       >
-        <div className={`h-8 w-8 rounded-lg ${colors.bg} flex items-center justify-center shrink-0`}>
-          <Layers size={14} className={colors.text} />
+        <div className={`h-8 w-8 rounded-lg ${locked ? 'bg-hover' : colors.bg} flex items-center justify-center shrink-0`}>
+          {locked ? <Lock size={14} className="text-text-tertiary" /> : <Layers size={14} className={colors.text} />}
         </div>
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-medium text-text-primary">
+          <p className={`text-sm font-medium ${locked ? 'text-text-tertiary' : 'text-text-primary'}`}>
             {chapter.number}. {chapter.name}
           </p>
           <div className="flex items-center gap-2 mt-0.5">
             <span className="text-xs text-text-tertiary">
               {chapter.questionCount} {chapter.questionCount > 1 ? t('questions') : t('question')}
             </span>
-            {chapter.hasTheory && (
+            {locked ? (
+              <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wider text-red bg-red/10 border border-red/20 px-1.5 py-0.5 rounded">
+                <Lock size={9} />
+                {t('app.examDetail.upgradeForAll')}
+              </span>
+            ) : chapter.hasTheory && (
               <>
                 <span className="w-1 h-1 rounded-full bg-text-tertiary" />
                 <span className="text-[10px] font-medium text-blue flex items-center gap-1">
@@ -409,7 +418,9 @@ function ChapterSection({ chapter, color, preselected, onContentLoaded }: { chap
             )}
           </div>
         </div>
-        {expanded ? (
+        {locked ? (
+          <Lock size={16} className="shrink-0 text-text-tertiary" />
+        ) : expanded ? (
           <ChevronDown size={16} className="shrink-0 text-text-tertiary" />
         ) : (
           <ChevronRight size={16} className="shrink-0 text-text-tertiary" />
@@ -597,7 +608,7 @@ function ChapterSection({ chapter, color, preselected, onContentLoaded }: { chap
 
 // ─── Category Card ────────────────────────────────────────
 
-function CategoryCard({ category, preselectedChapterId, onChapterContentLoaded, displayName }: { category: TheoryCategory; preselectedChapterId?: string; onChapterContentLoaded?: (chapterId: string, content: string) => void; displayName?: string }) {
+function CategoryCard({ category, preselectedChapterId, onChapterContentLoaded, displayName, lockedChapters }: { category: TheoryCategory; preselectedChapterId?: string; onChapterContentLoaded?: (chapterId: string, content: string) => void; displayName?: string; lockedChapters?: Set<string> | null }) {
   const [expanded, setExpanded] = useState(false);
   const color = getSectionColor(category.code);
   const colors = SECTION_STYLES[color];
@@ -684,7 +695,7 @@ function CategoryCard({ category, preselectedChapterId, onChapterContentLoaded, 
                 category.chapters
                   .filter(ch => ch.questionCount > 0)
                   .map((ch) => (
-                    <ChapterSection key={ch.id} chapter={ch} color={color} preselected={ch.id === preselectedChapterId} onContentLoaded={onChapterContentLoaded} />
+                    <ChapterSection key={ch.id} chapter={ch} color={color} preselected={ch.id === preselectedChapterId} locked={lockedChapters?.has(ch.id)} onContentLoaded={onChapterContentLoaded} />
                   ))
               ) : (
                 <div className="py-8 text-center">
@@ -828,6 +839,7 @@ export default function TheoryPage() {
   const [error, setError] = useState<string | null>(null);
   const [preselectedChapterId, setPreselectedChapterId] = useState<string | null>(null);
   const [preselectedSection, setPreselectedSection] = useState<string | null>(null);
+  const [lockedChapterIds, setLockedChapterIds] = useState<Set<string> | null>(null);
 
   // Read chapterId / section from URL params or localStorage
   useEffect(() => {
@@ -1013,6 +1025,21 @@ export default function TheoryPage() {
   useEffect(() => {
     fetchTheory();
   }, [locale]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // FREE plan = first chapter only: fetch the locked status per chapter so
+  // the UI shows a lock on chapters 2-13 (practice + theory stays public on
+  // the SSG pages for SEO, but the app shows premium gating).
+  useEffect(() => {
+    if (categories.length === 0) return;
+    const examId = categories[0]?.chapters?.find((ch) => ch.examId)?.examId;
+    if (!examId) return;
+    getStudentExamChapters(examId)
+      .then((chapters) => {
+        const locked = new Set(chapters.filter((c) => c.locked).map((c) => c.id));
+        setLockedChapterIds(locked);
+      })
+      .catch(() => {});
+  }, [categories]);
 
   const LICENSE_SECTIONS = [
     {
@@ -1278,7 +1305,7 @@ export default function TheoryPage() {
             {/* Category cards */}
             <div className="space-y-3">
               {filtered.map((cat) => (
-                <CategoryCard key={cat.id} category={cat} displayName={getCategoryDisplayName(cat)} preselectedChapterId={preselectedChapterId || undefined} onChapterContentLoaded={handleChapterContentLoaded} />
+                <CategoryCard key={cat.id} category={cat} displayName={getCategoryDisplayName(cat)} preselectedChapterId={preselectedChapterId || undefined} onChapterContentLoaded={handleChapterContentLoaded} lockedChapters={lockedChapterIds} />
               ))}
             </div>
           </section>

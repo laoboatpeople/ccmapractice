@@ -454,11 +454,19 @@ export default function StudentExamDetailPage() {
                 className="bg-card border border-border rounded-card px-5 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 hover:bg-hover/30 transition-colors"
               >
                 <div className="flex items-center gap-3 min-w-0 flex-1 w-full">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-blue/10 border border-blue/20 text-xs font-mono font-bold text-blue flex-shrink-0">
-                    {chapter.number}
+                  <span className={`flex items-center justify-center w-8 h-8 rounded-lg border flex-shrink-0 ${
+                    chapter.locked
+                      ? 'bg-hover border-border text-text-tertiary'
+                      : 'bg-blue/10 border-blue/20 text-blue'
+                  }`}>
+                    {chapter.locked ? <Lock size={14} /> : (
+                      <span className="text-xs font-mono font-bold">{chapter.number}</span>
+                    )}
                   </span>
                   <div className="min-w-0 flex-1">
-                    <p className="text-sm font-medium text-text-primary leading-snug">
+                    <p className={`text-sm font-medium leading-snug ${
+                      chapter.locked ? 'text-text-tertiary' : 'text-text-primary'
+                    }`}>
                       {chapter.name}
                     </p>
                     <div className="flex flex-wrap items-center gap-2 mt-0.5">
