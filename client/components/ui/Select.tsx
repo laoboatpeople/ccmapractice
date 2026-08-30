@@ -91,7 +91,7 @@ const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
             disabled={disabled || loading}
             onClick={() => !disabled && !loading && setIsOpen(prev => !prev)}
             className={cn(
-              'flex h-10 w-full items-center justify-between rounded-input border bg-[#150A12] px-3 py-2 text-sm text-text-primary transition-colors duration-150',
+              'flex h-10 w-full items-center justify-between rounded-input border bg-[#031428] px-3 py-2 text-sm text-text-primary transition-colors duration-150',
               'focus:outline-none focus:ring-2 focus:ring-blue focus:ring-offset-2 focus:ring-offset-primary',
               'disabled:cursor-not-allowed disabled:opacity-50',
               error

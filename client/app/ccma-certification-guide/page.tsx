@@ -116,14 +116,14 @@ export default function CcmaCertificationGuidePage() {
         teaches={['NHA CCMA Certification', 'CCMA Exam Format', 'Clinical Procedures', 'Phlebotomy & EKG', 'Medical Law and Ethics']}
         resourceType="Guide"
       />
-      <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
-        <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
+      <div className="min-h-screen bg-[#031428] text-[#F5F8FA]">
+        <nav className="border-b border-white/5 bg-[#031428]/80 backdrop-blur-md">
           <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2">
-              <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
+              <img src="/logo/logo-main.png?v=6" alt="CCMAPractice" className="h-7 w-auto" />
             </a>
             <div className="flex items-center gap-4">
-              <a href="/faq" className="text-sm text-[#94A3B8] hover:text-white transition-colors">← FAQ</a>
+              <a href="/faq" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">← FAQ</a>
             </div>
           </div>
         </nav>
@@ -131,12 +131,12 @@ export default function CcmaCertificationGuidePage() {
         <article className="max-w-3xl mx-auto px-6 pt-16 pb-24">
           <header className="mb-12">
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-[11px] font-medium text-[#DB2777] bg-[#DB2777]/10 px-2 py-1 rounded">Certification</span>
-              <span className="text-xs text-[#64748B]">July 7, 2026 *updated August 18, 2026</span>
-              <span className="text-xs text-[#64748B]">· 12 min read</span>
+              <span className="text-[11px] font-medium text-[#20C7C9] bg-[#20C7C9]/10 px-2 py-1 rounded">Certification</span>
+              <span className="text-xs text-[#70849A]">July 7, 2026 *updated August 18, 2026</span>
+              <span className="text-xs text-[#70849A]">· 12 min read</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">The Complete CCMA Certification Guide</h1>
-            <p className="text-lg text-[#94A3B8]">
+            <p className="text-lg text-[#A8B7C9]">
               The NHA Certified Clinical Medical Assistant (CCMA) credential is the standard certification for
               medical assistants in the United States. This guide covers the exam format, the 13 blueprint
               chapters, the passing score, and exactly how to prepare.
@@ -144,7 +144,7 @@ export default function CcmaCertificationGuidePage() {
           </header>
 
           <div className="prose prose-invert max-w-none text-[#CBD5E1] leading-relaxed space-y-6">
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">What Is the CCMA Certification?</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">What Is the CCMA Certification?</h2>
             <p>
               The CCMA certification verifies that a medical assistant understands the clinical and
               administrative skills used every day in ambulatory healthcare settings — physician offices,
@@ -159,7 +159,7 @@ export default function CcmaCertificationGuidePage() {
               professionally with patients.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">The Exam at a Glance</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">The Exam at a Glance</h2>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Format:</strong> computer-based (PSI testing center or online proctoring).</li>
               <li><strong>Questions:</strong> 150 scored questions plus 30 unscored pretest questions (180 total).</li>
@@ -170,7 +170,7 @@ export default function CcmaCertificationGuidePage() {
               <li><strong>Renewal:</strong> every 2 years, with 10 continuing education units (CEUs).</li>
             </ul>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">The 13 Blueprint Chapters</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">The 13 Blueprint Chapters</h2>
             <p>
               The NHA publishes an official exam blueprint that defines exactly what the CCMA exam tests. The
               content is organized into 13 chapters:
@@ -196,7 +196,7 @@ export default function CcmaCertificationGuidePage() {
               standard precautions), HIPAA, medical billing, and therapeutic communication.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">How to Prepare</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">How to Prepare</h2>
             <ol className="list-decimal pl-6 space-y-2">
               <li><strong>Download the candidate handbook.</strong> The official NHA CCMA candidate handbook lists the exact content areas, question count, time limit, passing score, and eligibility requirements.</li>
               <li><strong>Learn the blueprint.</strong> Map the 13 chapters and weight your study time to the exam's content areas.</li>
@@ -207,13 +207,13 @@ export default function CcmaCertificationGuidePage() {
             <p>
               CCMAPractice covers all 13 blueprint chapters with guideline-referenced questions, adaptive
               difficulty, and timed simulations. Start with{' '}
-              <a href="/free-ccma-practice-questions" className="text-[#DB2777] hover:text-[#60A5FA] transition-colors">
+              <a href="/free-ccma-practice-questions" className="text-[#20C7C9] hover:text-[#60A5FA] transition-colors">
                 free CCMA practice questions
               </a>{' '}
               to see the format.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">Career Outlook</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">Career Outlook</h2>
             <p>
               Certified medical assistants work in physician offices, clinics, hospitals, and urgent care
               centers. The Bureau of Labor Statistics reports a median annual wage of more than $43,000 for
@@ -222,18 +222,18 @@ export default function CcmaCertificationGuidePage() {
               EKG technology, and patient care coordination.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">Ready to Start?</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">Ready to Start?</h2>
             <p>
               Follow the full{' '}
-              <a href="/blog/ccma-b1-certification-guide" className="text-[#DB2777] hover:text-[#60A5FA] transition-colors">
+              <a href="/blog/ccma-b1-certification-guide" className="text-[#20C7C9] hover:text-[#60A5FA] transition-colors">
                 step-by-step certification guide
               </a>,{' '}
               learn the{' '}
-              <a href="/blog/ccma-study-guide" className="text-[#DB2777] hover:text-[#60A5FA] transition-colors">
+              <a href="/blog/ccma-study-guide" className="text-[#20C7C9] hover:text-[#60A5FA] transition-colors">
                 CCMA study guide
               </a>,{' '}
               and build a{' '}
-              <a href="/blog/ccma-exam-study-plan" className="text-[#DB2777] hover:text-[#60A5FA] transition-colors">
+              <a href="/blog/ccma-exam-study-plan" className="text-[#20C7C9] hover:text-[#60A5FA] transition-colors">
                 12-week study plan
               </a>{' '}
               that fits your schedule.

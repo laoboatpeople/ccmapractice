@@ -54,14 +54,14 @@ export default function AiCcmaExamPreparationPage() {
           { name: 'How AI Is Changing CCMA Exam Preparation', url: 'https://ccmapractice.com/blog/ai-ccma-exam-preparation' },
         ]}
       />
-      <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
-        <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
+      <div className="min-h-screen bg-[#031428] text-[#F5F8FA]">
+        <nav className="border-b border-white/5 bg-[#031428]/80 backdrop-blur-md">
           <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2">
-              <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
+              <img src="/logo/logo-main.png?v=6" alt="CCMAPractice" className="h-7 w-auto" />
             </a>
             <div className="flex items-center gap-4">
-              <a href="/blog" className="text-sm text-[#94A3B8] hover:text-white transition-colors">← Blog</a>
+              <a href="/blog" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">← Blog</a>
             </div>
           </div>
         </nav>
@@ -69,12 +69,12 @@ export default function AiCcmaExamPreparationPage() {
         <article className="max-w-3xl mx-auto px-6 pt-16 pb-24">
           <header className="mb-12">
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-[11px] font-medium text-[#DB2777] bg-[#DB2777]/10 px-2 py-1 rounded">Technology</span>
-              <span className="text-xs text-[#64748B]">May 16, 2026 *updated August 18, 2026</span>
-              <span className="text-xs text-[#64748B]">· 9 min read</span>
+              <span className="text-[11px] font-medium text-[#20C7C9] bg-[#20C7C9]/10 px-2 py-1 rounded">Technology</span>
+              <span className="text-xs text-[#70849A]">May 16, 2026 *updated August 18, 2026</span>
+              <span className="text-xs text-[#70849A]">· 9 min read</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">How AI Is Changing CCMA Exam Preparation</h1>
-            <p className="text-lg text-[#94A3B8]">
+            <p className="text-lg text-[#A8B7C9]">
               The NHA CCMA exam tests clinical judgment — and that is exactly what AI-powered study platforms
               are getting good at teaching. Here is how AI is reshaping the way medical assistants prepare for
               certification.
@@ -83,17 +83,17 @@ export default function AiCcmaExamPreparationPage() {
 
           {/* Author byline */}
           <div className="flex items-center gap-3 mb-8 pb-6 border-b border-white/5">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#DB2777] to-[#06B6D4] flex items-center justify-center text-white font-bold text-sm">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#20C7C9] to-[#06B6D4] flex items-center justify-center text-white font-bold text-sm">
               CP
             </div>
             <div>
-              <p className="text-sm font-medium text-[#F8FAFC]">CCMAPractice Team</p>
-              <p className="text-xs text-[#64748B]">AI-powered NHA CCMA exam preparation — smarter studying for medical assistants</p>
+              <p className="text-sm font-medium text-[#F5F8FA]">CCMAPractice Team</p>
+              <p className="text-xs text-[#70849A]">AI-powered NHA CCMA exam preparation — smarter studying for medical assistants</p>
             </div>
           </div>
 
           <div className="prose prose-invert max-w-none text-[#CBD5E1] leading-relaxed space-y-6">
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">The Old Way: Static Books, Guesswork</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">The Old Way: Static Books, Guesswork</h2>
             <p>
               Traditional CCMA prep is a one-size-fits-all stack: a textbook, a study guide, and a few hundred
               practice questions. You read, you test, you hope. The problem is that everyone's weak chapters are
@@ -101,7 +101,7 @@ export default function AiCcmaExamPreparationPage() {
               points.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">Adaptive Question Curation</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">Adaptive Question Curation</h2>
             <p>
               AI-powered platforms track your accuracy on every blueprint chapter and every clinical topic, then
               use that data to build your next session. Miss three phlebotomy questions in a row? Your next quiz
@@ -109,7 +109,7 @@ export default function AiCcmaExamPreparationPage() {
               performance data, not by a generic syllabus order.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">Instant, Guideline-Referenced Explanations</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">Instant, Guideline-Referenced Explanations</h2>
             <p>
               On a clinical exam, the explanation <em>is</em> the lesson. AI platforms generate explanations
               that cite the exact guideline — OSHA Bloodborne Pathogens, the HIPAA Privacy Rule, CDC Standard
@@ -117,7 +117,7 @@ export default function AiCcmaExamPreparationPage() {
               the answer, but why the guideline says so.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">AI Tutoring for Clinical Scenarios</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">AI Tutoring for Clinical Scenarios</h2>
             <p>
               Stuck on why the order of draw starts with blood cultures, or when a patient's chest pain requires
               immediate escalation? An AI tutor can walk you through the reasoning, explain the rule behind the
@@ -125,25 +125,25 @@ export default function AiCcmaExamPreparationPage() {
               instructor beside you — available at 11 p.m. the night before your exam.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">Predictive Readiness Scoring</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">Predictive Readiness Scoring</h2>
             <p>
               The most useful AI feature is readiness prediction. By comparing your chapter-level accuracy and
               simulation scores against the 390/500 passing bar, AI platforms can tell you — honestly — whether
               you are ready to book the exam or need two more weeks on phlebotomy. No more guessing.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">What AI Can't Do (Yet)</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">What AI Can't Do (Yet)</h2>
             <p>
               AI cannot perform clinical skills for you, and it cannot replace the hands-on training that comes
               from your program and externship. AI's job is to make your practice time dramatically more
               efficient so that when you sit for the exam, the clinical reasoning is already automatic.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">Try AI-Powered CCMA Prep</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">Try AI-Powered CCMA Prep</h2>
             <p>
               CCMAPractice combines adaptive question curation, guideline-referenced explanations, and an AI
               tutor across all 13 blueprint chapters. See how it feels with{' '}
-              <a href="/free-ccma-practice-questions" className="text-[#DB2777] hover:text-[#60A5FA] transition-colors">
+              <a href="/free-ccma-practice-questions" className="text-[#20C7C9] hover:text-[#60A5FA] transition-colors">
                 free CCMA practice questions
               </a>{' '}
               — no signup needed.

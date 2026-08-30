@@ -64,15 +64,15 @@ function CcmaNewsletterSection() {
 
   return (
     <section className="py-20 px-6 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#DB2777]/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#20C7C9]/5 to-transparent" />
       <div className="relative z-10 max-w-3xl mx-auto text-center">
         <ScrollReveal>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#22D3C5] to-[#22B8E6] bg-clip-text text-transparent">
               Get Free CCMA Practice Questions
             </span>
           </h2>
-          <p className="text-[#94A3B8] max-w-2xl mx-auto mb-8">
+          <p className="text-[#A8B7C9] max-w-2xl mx-auto mb-8">
             Subscribe and get free NHA CCMA practice questions, exam tips, and study resources delivered to your inbox.
           </p>
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -82,12 +82,12 @@ function CcmaNewsletterSection() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
               required
-              className="flex-1 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-[#F8FAFC] placeholder:text-[#64748B] focus:outline-none focus:border-[#DB2777]/50"
+              className="flex-1 px-4 py-3 rounded-xl bg-[#0B2038] border border-[#14506B]/50 text-[#F5F8FA] placeholder:text-[#70849A] focus:outline-none focus:border-[#20C7C9]/60"
             />
             <button
               type="submit"
               disabled={status === "loading"}
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#DB2777] to-[#A855F7] font-semibold text-white hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50"
+              className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#23D0C6] to-[#168AC2] font-semibold text-white hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50"
             >
               {status === "loading" ? <Loader2 className="w-4 h-4 animate-spin" /> : <Mail className="w-4 h-4" />}
               Subscribe
@@ -107,30 +107,33 @@ function CcmaNewsletterSection() {
 export default function MarketingLandingPage() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <div className="min-h-screen bg-[#150A12] text-[#F8FAFC] font-sans overflow-x-hidden">
+    <div
+      className="min-h-screen bg-[#031428] text-[#F5F8FA] font-sans overflow-x-hidden"
+      style={{ background: 'linear-gradient(120deg, #021226 0%, #05213A 55%, #031427 100%)' }}
+    >
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#150A12]/80 border-b border-white/5">
+      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[#020F1E]/80 border-b border-[#14506B]/40">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-9 w-auto" />
+            <img src="/logo/logo-main.png?v=6" alt="CCMAPractice" className="h-9 w-auto" />
           </div>
           <div className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Features</a>
-            <a href="#how-it-works" className="text-sm text-[#94A3B8] hover:text-white transition-colors">How It Works</a>
-            <a href="#chapters" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Chapters</a>
-            <a href="#pricing" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Pricing</a>
-            <a href="/blog" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Blog</a>
-            <a href="/faq" className="text-sm text-[#94A3B8] hover:text-white transition-colors">FAQ</a>
-            <a href="/contact" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Contact</a>
-            <a href="#testimonials" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Testimonials</a>
+            <a href="#features" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Features</a>
+            <a href="#how-it-works" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">How It Works</a>
+            <a href="#chapters" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Chapters</a>
+            <a href="#pricing" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Pricing</a>
+            <a href="/blog" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Blog</a>
+            <a href="/faq" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">FAQ</a>
+            <a href="/contact" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Contact</a>
+            <a href="#testimonials" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Testimonials</a>
           </div>
           <div className="flex items-center gap-3">
-            <a href="/auth/login" className="hidden sm:inline-block px-4 py-2 bg-[#DB2777] hover:bg-[#BE185D] rounded-lg text-sm font-medium transition-colors">
+            <a href="/auth/login" className="hidden sm:inline-block px-4 py-2 bg-[#20C7C9] hover:bg-[#1688B8] rounded-lg text-sm font-medium transition-colors">
               Sign In
             </a>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden p-2 rounded-lg border border-white/10 text-[#F8FAFC] hover:bg-white/5 transition-colors"
+              className="md:hidden p-2 rounded-lg border border-[#14506B]/50 text-[#F5F8FA] hover:bg-[#0B2038] transition-colors"
               aria-label="Toggle menu"
             >
               {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -138,17 +141,17 @@ export default function MarketingLandingPage() {
           </div>
         </div>
         {menuOpen && (
-          <div className="md:hidden border-t border-white/5 bg-[#150A12]/95 backdrop-blur-md">
+          <div className="md:hidden border-t border-[#14506B]/40 bg-[#020F1E]/95 backdrop-blur-md">
             <div className="px-6 py-4 flex flex-col gap-4">
-              <a href="#features" onClick={() => setMenuOpen(false)} className="text-sm text-[#94A3B8] hover:text-white transition-colors">Features</a>
-              <a href="#how-it-works" onClick={() => setMenuOpen(false)} className="text-sm text-[#94A3B8] hover:text-white transition-colors">How It Works</a>
-              <a href="#chapters" onClick={() => setMenuOpen(false)} className="text-sm text-[#94A3B8] hover:text-white transition-colors">Chapters</a>
-              <a href="#pricing" onClick={() => setMenuOpen(false)} className="text-sm text-[#94A3B8] hover:text-white transition-colors">Pricing</a>
-              <a href="/blog" onClick={() => setMenuOpen(false)} className="text-sm text-[#94A3B8] hover:text-white transition-colors">Blog</a>
-              <a href="/faq" onClick={() => setMenuOpen(false)} className="text-sm text-[#94A3B8] hover:text-white transition-colors">FAQ</a>
-              <a href="/contact" onClick={() => setMenuOpen(false)} className="text-sm text-[#94A3B8] hover:text-white transition-colors">Contact</a>
-              <a href="#testimonials" onClick={() => setMenuOpen(false)} className="text-sm text-[#94A3B8] hover:text-white transition-colors">Testimonials</a>
-              <a href="/auth/login" onClick={() => setMenuOpen(false)} className="sm:hidden px-4 py-2 bg-[#DB2777] hover:bg-[#BE185D] rounded-lg text-sm font-medium text-center transition-colors">
+              <a href="#features" onClick={() => setMenuOpen(false)} className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Features</a>
+              <a href="#how-it-works" onClick={() => setMenuOpen(false)} className="text-sm text-[#A8B7C9] hover:text-white transition-colors">How It Works</a>
+              <a href="#chapters" onClick={() => setMenuOpen(false)} className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Chapters</a>
+              <a href="#pricing" onClick={() => setMenuOpen(false)} className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Pricing</a>
+              <a href="/blog" onClick={() => setMenuOpen(false)} className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Blog</a>
+              <a href="/faq" onClick={() => setMenuOpen(false)} className="text-sm text-[#A8B7C9] hover:text-white transition-colors">FAQ</a>
+              <a href="/contact" onClick={() => setMenuOpen(false)} className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Contact</a>
+              <a href="#testimonials" onClick={() => setMenuOpen(false)} className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Testimonials</a>
+              <a href="/auth/login" onClick={() => setMenuOpen(false)} className="sm:hidden px-4 py-2 bg-[#20C7C9] hover:bg-[#1688B8] rounded-lg text-sm font-medium text-center transition-colors">
                 Sign In
               </a>
             </div>
@@ -159,9 +162,9 @@ export default function MarketingLandingPage() {
       {/* 1. HERO SECTION */}
       <section className="relative pt-40 pb-20 px-6 overflow-hidden">
         {/* Background gradient and glow */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#DB2777]/10 via-[#150A12] to-[#150A12]" />
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#DB2777]/20 rounded-full blur-[120px]" />
-        <div className="absolute top-40 right-20 w-[400px] h-[400px] bg-[#A855F7]/10 rounded-full blur-[100px]" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(120deg, #021226 0%, #05213A 55%, #031427 100%)' }} />
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[#1688B8]/20 rounded-full blur-[120px]" />
+        <div className="absolute top-40 right-20 w-[400px] h-[400px] bg-[#20C7C9]/10 rounded-full blur-[100px]" />
         
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -169,20 +172,20 @@ export default function MarketingLandingPage() {
             <div 
               className="animate-fade-in-up flex-1 text-center lg:text-left"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
-                <Sparkles className="w-4 h-4 text-[#F59E0B]" />
-                <span className="text-sm text-[#94A3B8]">NHA CCMA Exam Prep</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#14506B]/20 border border-[#14506B]/50 mb-6">
+                <Sparkles className="w-4 h-4 text-[#20C7C9]" />
+                <span className="text-sm text-[#A8B7C9]">NHA CCMA Exam Prep</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#22D3C5] to-[#22B8E6] bg-clip-text text-transparent">
                   Pass Your NHA CCMA
                 </span>
                 <br />
-                <span className="bg-gradient-to-r from-[#A855F7] to-[#DB2777] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#22B8E6] to-[#22D3C5] bg-clip-text text-transparent">
                   Exam with Confidence
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-[#94A3B8] mb-8 max-w-xl mx-auto lg:mx-0">
+              <p className="text-lg md:text-xl text-[#A8B7C9] mb-8 max-w-xl mx-auto lg:mx-0">
                 Master the 13-chapter NHA CCMA blueprint with 1,200+ practice questions, complete theory guides, and an AI tutor that explains every answer.
               </p>
               
@@ -194,9 +197,9 @@ export default function MarketingLandingPage() {
                   { icon: Shield, text: "390/500 passing score" },
                   { icon: Brain, text: "AI tutor included" },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10">
-                    <item.icon className="w-4 h-4 text-[#DB2777]" />
-                    <span className="text-sm text-[#94A3B8]">{item.text}</span>
+                  <div key={i} className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0B2038] border border-[#14506B]/50">
+                    <item.icon className="w-4 h-4 text-[#20C7C9]" />
+                    <span className="text-sm text-[#A8B7C9]">{item.text}</span>
                   </div>
                 ))}
               </div>
@@ -205,7 +208,7 @@ export default function MarketingLandingPage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a
                   href="/auth/login"
-                  className="group px-8 py-4 bg-gradient-to-r from-[#DB2777] to-[#A855F7] rounded-xl font-semibold text-white hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] transition-all duration-300 flex items-center justify-center gap-2"
+                  className="group px-8 py-4 bg-gradient-to-r from-[#23D0C6] to-[#168AC2] rounded-xl font-semibold text-white hover:shadow-[0_0_30px_rgba(32,199,201,0.35)] transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   <LogIn className="w-5 h-5" />
                   Start Practicing Free
@@ -213,7 +216,7 @@ export default function MarketingLandingPage() {
                 </a>
                 <a
                   href="#how-it-works"
-                  className="px-8 py-4 rounded-xl font-semibold text-white border border-white/20 hover:bg-white/5 transition-all duration-300 flex items-center justify-center gap-2"
+                  className="px-8 py-4 rounded-xl font-semibold text-white border border-[#14506B]/60 hover:bg-[#0B2038] transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   <Play className="w-5 h-5" />
                   See How It Works
@@ -225,10 +228,15 @@ export default function MarketingLandingPage() {
             <div
               className="animate-fade-in-right flex-1 flex justify-center lg:justify-end"
             >
-              <AppMockup title="Phlebotomy — Chapter 8">
+              <div className="relative">
+                <div
+                  className="absolute -inset-10 rounded-full pointer-events-none"
+                  style={{ background: 'radial-gradient(circle, rgba(17,126,181,0.35) 0%, rgba(4,31,57,0.15) 45%, transparent 70%)' }}
+                />
+                <AppMockup title="Phlebotomy — Chapter 8">
                 <div className="space-y-3">
-                  <div className="text-xs text-[#DB2777] font-medium">Question 12 of 50</div>
-                  <div className="text-sm text-[#F8FAFC] font-medium leading-relaxed">
+                  <div className="text-xs text-[#20C7C9] font-medium">Question 12 of 50</div>
+                  <div className="text-sm text-[#F5F8FA] font-medium leading-relaxed">
                     Which of the following is the correct order of draw for venipuncture using a standard evacuated tube system?
                   </div>
                   <div className="space-y-2 mt-3">
@@ -238,13 +246,14 @@ export default function MarketingLandingPage() {
                       { text: "Green, red, lavender, light blue", correct: false },
                       { text: "Lavender, green, red, light blue", correct: false },
                     ].map((opt, i) => (
-                      <div key={i} className={`p-2 rounded-lg text-xs ${opt.correct ? 'bg-[#DB2777]/20 border border-[#DB2777]/50 text-white' : 'bg-white/5 text-[#94A3B8]'}`}>
+                      <div key={i} className={`p-2 rounded-lg text-xs ${opt.correct ? 'bg-[#074653] border border-[#16C6C5] text-white' : 'bg-[#0B2038] text-[#A8B7C9]'}`}>
                         {opt.text}
                       </div>
                     ))}
                   </div>
                 </div>
               </AppMockup>
+              </div>
             </div>
           </div>
         </div>
@@ -252,15 +261,15 @@ export default function MarketingLandingPage() {
 
       {/* 2. BUILT FOR BUSY MEDICAL ASSISTANTS */}
       <section id="why-mobile" className="py-20 px-6 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#DB2777]/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#20C7C9]/5 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#22D3C5] to-[#22B8E6] bg-clip-text text-transparent">
                 Built for Busy Medical Assistants
               </span>
             </h2>
-            <p className="text-[#94A3B8] max-w-2xl mx-auto">
+            <p className="text-[#A8B7C9] max-w-2xl mx-auto">
               Study in short sessions between patients, on your commute, or at home — every session syncs to your progress.
             </p>
           </ScrollReveal>
@@ -291,11 +300,11 @@ export default function MarketingLandingPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#22D3C5] to-[#22B8E6] bg-clip-text text-transparent">
                 Everything You Need to Pass the NHA CCMA Exam
               </span>
             </h2>
-            <p className="text-[#94A3B8] max-w-2xl mx-auto">
+            <p className="text-[#A8B7C9] max-w-2xl mx-auto">
               A complete CCMA study system — theory, practice, and AI support in one place.
             </p>
           </ScrollReveal>
@@ -323,22 +332,22 @@ export default function MarketingLandingPage() {
 
       {/* 4. HOW IT WORKS */}
       <section id="how-it-works" className="py-20 px-6 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#A855F7]/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#1688B8]/5 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#22D3C5] to-[#22B8E6] bg-clip-text text-transparent">
                 How It Works
               </span>
             </h2>
-            <p className="text-[#94A3B8] max-w-2xl mx-auto">
+            <p className="text-[#A8B7C9] max-w-2xl mx-auto">
               Three steps from your first practice session to your passing score.
             </p>
           </ScrollReveal>
 
           <div className="relative flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4">
             {/* Connector line */}
-            <div className="hidden md:block absolute top-16 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-[#DB2777] via-[#A855F7] to-[#8B5CF6]" />
+            <div className="hidden md:block absolute top-16 left-1/4 right-1/4 h-0.5 bg-gradient-to-r from-[#20C7C9] via-[#1688B8] to-[#22B8E6]" />
             
             {[
               { num: "1", title: "Create Your Free Account", desc: "Sign up and get instant access to CCMA practice questions and your first theory chapter." },
@@ -347,11 +356,11 @@ export default function MarketingLandingPage() {
             ].map((item, i) => (
               <ScrollReveal key={i} className="relative flex-1 max-w-sm text-center">
                 <div className="relative z-10">
-                  <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-[#DB2777] to-[#A855F7] flex items-center justify-center text-2xl font-bold text-white shadow-[0_0_40px-rgba(59,130,246,0.3)]">
+                  <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-br from-[#20C7C9] to-[#1688B8] flex items-center justify-center text-2xl font-bold text-white shadow-[0_0_40px_rgba(32,199,201,0.25)]">
                     {item.num}
                   </div>
-                  <h3 className="text-xl font-bold text-[#F8FAFC] mb-2">{item.title}</h3>
-                  <p className="text-sm text-[#94A3B8] leading-relaxed">{item.desc}</p>
+                  <h3 className="text-xl font-bold text-[#F5F8FA] mb-2">{item.title}</h3>
+                  <p className="text-sm text-[#A8B7C9] leading-relaxed">{item.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -364,11 +373,11 @@ export default function MarketingLandingPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#22D3C5] to-[#22B8E6] bg-clip-text text-transparent">
                 The 13 Chapters of the NHA CCMA Blueprint
               </span>
             </h2>
-            <p className="text-[#94A3B8] max-w-2xl mx-auto">
+            <p className="text-[#A8B7C9] max-w-2xl mx-auto">
               Every topic on the official NHA CCMA exam, covered in depth by our theory guides and practice questions.
             </p>
           </ScrollReveal>
@@ -377,17 +386,17 @@ export default function MarketingLandingPage() {
             {CCMA_CHAPTERS.map((chapter, i) => (
               <ScrollReveal
                 key={chapter.num}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#DB2777]/30 transition-all duration-300 group"
+                className="p-6 rounded-2xl bg-[#0B2038] border border-[#14506B]/50 hover:border-[#20C7C9]/40 transition-all duration-300 group"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#DB2777] to-[#A855F7] flex items-center justify-center text-sm font-bold text-white flex-shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#20C7C9] to-[#1688B8] flex items-center justify-center text-sm font-bold text-white flex-shrink-0">
                     {chapter.num}
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-[#F8FAFC] mb-1 group-hover:text-[#DB2777] transition-colors">
+                    <h3 className="text-lg font-bold text-[#F5F8FA] mb-1 group-hover:text-[#20C7C9] transition-colors">
                       {chapter.title}
                     </h3>
-                    <p className="text-xs text-[#64748B]">
+                    <p className="text-xs text-[#70849A]">
                       {i === 0 ? "Medical terminology and basic science foundations" :
                        i === 1 ? "Body systems and how they work together" :
                        i === 2 ? "Patient intake, history, and vital signs" :
@@ -411,7 +420,7 @@ export default function MarketingLandingPage() {
           <div className="text-center mt-10">
             <a
               href="/ccma-certification-guide"
-              className="inline-flex items-center gap-2 text-sm text-[#94A3B8] hover:text-white transition-colors group"
+              className="inline-flex items-center gap-2 text-sm text-[#A8B7C9] hover:text-white transition-colors group"
             >
               Read the full CCMA certification guide
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -422,15 +431,15 @@ export default function MarketingLandingPage() {
 
       {/* 6. STATS SECTION */}
       <section className="py-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#DB2777]/10 via-[#150A12] to-[#8B5CF6]/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#20C7C9]/10 via-[#031428] to-[#22B8E6]/10" />
         <div className="relative z-10 max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#22D3C5] to-[#22B8E6] bg-clip-text text-transparent">
                 Know Exactly What You Are Preparing For
               </span>
             </h2>
-            <p className="text-[#94A3B8] max-w-2xl mx-auto">
+            <p className="text-[#A8B7C9] max-w-2xl mx-auto">
               The NHA CCMA exam, by the numbers — so there are no surprises on exam day.
             </p>
           </ScrollReveal>
@@ -444,11 +453,11 @@ export default function MarketingLandingPage() {
             ].map((item, i) => (
               <ScrollReveal
                 key={i}
-                className="p-8 rounded-2xl bg-white/5 border border-white/10 text-center hover:border-[#DB2777]/30 transition-all duration-300"
+                className="p-8 rounded-2xl bg-[#0B2038] border border-[#14506B]/50 text-center hover:border-[#20C7C9]/40 transition-all duration-300"
               >
-                <item.icon className="w-8 h-8 mx-auto mb-4 text-[#DB2777]" />
-                <div className="text-4xl font-bold text-[#F8FAFC] mb-2">{item.value}</div>
-                <p className="text-sm text-[#94A3B8]">{item.label}</p>
+                <item.icon className="w-8 h-8 mx-auto mb-4 text-[#20C7C9]" />
+                <div className="text-4xl font-bold text-[#F5F8FA] mb-2">{item.value}</div>
+                <p className="text-sm text-[#A8B7C9]">{item.label}</p>
               </ScrollReveal>
             ))}
           </div>
@@ -457,23 +466,23 @@ export default function MarketingLandingPage() {
 
       {/* 7. AI SECTION */}
       <section className="py-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#DB2777]/20 via-[#8B5CF6]/20 to-[#150A12]" />
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#8B5CF6]/20 rounded-full blur-[150px]" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#DB2777]/20 rounded-full blur-[150px]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#20C7C9]/15 via-[#22B8E6]/15 to-[#031428]" />
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#22B8E6]/15 rounded-full blur-[150px]" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#20C7C9]/15 rounded-full blur-[150px]" />
         
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <ScrollReveal className="flex-1">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
-                <Zap className="w-4 h-4 text-[#8B5CF6]" />
-                <span className="text-sm text-[#94A3B8]">AI-Powered Study</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#14506B]/20 border border-[#14506B]/50 mb-6">
+                <Zap className="w-4 h-4 text-[#22B8E6]" />
+                <span className="text-sm text-[#A8B7C9]">AI-Powered Study</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-[#DB2777] to-[#8B5CF6] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#20C7C9] to-[#22B8E6] bg-clip-text text-transparent">
                   Your Personal CCMA Study Partner
                 </span>
               </h2>
-              <p className="text-[#94A3B8] mb-8 text-lg">
+              <p className="text-[#A8B7C9] mb-8 text-lg">
                 The AI tutor works alongside you through every chapter of the CCMA blueprint — explaining, adapting, and keeping you on track.
               </p>
               
@@ -486,11 +495,11 @@ export default function MarketingLandingPage() {
                   "Review your performance to keep you consistent",
                 ].map((item, i) => (
                   <ScrollReveal key={i} className="flex items-start gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#8B5CF6]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <Check className="w-4 h-4 text-[#8B5CF6]" />
+                    <div className="w-6 h-6 rounded-full bg-[#22B8E6]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="w-4 h-4 text-[#22B8E6]" />
                     </div>
                     <div>
-                      <h4 className="text-[#F8FAFC] font-medium">{item}</h4>
+                      <h4 className="text-[#F5F8FA] font-medium">{item}</h4>
                     </div>
                   </ScrollReveal>
                 ))}
@@ -499,20 +508,20 @@ export default function MarketingLandingPage() {
 
             <ScrollReveal className="flex-1 flex justify-center">
               <div className="relative w-80 h-80">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#DB2777] to-[#8B5CF6] rounded-3xl rotate-6 opacity-20" />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#A855F7] to-[#DB2777] rounded-3xl -rotate-3 opacity-30" />
-                <div className="relative w-full h-full bg-[#1A2035] rounded-3xl border border-[#2D3A52] flex items-center justify-center backdrop-blur-sm">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#20C7C9] to-[#22B8E6] rounded-3xl rotate-6 opacity-20" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#1688B8] to-[#20C7C9] rounded-3xl -rotate-3 opacity-30" />
+                <div className="relative w-full h-full bg-[#0B2038] rounded-3xl border border-[#14506B]/60 flex items-center justify-center backdrop-blur-sm">
                   <div className="text-center p-8">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-[#DB2777] to-[#8B5CF6] flex items-center justify-center">
+                    <div className="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-[#20C7C9] to-[#22B8E6] flex items-center justify-center">
                       <Brain className="w-10 h-10 text-white" />
                     </div>
-                    <h3 className="text-xl font-bold text-[#F8FAFC] mb-2">AI Tutor</h3>
-                    <p className="text-sm text-[#94A3B8]">Your personal CCMA study partner</p>
+                    <h3 className="text-xl font-bold text-[#F5F8FA] mb-2">AI Tutor</h3>
+                    <p className="text-sm text-[#A8B7C9]">Your personal CCMA study partner</p>
                     <div className="mt-4 flex justify-center gap-1">
                       {[0, 1, 2, 3].map((i) => (
                         <div
                           key={i}
-                          className="w-2 h-2 rounded-full bg-[#DB2777] animate-pulse"
+                          className="w-2 h-2 rounded-full bg-[#20C7C9] animate-pulse"
                           style={{ animationDelay: `${i * 0.15}s` }}
                         />
                       ))}
@@ -530,11 +539,11 @@ export default function MarketingLandingPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#22D3C5] to-[#22B8E6] bg-clip-text text-transparent">
                 Built for Every CCMA Candidate
               </span>
             </h2>
-            <p className="text-[#94A3B8] max-w-2xl mx-auto">
+            <p className="text-[#A8B7C9] max-w-2xl mx-auto">
               Whether you are finishing your training or already working in a clinic, CCMAPractice fits your study routine.
             </p>
           </ScrollReveal>
@@ -548,11 +557,11 @@ export default function MarketingLandingPage() {
             ].map((item, i) => (
               <ScrollReveal
                 key={i}
-                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-[#DB2777]/30 transition-all duration-300 group"
+                className="p-6 rounded-2xl bg-[#0B2038] border border-[#14506B]/50 hover:border-[#20C7C9]/40 transition-all duration-300 group"
               >
                 <div className="text-4xl mb-4">{item.icon}</div>
-                <h3 className="text-lg font-bold text-[#F8FAFC] mb-2 group-hover:text-[#DB2777] transition-colors">{item.title}</h3>
-                <p className="text-sm text-[#94A3B8]">{item.desc}</p>
+                <h3 className="text-lg font-bold text-[#F5F8FA] mb-2 group-hover:text-[#20C7C9] transition-colors">{item.title}</h3>
+                <p className="text-sm text-[#A8B7C9]">{item.desc}</p>
               </ScrollReveal>
             ))}
           </div>
@@ -561,15 +570,15 @@ export default function MarketingLandingPage() {
 
       {/* 9. TESTIMONIALS */}
       <section id="testimonials" className="py-20 px-6 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#DB2777]/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#20C7C9]/5 to-transparent" />
         <div className="relative z-10 max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#22D3C5] to-[#22B8E6] bg-clip-text text-transparent">
                 What CCMA Candidates Say
               </span>
             </h2>
-            <p className="text-[#94A3B8] max-w-2xl mx-auto">
+            <p className="text-[#A8B7C9] max-w-2xl mx-auto">
               Candidates preparing for the NHA CCMA exam use CCMAPractice to study smarter.
             </p>
           </ScrollReveal>
@@ -581,7 +590,7 @@ export default function MarketingLandingPage() {
               school=""
               quote="The practice questions felt just like the real exam. The explanations referencing OSHA and HIPAA guidelines made everything click."
               index={0}
-              color="#DB2777"
+              color="#20C7C9"
             />
             <TestimonialCard
               name="Jasmine R."
@@ -597,7 +606,7 @@ export default function MarketingLandingPage() {
               school=""
               quote="The theory guides and 13-chapter structure gave me a clear study plan. I knew exactly what to review each week."
               index={2}
-              color="#8B5CF6"
+              color="#22B8E6"
             />
           </div>
         </div>
@@ -608,11 +617,11 @@ export default function MarketingLandingPage() {
         <div className="max-w-7xl mx-auto">
           <ScrollReveal className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#22D3C5] to-[#22B8E6] bg-clip-text text-transparent">
                 Simple, Affordable Pricing
               </span>
             </h2>
-            <p className="text-[#94A3B8] max-w-2xl mx-auto">
+            <p className="text-[#A8B7C9] max-w-2xl mx-auto">
               Start free. Upgrade when you are ready to go all-in on passing the NHA CCMA exam.
             </p>
           </ScrollReveal>
@@ -667,7 +676,7 @@ export default function MarketingLandingPage() {
           <div className="text-center mt-10">
             <a
               href="/pricing"
-              className="inline-flex items-center gap-2 text-sm text-[#94A3B8] hover:text-white transition-colors group"
+              className="inline-flex items-center gap-2 text-sm text-[#A8B7C9] hover:text-white transition-colors group"
             >
               View detailed plan comparison
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -678,31 +687,31 @@ export default function MarketingLandingPage() {
 
       {/* 11. FINAL CTA */}
       <section id="final-cta" className="py-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#DB2777]/20 via-[#A855F7]/20 to-[#8B5CF6]/20" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#DB2777]/10 rounded-full blur-[120px]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#20C7C9]/15 via-[#1688B8]/15 to-[#22B8E6]/10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#20C7C9]/10 rounded-full blur-[120px]" />
         
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <ScrollReveal>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#22D3C5] to-[#22B8E6] bg-clip-text text-transparent">
                 Ready to Pass Your NHA CCMA Exam?
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-[#94A3B8] mb-10 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-[#A8B7C9] mb-10 max-w-2xl mx-auto">
               Join medical assistant candidates preparing with 1,200+ practice questions, complete theory guides, and an AI tutor.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/auth/login"
-                className="group px-8 py-4 bg-white text-[#150A12] rounded-xl font-semibold hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all duration-300 flex items-center justify-center gap-3"
+                className="group px-8 py-4 bg-gradient-to-r from-[#23D0C6] to-[#168AC2] text-white rounded-xl font-semibold hover:shadow-[0_0_40px_rgba(32,199,201,0.35)] transition-all duration-300 flex items-center justify-center gap-3"
               >
                 <LogIn className="w-6 h-6" />
                 Start Practicing Free
               </a>
               <a
                 href="/pricing"
-                className="group px-8 py-4 bg-white/10 text-white rounded-xl font-semibold border border-white/20 hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-3"
+                className="group px-8 py-4 bg-[#102840] text-white rounded-xl font-semibold border border-[#14506B]/60 hover:bg-[#102840] transition-all duration-300 flex items-center justify-center gap-3"
               >
                 <ChevronRight className="w-6 h-6" />
                 View Plans
@@ -717,80 +726,80 @@ export default function MarketingLandingPage() {
       <RelatedStudyPlatforms />
 
       {/* 12. FOOTER */}
-      <footer className="py-12 px-6 border-t border-white/10">
+      <footer className="py-12 px-6 border-t border-[#14506B]/50">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-8 w-auto" />
+                <img src="/logo/logo-main.png?v=6" alt="CCMAPractice" className="h-8 w-auto" />
               </div>
-              <p className="text-sm text-[#94A3B8]">
+              <p className="text-sm text-[#A8B7C9]">
                 AI-powered NHA CCMA exam prep — practice questions, theory guides, and an AI tutor to help you pass with confidence.
               </p>
             </div>
             
             <div>
-              <h4 className="font-semibold text-[#F8FAFC] mb-4">Product</h4>
+              <h4 className="font-semibold text-[#F5F8FA] mb-4">Product</h4>
               <ul className="space-y-2">
-                <li><a href="#features" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Features</a></li>
-                <li><a href="/" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Home</a></li>
-                <li><a href="/pricing" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Pricing</a></li>
+                <li><a href="#features" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Features</a></li>
+                <li><a href="/" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Home</a></li>
+                <li><a href="/pricing" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Pricing</a></li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold text-[#F8FAFC] mb-4">Resources</h4>
+              <h4 className="font-semibold text-[#F5F8FA] mb-4">Resources</h4>
               <ul className="space-y-2">
-                <li><a href="/blog" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Blog</a></li>
-                <li><a href="/ccma-certification-guide" className="text-sm text-[#94A3B8] hover:text-white transition-colors">CCMA Certification Guide</a></li>
-                <li><a href="/free-ccma-practice-questions" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Free CCMA Practice Questions</a></li>
-                <li><a href="/blog/ccma-exam-structure" className="text-sm text-[#94A3B8] hover:text-white transition-colors">CCMA Exam Structure</a></li>
-                <li><a href="/blog/ccma-study-plan" className="text-sm text-[#94A3B8] hover:text-white transition-colors">CCMA Study Plan</a></li>
+                <li><a href="/blog" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Blog</a></li>
+                <li><a href="/ccma-certification-guide" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">CCMA Certification Guide</a></li>
+                <li><a href="/free-ccma-practice-questions" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Free CCMA Practice Questions</a></li>
+                <li><a href="/blog/ccma-exam-structure" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">CCMA Exam Structure</a></li>
+                <li><a href="/blog/ccma-study-plan" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">CCMA Study Plan</a></li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold text-[#F8FAFC] mb-4">Company</h4>
+              <h4 className="font-semibold text-[#F5F8FA] mb-4">Company</h4>
               <ul className="space-y-2">
-                <li><a href="/faq" className="text-sm text-[#94A3B8] hover:text-white transition-colors">FAQ</a></li>
-                <li><a href="/contact" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Contact</a></li>
-                <li><a href="/privacy" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="/terms" className="text-sm text-[#94A3B8] hover:text-white transition-colors">Terms of Service</a></li>
+                <li><a href="/faq" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">FAQ</a></li>
+                <li><a href="/contact" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Contact</a></li>
+                <li><a href="/privacy" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="/terms" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">Terms of Service</a></li>
               </ul>
             </div>
           </div>
           
-          <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="text-sm text-[#94A3B8]">
+          <div className="pt-8 border-t border-[#14506B]/50 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="text-sm text-[#A8B7C9]">
               © 2026 CCMAPractice. All rights reserved.
             </div>
             
             <div className="flex items-center gap-4">
-              <a href="https://x.com/ccmapractice" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
-                <svg className="w-5 h-5 text-[#94A3B8]" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              <a href="https://x.com/ccmapractice" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#0B2038] flex items-center justify-center hover:bg-[#102840] transition-colors">
+                <svg className="w-5 h-5 text-[#A8B7C9]" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               </a>
-              <a href="https://linkedin.com/company/ccmapractice" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
-                <Linkedin className="w-5 h-5 text-[#94A3B8]" />
+              <a href="https://linkedin.com/company/ccmapractice" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#0B2038] flex items-center justify-center hover:bg-[#102840] transition-colors">
+                <Linkedin className="w-5 h-5 text-[#A8B7C9]" />
               </a>
-              <a href="https://instagram.com/ccmapractice" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors">
-                <Instagram className="w-5 h-5 text-[#94A3B8]" />
+              <a href="https://instagram.com/ccmapractice" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-[#0B2038] flex items-center justify-center hover:bg-[#102840] transition-colors">
+                <Instagram className="w-5 h-5 text-[#A8B7C9]" />
               </a>
             </div>
             
             <div className="flex items-center gap-2">
               <a
                 href="/auth/login"
-                className="px-3 py-1.5 bg-blue/10 rounded-lg flex items-center gap-2 hover:bg-blue/20 transition-colors"
+                className="px-3 py-1.5 bg-[#20C7C9]/10 rounded-lg flex items-center gap-2 hover:bg-[#20C7C9]/20 transition-colors"
               >
-                <LogIn className="w-4 h-4 text-blue" />
-                <span className="text-xs text-blue font-medium">Start Free</span>
+                <LogIn className="w-4 h-4 text-[#20C7C9]" />
+                <span className="text-xs text-[#20C7C9] font-medium">Start Free</span>
               </a>
               <a
                 href="#pricing"
-                className="px-3 py-1.5 bg-white/5 rounded-lg flex items-center gap-2 hover:bg-white/10 transition-colors"
+                className="px-3 py-1.5 bg-[#0B2038] rounded-lg flex items-center gap-2 hover:bg-[#102840] transition-colors"
               >
-                <ChevronRight className="w-4 h-4 text-[#94A3B8]" />
-                <span className="text-xs text-[#94A3B8]">View Pricing</span>
+                <ChevronRight className="w-4 h-4 text-[#A8B7C9]" />
+                <span className="text-xs text-[#A8B7C9]">View Pricing</span>
               </a>
             </div>
           </div>

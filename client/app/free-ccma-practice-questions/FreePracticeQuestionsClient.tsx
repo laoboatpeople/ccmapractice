@@ -180,10 +180,10 @@ function EmailCapture() {
 
   return (
     <div className="rounded-xl border border-white/10 bg-white/[0.03] p-6">
-      <h3 className="text-lg font-bold text-[#F8FAFC] mb-2">
+      <h3 className="text-lg font-bold text-[#F5F8FA] mb-2">
         📥 Get 10 Free CCMA Practice Questions
       </h3>
-      <p className="text-sm text-[#94A3B8] mb-4">
+      <p className="text-sm text-[#A8B7C9] mb-4">
         Subscribe to the CCMAPractice newsletter and we&apos;ll send you a free sample pack.
       </p>
       {status === 'success' ? (
@@ -196,12 +196,12 @@ function EmailCapture() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="your@email.com"
             required
-            className="flex-1 px-4 py-2.5 rounded-lg bg-[#1A2035] border border-white/10 text-[#F8FAFC] text-sm placeholder:text-[#64748B] focus:outline-none focus:border-[#DB2777]"
+            className="flex-1 px-4 py-2.5 rounded-lg bg-[#0B2038] border border-white/10 text-[#F5F8FA] text-sm placeholder:text-[#70849A] focus:outline-none focus:border-[#20C7C9]"
           />
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="px-6 py-2.5 rounded-lg bg-[#DB2777] hover:bg-[#BE185D] text-white text-sm font-medium disabled:opacity-50 transition-colors"
+            className="px-6 py-2.5 rounded-lg bg-[#20C7C9] hover:bg-[#1688B8] text-white text-sm font-medium disabled:opacity-50 transition-colors"
           >
             {status === 'loading' ? 'Sending...' : 'Get Free Sample'}
           </button>
@@ -218,18 +218,18 @@ function QuestionCard({ q }: { q: typeof questions[0] }) {
   return (
     <div className="rounded-xl border border-white/10 bg-white/[0.03] p-6">
       <div className="flex items-center gap-2 mb-3">
-        <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#DB2777] text-white text-xs font-bold">
+        <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#20C7C9] text-white text-xs font-bold">
           {q.id}
         </span>
-        <span className="text-xs font-medium text-[#DB2777] uppercase tracking-wider">{q.topic}</span>
+        <span className="text-xs font-medium text-[#20C7C9] uppercase tracking-wider">{q.topic}</span>
       </div>
-      <p className="text-sm text-[#F8FAFC] font-medium mb-4">{q.stem}</p>
+      <p className="text-sm text-[#F5F8FA] font-medium mb-4">{q.stem}</p>
       <ul className="space-y-2 mb-4">
         {q.options.map((opt, i) => (
           <li
             key={i}
-            className={`text-xs text-[#94A3B8] p-2 rounded ${
-              i === q.correctIndex ? 'border-l-2 border-[#DB2777] bg-[#DB2777]/5' : ''
+            className={`text-xs text-[#A8B7C9] p-2 rounded ${
+              i === q.correctIndex ? 'border-l-2 border-[#20C7C9] bg-[#20C7C9]/5' : ''
             }`}
           >
             {opt}
@@ -237,7 +237,7 @@ function QuestionCard({ q }: { q: typeof questions[0] }) {
         ))}
       </ul>
       <details className="group">
-        <summary className="inline-flex items-center gap-1 text-xs font-medium text-[#DB2777] hover:text-[#60A5FA] cursor-pointer list-none">
+        <summary className="inline-flex items-center gap-1 text-xs font-medium text-[#20C7C9] hover:text-[#60A5FA] cursor-pointer list-none">
           <span>▶</span>
           <span>Show Answer</span>
         </summary>
@@ -245,8 +245,8 @@ function QuestionCard({ q }: { q: typeof questions[0] }) {
           <p className="text-xs font-medium text-green-400 mb-1">
             ✅ Correct Answer: {q.options[q.correctIndex]}
           </p>
-          <p className="text-xs text-[#94A3B8]">{q.explanation}</p>
-          <p className="text-xs text-[#64748B] mt-1 italic">Reference: {q.ref}</p>
+          <p className="text-xs text-[#A8B7C9]">{q.explanation}</p>
+          <p className="text-xs text-[#70849A] mt-1 italic">Reference: {q.ref}</p>
         </div>
       </details>
     </div>
@@ -255,14 +255,14 @@ function QuestionCard({ q }: { q: typeof questions[0] }) {
 
 export default function FreePracticeQuestionsClient() {
   return (
-    <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
+    <div className="min-h-screen bg-[#031428] text-[#F5F8FA]">
       {/* Nav */}
-      <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
+      <nav className="border-b border-white/5 bg-[#031428]/80 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
-            <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
+            <img src="/logo/logo-main.png?v=6" alt="CCMAPractice" className="h-7 w-auto" />
           </a>
-          <a href="/blog" className="text-sm text-[#94A3B8] hover:text-white transition-colors">
+          <a href="/blog" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">
             ← Back to Blog
           </a>
         </div>
@@ -271,13 +271,13 @@ export default function FreePracticeQuestionsClient() {
       {/* Header */}
       <header className="max-w-4xl mx-auto px-6 pt-16 pb-8 text-center">
         <h1 className="text-4xl font-bold mb-4">Free CCMA Practice Questions</h1>
-        <p className="text-lg text-[#94A3B8] max-w-2xl mx-auto mb-6">
+        <p className="text-lg text-[#A8B7C9] max-w-2xl mx-auto mb-6">
           10 realistic NHA CCMA-style clinical questions covering vital signs, phlebotomy, medication
           administration, and HIPAA — with the guideline reference for every answer. Click to reveal the answer and explanation.
         </p>
         <a
           href="/auth/register"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#DB2777] hover:bg-[#BE185D] text-white text-sm font-medium transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#20C7C9] hover:bg-[#1688B8] text-white text-sm font-medium transition-colors"
         >
           Start Your Free Practice →
         </a>
@@ -290,7 +290,7 @@ export default function FreePracticeQuestionsClient() {
 
       {/* Introduction */}
       <section className="max-w-4xl mx-auto px-6 mb-12">
-        <div className="text-sm text-[#94A3B8] leading-relaxed">
+        <div className="text-sm text-[#A8B7C9] leading-relaxed">
           <p>
             These 10 sample questions represent the type of questions you will
             encounter on the NHA CCMA exam. Each question covers a specific
@@ -299,13 +299,13 @@ export default function FreePracticeQuestionsClient() {
             HIPAA, infection control, EKG, and point of care testing.
           </p>
           <p className="mt-4">
-            Click the <strong className="text-[#F8FAFC]">Show Answer</strong> button under each question to see
+            Click the <strong className="text-[#F5F8FA]">Show Answer</strong> button under each question to see
             the correct answer, a detailed explanation, and the guideline
             reference. Use these questions to practice your clinical reasoning
             and identify areas that need more study.
           </p>
           <p className="mt-4">
-            CCMAPractice has <strong className="text-[#F8FAFC]">1,200+ CCMA practice questions</strong> covering all
+            CCMAPractice has <strong className="text-[#F5F8FA]">1,200+ CCMA practice questions</strong> covering all
             thirteen blueprint chapters — from foundational knowledge and anatomy
             to phlebotomy, EKG, and medical law and ethics. Sign up
             for free to access the full question bank with adaptive difficulty,
@@ -323,11 +323,11 @@ export default function FreePracticeQuestionsClient() {
 
       {/* CTA Section */}
       <section className="max-w-4xl mx-auto px-6 mb-16">
-        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-[#DB2777]/10 to-[#A855F7]/5 p-8 text-center">
-          <h2 className="text-2xl font-bold text-[#F8FAFC] mb-3">
+        <div className="rounded-xl border border-white/10 bg-gradient-to-br from-[#20C7C9]/10 to-[#1688B8]/5 p-8 text-center">
+          <h2 className="text-2xl font-bold text-[#F5F8FA] mb-3">
             Ready for 1,200+ Questions?
           </h2>
-          <p className="text-sm text-[#94A3B8] max-w-xl mx-auto mb-6">
+          <p className="text-sm text-[#A8B7C9] max-w-xl mx-auto mb-6">
             Get unlimited access to NHA CCMA-style clinical practice questions
             with adaptive difficulty, timed simulations, AI Tutor explanations,
             and detailed progress tracking.
@@ -335,13 +335,13 @@ export default function FreePracticeQuestionsClient() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
               href="/auth/register"
-              className="px-6 py-3 rounded-lg bg-[#DB2777] hover:bg-[#BE185D] text-white text-sm font-medium transition-colors"
+              className="px-6 py-3 rounded-lg bg-[#20C7C9] hover:bg-[#1688B8] text-white text-sm font-medium transition-colors"
             >
               Create Free Account
             </a>
             <a
               href="/pricing"
-              className="px-6 py-3 rounded-lg border border-white/10 hover:bg-white/[0.05] text-[#F8FAFC] text-sm font-medium transition-colors"
+              className="px-6 py-3 rounded-lg border border-white/10 hover:bg-white/[0.05] text-[#F5F8FA] text-sm font-medium transition-colors"
             >
               View Pricing
             </a>
@@ -356,42 +356,42 @@ export default function FreePracticeQuestionsClient() {
 
       {/* Related Resources */}
       <section className="max-w-4xl mx-auto px-6 pb-20">
-        <h2 className="text-xl font-bold text-[#F8FAFC] mb-6">📚 More Study Resources</h2>
+        <h2 className="text-xl font-bold text-[#F5F8FA] mb-6">📚 More Study Resources</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <a href="/blog/ccma-b1-certification-guide" className="p-5 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
-            <h3 className="font-semibold text-[#F8FAFC] mb-1 text-sm">The Complete CCMA Certification Guide</h3>
-            <p className="text-xs text-[#64748B]">Everything you need to earn your CCMA certification.</p>
+            <h3 className="font-semibold text-[#F5F8FA] mb-1 text-sm">The Complete CCMA Certification Guide</h3>
+            <p className="text-xs text-[#70849A]">Everything you need to earn your CCMA certification.</p>
           </a>
           <a href="/blog/ccma-study-guide" className="p-5 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
-            <h3 className="font-semibold text-[#F8FAFC] mb-1 text-sm">CCMA Study Guide</h3>
-            <p className="text-xs text-[#64748B]">Master the 13 blueprint chapters of the NHA CCMA exam.</p>
+            <h3 className="font-semibold text-[#F5F8FA] mb-1 text-sm">CCMA Study Guide</h3>
+            <p className="text-xs text-[#70849A]">Master the 13 blueprint chapters of the NHA CCMA exam.</p>
           </a>
           <a href="/blog/ccma-exam-structure" className="p-5 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
-            <h3 className="font-semibold text-[#F8FAFC] mb-1 text-sm">CCMA Exam Structure</h3>
-            <p className="text-xs text-[#64748B]">Scored vs. pretest questions, time limits, and the passing score.</p>
+            <h3 className="font-semibold text-[#F5F8FA] mb-1 text-sm">CCMA Exam Structure</h3>
+            <p className="text-xs text-[#70849A]">Scored vs. pretest questions, time limits, and the passing score.</p>
           </a>
           <a href="/study-checklist" className="p-5 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
-            <h3 className="font-semibold text-[#F8FAFC] mb-1 text-sm">30-Day Study Checklist</h3>
-            <p className="text-xs text-[#64748B]">Printable day-by-day NHA CCMA exam prep plan.</p>
+            <h3 className="font-semibold text-[#F5F8FA] mb-1 text-sm">30-Day Study Checklist</h3>
+            <p className="text-xs text-[#70849A]">Printable day-by-day NHA CCMA exam prep plan.</p>
           </a>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="border-t border-white/5 py-8">
-        <div className="max-w-4xl mx-auto px-6 text-center text-xs text-[#64748B]">
+        <div className="max-w-4xl mx-auto px-6 text-center text-xs text-[#70849A]">
           <p className="mb-2">
-            <a href="/" className="hover:text-[#94A3B8] transition-colors">Home</a>
+            <a href="/" className="hover:text-[#A8B7C9] transition-colors">Home</a>
             <span className="mx-2">·</span>
-            <a href="/blog" className="hover:text-[#94A3B8] transition-colors">Blog</a>
+            <a href="/blog" className="hover:text-[#A8B7C9] transition-colors">Blog</a>
             <span className="mx-2">·</span>
-            <a href="/about" className="hover:text-[#94A3B8] transition-colors">About</a>
+            <a href="/about" className="hover:text-[#A8B7C9] transition-colors">About</a>
             <span className="mx-2">·</span>
-            <a href="/pricing" className="hover:text-[#94A3B8] transition-colors">Pricing</a>
+            <a href="/pricing" className="hover:text-[#A8B7C9] transition-colors">Pricing</a>
             <span className="mx-2">·</span>
-            <a href="/privacy" className="hover:text-[#94A3B8] transition-colors">Privacy</a>
+            <a href="/privacy" className="hover:text-[#A8B7C9] transition-colors">Privacy</a>
             <span className="mx-2">·</span>
-            <a href="/terms" className="hover:text-[#94A3B8] transition-colors">Terms</a>
+            <a href="/terms" className="hover:text-[#A8B7C9] transition-colors">Terms</a>
           </p>
           <p>&copy; {new Date().getFullYear()} CCMAPractice. All rights reserved. CCMAPractice is not affiliated with the National Healthcareer Association (NHA).</p>
         </div>

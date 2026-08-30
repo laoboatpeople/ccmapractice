@@ -230,14 +230,14 @@ export default function CcmaResourcesPage() {
           { name: 'CCMA Resources', url: 'https://ccmapractice.com/ccma-resources' },
         ]}
       />
-      <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
-        <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
+      <div className="min-h-screen bg-[#031428] text-[#F5F8FA]">
+        <nav className="border-b border-white/5 bg-[#031428]/80 backdrop-blur-md">
           <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2">
-              <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
+              <img src="/logo/logo-main.png?v=6" alt="CCMAPractice" className="h-7 w-auto" />
             </a>
             <div className="flex items-center gap-4">
-              <a href="/faq" className="text-sm text-[#94A3B8] hover:text-white transition-colors">← FAQ</a>
+              <a href="/faq" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">← FAQ</a>
             </div>
           </div>
         </nav>
@@ -245,7 +245,7 @@ export default function CcmaResourcesPage() {
         {/* Header */}
         <header className="max-w-4xl mx-auto px-6 pt-16 pb-10 text-center">
           <h1 className="text-4xl font-bold mb-4">CCMA Resources Hub</h1>
-          <p className="text-lg text-[#94A3B8] max-w-2xl mx-auto">
+          <p className="text-lg text-[#A8B7C9] max-w-2xl mx-auto">
             Everything you need to prepare for the NHA CCMA certification
             exam — official links, guidelines, study tools, and practice — in one place.
           </p>
@@ -255,19 +255,19 @@ export default function CcmaResourcesPage() {
         <div className="max-w-4xl mx-auto px-6 space-y-14 pb-16">
           {sections.map((section) => (
             <section key={section.id} id={section.id}>
-              <h2 className="text-2xl font-bold text-[#F8FAFC] mb-2">{section.title}</h2>
-              <p className="text-sm text-[#94A3B8] mb-6">{section.description}</p>
+              <h2 className="text-2xl font-bold text-[#F5F8FA] mb-2">{section.title}</h2>
+              <p className="text-sm text-[#A8B7C9] mb-6">{section.description}</p>
               <div className="grid md:grid-cols-2 gap-4">
                 {section.resources.map((r) => (
                   <a
                     key={r.href}
                     href={r.href}
-                    className="group p-6 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-[#DB2777]/30 transition-all"
+                    className="group p-6 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] hover:border-[#20C7C9]/30 transition-all"
                   >
-                    <h3 className="font-semibold text-[#F8FAFC] mb-2 group-hover:text-[#DB2777] transition-colors">
+                    <h3 className="font-semibold text-[#F5F8FA] mb-2 group-hover:text-[#20C7C9] transition-colors">
                       {r.title}
                     </h3>
-                    <p className="text-sm text-[#94A3B8] leading-relaxed">{r.description}</p>
+                    <p className="text-sm text-[#A8B7C9] leading-relaxed">{r.description}</p>
                   </a>
                 ))}
               </div>
@@ -278,7 +278,7 @@ export default function CcmaResourcesPage() {
         {/* About the CCMA Exam */}
         <div className="max-w-4xl mx-auto px-6 pb-16">
           <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-8">
-            <h2 className="text-2xl font-bold text-[#F8FAFC] mb-4">
+            <h2 className="text-2xl font-bold text-[#F5F8FA] mb-4">
               The NHA CCMA Certification
             </h2>
             <div className="space-y-4 text-[#CBD5E1] leading-relaxed">
@@ -315,18 +315,18 @@ export default function CcmaResourcesPage() {
 
         {/* CTA */}
         <div className="max-w-4xl mx-auto px-6 pb-24">
-          <div className="text-center bg-gradient-to-r from-[#DB2777]/10 to-[#A855F7]/10 rounded-2xl p-10">
+          <div className="text-center bg-gradient-to-r from-[#20C7C9]/10 to-[#1688B8]/10 rounded-2xl p-10">
             <h2 className="text-2xl font-bold mb-3">
               Ready to Start Studying?
             </h2>
-            <p className="text-[#94A3B8] mb-6 max-w-xl mx-auto">
+            <p className="text-[#A8B7C9] mb-6 max-w-xl mx-auto">
               Create your free account and start practicing with AI-powered clinical
               questions tailored to the NHA CCMA exam. No credit card required.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/auth/register"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-[#DB2777] hover:bg-[#BE185D] rounded-lg text-sm font-medium transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-[#20C7C9] hover:bg-[#1688B8] rounded-lg text-sm font-medium transition-colors"
               >
                 Get Started Free
               </a>

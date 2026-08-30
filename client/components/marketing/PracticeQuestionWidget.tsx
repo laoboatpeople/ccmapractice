@@ -104,7 +104,7 @@ export default function PracticeQuestionWidget() {
 
   return (
     <section className="py-20 px-6 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-[#A855F7]/5 via-transparent to-[#DB2777]/5" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#1688B8]/5 via-transparent to-[#20C7C9]/5" />
       <div className="relative z-10 max-w-3xl mx-auto">
         {/* Heading */}
         <motion.div
@@ -116,11 +116,11 @@ export default function PracticeQuestionWidget() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-3">
             🔥{' '}
-            <span className="bg-gradient-to-r from-[#DB2777] to-[#A855F7] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#20C7C9] to-[#1688B8] bg-clip-text text-transparent">
               Try a Real CCMA Question
             </span>
           </h2>
-          <p className="text-[#94A3B8] max-w-xl mx-auto">
+          <p className="text-[#A8B7C9] max-w-xl mx-auto">
             See how CCMAPractice prepares you for the NHA CCMA exam. Select your answer below to test your clinical knowledge.
           </p>
         </motion.div>
@@ -131,20 +131,20 @@ export default function PracticeQuestionWidget() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           viewport={{ once: true }}
-          className="rounded-2xl border border-white/10 bg-gradient-to-br from-[#1A2035] to-[#150A12] p-6 md:p-8 shadow-xl"
+          className="rounded-2xl border border-white/10 bg-gradient-to-br from-[#0B2038] to-[#031428] p-6 md:p-8 shadow-xl"
         >
           {/* Topic badge */}
           <div className="flex items-center gap-2 mb-4">
-            <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#DB2777]/20 text-[#DB2777] text-xs font-bold">
+            <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-[#20C7C9]/20 text-[#20C7C9] text-xs font-bold">
               ?
             </span>
-            <span className="text-xs font-semibold text-[#DB2777] uppercase tracking-wider">
+            <span className="text-xs font-semibold text-[#20C7C9] uppercase tracking-wider">
               {question.topic}
             </span>
           </div>
 
           {/* Question stem */}
-          <p className="text-sm md:text-base text-[#F8FAFC] font-medium leading-relaxed mb-6">
+          <p className="text-sm md:text-base text-[#F5F8FA] font-medium leading-relaxed mb-6">
             {question.stem}
           </p>
 
@@ -152,11 +152,11 @@ export default function PracticeQuestionWidget() {
           <div className="space-y-3">
             {question.options.map((opt, idx) => {
               let optionStyle =
-                'border border-white/10 bg-white/[0.03] hover:border-[#DB2777]/30 hover:bg-white/[0.06]';
+                'border border-white/10 bg-white/[0.03] hover:border-[#20C7C9]/30 hover:bg-white/[0.06]';
 
               if (!answered) {
                 optionStyle =
-                  'border border-white/10 bg-white/[0.03] hover:border-[#DB2777]/30 hover:bg-white/[0.06] cursor-pointer';
+                  'border border-white/10 bg-white/[0.03] hover:border-[#20C7C9]/30 hover:bg-white/[0.06] cursor-pointer';
               } else if (idx === question.correctIndex) {
                 optionStyle = 'border border-green bg-green/10';
               } else if (idx === selectedIndex && !isCorrect) {
@@ -179,12 +179,12 @@ export default function PracticeQuestionWidget() {
                           ? 'bg-green text-white'
                           : answered && idx === selectedIndex && !isCorrect
                           ? 'bg-red text-white'
-                          : 'bg-white/10 text-[#94A3B8]'
+                          : 'bg-white/10 text-[#A8B7C9]'
                       }`}
                     >
                       {String.fromCharCode(65 + idx)}
                     </span>
-                    <span className="text-sm md:text-sm text-[#94A3B8] leading-relaxed">
+                    <span className="text-sm md:text-sm text-[#A8B7C9] leading-relaxed">
                       {opt}
                     </span>
                     {answered && idx === question.correctIndex && (
@@ -218,11 +218,11 @@ export default function PracticeQuestionWidget() {
                 <p className={`font-semibold text-sm mb-1 ${isCorrect ? 'text-green' : 'text-red'}`}>
                   {isCorrect ? '✅ Correct!' : '❌ Not quite.'}
                 </p>
-                <p className="text-xs md:text-sm text-[#94A3B8] leading-relaxed">
+                <p className="text-xs md:text-sm text-[#A8B7C9] leading-relaxed">
                   {question.explanation}
                 </p>
                 {question.ref && (
-                  <p className="text-xs text-[#64748B] mt-2 italic">
+                  <p className="text-xs text-[#70849A] mt-2 italic">
                     Reference: {question.ref}
                   </p>
                 )}
@@ -232,14 +232,14 @@ export default function PracticeQuestionWidget() {
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <a
                   href="/auth/register"
-                  className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#DB2777] to-[#A855F7] text-white text-sm font-semibold hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] transition-all duration-300"
+                  className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#20C7C9] to-[#1688B8] text-white text-sm font-semibold hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] transition-all duration-300"
                 >
                   Want to see more? → Start Free
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
                   href="https://ccmapractice.com/free-ccma-practice-questions"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-white/10 hover:bg-white/5 text-[#94A3B8] hover:text-white text-sm font-medium transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-white/10 hover:bg-white/5 text-[#A8B7C9] hover:text-white text-sm font-medium transition-all duration-300"
                 >
                   📄 Download Free CCMA questions
                 </a>

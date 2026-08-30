@@ -38,14 +38,14 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
+    <div className="min-h-screen bg-[#031428] text-[#F5F8FA]">
       {/* Nav */}
-      <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
+      <nav className="border-b border-white/5 bg-[#031428]/80 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
-            <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
+            <img src="/logo/logo-main.png?v=6" alt="CCMAPractice" className="h-7 w-auto" />
           </a>
-          <a href="/" className="text-sm text-[#94A3B8] hover:text-white transition-colors">
+          <a href="/" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">
             ← Back to Home
           </a>
         </div>
@@ -54,13 +54,13 @@ export default function AboutPage() {
       {/* Header */}
       <div className="max-w-4xl mx-auto px-6 pt-20 pb-16">
         <div className="text-center mb-16">
-          <span className="text-[11px] font-medium text-[#DB2777] bg-[#DB2777]/10 px-3 py-1.5 rounded-full uppercase tracking-wider">
+          <span className="text-[11px] font-medium text-[#20C7C9] bg-[#20C7C9]/10 px-3 py-1.5 rounded-full uppercase tracking-wider">
             About
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mt-6 mb-6">
             About CCMAPractice
           </h1>
-          <p className="text-lg md:text-xl text-[#94A3B8] max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-[#A8B7C9] max-w-3xl mx-auto leading-relaxed">
             We are building the most effective study platform for the NHA CCMA
             certification exam — combining AI technology with real clinical
             expertise to help candidates pass with confidence.
@@ -71,7 +71,7 @@ export default function AboutPage() {
         <section className="mb-16">
           <div className="bg-white/5 rounded-2xl p-8 md:p-10">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 rounded-lg bg-[#DB2777]/20 flex items-center justify-center text-[#DB2777]">★</span>
+              <span className="w-8 h-8 rounded-lg bg-[#20C7C9]/20 flex items-center justify-center text-[#20C7C9]">★</span>
               Our Mission
             </h2>
             <p className="text-[#CBD5E1] leading-relaxed mb-4">
@@ -108,7 +108,7 @@ export default function AboutPage() {
         <section className="mb-16">
           <div className="bg-white/5 rounded-2xl p-8 md:p-10">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 rounded-lg bg-[#A855F7]/20 flex items-center justify-center text-[#A855F7]">◆</span>
+              <span className="w-8 h-8 rounded-lg bg-[#1688B8]/20 flex items-center justify-center text-[#1688B8]">◆</span>
               Our Platform
             </h2>
             <p className="text-[#CBD5E1] leading-relaxed mb-4">
@@ -133,13 +133,13 @@ export default function AboutPage() {
             </p>
             <div className="grid md:grid-cols-2 gap-4 mt-8">
               <div className="bg-white/5 rounded-xl p-6">
-                <div className="w-10 h-10 rounded-lg bg-[#DB2777]/20 flex items-center justify-center mb-3">
-                  <svg className="w-5 h-5 text-[#DB2777]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <div className="w-10 h-10 rounded-lg bg-[#20C7C9]/20 flex items-center justify-center mb-3">
+                  <svg className="w-5 h-5 text-[#20C7C9]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 </div>
                 <h3 className="font-semibold mb-2">AI Adaptive Difficulty</h3>
-                <p className="text-sm text-[#94A3B8] leading-relaxed">
+                <p className="text-sm text-[#A8B7C9] leading-relaxed">
                   The AI adjusts question difficulty in real time based on your
                   performance. Master a topic and the system challenges you further;
                   struggle and it offers more foundational exercises. This ensures
@@ -147,13 +147,13 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="bg-white/5 rounded-xl p-6">
-                <div className="w-10 h-10 rounded-lg bg-[#A855F7]/20 flex items-center justify-center mb-3">
-                  <svg className="w-5 h-5 text-[#A855F7]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <div className="w-10 h-10 rounded-lg bg-[#1688B8]/20 flex items-center justify-center mb-3">
+                  <svg className="w-5 h-5 text-[#1688B8]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
                 </div>
                 <h3 className="font-semibold mb-2">Realistic Exam Simulations</h3>
-                <p className="text-sm text-[#94A3B8] leading-relaxed">
+                <p className="text-sm text-[#A8B7C9] leading-relaxed">
                   Timed 150-question practice exams replicate the actual NHA CCMA
                   testing environment. Build speed and confidence before the real
                   exam with question formats, durations, and difficulty levels
@@ -161,13 +161,13 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="bg-white/5 rounded-xl p-6">
-                <div className="w-10 h-10 rounded-lg bg-[#8B5CF6]/20 flex items-center justify-center mb-3">
-                  <svg className="w-5 h-5 text-[#8B5CF6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <div className="w-10 h-10 rounded-lg bg-[#22B8E6]/20 flex items-center justify-center mb-3">
+                  <svg className="w-5 h-5 text-[#22B8E6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                   </svg>
                 </div>
                 <h3 className="font-semibold mb-2">AI Tutor</h3>
-                <p className="text-sm text-[#94A3B8] leading-relaxed">
+                <p className="text-sm text-[#A8B7C9] leading-relaxed">
                   Get instant, plain-language explanations of complex clinical
                   concepts. Ask questions naturally and receive exam-focused
                   answers that reference the exact guidelines and procedures.
@@ -180,7 +180,7 @@ export default function AboutPage() {
                   </svg>
                 </div>
                 <h3 className="font-semibold mb-2">Progress Analytics</h3>
-                <p className="text-sm text-[#94A3B8] leading-relaxed">
+                <p className="text-sm text-[#A8B7C9] leading-relaxed">
                   Detailed analytics show your performance in every chapter of the
                   blueprint. Track accuracy by chapter, monitor difficulty
                   progression, and review your exam history — always know exactly
@@ -199,12 +199,12 @@ export default function AboutPage() {
               Our Founder
             </h2>
             <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-[#DB2777] to-[#A855F7] flex items-center justify-center text-white text-4xl font-bold shrink-0">
+              <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-[#20C7C9] to-[#1688B8] flex items-center justify-center text-white text-4xl font-bold shrink-0">
                 CO
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Chuck Onekeo</h3>
-                <p className="text-sm text-[#DB2777] font-medium mb-4">
+                <p className="text-sm text-[#20C7C9] font-medium mb-4">
                   Programmer &amp; AI Specialist — Founder of CCMAPractice
                 </p>
                 <p className="text-[#CBD5E1] leading-relaxed mb-4">
@@ -241,7 +241,7 @@ export default function AboutPage() {
         <section className="mb-16">
           <div className="bg-white/5 rounded-2xl p-8 md:p-10">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 rounded-lg bg-[#8B5CF6]/20 flex items-center justify-center text-[#8B5CF6]">⚡</span>
+              <span className="w-8 h-8 rounded-lg bg-[#22B8E6]/20 flex items-center justify-center text-[#22B8E6]">⚡</span>
               Why We Built This
             </h2>
             <p className="text-[#CBD5E1] leading-relaxed mb-4">
@@ -266,28 +266,28 @@ export default function AboutPage() {
             </p>
             <ul className="space-y-3 text-[#CBD5E1]">
               <li className="flex items-start gap-3">
-                <span className="text-[#DB2777] mt-1.5">▸</span>
-                <span><strong className="text-[#F8FAFC]">Scarcity of practice questions</strong> — Most candidates report that finding enough realistic practice questions is their biggest challenge. Free resources are thin (open-exam-prep offers roughly 114 questions), while official and commercial packages are expensive. We built a bank of 1,200+ questions covering all 13 blueprint chapters.</span>
+                <span className="text-[#20C7C9] mt-1.5">▸</span>
+                <span><strong className="text-[#F5F8FA]">Scarcity of practice questions</strong> — Most candidates report that finding enough realistic practice questions is their biggest challenge. Free resources are thin (open-exam-prep offers roughly 114 questions), while official and commercial packages are expensive. We built a bank of 1,200+ questions covering all 13 blueprint chapters.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#DB2777] mt-1.5">▸</span>
-                <span><strong className="text-[#F8FAFC]">Explanations without the why</strong> — Most question banks tell you the right answer but not why it is right. Every CCMAPractice explanation cites the actual guideline behind the answer — OSHA Bloodborne Pathogens, the HIPAA Privacy Rule, CDC Standard Precautions, AHA guidelines, CLIA-waived testing.</span>
+                <span className="text-[#20C7C9] mt-1.5">▸</span>
+                <span><strong className="text-[#F5F8FA]">Explanations without the why</strong> — Most question banks tell you the right answer but not why it is right. Every CCMAPractice explanation cites the actual guideline behind the answer — OSHA Bloodborne Pathogens, the HIPAA Privacy Rule, CDC Standard Precautions, AHA guidelines, CLIA-waived testing.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#DB2777] mt-1.5">▸</span>
-                <span><strong className="text-[#F8FAFC]">One-size-fits-all study materials</strong> — Every candidate learns differently. Our adaptive AI tailors the difficulty and focus of every study session to the individual&apos;s performance.</span>
+                <span className="text-[#20C7C9] mt-1.5">▸</span>
+                <span><strong className="text-[#F5F8FA]">One-size-fits-all study materials</strong> — Every candidate learns differently. Our adaptive AI tailors the difficulty and focus of every study session to the individual&apos;s performance.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#DB2777] mt-1.5">▸</span>
-                <span><strong className="text-[#F8FAFC]">Lack of exam simulation tools</strong> — Candidates need timed, realistic practice to build confidence. Our exam mode replicates the actual NHA CCMA testing environment with 150-question timed simulations.</span>
+                <span className="text-[#20C7C9] mt-1.5">▸</span>
+                <span><strong className="text-[#F5F8FA]">Lack of exam simulation tools</strong> — Candidates need timed, realistic practice to build confidence. Our exam mode replicates the actual NHA CCMA testing environment with 150-question timed simulations.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#DB2777] mt-1.5">▸</span>
-                <span><strong className="text-[#F8FAFC]">No visibility into progress</strong> — Without analytics, candidates don&apos;t know what to focus on. Our platform provides detailed performance metrics for every chapter and topic.</span>
+                <span className="text-[#20C7C9] mt-1.5">▸</span>
+                <span><strong className="text-[#F5F8FA]">No visibility into progress</strong> — Without analytics, candidates don&apos;t know what to focus on. Our platform provides detailed performance metrics for every chapter and topic.</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#DB2777] mt-1.5">▸</span>
-                <span><strong className="text-[#F8FAFC]">A certification that pays off</strong> — Medical assistants earn a median of $43,000+ per year (BLS), and CCMA certification improves job prospects and earning potential. Passing on the first try means starting your career sooner.</span>
+                <span className="text-[#20C7C9] mt-1.5">▸</span>
+                <span><strong className="text-[#F5F8FA]">A certification that pays off</strong> — Medical assistants earn a median of $43,000+ per year (BLS), and CCMA certification improves job prospects and earning potential. Passing on the first try means starting your career sooner.</span>
               </li>
             </ul>
           </div>
@@ -297,7 +297,7 @@ export default function AboutPage() {
         <section className="mb-16">
           <div className="bg-white/5 rounded-2xl p-8 md:p-10">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-              <span className="w-8 h-8 rounded-lg bg-[#A855F7]/20 flex items-center justify-center text-[#A855F7]">♥</span>
+              <span className="w-8 h-8 rounded-lg bg-[#1688B8]/20 flex items-center justify-center text-[#1688B8]">♥</span>
               Our Commitment
             </h2>
             <p className="text-[#CBD5E1] leading-relaxed mb-4">
@@ -306,33 +306,33 @@ export default function AboutPage() {
             </p>
             <div className="grid md:grid-cols-3 gap-6 mt-6">
               <div className="bg-white/5 rounded-xl p-6 text-center">
-                <div className="w-12 h-12 rounded-full bg-[#DB2777]/20 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-[#DB2777] text-2xl font-bold">Q</span>
+                <div className="w-12 h-12 rounded-full bg-[#20C7C9]/20 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-[#20C7C9] text-2xl font-bold">Q</span>
                 </div>
                 <h3 className="font-semibold mb-2">Quality Content</h3>
-                <p className="text-sm text-[#94A3B8] leading-relaxed">
+                <p className="text-sm text-[#A8B7C9] leading-relaxed">
                   Every question is reviewed against current clinical guidelines.
                   We regularly update our question bank to stay aligned with the
                   NHA CCMA exam blueprint and evolving standards of care.
                 </p>
               </div>
               <div className="bg-white/5 rounded-xl p-6 text-center">
-                <div className="w-12 h-12 rounded-full bg-[#A855F7]/20 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-[#A855F7] text-2xl font-bold">$</span>
+                <div className="w-12 h-12 rounded-full bg-[#1688B8]/20 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-[#1688B8] text-2xl font-bold">$</span>
                 </div>
                 <h3 className="font-semibold mb-2">Fair Pricing</h3>
-                <p className="text-sm text-[#94A3B8] leading-relaxed">
+                <p className="text-sm text-[#A8B7C9] leading-relaxed">
                   We offer a free tier so every candidate can try the platform,
                   plus affordable plans from $19/month. No hidden fees, no
                   surprises.
                 </p>
               </div>
               <div className="bg-white/5 rounded-xl p-6 text-center">
-                <div className="w-12 h-12 rounded-full bg-[#8B5CF6]/20 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-[#8B5CF6] text-2xl font-bold">S</span>
+                <div className="w-12 h-12 rounded-full bg-[#22B8E6]/20 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-[#22B8E6] text-2xl font-bold">S</span>
                 </div>
                 <h3 className="font-semibold mb-2">Student Success</h3>
-                <p className="text-sm text-[#94A3B8] leading-relaxed">
+                <p className="text-sm text-[#A8B7C9] leading-relaxed">
                   Our success is measured by your success. We continuously improve
                   the platform based on candidate feedback and performance data to
                   maximize pass rates.
@@ -353,16 +353,16 @@ export default function AboutPage() {
 
         {/* CTA */}
         <div className="text-center pb-20">
-          <div className="bg-gradient-to-r from-[#DB2777]/10 to-[#A855F7]/10 rounded-2xl p-10">
+          <div className="bg-gradient-to-r from-[#20C7C9]/10 to-[#1688B8]/10 rounded-2xl p-10">
             <h2 className="text-2xl font-bold mb-3">Ready to Pass Your NHA CCMA Exam?</h2>
-            <p className="text-[#94A3B8] mb-6 max-w-xl mx-auto">
+            <p className="text-[#A8B7C9] mb-6 max-w-xl mx-auto">
               Join thousands of medical assistant candidates preparing with
               CCMAPractice. Start free, upgrade when you are ready.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/auth/login"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-[#DB2777] hover:bg-[#BE185D] rounded-lg text-sm font-medium transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-[#20C7C9] hover:bg-[#1688B8] rounded-lg text-sm font-medium transition-colors"
               >
                 Get Started Free
               </a>

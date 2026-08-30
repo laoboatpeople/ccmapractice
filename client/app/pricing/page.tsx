@@ -154,14 +154,14 @@ export default function PricingPage() {
           { name: 'Pricing', url: 'https://ccmapractice.com/pricing' },
         ]}
       />
-      <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
+      <div className="min-h-screen bg-[#031428] text-[#F5F8FA]">
         {/* Nav */}
-        <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
+        <nav className="border-b border-white/5 bg-[#031428]/80 backdrop-blur-md">
           <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2">
-              <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
+              <img src="/logo/logo-main.png?v=6" alt="CCMAPractice" className="h-7 w-auto" />
             </a>
-            <a href="/" className="text-sm text-[#94A3B8] hover:text-white transition-colors">
+            <a href="/" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">
               ← Back to Home
             </a>
           </div>
@@ -170,13 +170,13 @@ export default function PricingPage() {
         {/* Header */}
         <div className="max-w-6xl mx-auto px-6 pt-20 pb-16">
           <div className="text-center mb-16">
-            <span className="text-[11px] font-medium text-[#DB2777] bg-[#DB2777]/10 px-3 py-1.5 rounded-full uppercase tracking-wider">
+            <span className="text-[11px] font-medium text-[#20C7C9] bg-[#20C7C9]/10 px-3 py-1.5 rounded-full uppercase tracking-wider">
               Pricing
             </span>
             <h1 className="text-4xl md:text-5xl font-bold mt-6 mb-6">
               Simple, Transparent Pricing
             </h1>
-            <p className="text-lg md:text-xl text-[#94A3B8] max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-[#A8B7C9] max-w-2xl mx-auto leading-relaxed">
               Start free, upgrade when you are ready. No hidden fees, no surprise charges.
               Every plan gives you access to CCMAPractice&apos;s AI-powered NHA CCMA exam preparation platform.
             </p>
@@ -189,7 +189,7 @@ export default function PricingPage() {
                 key={plan.name}
                 className={`relative rounded-2xl p-8 flex flex-col ${
                   plan.highlighted
-                    ? 'bg-gradient-to-b from-[#DB2777]/10 to-[#A855F7]/10 border-2 border-[#DB2777]/40'
+                    ? 'bg-gradient-to-b from-[#20C7C9]/10 to-[#1688B8]/10 border-2 border-[#20C7C9]/40'
                     : 'bg-white/5 border border-white/10'
                 }`}
               >
@@ -204,24 +204,24 @@ export default function PricingPage() {
                   <h2 className="text-xl font-bold mb-1">{plan.name}</h2>
                   <div className="flex items-baseline gap-1 my-4">
                     <span className="text-4xl font-bold">{plan.price}</span>
-                    <span className="text-sm text-[#94A3B8]">/{plan.period}</span>
+                    <span className="text-sm text-[#A8B7C9]">/{plan.period}</span>
                   </div>
-                  <p className="text-sm text-[#94A3B8]">{plan.description}</p>
+                  <p className="text-sm text-[#A8B7C9]">{plan.description}</p>
                 </div>
 
                 <ul className="space-y-3 mb-8 flex-1">
                   {plan.features.map((feature, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm">
                       {feature.included ? (
-                        <svg className="w-5 h-5 text-[#DB2777] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <svg className="w-5 h-5 text-[#20C7C9] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                         </svg>
                       ) : (
-                        <svg className="w-5 h-5 text-[#64748B] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <svg className="w-5 h-5 text-[#70849A] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                       )}
-                      <span className={feature.included ? 'text-[#CBD5E1]' : 'text-[#64748B] line-through'}>
+                      <span className={feature.included ? 'text-[#CBD5E1]' : 'text-[#70849A] line-through'}>
                         {feature.text}
                       </span>
                     </li>
@@ -230,7 +230,7 @@ export default function PricingPage() {
 
                 <a
                   href="/auth/login"
-                  className="inline-flex items-center justify-center w-full py-3 rounded-lg text-sm font-medium transition-colors bg-[#DB2777] hover:bg-[#BE185D] text-white"
+                  className="inline-flex items-center justify-center w-full py-3 rounded-lg text-sm font-medium transition-colors bg-[#20C7C9] hover:bg-[#1688B8] text-white"
                 >
                   {plan.cta}
                 </a>
@@ -245,11 +245,11 @@ export default function PricingPage() {
               <table className="w-full border-collapse">
                 <thead>
                   <tr className="border-b border-white/10">
-                    <th className="text-left py-4 pr-6 text-sm font-medium text-[#94A3B8]">Feature</th>
-                    <th className="text-center py-4 px-4 text-sm font-medium text-[#94A3B8]">Free</th>
-                    <th className="text-center py-4 px-4 text-sm font-medium text-[#DB2777]">Monthly</th>
-                    <th className="text-center py-4 px-4 text-sm font-medium text-[#DB2777]">Yearly</th>
-                    <th className="text-center py-4 px-4 text-sm font-medium text-[#94A3B8]">Lifetime</th>
+                    <th className="text-left py-4 pr-6 text-sm font-medium text-[#A8B7C9]">Feature</th>
+                    <th className="text-center py-4 px-4 text-sm font-medium text-[#A8B7C9]">Free</th>
+                    <th className="text-center py-4 px-4 text-sm font-medium text-[#20C7C9]">Monthly</th>
+                    <th className="text-center py-4 px-4 text-sm font-medium text-[#20C7C9]">Yearly</th>
+                    <th className="text-center py-4 px-4 text-sm font-medium text-[#A8B7C9]">Lifetime</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5">
@@ -266,10 +266,10 @@ export default function PricingPage() {
                   ].map((row, i) => (
                     <tr key={i} className="hover:bg-white/5 transition-colors">
                       <td className="py-4 pr-6 text-sm text-[#CBD5E1]">{row.feature}</td>
-                      <td className="py-4 px-4 text-center text-sm text-[#94A3B8]">{row.free}</td>
-                      <td className="py-4 px-4 text-center text-sm text-[#F8FAFC]">{row.monthly}</td>
-                      <td className="py-4 px-4 text-center text-sm text-[#F8FAFC]">{row.yearly}</td>
-                      <td className="py-4 px-4 text-center text-sm text-[#F8FAFC]">{row.lifetime}</td>
+                      <td className="py-4 px-4 text-center text-sm text-[#A8B7C9]">{row.free}</td>
+                      <td className="py-4 px-4 text-center text-sm text-[#F5F8FA]">{row.monthly}</td>
+                      <td className="py-4 px-4 text-center text-sm text-[#F5F8FA]">{row.yearly}</td>
+                      <td className="py-4 px-4 text-center text-sm text-[#F5F8FA]">{row.lifetime}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -284,11 +284,11 @@ export default function PricingPage() {
               {pricingFaqs.map((faq, i) => (
                 <details key={i} className="group py-5 cursor-pointer">
                   <summary className="flex items-start justify-between gap-4 list-none">
-                    <span className="text-base font-medium text-[#F8FAFC] group-hover:text-[#DB2777] transition-colors">
+                    <span className="text-base font-medium text-[#F5F8FA] group-hover:text-[#20C7C9] transition-colors">
                       {faq.question}
                     </span>
                     <svg
-                      className="w-5 h-5 text-[#64748B] mt-0.5 shrink-0 transition-transform group-open:rotate-180"
+                      className="w-5 h-5 text-[#70849A] mt-0.5 shrink-0 transition-transform group-open:rotate-180"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -297,7 +297,7 @@ export default function PricingPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
                   </summary>
-                  <p className="mt-3 text-[#94A3B8] leading-relaxed">{faq.answer}</p>
+                  <p className="mt-3 text-[#A8B7C9] leading-relaxed">{faq.answer}</p>
                 </details>
               ))}
             </div>
@@ -305,15 +305,15 @@ export default function PricingPage() {
 
           {/* Final CTA */}
           <div className="text-center pb-20">
-            <div className="bg-gradient-to-r from-[#DB2777]/10 to-[#A855F7]/10 rounded-2xl p-10">
+            <div className="bg-gradient-to-r from-[#20C7C9]/10 to-[#1688B8]/10 rounded-2xl p-10">
               <h2 className="text-2xl font-bold mb-3">Still Not Sure?</h2>
-              <p className="text-[#94A3B8] mb-6 max-w-xl mx-auto">
+              <p className="text-[#A8B7C9] mb-6 max-w-xl mx-auto">
                 Start with the Free plan — no credit card required. Experience CCMAPractice
                 for yourself and upgrade when you are ready.
               </p>
               <a
                 href="/auth/login"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-[#DB2777] hover:bg-[#BE185D] rounded-lg text-sm font-medium transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-[#20C7C9] hover:bg-[#1688B8] rounded-lg text-sm font-medium transition-colors"
               >
                 Get Started Free
               </a>

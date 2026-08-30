@@ -578,7 +578,7 @@ export default function ExamDetailPage() {
                   onChange={(e) => setTimeLimit(e.target.value)}
                   placeholder="ex. 60"
                   min={1}
-                  className="w-full px-3 py-2 bg-[#243047] border border-border rounded-btn text-sm text-[#F8FAFC] placeholder:text-[#64748B] focus:outline-none focus:border-blue/50 transition-colors"
+                  className="w-full px-3 py-2 bg-[#243047] border border-border rounded-btn text-sm text-[#F5F8FA] placeholder:text-[#70849A] focus:outline-none focus:border-blue/50 transition-colors"
                 />
               </div>
 
@@ -594,7 +594,7 @@ export default function ExamDetailPage() {
                   placeholder="ex. 70"
                   min={0}
                   max={100}
-                  className="w-full px-3 py-2 bg-[#243047] border border-border rounded-btn text-sm text-[#F8FAFC] placeholder:text-[#64748B] focus:outline-none focus:border-blue/50 transition-colors"
+                  className="w-full px-3 py-2 bg-[#243047] border border-border rounded-btn text-sm text-[#F5F8FA] placeholder:text-[#70849A] focus:outline-none focus:border-blue/50 transition-colors"
                 />
               </div>
 
@@ -609,7 +609,7 @@ export default function ExamDetailPage() {
                   onChange={(e) => setQuestionsPerSim(e.target.value)}
                   placeholder="ex. 40"
                   min={1}
-                  className="w-full px-3 py-2 bg-[#243047] border border-border rounded-btn text-sm text-[#F8FAFC] placeholder:text-[#64748B] focus:outline-none focus:border-blue/50 transition-colors"
+                  className="w-full px-3 py-2 bg-[#243047] border border-border rounded-btn text-sm text-[#F5F8FA] placeholder:text-[#70849A] focus:outline-none focus:border-blue/50 transition-colors"
                 />
               </div>
 

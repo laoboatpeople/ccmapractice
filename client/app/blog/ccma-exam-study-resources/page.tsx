@@ -54,14 +54,14 @@ export default function CcmaExamStudyResourcesPage() {
           { name: 'CCMA Exam Study Resources', url: 'https://ccmapractice.com/blog/ccma-exam-study-resources' },
         ]}
       />
-      <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
-        <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
+      <div className="min-h-screen bg-[#031428] text-[#F5F8FA]">
+        <nav className="border-b border-white/5 bg-[#031428]/80 backdrop-blur-md">
           <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2">
-              <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
+              <img src="/logo/logo-main.png?v=6" alt="CCMAPractice" className="h-7 w-auto" />
             </a>
             <div className="flex items-center gap-4">
-              <a href="/blog" className="text-sm text-[#94A3B8] hover:text-white transition-colors">← Blog</a>
+              <a href="/blog" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">← Blog</a>
             </div>
           </div>
         </nav>
@@ -69,12 +69,12 @@ export default function CcmaExamStudyResourcesPage() {
         <article className="max-w-3xl mx-auto px-6 pt-16 pb-24">
           <header className="mb-12">
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-[11px] font-medium text-[#DB2777] bg-[#DB2777]/10 px-2 py-1 rounded">Reference</span>
-              <span className="text-xs text-[#64748B]">May 22, 2026 *updated August 18, 2026</span>
-              <span className="text-xs text-[#64748B]">· 10 min read</span>
+              <span className="text-[11px] font-medium text-[#20C7C9] bg-[#20C7C9]/10 px-2 py-1 rounded">Reference</span>
+              <span className="text-xs text-[#70849A]">May 22, 2026 *updated August 18, 2026</span>
+              <span className="text-xs text-[#70849A]">· 10 min read</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">CCMA Exam Study Resources: Best Books, Tools & Guidelines</h1>
-            <p className="text-lg text-[#94A3B8]">
+            <p className="text-lg text-[#A8B7C9]">
               Whether you are a recent graduate or a working medical assistant, the right resources make the
               difference between months of unfocused reading and a confident pass. Here is everything you need,
               ranked by how much it moves the needle.
@@ -83,17 +83,17 @@ export default function CcmaExamStudyResourcesPage() {
 
           {/* Author byline */}
           <div className="flex items-center gap-3 mb-8 pb-6 border-b border-white/5">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#DB2777] to-[#06B6D4] flex items-center justify-center text-white font-bold text-sm">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#20C7C9] to-[#06B6D4] flex items-center justify-center text-white font-bold text-sm">
               CP
             </div>
             <div>
-              <p className="text-sm font-medium text-[#F8FAFC]">CCMAPractice Team</p>
-              <p className="text-xs text-[#64748B]">NHA CCMA exam preparation specialists — curating the best clinical study tools since 2025</p>
+              <p className="text-sm font-medium text-[#F5F8FA]">CCMAPractice Team</p>
+              <p className="text-xs text-[#70849A]">NHA CCMA exam preparation specialists — curating the best clinical study tools since 2025</p>
             </div>
           </div>
 
           <div className="prose prose-invert max-w-none text-[#CBD5E1] leading-relaxed space-y-6">
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">1. Official NHA Materials (Non-Negotiable)</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">1. Official NHA Materials (Non-Negotiable)</h2>
             <p>Start with the certifying body itself — the NHA publishes the authoritative sources for the exam:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>NHA CCMA Candidate Handbook</strong> — the official guide listing eligibility, exam format, the 13 blueprint chapters, fees, and the 390/500 passing score. Read yours first.</li>
@@ -101,7 +101,7 @@ export default function CcmaExamStudyResourcesPage() {
               <li><strong>NHA Study Guide + Practice Test bundle (~$99)</strong> — official prep materials, but a single study guide can only cover so much ground.</li>
             </ul>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">2. The Guidelines Themselves (What the Exam Tests)</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">2. The Guidelines Themselves (What the Exam Tests)</h2>
             <p>The CCMA exam tests guidelines as much as it tests facts. Know these sources and the key rules inside them:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>OSHA Bloodborne Pathogens Standard</strong> — exposure control plans, universal precautions, PPE, and post-exposure follow-up.</li>
@@ -111,7 +111,7 @@ export default function CcmaExamStudyResourcesPage() {
               <li><strong>CLIA Waived Testing</strong> — which point-of-care tests are waived (urine dipsticks, glucose meters, pregnancy tests) and how to run them.</li>
             </ul>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">3. Medical Assisting Textbooks</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">3. Medical Assisting Textbooks</h2>
             <p>Books that teach the clinical skills behind the exam build the mental model you need:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Medical Assisting textbooks</strong> — comprehensive texts (e.g., Kinn's Medical Assisting Fundamentals) covering clinical and administrative skills system by system.</li>
@@ -119,10 +119,10 @@ export default function CcmaExamStudyResourcesPage() {
               <li><strong>Anatomy and physiology reference</strong> — a solid A&P text builds the foundation behind the Anatomy and Physiology chapter.</li>
             </ul>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">4. Practice Question Platforms (Where You Should Spend Most of Your Time)</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">4. Practice Question Platforms (Where You Should Spend Most of Your Time)</h2>
             <p>
               The highest-ROI activity for the CCMA exam is answering scenario-based clinical questions with
-              guideline-referenced explanations. <a href="/free-ccma-practice-questions" className="text-[#DB2777] hover:text-[#60A5FA] transition-colors">CCMAPractice</a>{' '}
+              guideline-referenced explanations. <a href="/free-ccma-practice-questions" className="text-[#20C7C9] hover:text-[#60A5FA] transition-colors">CCMAPractice</a>{' '}
               is purpose-built for this: 1,200+ exam-style questions across all 13 blueprint chapters, each with
               the guideline reference, adaptive difficulty, and timed simulations that mirror the real exam
               conditions.
@@ -133,7 +133,7 @@ export default function CcmaExamStudyResourcesPage() {
               <li><strong>Simulate under exam conditions</strong> — full-length, timed sessions at least once a week.</li>
             </ul>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">5. Free Resources Worth Your Time</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">5. Free Resources Worth Your Time</h2>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>NHA website</strong> — candidate handbook, blueprint, certification FAQs, and CEU resources.</li>
               <li><strong>CDC and OSHA websites</strong> — the actual guideline documents behind the infection control and safety questions.</li>
@@ -141,12 +141,12 @@ export default function CcmaExamStudyResourcesPage() {
               <li><strong>Beware thin free banks</strong> — most free question sets (like open-exam-prep) only have ~100 questions, which is not enough coverage for the 13-chapter blueprint.</li>
             </ul>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">A Smarter Study Sequence</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">A Smarter Study Sequence</h2>
             <p>
               Read the candidate handbook → skim the 13-chapter blueprint → drill practice questions chapter by
               chapter → review explanations (especially guideline references) → take full simulations → target
               weak chapters → retake simulations. For a week-by-week schedule, see our{' '}
-              <a href="/blog/ccma-exam-study-plan" className="text-[#DB2777] hover:text-[#60A5FA] transition-colors">
+              <a href="/blog/ccma-exam-study-plan" className="text-[#20C7C9] hover:text-[#60A5FA] transition-colors">
                 12-week CCMA study plan
               </a>.
             </p>

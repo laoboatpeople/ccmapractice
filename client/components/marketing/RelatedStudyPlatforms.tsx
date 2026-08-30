@@ -11,7 +11,7 @@ const EN_PLATFORMS = [
   },
   {
     href: 'https://metierium.com',
-    color: '#DB2777',
+    color: '#3B82F6',
     name: 'Metierium',
     desc: 'Preparing for a Quebec construction trade exam instead? Metierium covers the CMEQ, CMMTQ, QBQ, CCQ and RBQ certification exams with theory, practice exams and an AI tutor.',
   },
@@ -56,7 +56,7 @@ const FR_PLATFORMS = [
   },
   {
     href: 'https://metierium.com',
-    color: '#DB2777',
+    color: '#3B82F6',
     name: 'Metierium',
     desc: "Vous préparez plutôt un examen de métier de la construction au Québec? Metierium couvre les certifications CMEQ, CMMTQ, QBQ, CCQ et RBQ avec la théorie, des examens pratiques et un tuteur IA.",
   },
@@ -98,7 +98,7 @@ export default function RelatedStudyPlatforms() {
   const platforms = isFr ? FR_PLATFORMS : EN_PLATFORMS;
 
   return (
-    <div className="mt-12 border-t border-white/10 pt-10">
+    <div className="mt-12 border-t border-[#14506B]/50 pt-10">
       <h2 className="text-xl font-bold mb-5">
         {isFr ? 'Plateformes d\'étude connexes' : 'Related Study Platforms'}
       </h2>
@@ -109,7 +109,7 @@ export default function RelatedStudyPlatforms() {
             href={p.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group p-5 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.05] transition-all"
+            className="group p-5 rounded-xl border border-[#14506B]/50 bg-white/[0.02] hover:bg-white/[0.05] transition-all"
             style={{ ['--hover-border' as string]: p.color }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLElement).style.borderColor = `${p.color}30`;
@@ -121,7 +121,7 @@ export default function RelatedStudyPlatforms() {
             <h3 className="text-lg font-semibold mb-1 group-hover:!text-[var(--hover-border)] transition-colors" style={{ color: 'inherit' }}>
               <span style={{ color: p.color }}>{p.name}</span>
             </h3>
-            <p className="text-sm text-[#94A3B8] mb-2">{p.desc}</p>
+            <p className="text-sm text-[#A8B7C9] mb-2">{p.desc}</p>
             <span className="text-sm font-medium" style={{ color: p.color }}>
               {p.href.replace('https://', '')} →
             </span>

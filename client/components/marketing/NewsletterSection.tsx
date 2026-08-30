@@ -46,17 +46,17 @@ export default function NewsletterSection() {
 
   return (
     <section className="py-16 px-6 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#DB2777]/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#20C7C9]/5 to-transparent" />
       <div className="relative z-10 max-w-xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
-          <Mail className="w-4 h-4 text-[#DB2777]" />
-          <span className="text-sm text-[#94A3B8]">{isFr ? 'Infolettre' : 'Newsletter'}</span>
+          <Mail className="w-4 h-4 text-[#20C7C9]" />
+          <span className="text-sm text-[#A8B7C9]">{isFr ? 'Infolettre' : 'Newsletter'}</span>
         </div>
 
-        <h3 className="text-2xl md:text-3xl font-bold mb-3 text-[#F8FAFC]">
+        <h3 className="text-2xl md:text-3xl font-bold mb-3 text-[#F5F8FA]">
           {isFr ? 'Restez informé' : 'Stay in the loop'}
         </h3>
-        <p className="text-[#94A3B8] mb-8 text-sm md:text-base">
+        <p className="text-[#A8B7C9] mb-8 text-sm md:text-base">
           {isFr ? 'Abonnez-vous et recevez gratuitement la checklist de préparation CCMA 30 jours, des conseils d\'examen et des ressources d\'étude.' : 'Subscribe and get the free 30-Day CCMA Exam Prep Checklist, exam tips, and study resources delivered to your inbox.'}
         </p>
 
@@ -65,12 +65,12 @@ export default function NewsletterSection() {
             <div className="w-8 h-8 rounded-full bg-[#10B981]/20 flex items-center justify-center">
               <Check className="w-5 h-5 text-[#10B981]" />
             </div>
-            <p className="text-[#F8FAFC] font-medium">{message}</p>
+            <p className="text-[#F5F8FA] font-medium">{message}</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
             <div className="flex-1 relative">
-              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#94A3B8]" />
+              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#A8B7C9]" />
               <input
                 type="email"
                 value={email}
@@ -78,13 +78,13 @@ export default function NewsletterSection() {
                 placeholder={isFr ? 'vous@courriel.com' : 'you@email.com'}
                 required
                 disabled={status === "loading"}
-                className="w-full pl-11 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-[#F8FAFC] placeholder-[#64748B] focus:outline-none focus:border-[#DB2777]/50 focus:ring-1 focus:ring-[#DB2777]/30 transition-all duration-200 disabled:opacity-50"
+                className="w-full pl-11 pr-4 py-3 rounded-xl bg-white/5 border border-white/10 text-[#F5F8FA] placeholder-[#70849A] focus:outline-none focus:border-[#20C7C9]/50 focus:ring-1 focus:ring-[#20C7C9]/30 transition-all duration-200 disabled:opacity-50"
               />
             </div>
             <button
               type="submit"
               disabled={status === "loading"}
-              className="px-6 py-3 bg-[#DB2777] hover:bg-[#BE185D] text-white rounded-xl font-medium transition-all duration-200 disabled:opacity-50 flex items-center justify-center gap-2 whitespace-nowrap"
+              className="px-6 py-3 bg-[#20C7C9] hover:bg-[#1688B8] text-white rounded-xl font-medium transition-all duration-200 disabled:opacity-50 flex items-center justify-center gap-2 whitespace-nowrap"
             >
               {status === "loading" ? (
                 <>

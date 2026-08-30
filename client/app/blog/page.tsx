@@ -125,15 +125,15 @@ export default function BlogIndexPage() {
           { name: 'Blog', url: 'https://ccmapractice.com/blog' },
         ]}
       />
-      <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
+      <div className="min-h-screen bg-[#031428] text-[#F5F8FA]">
       {/* Nav */}
-      <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
+      <nav className="border-b border-white/5 bg-[#031428]/80 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
-            <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
+            <img src="/logo/logo-main.png?v=6" alt="CCMAPractice" className="h-7 w-auto" />
           </a>
           <div className="flex items-center gap-4">
-            <a href="/" className="text-sm text-[#94A3B8] hover:text-white transition-colors">← Back to Home</a>
+            <a href="/" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">← Back to Home</a>
           </div>
         </div>
       </nav>
@@ -141,7 +141,7 @@ export default function BlogIndexPage() {
       {/* Header */}
       <div className="max-w-4xl mx-auto px-6 pt-16 pb-8">
         <h1 className="text-4xl font-bold mb-4">CCMA Exam Guide</h1>
-        <p className="text-lg text-[#94A3B8] max-w-2xl">
+        <p className="text-lg text-[#A8B7C9] max-w-2xl">
           Expert resources to help you prepare for the NHA CCMA exam.
           Each guide covers the clinical procedures, guidelines, and study
           skills the exam rewards.
@@ -158,7 +158,7 @@ export default function BlogIndexPage() {
         <div className="max-w-4xl mx-auto px-6 py-8 text-center">
           <a
             href="/faq"
-            className="text-sm text-[#94A3B8] hover:text-white transition-colors"
+            className="text-sm text-[#A8B7C9] hover:text-white transition-colors"
           >
             Visit our FAQ →
           </a>

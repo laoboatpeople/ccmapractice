@@ -54,14 +54,14 @@ export default function CcmaCertificationGuideBlogPage() {
           { name: 'How to Get Your CCMA Certification', url: 'https://ccmapractice.com/blog/ccma-b1-certification-guide' },
         ]}
       />
-      <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
-        <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
+      <div className="min-h-screen bg-[#031428] text-[#F5F8FA]">
+        <nav className="border-b border-white/5 bg-[#031428]/80 backdrop-blur-md">
           <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2">
-              <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
+              <img src="/logo/logo-main.png?v=6" alt="CCMAPractice" className="h-7 w-auto" />
             </a>
             <div className="flex items-center gap-4">
-              <a href="/blog" className="text-sm text-[#94A3B8] hover:text-white transition-colors">← Blog</a>
+              <a href="/blog" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">← Blog</a>
             </div>
           </div>
         </nav>
@@ -69,12 +69,12 @@ export default function CcmaCertificationGuideBlogPage() {
         <article className="max-w-3xl mx-auto px-6 pt-16 pb-24">
           <header className="mb-12">
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-[11px] font-medium text-[#DB2777] bg-[#DB2777]/10 px-2 py-1 rounded">Certification</span>
-              <span className="text-xs text-[#64748B]">March 15, 2025 *updated August 18, 2026</span>
-              <span className="text-xs text-[#64748B]">· 10 min read</span>
+              <span className="text-[11px] font-medium text-[#20C7C9] bg-[#20C7C9]/10 px-2 py-1 rounded">Certification</span>
+              <span className="text-xs text-[#70849A]">March 15, 2025 *updated August 18, 2026</span>
+              <span className="text-xs text-[#70849A]">· 10 min read</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">How to Get Your CCMA Certification: A Complete Step-by-Step Guide</h1>
-            <p className="text-lg text-[#94A3B8]">
+            <p className="text-lg text-[#A8B7C9]">
               Earning the NHA Certified Clinical Medical Assistant (CCMA) credential proves you can perform the
               clinical and administrative skills used in physician offices, clinics, and urgent care centers
               across the United States. The exam is computer-based and content-driven, so success comes from
@@ -85,17 +85,17 @@ export default function CcmaCertificationGuideBlogPage() {
 
           {/* Author byline */}
           <div className="flex items-center gap-3 mb-8 pb-6 border-b border-white/5">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#DB2777] to-[#06B6D4] flex items-center justify-center text-white font-bold text-sm">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#20C7C9] to-[#06B6D4] flex items-center justify-center text-white font-bold text-sm">
               CP
             </div>
             <div>
-              <p className="text-sm font-medium text-[#F8FAFC]">CCMAPractice Team</p>
-              <p className="text-xs text-[#64748B]">NHA CCMA exam preparation specialists — helping medical assistants earn their certification since 2025</p>
+              <p className="text-sm font-medium text-[#F5F8FA]">CCMAPractice Team</p>
+              <p className="text-xs text-[#70849A]">NHA CCMA exam preparation specialists — helping medical assistants earn their certification since 2025</p>
             </div>
           </div>
 
           <div className="prose prose-invert max-w-none text-[#CBD5E1] leading-relaxed space-y-6">
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">What Is the CCMA Certification?</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">What Is the CCMA Certification?</h2>
             <p>
               The National Healthcareer Association (NHA) CCMA certification is the standard credential for
               clinical medical assistants in the United States. CCMA-certified medical assistants are qualified
@@ -109,7 +109,7 @@ export default function CcmaCertificationGuideBlogPage() {
               technology, and patient care coordination.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">Step 1: Meet the Basic Requirements</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">Step 1: Meet the Basic Requirements</h2>
             <p>Before you can sit for the CCMA exam, make sure you meet these foundational eligibility criteria:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>High school diploma or equivalent</strong> — required by NHA eligibility guidelines.</li>
@@ -117,7 +117,7 @@ export default function CcmaCertificationGuideBlogPage() {
               <li><strong>No state license required to sit</strong> — unlike some allied health roles, the CCMA exam itself does not gate you on a state license.</li>
             </ul>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">Step 2: Understand the Exam Format</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">Step 2: Understand the Exam Format</h2>
             <p>
               The CCMA exam is a <strong>computer-based, multiple-choice exam</strong> administered by the NHA
               at PSI testing centers or through online proctoring. Knowing the format in advance removes most of
@@ -138,7 +138,7 @@ export default function CcmaCertificationGuideBlogPage() {
               Communication and Customer Service, and Medical Law and Ethics.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">Step 3: Master the Clinical Essentials</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">Step 3: Master the Clinical Essentials</h2>
             <p>
               The CCMA exam does not test whether you have memorized a textbook — it tests whether you can
               apply clinical knowledge the way you would in a real office. Here is how to build that skill:
@@ -152,12 +152,12 @@ export default function CcmaCertificationGuideBlogPage() {
             </ul>
             <p>
               For a full walkthrough of the exam content, see our{' '}
-              <a href="/blog/ccma-study-guide" className="text-[#DB2777] hover:text-[#60A5FA] transition-colors">
+              <a href="/blog/ccma-study-guide" className="text-[#20C7C9] hover:text-[#60A5FA] transition-colors">
                 CCMA study guide
               </a>.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">Step 4: Build a Study Plan Around Practice Questions</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">Step 4: Build a Study Plan Around Practice Questions</h2>
             <p>
               Passive reading is the least efficient way to prepare for a clinical exam. The fastest path is
               active practice with exam-style questions that force you to apply what you know:
@@ -171,13 +171,13 @@ export default function CcmaCertificationGuideBlogPage() {
             <p>
               CCMAPractice mirrors the real exam format: NHA-style clinical questions with guideline
               references, adaptive difficulty, and full-length simulations. Try{' '}
-              <a href="/free-ccma-practice-questions" className="text-[#DB2777] hover:text-[#60A5FA] transition-colors">
+              <a href="/free-ccma-practice-questions" className="text-[#20C7C9] hover:text-[#60A5FA] transition-colors">
                 free CCMA practice questions
               </a>{' '}
               to see the format before you commit to a plan.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">Step 5: Register and Take the Exam</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">Step 5: Register and Take the Exam</h2>
             <p>
               Once you feel ready, register for the CCMA exam through the NHA (nhanow.com). You can take the
               exam at a PSI testing center or through online proctoring. On exam day:
@@ -188,7 +188,7 @@ export default function CcmaCertificationGuideBlogPage() {
               <li><strong>Trust your clinical judgment</strong> — if you practiced with scenario questions, the right action will feel familiar.</li>
             </ul>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">How Long Does It Take to Get CCMA Certified?</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">How Long Does It Take to Get CCMA Certified?</h2>
             <p>
               Most candidates pass the CCMA exam with <strong>6 to 10 weeks</strong> of focused preparation,
               studying 45–60 minutes per day. Candidates coming from a recent medical assisting program often
@@ -197,7 +197,7 @@ export default function CcmaCertificationGuideBlogPage() {
               clinical content.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">After Certification: Renewal & Career Growth</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">After Certification: Renewal & Career Growth</h2>
             <p>
               The CCMA credential must be renewed <strong>every 2 years</strong> by completing{' '}
               <strong>10 continuing education units (CEUs)</strong> and paying the renewal fee. The credential

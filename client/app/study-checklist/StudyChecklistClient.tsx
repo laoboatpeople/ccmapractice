@@ -599,10 +599,10 @@ function EmailCapture({ variant }: { variant: 'top' | 'bottom' }) {
 
   return (
     <div className={`rounded-xl border border-white/10 bg-white/[0.03] p-6 ${variant === 'top' ? 'no-print' : ''}`}>
-      <h3 className="text-lg font-bold text-[#F8FAFC] mb-2">
+      <h3 className="text-lg font-bold text-[#F5F8FA] mb-2">
         📥 {variant === 'top' ? 'Subscribe to Our Newsletter' : 'Subscribe for the Free PDF'}
       </h3>
-      <p className="text-sm text-[#94A3B8] mb-4">
+      <p className="text-sm text-[#A8B7C9] mb-4">
         Subscribe to the CCMAPractice newsletter and we&apos;ll send you the printable PDF version of this 8-week checklist.
       </p>
       {status === 'success' ? (
@@ -615,12 +615,12 @@ function EmailCapture({ variant }: { variant: 'top' | 'bottom' }) {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="your@email.com"
             required
-            className="flex-1 px-4 py-2.5 rounded-lg bg-[#1A2035] border border-white/10 text-[#F8FAFC] text-sm placeholder:text-[#64748B] focus:outline-none focus:border-[#DB2777]"
+            className="flex-1 px-4 py-2.5 rounded-lg bg-[#0B2038] border border-white/10 text-[#F5F8FA] text-sm placeholder:text-[#70849A] focus:outline-none focus:border-[#20C7C9]"
           />
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="px-6 py-2.5 rounded-lg bg-[#DB2777] hover:bg-[#BE185D] text-white text-sm font-medium disabled:opacity-50 transition-colors"
+            className="px-6 py-2.5 rounded-lg bg-[#20C7C9] hover:bg-[#1688B8] text-white text-sm font-medium disabled:opacity-50 transition-colors"
           >
             {status === 'loading' ? 'Sending...' : 'Get PDF'}
           </button>
@@ -647,29 +647,29 @@ function WeekSection({
   return (
     <div className="mb-12">
       <div className="flex items-center gap-2 mb-2">
-        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#DB2777] text-white text-sm font-bold">
+        <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#20C7C9] text-white text-sm font-bold">
           {week}
         </span>
-        <h2 className="text-2xl font-bold text-[#F8FAFC]">
+        <h2 className="text-2xl font-bold text-[#F5F8FA]">
           Week {week}: {title}
         </h2>
       </div>
-      <p className="text-sm text-[#94A3B8] mb-6 ml-11">{subtitle}</p>
+      <p className="text-sm text-[#A8B7C9] mb-6 ml-11">{subtitle}</p>
       <div className="space-y-3">
         {days.map((d) => (
           <div
             key={d.day}
             className="flex items-start gap-4 p-4 rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-colors"
           >
-            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-sm font-semibold text-[#DB2777]">
+            <div className="flex-shrink-0 w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-sm font-semibold text-[#20C7C9]">
               {d.day}
             </div>
             <div className="flex-1 min-w-0">
-              <h3 className="font-semibold text-[#F8FAFC] text-sm mb-2">{d.title}</h3>
+              <h3 className="font-semibold text-[#F5F8FA] text-sm mb-2">{d.title}</h3>
               <ul className="space-y-1">
                 {d.tasks.map((task, i) => (
-                  <li key={i} className="flex items-start gap-2 text-xs text-[#94A3B8]">
-                    <span className="text-[#DB2777] mt-1">☐</span>
+                  <li key={i} className="flex items-start gap-2 text-xs text-[#A8B7C9]">
+                    <span className="text-[#20C7C9] mt-1">☐</span>
                     <span>{task}</span>
                   </li>
                 ))}
@@ -684,14 +684,14 @@ function WeekSection({
 
 export default function StudyChecklistClient({ faqs }: Props) {
   return (
-    <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
+    <div className="min-h-screen bg-[#031428] text-[#F5F8FA]">
       {/* Nav */}
-      <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
+      <nav className="border-b border-white/5 bg-[#031428]/80 backdrop-blur-md">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2">
-            <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
+            <img src="/logo/logo-main.png?v=6" alt="CCMAPractice" className="h-7 w-auto" />
           </a>
-          <a href="/" className="text-sm text-[#94A3B8] hover:text-white transition-colors">
+          <a href="/" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">
             ← Back to Home
           </a>
         </div>
@@ -702,7 +702,7 @@ export default function StudyChecklistClient({ faqs }: Props) {
         <h1 className="text-4xl font-bold mb-4">
           8-Week CCMA Exam Prep Checklist
         </h1>
-        <p className="text-lg text-[#94A3B8] max-w-2xl mx-auto mb-6">
+        <p className="text-lg text-[#A8B7C9] max-w-2xl mx-auto mb-6">
           A week-by-week study plan to prepare for the NHA CCMA (Certified Clinical Medical
           Assistant) exam. Print it, check it, pass it.
         </p>
@@ -715,7 +715,7 @@ export default function StudyChecklistClient({ faqs }: Props) {
 
       {/* Introduction */}
       <section className="max-w-4xl mx-auto px-6 mb-12">
-        <div className="prose prose-invert max-w-none text-sm text-[#94A3B8] leading-relaxed">
+        <div className="prose prose-invert max-w-none text-sm text-[#A8B7C9] leading-relaxed">
           <p>
             Passing your NHA CCMA exam requires more than just reading
             textbooks. You need a structured plan that covers every blueprint
@@ -728,7 +728,7 @@ export default function StudyChecklistClient({ faqs }: Props) {
             general patient care, infection control (OSHA, CDC), phlebotomy and
             point of care testing, EKG, administrative assisting, HIPAA, and
             full-length timed simulations. Use it alongside{' '}
-            <Link href="/" className="text-[#DB2777] hover:text-[#60A5FA]">
+            <Link href="/" className="text-[#20C7C9] hover:text-[#60A5FA]">
               CCMAPractice
             </Link>{' '}
             for daily practice questions, AI Tutor explanations, and progress
@@ -736,56 +736,56 @@ export default function StudyChecklistClient({ faqs }: Props) {
           </p>
           <p className="mt-4">
             New to the exam? Read our{' '}
-            <Link href="/faq" className="text-[#DB2777] hover:text-[#60A5FA]">
+            <Link href="/faq" className="text-[#20C7C9] hover:text-[#60A5FA]">
               CCMA exam FAQ
             </Link>{' '}
             to understand the format. Need the content itself? Start with the{' '}
-            <Link href="/theory" className="text-[#DB2777] hover:text-[#60A5FA]">
+            <Link href="/theory" className="text-[#20C7C9] hover:text-[#60A5FA]">
               theory guides
             </Link>{' '}
             and{' '}
-            <Link href="/exams" className="text-[#DB2777] hover:text-[#60A5FA]">
+            <Link href="/exams" className="text-[#20C7C9] hover:text-[#60A5FA]">
               practice exams
             </Link>
             .
           </p>
 
-          <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">
+          <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">
             The Eight-Week Structure
           </h2>
           <ul className="list-disc pl-6 space-y-2">
             <li>
-              <strong className="text-[#F8FAFC]">Week 1: Assessment &amp; Foundational Knowledge</strong> — Review the
+              <strong className="text-[#F5F8FA]">Week 1: Assessment &amp; Foundational Knowledge</strong> — Review the
               exam blueprint, take a diagnostic quiz, and build your medical
               terminology and anatomy foundation.
             </li>
             <li>
-              <strong className="text-[#F8FAFC]">Week 2: Patient Intake &amp; Vital Signs</strong> — Master patient intake,
+              <strong className="text-[#F5F8FA]">Week 2: Patient Intake &amp; Vital Signs</strong> — Master patient intake,
               documentation, and accurate vital sign measurement (temperature, pulse,
               respirations, blood pressure).
             </li>
             <li>
-              <strong className="text-[#F8FAFC]">Week 3: General Patient Care</strong> — Positioning, wound care,
+              <strong className="text-[#F5F8FA]">Week 3: General Patient Care</strong> — Positioning, wound care,
               injections, and assisting with examinations.
             </li>
             <li>
-              <strong className="text-[#F8FAFC]">Week 4: Infection Control &amp; Safety</strong> — OSHA Bloodborne
+              <strong className="text-[#F5F8FA]">Week 4: Infection Control &amp; Safety</strong> — OSHA Bloodborne
               Pathogens, CDC Standard Precautions, PPE, and sterilization.
             </li>
             <li>
-              <strong className="text-[#F8FAFC]">Week 5: Phlebotomy &amp; Laboratory Procedures</strong> — Venipuncture,
+              <strong className="text-[#F5F8FA]">Week 5: Phlebotomy &amp; Laboratory Procedures</strong> — Venipuncture,
               order of draw, specimen handling, and CLIA-waived point of care testing.
             </li>
             <li>
-              <strong className="text-[#F8FAFC]">Week 6: EKG &amp; Cardiovascular Testing</strong> — Lead placement,
+              <strong className="text-[#F5F8FA]">Week 6: EKG &amp; Cardiovascular Testing</strong> — Lead placement,
               tracing quality, rhythm basics, and patient care coordination.
             </li>
             <li>
-              <strong className="text-[#F8FAFC]">Week 7: Administrative, Communication &amp; Law/Ethics</strong> —
+              <strong className="text-[#F5F8FA]">Week 7: Administrative, Communication &amp; Law/Ethics</strong> —
               Scheduling, billing, HIPAA, therapeutic communication, and legal responsibilities.
             </li>
             <li>
-              <strong className="text-[#F8FAFC]">Week 8: Exam Simulation</strong> — Take full-length, timed, 150-question
+              <strong className="text-[#F5F8FA]">Week 8: Exam Simulation</strong> — Take full-length, timed, 150-question
               simulations, review every wrong answer, target weak areas, and arrive on exam
               day fully prepared.
             </li>
@@ -809,32 +809,32 @@ export default function StudyChecklistClient({ faqs }: Props) {
       {/* Tips Section */}
       <section className="max-w-4xl mx-auto px-6 mb-16">
         <div className="rounded-xl border border-white/10 bg-white/[0.03] p-6 md:p-8">
-          <h3 className="text-lg font-bold text-[#F8FAFC] mb-4">
+          <h3 className="text-lg font-bold text-[#F5F8FA] mb-4">
             💡 Tips for Maximizing This Checklist
           </h3>
-          <ul className="space-y-3 text-sm text-[#94A3B8]">
+          <ul className="space-y-3 text-sm text-[#A8B7C9]">
             <li className="flex gap-3">
-              <span className="text-[#DB2777] flex-shrink-0">1.</span>
+              <span className="text-[#20C7C9] flex-shrink-0">1.</span>
               <span><strong className="text-[#CBD5E1]">Consistency over intensity:</strong> Studying 2 hours every day is vastly more effective than cramming 8 hours on weekends.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-[#DB2777] flex-shrink-0">2.</span>
+              <span className="text-[#20C7C9] flex-shrink-0">2.</span>
               <span><strong className="text-[#CBD5E1]">Learn the clinical skills, not just the facts:</strong> Vital signs, phlebotomy tube order, and EKG lead placement are heavily tested — drill them until automatic.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-[#DB2777] flex-shrink-0">3.</span>
+              <span className="text-[#20C7C9] flex-shrink-0">3.</span>
               <span><strong className="text-[#CBD5E1]">Track your weak areas:</strong> After every quiz, log the chapters you got wrong. Spend the next day reviewing them.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-[#DB2777] flex-shrink-0">4.</span>
+              <span className="text-[#20C7C9] flex-shrink-0">4.</span>
               <span><strong className="text-[#CBD5E1]">Know the guidelines:</strong> OSHA Bloodborne Pathogens, HIPAA Privacy Rule, CDC Standard Precautions, and AHA vital sign ranges show up again and again.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-[#DB2777] flex-shrink-0">5.</span>
+              <span className="text-[#20C7C9] flex-shrink-0">5.</span>
               <span><strong className="text-[#CBD5E1]">Simulate real exam conditions:</strong> In Week 8, take simulations in a quiet room with no phone and a strict 3-hour timer.</span>
             </li>
             <li className="flex gap-3">
-              <span className="text-[#DB2777] flex-shrink-0">6.</span>
+              <span className="text-[#20C7C9] flex-shrink-0">6.</span>
               <span><strong className="text-[#CBD5E1]">Use the CCMAPractice AI Tutor:</strong> When a concept doesn&apos;t click, ask the AI Tutor to explain it in plain language.</span>
             </li>
           </ul>
@@ -843,7 +843,7 @@ export default function StudyChecklistClient({ faqs }: Props) {
 
       {/* FAQ Section */}
       <section className="max-w-4xl mx-auto px-6 mb-16">
-        <h2 className="text-2xl font-bold text-[#F8FAFC] mb-6">
+        <h2 className="text-2xl font-bold text-[#F5F8FA] mb-6">
           Frequently Asked Questions
         </h2>
         <div className="space-y-4">
@@ -852,11 +852,11 @@ export default function StudyChecklistClient({ faqs }: Props) {
               key={i}
               className="group rounded-xl border border-white/10 bg-white/[0.03] overflow-hidden"
             >
-              <summary className="flex items-center justify-between p-5 cursor-pointer text-[#F8FAFC] font-medium text-sm hover:bg-white/[0.06] transition-colors">
+              <summary className="flex items-center justify-between p-5 cursor-pointer text-[#F5F8FA] font-medium text-sm hover:bg-white/[0.06] transition-colors">
                 <span>{faq.question}</span>
-                <span className="text-[#DB2777] text-lg group-open:rotate-180 transition-transform">▼</span>
+                <span className="text-[#20C7C9] text-lg group-open:rotate-180 transition-transform">▼</span>
               </summary>
-              <div className="px-5 pb-5 text-sm text-[#94A3B8] leading-relaxed border-t border-white/5 pt-4">
+              <div className="px-5 pb-5 text-sm text-[#A8B7C9] leading-relaxed border-t border-white/5 pt-4">
                 {faq.answer}
               </div>
             </details>
@@ -871,42 +871,42 @@ export default function StudyChecklistClient({ faqs }: Props) {
 
       {/* Related Resources */}
       <section className="max-w-4xl mx-auto px-6 pb-20">
-        <h2 className="text-xl font-bold text-[#F8FAFC] mb-6">📚 Related Resources</h2>
+        <h2 className="text-xl font-bold text-[#F5F8FA] mb-6">📚 Related Resources</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <a href="/theory" className="p-5 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
-            <h3 className="font-semibold text-[#F8FAFC] mb-1 text-sm">NHA CCMA Theory Guides</h3>
-            <p className="text-xs text-[#64748B]">Complete study guides for all 13 blueprint chapters — anatomy, vitals, phlebotomy, EKG, and more.</p>
+            <h3 className="font-semibold text-[#F5F8FA] mb-1 text-sm">NHA CCMA Theory Guides</h3>
+            <p className="text-xs text-[#70849A]">Complete study guides for all 13 blueprint chapters — anatomy, vitals, phlebotomy, EKG, and more.</p>
           </a>
           <a href="/exams" className="p-5 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
-            <h3 className="font-semibold text-[#F8FAFC] mb-1 text-sm">NHA CCMA Practice Exams</h3>
-            <p className="text-xs text-[#64748B]">1,200+ practice questions with detailed explanations and full-length simulations.</p>
+            <h3 className="font-semibold text-[#F5F8FA] mb-1 text-sm">NHA CCMA Practice Exams</h3>
+            <p className="text-xs text-[#70849A]">1,200+ practice questions with detailed explanations and full-length simulations.</p>
           </a>
           <a href="/faq" className="p-5 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
-            <h3 className="font-semibold text-[#F8FAFC] mb-1 text-sm">CCMA Exam FAQ</h3>
-            <p className="text-xs text-[#64748B]">Format, scoring, fees, renewal, and everything else about the NHA CCMA exam.</p>
+            <h3 className="font-semibold text-[#F5F8FA] mb-1 text-sm">CCMA Exam FAQ</h3>
+            <p className="text-xs text-[#70849A]">Format, scoring, fees, renewal, and everything else about the NHA CCMA exam.</p>
           </a>
           <a href="/pricing" className="p-5 rounded-xl border border-white/10 bg-white/[0.03] hover:bg-white/[0.06] transition-colors">
-            <h3 className="font-semibold text-[#F8FAFC] mb-1 text-sm">CCMAPractice Plans</h3>
-            <p className="text-xs text-[#64748B]">Unlock unlimited practice questions, AI Tutor sessions, and full exam simulations.</p>
+            <h3 className="font-semibold text-[#F5F8FA] mb-1 text-sm">CCMAPractice Plans</h3>
+            <p className="text-xs text-[#70849A]">Unlock unlimited practice questions, AI Tutor sessions, and full exam simulations.</p>
           </a>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="border-t border-white/5 py-8 no-print">
-        <div className="max-w-4xl mx-auto px-6 text-center text-xs text-[#64748B]">
+        <div className="max-w-4xl mx-auto px-6 text-center text-xs text-[#70849A]">
           <p className="mb-2">
-            <a href="/" className="hover:text-[#94A3B8] transition-colors">Home</a>
+            <a href="/" className="hover:text-[#A8B7C9] transition-colors">Home</a>
             <span className="mx-2">·</span>
-            <a href="/blog" className="hover:text-[#94A3B8] transition-colors">Blog</a>
+            <a href="/blog" className="hover:text-[#A8B7C9] transition-colors">Blog</a>
             <span className="mx-2">·</span>
-            <a href="/about" className="hover:text-[#94A3B8] transition-colors">About</a>
+            <a href="/about" className="hover:text-[#A8B7C9] transition-colors">About</a>
             <span className="mx-2">·</span>
-            <a href="/pricing" className="hover:text-[#94A3B8] transition-colors">Pricing</a>
+            <a href="/pricing" className="hover:text-[#A8B7C9] transition-colors">Pricing</a>
             <span className="mx-2">·</span>
-            <a href="/privacy" className="hover:text-[#94A3B8] transition-colors">Privacy</a>
+            <a href="/privacy" className="hover:text-[#A8B7C9] transition-colors">Privacy</a>
             <span className="mx-2">·</span>
-            <a href="/terms" className="hover:text-[#94A3B8] transition-colors">Terms</a>
+            <a href="/terms" className="hover:text-[#A8B7C9] transition-colors">Terms</a>
           </p>
           <p>&copy; {new Date().getFullYear()} CCMAPractice. All rights reserved. CCMAPractice is not affiliated with the National Healthcareer Association (NHA).</p>
         </div>

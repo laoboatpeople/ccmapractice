@@ -54,14 +54,14 @@ export default function CcmaStudyGuidePage() {
           { name: 'CCMA Study Guide', url: 'https://ccmapractice.com/blog/ccma-study-guide' },
         ]}
       />
-      <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
-        <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
+      <div className="min-h-screen bg-[#031428] text-[#F5F8FA]">
+        <nav className="border-b border-white/5 bg-[#031428]/80 backdrop-blur-md">
           <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2">
-              <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
+              <img src="/logo/logo-main.png?v=6" alt="CCMAPractice" className="h-7 w-auto" />
             </a>
             <div className="flex items-center gap-4">
-              <a href="/blog" className="text-sm text-[#94A3B8] hover:text-white transition-colors">← Blog</a>
+              <a href="/blog" className="text-sm text-[#A8B7C9] hover:text-white transition-colors">← Blog</a>
             </div>
           </div>
         </nav>
@@ -69,12 +69,12 @@ export default function CcmaStudyGuidePage() {
         <article className="max-w-3xl mx-auto px-6 pt-16 pb-24">
           <header className="mb-12">
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-[11px] font-medium text-[#DB2777] bg-[#DB2777]/10 px-2 py-1 rounded">Study Guide</span>
-              <span className="text-xs text-[#64748B]">April 2, 2025 *updated August 18, 2026</span>
-              <span className="text-xs text-[#64748B]">· 10 min read</span>
+              <span className="text-[11px] font-medium text-[#20C7C9] bg-[#20C7C9]/10 px-2 py-1 rounded">Study Guide</span>
+              <span className="text-xs text-[#70849A]">April 2, 2025 *updated August 18, 2026</span>
+              <span className="text-xs text-[#70849A]">· 10 min read</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold mb-4">CCMA Study Guide: Master the 13 Blueprint Chapters</h1>
-            <p className="text-lg text-[#94A3B8]">
+            <p className="text-lg text-[#A8B7C9]">
               The NHA CCMA exam is scenario-based — which means the winning skill is applying clinical
               knowledge the way you would in a real office. This guide maps the entire 13-chapter blueprint so
               you know exactly what to study and what the exam rewards.
@@ -83,17 +83,17 @@ export default function CcmaStudyGuidePage() {
 
           {/* Author byline */}
           <div className="flex items-center gap-3 mb-8 pb-6 border-b border-white/5">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#DB2777] to-[#06B6D4] flex items-center justify-center text-white font-bold text-sm">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#20C7C9] to-[#06B6D4] flex items-center justify-center text-white font-bold text-sm">
               CP
             </div>
             <div>
-              <p className="text-sm font-medium text-[#F8FAFC]">CCMAPractice Team</p>
-              <p className="text-xs text-[#64748B]">NHA CCMA exam preparation specialists — clinical drills for the Certified Clinical Medical Assistant exam</p>
+              <p className="text-sm font-medium text-[#F5F8FA]">CCMAPractice Team</p>
+              <p className="text-xs text-[#70849A]">NHA CCMA exam preparation specialists — clinical drills for the Certified Clinical Medical Assistant exam</p>
             </div>
           </div>
 
           <div className="prose prose-invert max-w-none text-[#CBD5E1] leading-relaxed space-y-6">
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">Why Application Beats Memorization</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">Why Application Beats Memorization</h2>
             <p>
               The CCMA exam does not reward rote recall — it rewards <em>clinical judgment</em>. Instead of
               memorizing hundreds of isolated facts, you need to know which fact applies in which patient
@@ -101,7 +101,7 @@ export default function CcmaStudyGuidePage() {
               flashcards — consistently outperform those who cram.
             </p>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">The 13 Blueprint Chapters at a Glance</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">The 13 Blueprint Chapters at a Glance</h2>
             <p>The NHA organizes the exam into 13 chapters. Here is the mental map you need:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>1. Foundational Knowledge and Basic Science:</strong> medical terminology, abbreviations, and basic science. The vocabulary of the exam — know common prefixes, suffixes, and abbreviations cold.</li>
@@ -119,7 +119,7 @@ export default function CcmaStudyGuidePage() {
               <li><strong>13. Medical Law and Ethics:</strong> HIPAA, informed consent, scope of practice, and legal responsibilities.</li>
             </ul>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">Clinical Essentials to Know Cold</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">Clinical Essentials to Know Cold</h2>
             <p>While all 13 chapters are fair game, these clinical essentials appear disproportionately often:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Vital signs:</strong> BP {'<'} 120/80, pulse 60–100 bpm, respirations 12–20/min, oral temp ~98.6°F (37°C). Know how to measure each and when to report abnormal values.</li>
@@ -130,7 +130,7 @@ export default function CcmaStudyGuidePage() {
               <li><strong>Standard precautions:</strong> treat all blood and body fluids as potentially infectious (CDC).</li>
             </ul>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">HIPAA and OSHA: The Rules Behind the Scenarios</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">HIPAA and OSHA: The Rules Behind the Scenarios</h2>
             <p>
               HIPAA and OSHA content spans both clinical and administrative questions. The high-yield rules:
             </p>
@@ -140,19 +140,19 @@ export default function CcmaStudyGuidePage() {
               <li><strong>CLIA:</strong> waived tests (urine dipsticks, glucose meters, pregnancy tests) are the category you will perform in most ambulatory settings.</li>
             </ul>
 
-            <h2 className="text-xl font-semibold text-[#F8FAFC] mt-10">How to Study This Content</h2>
+            <h2 className="text-xl font-semibold text-[#F5F8FA] mt-10">How to Study This Content</h2>
             <p>
               Reading about clinical skills is not enough — you need reps. CCMAPractice's question bank covers
               all 13 chapters with scenario-based questions and guideline references, and timed simulations
               replicate the real exam. Start with{' '}
-              <a href="/free-ccma-practice-questions" className="text-[#DB2777] hover:text-[#60A5FA] transition-colors">
+              <a href="/free-ccma-practice-questions" className="text-[#20C7C9] hover:text-[#60A5FA] transition-colors">
                 free CCMA practice questions
               </a>{' '}
               to practice your clinical reasoning today.
             </p>
             <p>
               For the full certification roadmap, see our{' '}
-              <a href="/blog/ccma-b1-certification-guide" className="text-[#DB2777] hover:text-[#60A5FA] transition-colors">
+              <a href="/blog/ccma-b1-certification-guide" className="text-[#20C7C9] hover:text-[#60A5FA] transition-colors">
                 step-by-step CCMA certification guide
               </a>.
             </p>

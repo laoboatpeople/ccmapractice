@@ -67,12 +67,12 @@ export default async function TheoryChapterPage({ params }: { params: Promise<{ 
       <header className="border-b border-white/5 bg-[#061C33]/80 backdrop-blur-md sticky top-0 z-40">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2" aria-label="ccmapractice home">
-            <img src="/logo/logo-main.png?v=5" alt="ccmapractice" className="h-7 w-auto" />
+            <img src="/logo/logo-main.png?v=6" alt="ccmapractice" className="h-7 w-auto" />
           </Link>
           <nav className="flex items-center gap-4 text-sm">
             <Link href="/theory" className="text-[#D6EAF7] hover:text-[#F6FBFF] transition-colors">All Chapters</Link>
             <Link href="/exams" className="text-[#D6EAF7] hover:text-[#F6FBFF] transition-colors">Practice Exams</Link>
-            <Link href="/pricing" className="px-4 py-2 rounded-lg bg-[#A855F7] text-[#061C33] font-medium transition-colors">Pricing</Link>
+            <Link href="/pricing" className="px-4 py-2 rounded-lg bg-[#1688B8] text-[#061C33] font-medium transition-colors">Pricing</Link>
           </nav>
         </div>
       </header>
@@ -87,11 +87,11 @@ export default async function TheoryChapterPage({ params }: { params: Promise<{ 
         </nav>
 
         <div className="flex items-start gap-4 mb-8">
-          <div className="w-12 h-12 rounded-xl bg-[#A855F7]/10 border border-[#A855F7]/20 flex items-center justify-center shrink-0">
-            <BookOpen size={22} className="text-[#A855F7]" />
+          <div className="w-12 h-12 rounded-xl bg-[#1688B8]/10 border border-[#1688B8]/20 flex items-center justify-center shrink-0">
+            <BookOpen size={22} className="text-[#1688B8]" />
           </div>
           <div>
-            <div className="text-xs font-medium text-[#A855F7] uppercase tracking-wide mb-1">Chapter {ROMAN[chapter.number - 1] || chapter.number}</div>
+            <div className="text-xs font-medium text-[#1688B8] uppercase tracking-wide mb-1">Chapter {ROMAN[chapter.number - 1] || chapter.number}</div>
             <h1 className="text-2xl md:text-3xl font-bold text-[#F6FBFF] leading-tight">{chapter.name}</h1>
             <p className="text-sm text-[#53697D] mt-2 max-w-2xl">ccmapractice study guide with diagrams.</p>
           </div>
@@ -116,10 +116,10 @@ export default async function TheoryChapterPage({ params }: { params: Promise<{ 
           ) : null}
         </div>
 
-        <div className="mt-8 bg-gradient-to-r from-[#A855F7]/10 to-[#A855F7]/5 border border-[#A855F7]/20 rounded-2xl p-6 text-center">
+        <div className="mt-8 bg-gradient-to-r from-[#1688B8]/10 to-[#1688B8]/5 border border-[#1688B8]/20 rounded-2xl p-6 text-center">
           <h2 className="text-lg font-bold text-[#F6FBFF] mb-2">Ready to test this chapter?</h2>
           <p className="text-sm text-[#53697D] mb-4">Practice with exam-aligned questions and timed simulations.</p>
-          <Link href="/exams" className="inline-block px-6 py-3 rounded-lg bg-[#A855F7] text-white text-sm font-medium transition-colors">Start Practicing Free</Link>
+          <Link href="/exams" className="inline-block px-6 py-3 rounded-lg bg-[#1688B8] text-white text-sm font-medium transition-colors">Start Practicing Free</Link>
         </div>
       </main>
     </div>

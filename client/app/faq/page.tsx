@@ -44,7 +44,7 @@ function FaqAnswer({ text }: { text: string }) {
             <ul key={i} className="space-y-1.5 pl-1">
               {items.map((item, j) => (
                 <li key={j} className="flex items-start gap-2">
-                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#DB2777] flex-shrink-0" />
+                  <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#20C7C9] flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -145,16 +145,16 @@ export default function FAQPage() {
           { name: 'FAQ', url: 'https://ccmapractice.com/faq' },
         ]}
       />
-      <div className="min-h-screen bg-[#150A12] text-[#F8FAFC]">
+      <div className="min-h-screen bg-[#031428] text-[#F5F8FA]">
         {/* Nav */}
-        <nav className="border-b border-white/5 bg-[#150A12]/80 backdrop-blur-md">
+        <nav className="border-b border-white/5 bg-[#031428]/80 backdrop-blur-md">
           <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
             <a href="/" className="flex items-center gap-2">
-              <img src="/logo/logo-main.png?v=5" alt="CCMAPractice" className="h-7 w-auto" />
+              <img src="/logo/logo-main.png?v=6" alt="CCMAPractice" className="h-7 w-auto" />
             </a>
             <a
               href="/"
-              className="text-sm text-[#94A3B8] hover:text-white transition-colors"
+              className="text-sm text-[#A8B7C9] hover:text-white transition-colors"
             >
               ← Back to Home
             </a>
@@ -166,7 +166,7 @@ export default function FAQPage() {
           <h1 className="text-4xl font-bold mb-4">
             Frequently Asked Questions
           </h1>
-          <p className="text-lg text-[#94A3B8] max-w-2xl">
+          <p className="text-lg text-[#A8B7C9] max-w-2xl">
             Everything you need to know about CCMAPractice, NHA CCMA certification,
             and how our AI-powered platform works.
           </p>
@@ -177,14 +177,14 @@ export default function FAQPage() {
           {faqs.map((faq, i) => (
             <details key={i} className="group py-6 cursor-pointer">
               <summary className="flex items-start justify-between gap-4 list-none">
-                <h2 className="text-lg font-medium text-[#F8FAFC] group-hover:text-[#DB2777] transition-colors">
+                <h2 className="text-lg font-medium text-[#F5F8FA] group-hover:text-[#20C7C9] transition-colors">
                   {faq.question}
                 </h2>
-                <span className="text-[#DB2777] text-xl group-open:rotate-180 transition-transform flex-shrink-0">
+                <span className="text-[#20C7C9] text-xl group-open:rotate-180 transition-transform flex-shrink-0">
                   ▼
                 </span>
               </summary>
-              <p className="mt-4 text-sm text-[#94A3B8] leading-relaxed">
+              <p className="mt-4 text-sm text-[#A8B7C9] leading-relaxed">
                 <FaqAnswer text={faq.answer} />
               </p>
             </details>
@@ -196,15 +196,15 @@ export default function FAQPage() {
         {/* Contact CTA */}
         <div className="max-w-4xl mx-auto px-6 pb-24">
           <div className="border-t border-white/5 pt-16 text-center">
-            <h2 className="text-2xl font-bold text-[#F8FAFC] mb-2">
+            <h2 className="text-2xl font-bold text-[#F5F8FA] mb-2">
               Still have questions?
             </h2>
-            <p className="text-[#94A3B8] mb-6">
+            <p className="text-[#A8B7C9] mb-6">
               Our team is here to help you on your certification journey.
             </p>
             <a
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#DB2777] hover:bg-[#BE185D] rounded-lg text-sm font-medium transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#20C7C9] hover:bg-[#1688B8] rounded-lg text-sm font-medium transition-colors"
             >
               Contact Us
             </a>

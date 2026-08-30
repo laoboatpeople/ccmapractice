@@ -20,9 +20,9 @@ export default function TestimonialCard({ name, role, school, quote, index, colo
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.15 }}
       viewport={{ once: true }}
-      className="relative p-6 rounded-2xl backdrop-blur-md bg-white/5 border border-white/10"
+      className="relative p-6 rounded-2xl backdrop-blur-md bg-[#0B2038] border border-[#14506B]/50"
     >
-      <div className="absolute top-6 right-6 text-6xl text-blue-500/10 font-serif">&quot;</div>
+      <div className="absolute top-6 right-6 text-6xl text-[#20C7C9]-500/10 font-serif">&quot;</div>
       <div className="relative z-10">
         <div className="flex items-center gap-4 mb-4">
           <div 

@@ -110,7 +110,7 @@ const TOOLTIP_STYLE = {
   backgroundColor: '#1A2035',
   border: '1px solid #2D3A52',
   borderRadius: 8,
-  color: '#F8FAFC',
+  color: '#F5F8FA',
   fontSize: 12,
 };
 
@@ -316,7 +316,7 @@ export default function DashboardPage() {
     ? Object.entries(data.questionsByDifficulty).map(([key, value]) => ({
         name: DIFFICULTY_LABELS[key] ?? key,
         value,
-        fill: DIFFICULTY_COLORS[key] ?? '#64748B',
+        fill: DIFFICULTY_COLORS[key] ?? '#70849A',
       }))
     : [];
 
@@ -408,10 +408,10 @@ export default function DashboardPage() {
             <ResponsiveContainer width="100%" height={192}>
               <LineChart data={userGrowthData}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#2D3A52" />
-                <XAxis dataKey="date" tick={{ fill: '#64748B', fontSize: 11 }} tickLine={false} axisLine={{ stroke: '#2D3A52' }} />
-                <YAxis tick={{ fill: '#64748B', fontSize: 11 }} tickLine={false} axisLine={false} />
+                <XAxis dataKey="date" tick={{ fill: '#70849A', fontSize: 11 }} tickLine={false} axisLine={{ stroke: '#2D3A52' }} />
+                <YAxis tick={{ fill: '#70849A', fontSize: 11 }} tickLine={false} axisLine={false} />
                 <Tooltip contentStyle={TOOLTIP_STYLE} />
-                <Line type="monotone" dataKey="count" stroke="#DB2777" strokeWidth={2} dot={false} activeDot={{ r: 4 }} name="Nouveaux" />
+                <Line type="monotone" dataKey="count" stroke="#20C7C9" strokeWidth={2} dot={false} activeDot={{ r: 4 }} name="Nouveaux" />
               </LineChart>
             </ResponsiveContainer>
           ) : (
@@ -428,8 +428,8 @@ export default function DashboardPage() {
             <ResponsiveContainer width="100%" height={192}>
               <BarChart data={revenueData}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#2D3A52" />
-                <XAxis dataKey="month" tick={{ fill: '#64748B', fontSize: 11 }} tickLine={false} axisLine={{ stroke: '#2D3A52' }} />
-                <YAxis tick={{ fill: '#64748B', fontSize: 11 }} tickLine={false} axisLine={false} tickFormatter={(v) => `$${v}`} />
+                <XAxis dataKey="month" tick={{ fill: '#70849A', fontSize: 11 }} tickLine={false} axisLine={{ stroke: '#2D3A52' }} />
+                <YAxis tick={{ fill: '#70849A', fontSize: 11 }} tickLine={false} axisLine={false} tickFormatter={(v) => `$${v}`} />
                 <Tooltip contentStyle={TOOLTIP_STYLE} formatter={(value: number) => [`$${value}`, 'Revenu']} />
                 <Bar dataKey="dollars" fill="#10B981" radius={[4, 4, 0, 0]} />
               </BarChart>
@@ -480,8 +480,8 @@ export default function DashboardPage() {
             <ResponsiveContainer width="100%" height={192}>
               <BarChart data={data.passRateByExam} layout="vertical" margin={{ left: 8, right: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#2D3A52" horizontal={false} />
-                <XAxis type="number" domain={[0, 100]} tick={{ fill: '#64748B', fontSize: 11 }} tickLine={false} axisLine={{ stroke: '#2D3A52' }} tickFormatter={(v) => `${v}%`} />
-                <YAxis type="category" dataKey="examCode" tick={{ fill: '#94A3B8', fontSize: 11 }} tickLine={false} axisLine={false} width={110} />
+                <XAxis type="number" domain={[0, 100]} tick={{ fill: '#70849A', fontSize: 11 }} tickLine={false} axisLine={{ stroke: '#2D3A52' }} tickFormatter={(v) => `${v}%`} />
+                <YAxis type="category" dataKey="examCode" tick={{ fill: '#A8B7C9', fontSize: 11 }} tickLine={false} axisLine={false} width={110} />
                 <Tooltip contentStyle={TOOLTIP_STYLE} formatter={(value: number) => [`${value}%`, 'Réussite']} />
                 <Bar dataKey="passRate" fill="#D4A843" radius={[0, 4, 4, 0]} />
               </BarChart>
@@ -551,7 +551,7 @@ export default function DashboardPage() {
                     <div className="flex items-center gap-3 mt-1">
                       <span
                         className="text-[10px] px-1.5 py-0.5 rounded text-white"
-                        style={{ backgroundColor: DIFFICULTY_COLORS[q.difficulty] ?? '#64748B' }}
+                        style={{ backgroundColor: DIFFICULTY_COLORS[q.difficulty] ?? '#70849A' }}
                       >
                         {DIFFICULTY_LABELS[q.difficulty] ?? q.difficulty}
                       </span>
@@ -629,7 +629,7 @@ export default function DashboardPage() {
                   </div>
                   <span
                     className="text-[9px] px-1.5 py-0.5 rounded text-white flex-shrink-0"
-                    style={{ backgroundColor: DIFFICULTY_COLORS[aq.question.difficulty.toLowerCase()] ?? '#64748B' }}
+                    style={{ backgroundColor: DIFFICULTY_COLORS[aq.question.difficulty.toLowerCase()] ?? '#70849A' }}
                   >
                     {DIFFICULTY_LABELS[aq.question.difficulty.toLowerCase()] ?? aq.question.difficulty}
                   </span>
