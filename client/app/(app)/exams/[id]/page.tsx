@@ -438,19 +438,19 @@ export default function StudentExamDetailPage() {
               <motion.div
                 key={chapter.id}
                 variants={itemVariants}
-                className="bg-card border border-border rounded-card px-5 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 hover:bg-hover/30 transition-colors"
+                className="relative bg-card border border-border rounded-card px-5 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 hover:bg-hover/30 transition-colors"
               >
+                {chapter.locked && (
+                  <span
+                    className="absolute -top-2 -right-2 flex items-center justify-center w-5 h-5 rounded-full bg-red text-white border-2 border-card shadow-sm"
+                    title={t('app.examDetail.testChapterLocked')}
+                  >
+                    <Lock size={10} />
+                  </span>
+                )}
                 <div className="flex items-center gap-3 min-w-0 flex-1 w-full">
-                  <span className={`relative flex items-center justify-center w-8 h-8 rounded-full border flex-shrink-0 ${
-                    chapter.locked
-                      ? 'bg-red text-white border-2 border-card shadow-sm'
-                      : 'bg-blue/10 border-blue/20 text-blue'
-                  }`}>
-                    {chapter.locked ? (
-                      <Lock size={13} />
-                    ) : (
-                      <span className="text-xs font-mono font-bold">{chapter.number}</span>
-                    )}
+                  <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-blue/10 border border-blue/20 text-blue flex-shrink-0">
+                    <span className="text-xs font-mono font-bold">{chapter.number}</span>
                   </span>
                   <div className="min-w-0 flex-1">
                     <p className={`text-sm font-medium leading-snug ${
