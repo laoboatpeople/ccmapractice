@@ -61,12 +61,12 @@ const faqs = [
   {
     question: 'What is CCMAPractice?',
     answer:
-      'CCMAPractice is an AI-powered web application designed to help candidates prepare for the NHA CCMA (Certified Clinical Medical Assistant) certification exam. It combines 1,200+ practice questions with detailed, guideline-referenced explanations, complete theory guides for all 13 chapters of the official exam blueprint, an AI tutor that explains any question, and realistic 150-question exam simulations.',
+      'CCMAPractice is an AI-powered web application designed to help candidates prepare for the NHA CCMA (Certified Clinical Medical Assistant) certification exam.\n\nIt combines:\n\n• 1,200+ practice questions with detailed, guideline-referenced explanations\n• Complete theory guides for all 13 chapters of the official exam blueprint\n• An AI tutor that explains any question\n• Realistic 150-question exam simulations',
   },
   {
     question: 'What is the NHA CCMA exam?',
     answer:
-      'The NHA CCMA exam is the Certified Clinical Medical Assistant certification exam from the National Healthcareer Association (NHA). It consists of 180 multiple-choice questions — 150 scored questions and 30 unscored pretest questions — and you have 3 hours to complete it. The exam is taken on a computer at a PSI testing center or via online proctoring. You need a score of 390 out of 500 (~78%) to pass, and the exam fee is $155–165. In 2024, 81.4% of candidates passed on their first attempt — solid preparation makes the difference.',
+      'The NHA CCMA exam is the Certified Clinical Medical Assistant certification exam from the National Healthcareer Association (NHA).\n\nExam facts:\n\n• 180 multiple-choice questions — 150 scored + 30 unscored pretest\n• 3 hours to complete\n• Taken on a computer at a PSI testing center or via online proctoring\n• Passing score: 390 out of 500 (~78%)\n• Exam fee: $155–165\n\nIn 2024, 81.4% of candidates passed on their first attempt — solid preparation makes the difference.',
   },
   {
     question: 'What topics are covered on the NHA CCMA exam?',
@@ -76,7 +76,7 @@ const faqs = [
   {
     question: 'How many practice questions does CCMAPractice include?',
     answer:
-      'CCMAPractice includes a question bank of over 1,200 practice questions. Every question comes with a detailed explanation that cites the actual guidelines and standards behind the correct answer — including OSHA Bloodborne Pathogens, the HIPAA Privacy Rule, CDC Standard Precautions, AHA guidelines, and CLIA-waived testing requirements. New questions are added regularly to stay aligned with the current NHA CCMA blueprint.',
+      'CCMAPractice includes a question bank of over 1,200 practice questions.\n\nEvery question comes with a detailed explanation that cites the actual guidelines and standards behind the correct answer — including:\n\n• OSHA Bloodborne Pathogens\n• The HIPAA Privacy Rule\n• CDC Standard Precautions\n• AHA guidelines\n• CLIA-waived testing requirements\n\nNew questions are added regularly to stay aligned with the current NHA CCMA blueprint.',
   },
   {
     question: 'What are the 13 theory chapters?',
@@ -86,22 +86,22 @@ const faqs = [
   {
     question: 'How do the exam simulations work?',
     answer:
-      'Our exam simulations replicate the real NHA CCMA testing experience: 150 scored-style questions to answer in a timed session, mirroring the actual exam format. You build speed, stamina, and confidence before exam day, then review your performance question by question with detailed explanations of every answer.',
+      'Our exam simulations replicate the real NHA CCMA testing experience:\n\n• 150 scored-style questions in a timed session, mirroring the actual exam format\n• Build speed, stamina, and confidence before exam day\n• Review your performance question by question with detailed explanations of every answer',
   },
   {
     question: 'What is the AI Tutor and how does it work?',
     answer:
-      'The AI Tutor is an interactive chat feature that helps you understand difficult concepts. When you encounter a question you do not understand, you can ask the AI Tutor for a simplified explanation. It breaks down complex clinical procedures, medical terminology, and guideline requirements into clear, digestible answers, citing the relevant standards.',
+      'The AI Tutor is an interactive chat feature that helps you understand difficult concepts. When you encounter a question you do not understand, you can ask the AI Tutor for a simplified explanation.\n\nIt breaks down complex clinical procedures, medical terminology, and guideline requirements into clear, digestible answers, citing the relevant standards.',
   },
   {
     question: 'How does the AI adaptive difficulty work?',
     answer:
-      'CCMAPractice adjusts question difficulty based on your performance. Score 80% or higher on a set of questions, and the system increases difficulty (EASY → MEDIUM → HARD). Score below 50%, and the difficulty decreases. This ensures you are always studying at the right level to maximize learning efficiency.',
+      'CCMAPractice adjusts question difficulty based on your performance:\n\n• Score 80% or higher on a set of questions → difficulty increases (EASY → MEDIUM → HARD)\n• Score below 50% → difficulty decreases\n\nThis ensures you are always studying at the right level to maximize learning efficiency.',
   },
   {
     question: 'What plans are available?',
     answer:
-      'CCMAPractice offers four plans: FREE (limited access to one practice category), MONTHLY ($19 per month with full access to everything), YEARLY ($69 per year — 2 months free vs Monthly), and LIFETIME ($149 one-time payment for permanent access to all current and future content).',
+      'CCMAPractice offers four plans:\n\n• FREE — limited access to one practice category\n• MONTHLY — $19 per month, full access to everything\n• YEARLY — $69 per year (2 months free vs Monthly)\n• LIFETIME — $149 one-time payment, permanent access to all current and future content',
   },
   {
     question: 'Is CCMAPractice available on mobile?',
@@ -111,27 +111,27 @@ const faqs = [
   {
     question: 'How does CCMAPractice compare to free resources?',
     answer:
-      'Free resources like open-exam-prep offer a limited set of NHA CCMA practice questions (roughly 114 questions) with minimal explanations. CCMAPractice gives you 1,200+ questions, complete theory guides for all 13 blueprint chapters, an AI tutor, and realistic exam simulations — every explanation citing the actual guidelines behind the answer. Compared to the official NHA study guide and practice tests (~$99) or Mometrix (~$50–60), CCMAPractice offers deeper content and adaptive study tools starting at $19 per month.',
+      'Free resources like open-exam-prep offer a limited set of NHA CCMA practice questions (roughly 114 questions) with minimal explanations. CCMAPractice gives you:\n\n• 1,200+ questions\n• Complete theory guides for all 13 blueprint chapters\n• An AI tutor\n• Realistic exam simulations\n• Every explanation citing the actual guidelines behind the answer\n\nCompared to the official NHA study guide and practice tests (~$99) or Mometrix (~$50–60), CCMAPractice offers deeper content and adaptive study tools starting at $19 per month.',
   },
   {
     question: 'Is CCMAPractice affiliated with the NHA?',
     answer:
-      'No. CCMAPractice is an independent exam preparation platform and is not affiliated with, endorsed by, or sponsored by the National Healthcareer Association (NHA). The NHA CCMA exam, its blueprint, and its passing standards are the property of the NHA; CCMAPractice simply builds study tools aligned to the publicly available exam blueprint.',
+      'No. CCMAPractice is an independent exam preparation platform and is not affiliated with, endorsed by, or sponsored by the National Healthcareer Association (NHA).\n\nThe NHA CCMA exam, its blueprint, and its passing standards are the property of the NHA; CCMAPractice simply builds study tools aligned to the publicly available exam blueprint.',
   },
   {
     question: 'Do I need to renew my CCMA certification?',
     answer:
-      'Yes. The NHA CCMA certification must be renewed every 2 years. Renewal requires completing 10 continuing education (CE) credits and paying the renewal fee, which is $179. CCMAPractice is a great way to refresh your clinical knowledge and stay sharp between renewals.',
+      'Yes. The NHA CCMA certification must be renewed every 2 years.\n\nRenewal requires:\n\n• 10 continuing education (CE) credits\n• The renewal fee of $179\n\nCCMAPractice is a great way to refresh your clinical knowledge and stay sharp between renewals.',
   },
   {
     question: 'Can I track my progress across topics?',
     answer:
-      'Yes, CCMAPractice provides detailed analytics including accuracy by chapter, difficulty progression, exam history, and performance trends. This helps you identify weak areas — whether it is phlebotomy, EKG, or medical law and ethics — and focus your study time effectively.',
+      'Yes, CCMAPractice provides detailed analytics to help you identify weak areas and focus your study time:\n\n• Accuracy by chapter\n• Difficulty progression\n• Exam history\n• Performance trends\n\nWhether it is phlebotomy, EKG, or medical law and ethics, you will see exactly where to focus.',
   },
   {
     question: 'How do I get started?',
     answer:
-      'Visit ccmapractice.com to get started. Create a free account, choose the FREE plan to try it out, and upgrade to MONTHLY, YEARLY, or LIFETIME when you are ready for full access.',
+      'Getting started takes three steps:\n\n• Visit ccmapractice.com and create a free account\n• Choose the FREE plan to try the platform\n• Upgrade to MONTHLY, YEARLY, or LIFETIME when you are ready for full access',
   },
 ];
 
@@ -184,9 +184,9 @@ export default function FAQPage() {
                   ▼
                 </span>
               </summary>
-              <p className="mt-4 text-sm text-[#A8B7C9] leading-relaxed">
+              <div className="mt-4 text-sm text-[#A8B7C9] leading-relaxed">
                 <FaqAnswer text={faq.answer} />
-              </p>
+              </div>
             </details>
           ))}
         </div>
