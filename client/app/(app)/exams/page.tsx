@@ -88,7 +88,7 @@ function SkeletonCard() {
 }
 
 export default function StudentExamsPage() {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const router = useRouter();
 
   const CATEGORY_TRANSLATIONS: Record<string, string> = {
@@ -252,9 +252,11 @@ export default function StudentExamsPage() {
     <div className="animate-fade-in space-y-10">
       {/* Header */}
       <div className="mb-2">
-        <h1 className="text-2xl font-semibold text-text-primary">{t('examCategories')}</h1>
+        <h1 className="text-2xl font-semibold text-text-primary">NHA CCMA</h1>
         <p className="text-sm text-text-secondary mt-1">
-          {t('examsSub')}
+          {locale.startsWith('fr')
+            ? 'NHA CCMA — 150 questions notées + 30 prétest, 3 heures, note de passage 390/500. Blueprint de l\'examen Certified Clinical Medical Assistant : Foundational Knowledge 15, Anatomy & Physiology 8, Clinical Patient Care 84, Patient Care Coordination 12, Administrative Assisting 12, Communication 12, Medical Law & Ethics 7.'
+            : 'NHA CCMA — 150 scored questions + 30 pretest, 3 hours, passing score 390/500. Certified Clinical Medical Assistant exam blueprint: Foundational Knowledge 15, Anatomy & Physiology 8, Clinical Patient Care 84, Patient Care Coordination 12, Administrative Assisting 12, Communication 12, Medical Law & Ethics 7.'}
         </p>
       </div>
 
