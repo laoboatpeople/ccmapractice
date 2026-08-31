@@ -17,15 +17,6 @@ import { getStudentExamCategories } from '@/lib/student-api';
 import type { StudentExamCategory } from '@/types/student';
 import { useLocale } from '@/src/contexts/LocaleContext';
 
-/** Strip markdown-lite (bold markers, bullets) for compact card previews. */
-function stripMd(text: string): string {
-  return text
-    .replace(/\*\*/g, '')
-    .replace(/^•\s*/gm, '')
-    .replace(/\n+/g, ' ')
-    .trim();
-}
-
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -204,18 +195,10 @@ export default function StudentExamsPage() {
           </div>
         </div>
 
-        {/* Name & Description */}
+        {/* Name */}
         <h3 className="text-sm font-semibold text-text-primary group-hover:text-blue transition-colors mb-1">
           {t(CATEGORY_TRANSLATIONS[category.id] || '') || category.name}
         </h3>
-        {category.description && (
-          <p className="text-xs text-text-secondary line-clamp-2 mb-4 leading-relaxed">
-            {stripMd(category.description)}
-          </p>
-        )}
-        {!category.description && (
-          <div className="mb-4" />
-        )}
 
         {/* Stats row */}
         <div className="flex items-center gap-4 text-xs text-text-tertiary">
@@ -255,8 +238,8 @@ export default function StudentExamsPage() {
         <h1 className="text-2xl font-semibold text-text-primary">NHA CCMA</h1>
         <p className="text-sm text-text-secondary mt-1">
           {locale.startsWith('fr')
-            ? 'NHA CCMA — 150 questions notées + 30 prétest, 3 heures, note de passage 390/500. Blueprint de l\'examen Certified Clinical Medical Assistant : Foundational Knowledge 15, Anatomy & Physiology 8, Clinical Patient Care 84, Patient Care Coordination 12, Administrative Assisting 12, Communication 12, Medical Law & Ethics 7.'
-            : 'NHA CCMA — 150 scored questions + 30 pretest, 3 hours, passing score 390/500. Certified Clinical Medical Assistant exam blueprint: Foundational Knowledge 15, Anatomy & Physiology 8, Clinical Patient Care 84, Patient Care Coordination 12, Administrative Assisting 12, Communication 12, Medical Law & Ethics 7.'}
+            ? '150 questions notées + 30 prétest · 3 heures · note de passage 390/500.'
+            : '150 scored questions + 30 pretest · 3 hours · passing score 390/500.'}
         </p>
       </div>
 
@@ -325,7 +308,6 @@ export default function StudentExamsPage() {
                 </div>
                 <div className="min-w-0">
                   <h2 className="text-base font-semibold text-text-primary">{section.title}</h2>
-                  <p className="text-xs text-text-tertiary mt-0.5">{section.subtitle}</p>
                 </div>
               </div>
 

@@ -1045,8 +1045,8 @@ export default function TheoryPage() {
   }, []);
 
   const theoryDescription = locale.startsWith('fr')
-    ? "NHA CCMA — 150 questions notées + 30 prétest, 3 heures, note de passage 390/500. Blueprint de l'examen Certified Clinical Medical Assistant : Foundational Knowledge 15, Anatomy & Physiology 8, Clinical Patient Care 84, Patient Care Coordination 12, Administrative Assisting 12, Communication 12, Medical Law & Ethics 7."
-    : 'NHA CCMA — 150 scored questions + 30 pretest, 3 hours, passing score 390/500. Certified Clinical Medical Assistant exam blueprint: Foundational Knowledge 15, Anatomy & Physiology 8, Clinical Patient Care 84, Patient Care Coordination 12, Administrative Assisting 12, Communication 12, Medical Law & Ethics 7.';
+    ? '150 questions notées + 30 prétest · 3 heures · note de passage 390/500.'
+    : '150 scored questions + 30 pretest · 3 hours · passing score 390/500.';
 
   return (
     <div className="animate-fade-in space-y-8">
