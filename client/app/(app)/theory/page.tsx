@@ -1044,6 +1044,10 @@ export default function TheoryPage() {
     return cat.name;
   }, []);
 
+  const theoryDescription = locale.startsWith('fr')
+    ? "NHA CCMA — 150 questions notées + 30 prétest, 3 heures, note de passage 390/500. Blueprint de l'examen Certified Clinical Medical Assistant : Foundational Knowledge 15, Anatomy & Physiology 8, Clinical Patient Care 84, Patient Care Coordination 12, Administrative Assisting 12, Communication 12, Medical Law & Ethics 7."
+    : 'NHA CCMA — 150 scored questions + 30 pretest, 3 hours, passing score 390/500. Certified Clinical Medical Assistant exam blueprint: Foundational Knowledge 15, Anatomy & Physiology 8, Clinical Patient Care 84, Patient Care Coordination 12, Administrative Assisting 12, Communication 12, Medical Law & Ethics 7.';
+
   return (
     <div className="animate-fade-in space-y-8">
       {/* Header */}
@@ -1053,23 +1057,12 @@ export default function TheoryPage() {
             <GraduationCap size={22} className="text-blue" />
           </div>
           <div>
-            <h1 className="text-2xl font-semibold text-text-primary">{t('theory')}</h1>
-            <p className="text-sm text-text-secondary">
-              {t('theorySubtitle')}
-            </p>
+            <h1 className="text-2xl font-semibold text-text-primary">
+              NHA CCMA — {t('theoryWithTheory', { count: totalTheory })}
+            </h1>
+            <p className="text-sm text-text-secondary">{theoryDescription}</p>
           </div>
         </div>
-        {!loading && categories.length > 0 && (
-          <div className="flex items-center gap-4 mt-3 text-xs text-text-tertiary">
-            <span>{categories.length} {t('categories')}</span>
-            <span className="w-1 h-1 rounded-full bg-text-tertiary" />
-            <span>{totalChapters} {t('chapters')}</span>
-            <span className="w-1 h-1 rounded-full bg-text-tertiary" />
-            <span className="font-medium text-blue">{t('theoryWithTheory', { count: totalTheory })}</span>
-            <span className="w-1 h-1 rounded-full bg-text-tertiary" />
-            <span>{totalQuestions} {t('questions')}</span>
-          </div>
-        )}
       </div>
 
       {/* Licence rating filter — same pattern as /exams */}
