@@ -632,8 +632,8 @@ export default function MarketingLandingPage() {
               name="Free"
               price="$0"
               period=""
-              description="Try CCMA practice questions and one theory chapter."
-              features={["25 practice questions", "1 theory chapter", "Basic progress tracking", "Community support"]}
+              description="Start with a full practice category, one theory chapter, and the AI tutor — free forever."
+              features={["1 full practice category", "1 theory chapter", "50 AI tutor messages", "Basic progress tracking"]}
               buttonLabel="Get Started"
               buttonHref="/auth/login"
               index={0}
