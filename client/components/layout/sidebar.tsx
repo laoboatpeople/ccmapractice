@@ -59,12 +59,8 @@ export function Sidebar({ mobileOpen, onClose }: { mobileOpen?: boolean; onClose
     <nav className="flex flex-col h-full bg-[#031428] border-r border-border">
       {/* Logo */}
       <div className="flex items-center justify-between gap-3 px-5 py-5 border-b border-border">
-        <Link href="/app" className="flex items-center gap-3 group">
-          <img src="/logo/logo-main.png?v=6" alt="CCMAPractice" className="h-9 w-auto flex-shrink-0" />
-          <div>
-            <p className="text-sm font-semibold text-text-primary leading-none group-hover:text-blue transition-colors">CCMAPractice</p>
-            <p className="text-[10px] text-text-tertiary mt-0.5">CCMA Exam Prep</p>
-          </div>
+        <Link href="/app" className="flex items-center group">
+          <img src="/logo/logo-main.png?v=6" alt="CCMAPractice" className="h-8 w-auto flex-shrink-0" />
         </Link>
         {onClose && (
           <button onClick={onClose} className="lg:hidden text-text-secondary hover:text-text-primary">
