@@ -243,16 +243,6 @@ router.get('/exams/:examId/quiz', authenticate, async (req: Request, res: Respon
       res.status(403).json({ message: 'Upgrade to access the official exam simulation' });
       return;
     }
-    const allExams = await prisma.exam.findMany({
-      where: { isActive: true },
-      select: { id: true, code: true },
-    });
-    allExams.sort((a, b) => a.code.localeCompare(b.code));
-    const examIndex = allExams.findIndex(e => e.id === examId);
-    if (examIndex > 0) {
-      res.status(403).json({ message: 'Upgrade to access this exam category' });
-      return;
-    }
     // FREE plan = first chapter only:
     // - chapter-scoped quiz: only chapter 1 is allowed
     // - cross-chapter practice quiz (no chapterId): FREE but scoped to chapter 1
@@ -500,16 +490,6 @@ router.post('/exam-attempts', authenticate, async (req: Request, res: Response):
     // Official exam simulation is always paid for FREE users (even the first exam)
     if (mode === 'exam') {
       res.status(403).json({ message: 'Upgrade to access the official exam simulation' });
-      return;
-    }
-    const allExams = await prisma.exam.findMany({
-      where: { isActive: true },
-      select: { id: true, code: true },
-    });
-    allExams.sort((a, b) => a.code.localeCompare(b.code));
-    const examIndex = allExams.findIndex(e => e.id === examId);
-    if (examIndex > 0) {
-      res.status(403).json({ message: 'Upgrade to access this exam category' });
       return;
     }
     // FREE plan = first chapter only: every submitted question must belong
