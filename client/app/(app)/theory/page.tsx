@@ -658,9 +658,6 @@ function CategoryCard({ category, preselectedChapterId, onChapterContentLoaded, 
               <Share2 size={12} />
             </button>
           </div>
-          {category.description && (
-            <p className="text-xs text-text-secondary line-clamp-1 mb-2">{category.description}</p>
-          )}
           <div className="flex items-center gap-3 text-xs text-text-tertiary">
             <span className="flex items-center gap-1">
               <Layers size={12} className="text-amber" />
@@ -1275,7 +1272,6 @@ export default function TheoryPage() {
                     </span>
                   )}
                 </div>
-                <p className="text-xs text-text-tertiary mt-0.5">{section.subtitle}</p>
               </div>
             </div>
 
