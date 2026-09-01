@@ -45,6 +45,12 @@ const EN_PLATFORMS = [
     name: 'Sky107',
     desc: 'Getting your FAA Part 107 drone licence instead? Sky107 prepares you for the FAA UAG written test with 60-question exam simulations and practice questions.',
   },
+  {
+    href: 'https://inspectpractice.com',
+    color: '#C8102E',
+    name: 'Inspect Practice',
+    desc: 'Preparing for an ICC building inspector certification instead? Inspect Practice covers the ICC B1, B2, E1, P1 and M1 exams with AI-powered practice questions, IRC/IBC/NEC/IPC/IMC theory and exam simulations.',
+  },
 ];
 
 const FR_PLATFORMS = [
@@ -89,6 +95,12 @@ const FR_PLATFORMS = [
     color: '#F59E0B',
     name: 'Sky107',
     desc: "Vous obtenez plutôt votre permis de drone FAA Part 107? Sky107 vous prépare à l'examen écrit FAA UAG avec des simulations de 60 questions et des questions pratiques.",
+  },
+  {
+    href: 'https://inspectpractice.com',
+    color: '#C8102E',
+    name: 'Inspect Practice',
+    desc: "Vous préparez plutôt une certification ICC d'inspecteur en bâtiment? Inspect Practice couvre les examens ICC B1, B2, E1, P1 et M1 avec des questions pratiques propulsées par l'IA, la théorie IRC/IBC/NEC/IPC/IMC et des simulations d'examen.",
   },
 ];
 
