@@ -31,13 +31,35 @@ export default function Captcha({ onVerify, onExpire }: CaptchaProps) {
       return;
     }
     try {
+      const tokenRef = { got: false };
       widgetId.current = ts.render(containerRef.current, {
         sitekey: siteKey,
-        callback: (token: string) => onVerify(token),
+        callback: (token: string) => {
+          tokenRef.got = true;
+          onVerify(token);
+        },
         'expired-callback': () => onExpire?.(),
         'error-callback': () => setFailed(true),
         theme: 'dark',
       });
+      // Invisible-mode widgets produce no token until execute() is called.
+      // If the widget has not self-executed shortly after render, trigger it
+      // explicitly (no-op for visible widgets: they render an iframe and wait
+      // for user interaction, and are skipped via the iframe check below).
+      window.setTimeout(() => {
+        if (
+          !tokenRef.got &&
+          widgetId.current &&
+          (window as any).turnstile &&
+          !containerRef.current?.querySelector('iframe')
+        ) {
+          try {
+            (window as any).turnstile.execute(widgetId.current);
+          } catch {
+            /* already executing or removed */
+          }
+        }
+      }, 2500);
     } catch {
       setFailed(true);
     }
