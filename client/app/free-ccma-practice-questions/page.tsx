@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://ccmapractice.com/images/free-ame-practice-questions.jpg',
+        url: 'https://ccmapractice.com/images/og/free-practice-questions.jpg',
         width: 1200,
         height: 630,
         alt: 'Free CCMA Practice Questions - CCMAPractice',
@@ -44,7 +44,7 @@ export default function FreeCcmaPracticeQuestionsPage() {
         description="10 free NHA CCMA-style clinical practice questions covering vital signs, the order of draw, the five rights of medication administration, and HIPAA with guideline references."
         datePublished="2026-05-20"
         dateModified="2026-08-18"
-        image={['https://ccmapractice.com/images/free-ame-practice-questions.jpg']}
+        image={['https://ccmapractice.com/images/og/free-practice-questions.jpg']}
       />
       <BreadcrumbListJsonLd
         items={[

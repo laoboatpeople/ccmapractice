@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://ccmapractice.com/images/study-checklist-og.jpg',
+        url: 'https://ccmapractice.com/images/og/study-checklist.jpg',
         width: 1200,
         height: 630,
         alt: '8-Week CCMA Exam Prep Checklist',
@@ -77,7 +77,7 @@ export default function StudyChecklistPage() {
         description="Free 8-week printable CCMA exam prep checklist covering vital signs, phlebotomy, EKG, HIPAA, and timed simulations for the NHA Certified Clinical Medical Assistant exam."
         datePublished="2026-05-20"
         dateModified="2026-08-18"
-        image={['https://ccmapractice.com/images/study-checklist-og.jpg']}
+        image={['https://ccmapractice.com/images/og/study-checklist.jpg']}
       />
       <BreadcrumbListJsonLd
         items={[
