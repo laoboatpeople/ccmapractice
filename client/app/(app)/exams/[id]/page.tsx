@@ -201,18 +201,45 @@ function ExamFormatDetails({ description }: { description: string }) {
       </div>
 
       <p className="text-xs font-semibold uppercase tracking-wider text-text-tertiary mb-2">Blueprint — scored questions</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5">
-        {fmt.topics.map((topic) => (
-          <div key={topic.label} className="flex items-center gap-2 text-sm">
-            <span className="text-text-secondary">{topic.label}</span>
-            <span className="inline-flex items-center justify-center min-w-[1.6rem] px-1.5 py-0.5 rounded bg-purple/15 text-purple font-bold text-xs">
-              {topic.count}
-            </span>
-            {topic.pct ? (
-              <span className="text-[11px] text-text-tertiary">{topic.pct}%</span>
-            ) : null}
-          </div>
-        ))}
+      <div className="overflow-hidden rounded-lg border border-purple/20">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="bg-purple/10 text-left text-[10px] uppercase tracking-wider text-text-tertiary">
+              <th className="px-3 py-2 font-semibold">Domain</th>
+              <th className="px-3 py-2 font-semibold text-right">Questions</th>
+              <th className="px-3 py-2 font-semibold text-right w-14">Share</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-purple/10">
+            {fmt.topics
+              .slice()
+              .sort((a, b) => b.count - a.count)
+              .map((topic) => {
+                const pct = topic.pct ?? (fmt.scored ? Math.round((topic.count / fmt.scored) * 100) : 0);
+                return (
+                  <tr key={topic.label} className="hover:bg-purple/5 transition-colors">
+                    <td className="px-3 py-2.5">
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="text-text-secondary">{topic.label}</span>
+                      </div>
+                      <div className="mt-1.5 h-1.5 w-full max-w-[220px] rounded-full bg-purple/10 overflow-hidden">
+                        <div
+                          className="h-full rounded-full bg-gradient-to-r from-purple to-blue"
+                          style={{ width: `${Math.max(pct, 2)}%` }}
+                        />
+                      </div>
+                    </td>
+                    <td className="px-3 py-2.5 text-right">
+                      <span className="inline-flex items-center justify-center min-w-[1.8rem] px-1.5 py-0.5 rounded bg-purple/15 text-purple font-bold text-xs">
+                        {topic.count}
+                      </span>
+                    </td>
+                    <td className="px-3 py-2.5 text-right font-semibold text-text-primary tabular-nums">{pct}%</td>
+                  </tr>
+                );
+              })}
+          </tbody>
+        </table>
       </div>
     </div>
   );
