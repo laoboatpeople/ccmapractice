@@ -201,7 +201,7 @@ function ExamFormatDetails({ description }: { description: string }) {
       </div>
 
       <p className="text-xs font-semibold uppercase tracking-wider text-text-tertiary mb-2">Blueprint — scored questions</p>
-      <div className="overflow-hidden rounded-lg border border-purple/20">
+      <div className="overflow-hidden rounded-lg border border-purple/20 max-w-md">
         <table className="w-full text-sm">
           <thead>
             <tr className="bg-purple/10 text-left text-[10px] uppercase tracking-wider text-text-tertiary">
