@@ -446,11 +446,9 @@ export default function StudentExamDetailPage() {
           <span className="font-mono text-blue">{displayCode}</span>
         </div>
         <h1 className="text-2xl font-semibold text-text-primary">{displayName}</h1>
-        {exam?.description &&
-          (parseExamFormat(exam.description)
-            ? <ExamDescription text={stripBlueprint(exam.description)} />
-            : <ExamDescription text={exam.description} />)
-        }
+        {exam?.description && !parseExamFormat(exam.description) && (
+          <ExamDescription text={exam.description} />
+        )}
 
         {/* Info chips */}
         <div className="flex flex-wrap items-center gap-3 mt-4">
@@ -547,7 +545,12 @@ export default function StudentExamDetailPage() {
                   className={`transition-transform duration-200 ${showFormat ? 'rotate-180' : ''}`}
                 />
               </button>
-              {showFormat && <ExamFormatDetails description={exam.description} />}
+              {showFormat && (
+                <>
+                  <ExamFormatDetails description={exam.description} />
+                  <ExamDescription text={stripBlueprint(exam.description)} />
+                </>
+              )}
             </div>
           )}
         </div>
