@@ -193,7 +193,7 @@ export function ProductJsonLd() {
     name: 'CCMAPractice NHA CCMA Exam Prep',
     description: 'AI-powered exam preparation for the NHA CCMA exam — Certified Clinical Medical Assistant. 150 scored questions + 30 pretest, 3 hours, passing score 390/500.',
     url: 'https://ccmapractice.com',
-    image: 'https://ccmapractice.com/images/og/home.jpg',
+    image: 'https://ccmapractice.com/images/og/home.jpg?v=2',
     brand: {
       '@type': 'Brand',
       name: 'CCMAPractice',

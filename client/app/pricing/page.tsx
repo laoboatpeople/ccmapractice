@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://ccmapractice.com/images/og/pricing.jpg',
+        url: 'https://ccmapractice.com/images/og/pricing.jpg?v=2',
         width: 1200,
         height: 630,
         alt: 'CCMAPractice NHA CCMA Exam Prep Pricing Plans',

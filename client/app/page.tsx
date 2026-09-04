@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: 'CCMAPractice',
     images: [
       {
-        url: 'https://ccmapractice.com/images/og/home.jpg',
+        url: 'https://ccmapractice.com/images/og/home.jpg?v=2',
         width: 1200,
         height: 630,
         alt: 'CCMAPractice NHA CCMA Exam Prep Platform',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: 'CCMAPractice — Pass Your NHA CCMA Exam',
     description:
       'AI-powered NHA CCMA exam prep platform with 1,200+ practice questions, theory guides, and an AI tutor. Questions matched to your weak areas for smarter studying.',
-    images: ['https://ccmapractice.com/images/og/home.jpg'],
+    images: ['https://ccmapractice.com/images/og/home.jpg?v=2'],
   },
 };
 
@@ -43,7 +43,7 @@ export default function RootPage() {
       <VideoObjectJsonLd
         name="CCMAPractice NHA CCMA Exam Platform Demo"
         description="See how CCMAPractice uses AI-powered adaptive learning to help medical assistants pass the NHA CCMA exam."
-        thumbnailUrl="https://ccmapractice.com/images/og/home.jpg"
+        thumbnailUrl="https://ccmapractice.com/images/og/home.jpg?v=2"
         contentUrl="https://ccmapractice.com/videos/ccma-demo-en.mp4"
         embedUrl="https://ccmapractice.com/"
         uploadDate="2026-05-01T00:00:00Z"

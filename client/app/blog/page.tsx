@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://ccmapractice.com/images/og/home.jpg',
+        url: 'https://ccmapractice.com/images/og/home.jpg?v=2',
         width: 1200,
         height: 630,
         alt: 'CCMAPractice Blog',
