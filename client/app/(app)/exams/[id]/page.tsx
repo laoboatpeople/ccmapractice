@@ -203,16 +203,14 @@ function ExamFormatDetails({ description }: { description: string }) {
       <p className="text-xs font-semibold uppercase tracking-wider text-text-tertiary mb-2">Blueprint — scored questions</p>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5">
         {fmt.topics.map((topic) => (
-          <div key={topic.label} className="flex items-center justify-between gap-3 text-sm">
+          <div key={topic.label} className="flex items-center gap-2 text-sm">
             <span className="text-text-secondary">{topic.label}</span>
-            <span className="inline-flex items-center gap-1">
-              <span className="inline-flex items-center justify-center min-w-[2rem] px-1.5 py-0.5 rounded bg-purple/15 text-purple font-bold text-xs">
-                {topic.count}
-              </span>
-              {topic.pct ? (
-                <span className="text-[11px] text-text-tertiary">{topic.pct}%</span>
-              ) : null}
+            <span className="inline-flex items-center justify-center min-w-[1.6rem] px-1.5 py-0.5 rounded bg-purple/15 text-purple font-bold text-xs">
+              {topic.count}
             </span>
+            {topic.pct ? (
+              <span className="text-[11px] text-text-tertiary">{topic.pct}%</span>
+            ) : null}
           </div>
         ))}
       </div>
