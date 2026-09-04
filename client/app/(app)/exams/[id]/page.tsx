@@ -12,6 +12,7 @@ import {
   AlertCircle,
   RefreshCw,
   ChevronRight,
+  ChevronDown,
   BarChart3,
   Timer,
   Clock,
@@ -50,6 +51,174 @@ const itemVariants = {
     transition: { duration: 0.25, ease: 'easeOut' as const },
   },
 } as const;
+
+/** Parses structured exam descriptions into format details.
+ *  Mode A (blueprint): header stats line "**...150 scored + 30 pretest | 3 hours | pass 390/500 (78%)**"
+ *  followed by "• Label — N (P%)" bullets (NHA CCMA style).
+ *  Mode B (topics list): "Topics: Label N, ..." (compact style).
+ */
+type ParsedExamFormat = {
+  scored?: number;
+  pretest?: number;
+  hours?: number;
+  passScaled?: string;
+  passPct?: number;
+  passCorrect?: number;
+  openBook?: string;
+  provider?: string;
+  topics?: { label: string; count: number; pct?: number }[];
+};
+
+function parseExamFormat(desc: string): ParsedExamFormat | null {
+  const fmt: ParsedExamFormat = {};
+
+  // Mode A: blueprint bullets
+  const bulletLines = desc
+    .split('\n')
+    .map((l) => l.trim())
+    .filter((l) => l.startsWith('•'));
+  if (bulletLines.length > 0) {
+    fmt.topics = bulletLines
+      .map((l) => l.replace(/^•\s*/, ''))
+      .map((s) => {
+        const m = s.match(/^(.*?)\s+—\s+(\d+)\s*(?:\((\d+)%\))?$/);
+        if (m) return { label: m[1].trim(), count: parseInt(m[2], 10), pct: m[3] ? parseInt(m[3], 10) : undefined };
+        const m2 = s.match(/^(.*?)\s+(\d+)\s*(?:\((\d+)%\))?$/);
+        if (m2) return { label: m2[1].trim(), count: parseInt(m2[2], 10), pct: m2[3] ? parseInt(m2[3], 10) : undefined };
+        return { label: s, count: 0 };
+      });
+
+    const head = desc.split('\n')[0];
+    const sc = head.match(/(\d+)\s+scored/i);
+    if (sc) fmt.scored = parseInt(sc[1], 10);
+    const pre = head.match(/(\d+)\s+pretest/i);
+    if (pre) fmt.pretest = parseInt(pre[1], 10);
+    const hr = head.match(/(\d+)\s+hours?/i);
+    if (hr) fmt.hours = parseInt(hr[1], 10);
+    const scaled = head.match(/pass\s+(\d+\/\d+)/i);
+    if (scaled) fmt.passScaled = scaled[1];
+    const pct = head.match(/\((\d+)%\)/i);
+    if (pct) fmt.passPct = parseInt(pct[1], 10);
+    const prov = head.match(/(NHA[^—|]*)/i);
+    if (prov) fmt.provider = prov[1].trim();
+    return fmt;
+  }
+
+  // Mode B: compact "Topics: ..." style
+  if (!/Topics:/i.test(desc)) return null;
+  const partM = desc.match(/Part\s+(\w+):/i);
+  if (partM) fmt.provider = `Part ${partM[1]}`;
+  const qM = desc.match(/(\d+)\s+questions/i);
+  if (qM) fmt.scored = parseInt(qM[1], 10);
+  const minM = desc.match(/(\d+)\s+minutes/i);
+  if (minM) fmt.hours = Math.round(parseInt(minM[1], 10) / 60);
+  const pctM = desc.match(/(\d+)%\s*to pass/i);
+  if (pctM) fmt.passPct = parseInt(pctM[1], 10);
+  const corrM = desc.match(/\((\d+)\s+correct\)/i);
+  if (corrM) fmt.passCorrect = parseInt(corrM[1], 10);
+  const obM = desc.match(/Open-book\s+(.*?)\.\s*Topics:/i);
+  if (obM) fmt.openBook = obM[1].trim();
+  const topM = desc.match(/Topics:\s*([^.]+)/i);
+  if (topM) {
+    fmt.topics = topM[1]
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .map((s) => {
+        const m = s.match(/^(.*?)\s+(\d+)$/);
+        if (m) return { label: m[1].trim(), count: parseInt(m[2], 10) };
+        return { label: s, count: 0 };
+      });
+  }
+  const provM = desc.match(/(PSI[^.]*)/i);
+  if (provM) fmt.provider = provM[1].trim();
+  return fmt;
+}
+
+/** Removes the blueprint section (header stats + bullets) from the header description,
+ *  leaving the explanatory sections (What is / Why it matters / How scoring works). */
+function stripBlueprint(desc: string): string {
+  const lines = desc.split('\n');
+  const out: string[] = [];
+  let skipping = false;
+  for (const raw of lines) {
+    const line = raw.trim();
+    if (!skipping && /^•/.test(line)) continue; // stray bullet outside blueprint? drop
+    if (!skipping && /^\*\*.*\b(\d+\s+scored|scored\s+\+)\b/i.test(line)) continue; // header stats
+    if (/Exam blueprint/i.test(line)) {
+      skipping = true;
+      continue;
+    }
+    if (skipping) {
+      if (/^•/.test(line)) continue;
+      if (line === '') continue;
+      skipping = false;
+    }
+    out.push(raw);
+  }
+  return out.join('\n');
+}
+
+function ExamFormatDetails({ description }: { description: string }) {
+  const fmt = parseExamFormat(description);
+  if (!fmt || !fmt.topics || fmt.topics.length === 0) return null;
+  return (
+    <div className="mt-4 pt-4 border-t border-purple/20">
+      <div className="flex flex-wrap items-center gap-2 mb-3">
+        {fmt.provider && (
+          <span className="text-[10px] font-mono font-semibold uppercase tracking-wider text-purple bg-purple/10 border border-purple/25 px-1.5 py-0.5 rounded">
+            {fmt.provider}
+          </span>
+        )}
+        {fmt.scored && (
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-purple/10 border border-purple/20 text-xs text-text-primary">
+            <HelpCircle size={12} className="text-purple" />
+            <span className="font-semibold">{fmt.scored}</span> scored
+            {fmt.pretest ? (
+              <span className="text-text-tertiary">+ {fmt.pretest} pretest</span>
+            ) : null}
+          </span>
+        )}
+        {fmt.hours && (
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-purple/10 border border-purple/20 text-xs text-text-primary">
+            <Clock size={12} className="text-purple" />
+            <span className="font-semibold">{fmt.hours}</span> hours
+          </span>
+        )}
+        {(fmt.passScaled || fmt.passPct) && (
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-purple/10 border border-purple/20 text-xs text-text-primary">
+            <Target size={12} className="text-purple" />
+            <span className="font-semibold">{fmt.passScaled ?? `${fmt.passPct}%`}</span> to pass
+            {fmt.passPct ? <span className="text-text-tertiary">({fmt.passPct}%)</span> : null}
+          </span>
+        )}
+        {fmt.openBook && (
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-purple/10 border border-purple/20 text-xs text-text-primary">
+            <BookOpen size={12} className="text-purple" />
+            Open book: <span className="font-semibold">{fmt.openBook}</span>
+          </span>
+        )}
+      </div>
+
+      <p className="text-xs font-semibold uppercase tracking-wider text-text-tertiary mb-2">Blueprint — scored questions</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5">
+        {fmt.topics.map((topic) => (
+          <div key={topic.label} className="flex items-center justify-between gap-3 text-sm">
+            <span className="text-text-secondary">{topic.label}</span>
+            <span className="inline-flex items-center gap-1">
+              <span className="inline-flex items-center justify-center min-w-[2rem] px-1.5 py-0.5 rounded bg-purple/15 text-purple font-bold text-xs">
+                {topic.count}
+              </span>
+              {topic.pct ? (
+                <span className="text-[11px] text-text-tertiary">{topic.pct}%</span>
+              ) : null}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 /** Renders inline markdown-lite: **bold** segments. */
 function renderInline(text: string, baseKey: string) {
@@ -107,6 +276,7 @@ export default function StudentExamDetailPage() {
   const [error, setError] = useState<string | null>(null);
   const [difficulty, setDifficulty] = useState<Difficulty>('ALL');
   const [questionCount, setQuestionCount] = useState<number>(10);
+  const [showFormat, setShowFormat] = useState(false);
 
   useEffect(() => {
     // Read adaptive difficulty from localStorage
@@ -276,9 +446,11 @@ export default function StudentExamDetailPage() {
           <span className="font-mono text-blue">{displayCode}</span>
         </div>
         <h1 className="text-2xl font-semibold text-text-primary">{displayName}</h1>
-        {exam?.description && (
-          <ExamDescription text={exam.description} />
-        )}
+        {exam?.description &&
+          (parseExamFormat(exam.description)
+            ? <ExamDescription text={stripBlueprint(exam.description)} />
+            : <ExamDescription text={exam.description} />)
+        }
 
         {/* Info chips */}
         <div className="flex flex-wrap items-center gap-3 mt-4">
@@ -360,6 +532,24 @@ export default function StudentExamDetailPage() {
               )}
             </div>
           </div>
+
+          {exam.description && parseExamFormat(exam.description) && (
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => setShowFormat((v) => !v)}
+                className="inline-flex items-center gap-1.5 mt-4 text-[11px] font-semibold uppercase tracking-wider text-text-tertiary hover:text-purple transition-colors"
+                aria-expanded={showFormat}
+              >
+                {showFormat ? 'Less details' : 'More details'}
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-200 ${showFormat ? 'rotate-180' : ''}`}
+                />
+              </button>
+              {showFormat && <ExamFormatDetails description={exam.description} />}
+            </div>
+          )}
         </div>
       )}
 
