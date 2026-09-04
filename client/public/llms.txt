@@ -14,35 +14,28 @@
 - CCMA Certification Guide: https://ccmapractice.com/ccma-certification-guide
 - CCMA Resources: https://ccmapractice.com/ccma-resources
 - Free CCMA Practice Questions: https://ccmapractice.com/free-ccma-practice-questions
+- Theory hub (all 13 chapters): https://ccmapractice.com/theory
 
-## Exam
-- CCMA (Certified Clinical Medical Assistant): https://ccmapractice.com/exams
+## Exam Format
+- NHA CCMA: 150 scored questions + 30 pretest, 3 hours, passing score 390/500
+- Clinical competencies (patient care, phlebotomy, EKG) plus administrative and communication skills
 
 ## Theory Chapters (13)
-- Foundational Knowledge and Basic Science
-- Anatomy and Physiology
-- Patient Intake and Vitals
-- General Patient Care Part 1
-- General Patient Care Part 2
-- Infection Control and Safety
-- Point of Care Testing and Laboratory Procedures
-- Phlebotomy
-- EKG and Cardiovascular Testing
-- Patient Care Coordination and Education
-- Administrative Assisting
-- Communication and Customer Service
-- Medical Law and Ethics
+1. Foundational Knowledge and Basic Science: https://ccmapractice.com/theory/f8107223-6d28-4e95-95e6-c6b4f1442661
+2. Anatomy and Physiology: https://ccmapractice.com/theory/40d42ae5-98d6-4a86-9bdd-06362d5e3afa
+3. Patient Intake and Vitals: https://ccmapractice.com/theory/4c6f3f84-468a-4804-b840-e99ca8c1299e
+4. General Patient Care Part 1: https://ccmapractice.com/theory/3e3f71d8-3389-4ff1-963d-0e41b7b970c0
+5. General Patient Care Part 2: https://ccmapractice.com/theory/34663250-9f64-4683-8395-2f05f60ce109
+6. Infection Control and Safety: https://ccmapractice.com/theory/c7112cf0-b445-4723-be00-4e9a93137334
+7. Point of Care Testing and Laboratory Procedures: https://ccmapractice.com/theory/5baf1e89-2a35-4550-87db-e7b73b67494b
+8. Phlebotomy: https://ccmapractice.com/theory/7e54ace8-1d13-47d3-99fd-4213c225bea2
+9. EKG and Cardiovascular Testing: https://ccmapractice.com/theory/75c2e8ad-d840-439f-a6dd-04c370721251
+10. Patient Care Coordination and Education: https://ccmapractice.com/theory/e851bfdb-d03a-4c8f-b1e8-f69f7ae18d64
+11. Administrative Assisting: https://ccmapractice.com/theory/52f9d691-8335-4b4e-ab99-f1b842c93ffe
+12. Communication and Customer Service: https://ccmapractice.com/theory/a1bb52cd-6f60-42ed-aefa-9715107cc371
+13. Medical Law and Ethics: https://ccmapractice.com/theory/4b01d12a-a9dc-45f3-955e-c5cdd6aa15a5
 
 ## Blog
 - CCMA Exam Guide Blog: https://ccmapractice.com/blog
 - CCMA Study Guide: https://ccmapractice.com/blog/ccma-study-guide
 - CCMA Exam Structure: https://ccmapractice.com/blog/ccma-exam-structure
-- CCMA Study Plan: https://ccmapractice.com/blog/ccma-exam-study-plan
-- AI CCMA Exam Preparation: https://ccmapractice.com/blog/ai-ccma-exam-preparation
-
-## Guidelines Covered (US)
-- OSHA Bloodborne Pathogens Standard
-- HIPAA Privacy Rule
-- CDC Standard Precautions
-- AHA CPR guidelines
-- CLIA waived testing

@@ -28,8 +28,6 @@ export function OrganizationJsonLd() {
       'Patient Care',
     ],
     sameAs: [
-      'https://twitter.com/ccmapractice',
-      'https://linkedin.com/company/ccmapractice',
       'https://www.nhanow.com',
       'https://en.wikipedia.org/wiki/Certified_clinical_medical_assistant',
     ],
@@ -53,14 +51,6 @@ export function WebSiteJsonLd() {
     description:
       'AI-powered exam preparation for the NHA CCMA exam — Certified Clinical Medical Assistant. 1,200+ practice questions, theory guides, and an AI tutor.',
     inLanguage: ['en'],
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: 'https://ccmapractice.com/search?q={search_term_string}',
-      },
-      'query-input': 'required name=search_term_string',
-    },
   };
 
   return (
@@ -255,34 +245,6 @@ export function ProductJsonLd() {
         itemCondition: 'https://schema.org/NewCondition',
         url: 'https://ccmapractice.com/#pricing',
         sku: 'CCMAPRACTICE-LIFETIME',
-      },
-    ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      bestRating: '5',
-      worstRating: '1',
-      ratingCount: '3',
-      reviewCount: '3',
-    },
-    review: [
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Marc Tremblay' },
-        reviewRating: { '@type': 'Rating', ratingValue: '5' },
-        reviewBody: "I was lost in my CCMA exam prep until I found CCMAPractice. The AI explanations made phlebotomy and EKG concepts finally click. Passed on the first try!",
-      },
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Sophie Martin' },
-        reviewRating: { '@type': 'Rating', ratingValue: '5' },
-        reviewBody: "Between my job and school, I never had time to sit down and review. Now I answer practice questions on my phone during breaks — the HIPAA and vitals drills were exactly what the exam asked.",
-      },
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Jean-François Côté' },
-        reviewRating: { '@type': 'Rating', ratingValue: '5' },
-        reviewBody: "The analytics showed I was weak on phlebotomy tube order and EKG lead placement. I focused my review there and started seeing real improvement in my simulation scores.",
       },
     ],
   };

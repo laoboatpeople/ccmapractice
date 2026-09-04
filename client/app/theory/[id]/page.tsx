@@ -1,9 +1,21 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import fs from 'fs';
+import path from 'path';
 import { BookOpen, ChevronRight, ArrowLeft, Home } from 'lucide-react';
 import theoryData from '@/src/data/theory-data.json';
 import { TheoryContent } from '@/lib/theory-markdown';
+import {
+  ArticleJsonLd,
+  BreadcrumbListJsonLd,
+  LearningResourceJsonLd,
+} from '@/components/seo/JsonLd';
+
+// Freshness dates derived from the actual content file (stable at build time).
+const THEORY_DATA_MTIME = new Date(
+  fs.statSync(path.join(process.cwd(), 'src/data/theory-data.json')).mtimeMs
+).toISOString().slice(0, 10);
 
 type TheoryChapter = {
   number: number;
@@ -50,6 +62,18 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       type: 'article',
       locale: 'en',
       siteName: 'ccmapractice',
+      images: [
+        {
+          url: 'https://ccmapractice.com/images/og/theory.jpg',
+          width: 1200,
+          height: 630,
+          alt: `${chapter.name} — NHA CCMA Study Guide`,
+        },
+      ],
+    },
+    other: {
+      'article:published_time': THEORY_DATA_MTIME,
+      'article:modified_time': THEORY_DATA_MTIME,
     },
   };
 }
@@ -63,7 +87,29 @@ export default async function TheoryChapterPage({ params }: { params: Promise<{ 
   const next = chapters.find((ch) => ch.number === chapter.number + 1);
 
   return (
-    <div className="min-h-screen bg-[#061C33] text-[#F6FBFF]">
+    <>
+      <ArticleJsonLd
+        headline={`${chapter.name} — NHA CCMA Study Guide`}
+        description={excerpt(chapter.content)}
+        datePublished={THEORY_DATA_MTIME}
+        dateModified={THEORY_DATA_MTIME}
+        image={['https://ccmapractice.com/images/og/theory.jpg']}
+      />
+      <LearningResourceJsonLd
+        name={`${chapter.name} — NHA CCMA Study Guide`}
+        description={excerpt(chapter.content)}
+        educationalLevel="Professional"
+        teaches={['NHA CCMA Exam', 'Clinical Medical Assisting', 'Patient Care', chapter.name]}
+        resourceType="StudyGuide"
+      />
+      <BreadcrumbListJsonLd
+        items={[
+          { name: 'Home', url: 'https://ccmapractice.com' },
+          { name: 'Theory', url: 'https://ccmapractice.com/theory' },
+          { name: `Chapter ${chapter.number}: ${chapter.name}`, url: `https://ccmapractice.com/theory/${chapter.id}` },
+        ]}
+      />
+      <div className="min-h-screen bg-[#061C33] text-[#F6FBFF]">
       <header className="border-b border-white/5 bg-[#061C33]/80 backdrop-blur-md sticky top-0 z-40">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2" aria-label="ccmapractice home">
@@ -122,6 +168,7 @@ export default async function TheoryChapterPage({ params }: { params: Promise<{ 
           <Link href="/exams" className="inline-block px-6 py-3 rounded-lg bg-[#1688B8] text-white text-sm font-medium transition-colors">Start Practicing Free</Link>
         </div>
       </main>
-    </div>
+      </div>
+    </>
   );
 }

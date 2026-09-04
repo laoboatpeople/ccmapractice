@@ -621,8 +621,8 @@ function CategoryCard({ category, preselectedChapterId, onChapterContentLoaded, 
     // Share the first available chapter in the category so it auto-expands to the right section
     const firstChapter = cat.chapters.find(ch => ch.id);
     const url = firstChapter
-      ? `${window.location.origin}/theory?chapterId=${firstChapter.id}`
-      : window.location.origin + '/theory';
+      ? `${window.location.origin}/app/theory?chapterId=${firstChapter.id}`
+      : window.location.origin + '/app/theory';
     const title = `${cat.name} | ccmapractice`;
     if (typeof navigator !== 'undefined' && navigator.share) {
       try { navigator.share({ title, url }); } catch {}

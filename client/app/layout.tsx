@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { headers } from 'next/headers';
 import './globals.css';
 import Providers from './providers';
-import { OrganizationJsonLd, WebSiteJsonLd, ProductJsonLd, CourseJsonLd } from '@/components/seo/JsonLd';
+import { OrganizationJsonLd, WebSiteJsonLd, CourseJsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: 'CCMAPractice',
@@ -55,7 +55,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <OrganizationJsonLd />
         <WebSiteJsonLd />
-        <ProductJsonLd />
         <CourseJsonLd />
         <Providers>{children}</Providers>
       </body>
