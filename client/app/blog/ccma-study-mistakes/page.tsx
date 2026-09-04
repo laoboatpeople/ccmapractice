@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://ccmapractice.com/images/blog/ame-license-canada.jpg',
+        url: 'https://ccmapractice.com/images/og/theory.jpg',
         width: 1200,
         height: 630,
         alt: 'CCMA Exam Mistakes',
@@ -45,7 +45,7 @@ export default function CcmaStudyMistakesPage() {
         description="The most common mistakes NHA CCMA exam candidates make — from ignoring the blueprint to memorizing without clinical context. Learn how to avoid these pitfalls and pass your CCMA exam on the first try."
         datePublished="2026-05-22"
         dateModified="2026-08-18"
-        image={["https://ccmapractice.com/images/blog/ame-license-canada.jpg"]}
+        image={["https://ccmapractice.com/images/og/theory.jpg"]}
       />
       <BreadcrumbListJsonLd
         items={[

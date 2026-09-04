@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://ccmapractice.com/images/blog/ame-license-canada.jpg',
+        url: 'https://ccmapractice.com/images/og/theory.jpg',
         width: 1200,
         height: 630,
         alt: 'Complete CCMA Certification Guide',
@@ -54,7 +54,7 @@ export default function CcmaCertificationGuidePage() {
         datePublished="2026-07-07"
         dateModified="2026-08-18"
         url="https://ccmapractice.com/ccma-certification-guide"
-        image={['https://ccmapractice.com/images/blog/ame-license-canada.jpg']}
+        image={['https://ccmapractice.com/images/og/theory.jpg']}
       />
       <BreadcrumbListJsonLd
         items={[

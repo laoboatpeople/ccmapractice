@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://ccmapractice.com/images/blog/ame-license-canada.jpg',
+        url: 'https://ccmapractice.com/images/og/theory.jpg',
         width: 1200,
         height: 630,
         alt: 'CCMA Study Guide',
@@ -45,7 +45,7 @@ export default function CcmaStudyGuidePage() {
         description="Master the NHA CCMA exam content with this complete study guide. The 13 blueprint chapters, clinical essentials like vital signs, phlebotomy, EKG, and injections, plus HIPAA and infection control."
         datePublished="2025-04-02"
         dateModified="2026-08-18"
-        image={["https://ccmapractice.com/images/blog/ame-license-canada.jpg"]}
+        image={["https://ccmapractice.com/images/og/theory.jpg"]}
       />
       <BreadcrumbListJsonLd
         items={[

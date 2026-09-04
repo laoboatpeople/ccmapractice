@@ -172,7 +172,7 @@ router.post('/register', registerLimiter, async (req: Request, res: Response): P
   // Notify admin of new registration (best-effort)
   if (settings.notifications?.adminNewUserAlert !== false) {
     const adminEmail = settings.notifications?.adminNotificationEmail || 'chuck.onekeo@gmail.com';
-    const adminMsg = `Nouvelle inscription sur Skylicence.cloud (Canada)\n\nEmail: ${email}\nNom: ${name || 'Non fourni'}\nRôle: ${isAdminRequest ? role : 'STUDENT'}\nDate: ${new Date().toLocaleString('fr-CA')}`;
+    const adminMsg = `Nouvelle inscription sur CCMAPractice (USA)\n\nEmail: ${email}\nNom: ${name || 'Non fourni'}\nRôle: ${isAdminRequest ? role : 'STUDENT'}\nDate: ${new Date().toLocaleString('fr-CA')}`;
     sendEmail(adminEmail, `Nouvelle inscription — ${email}`, adminMsg).catch(() => {});
   }
 

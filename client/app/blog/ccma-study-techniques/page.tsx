@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://ccmapractice.com/images/blog/ame-license-canada.jpg',
+        url: 'https://ccmapractice.com/images/og/theory.jpg',
         width: 1200,
         height: 630,
         alt: 'CCMA Study Techniques',
@@ -45,7 +45,7 @@ export default function CcmaStudyTechniquesPage() {
         description="Discover 10 proven study techniques for the NHA CCMA exam. From blueprint mapping and active recall to clinical mnemonics and timed simulations — techniques that actually work for the Certified Clinical Medical Assistant exam."
         datePublished="2026-05-23"
         dateModified="2026-08-18"
-        image={["https://ccmapractice.com/images/blog/ame-license-canada.jpg"]}
+        image={["https://ccmapractice.com/images/og/theory.jpg"]}
       />
       <BreadcrumbListJsonLd
         items={[

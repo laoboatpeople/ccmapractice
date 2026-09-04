@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://ccmapractice.com/images/blog/ame-license-canada.jpg',
+        url: 'https://ccmapractice.com/images/og/theory.jpg',
         width: 1200,
         height: 630,
         alt: 'CCMA Certification Guide',
@@ -45,7 +45,7 @@ export default function CcmaCertificationGuideBlogPage() {
         description="Complete step-by-step guide to obtaining your NHA CCMA (Certified Clinical Medical Assistant) certification. Learn eligibility requirements, the computer-based exam format, and how to prepare effectively."
         datePublished="2025-03-15"
         dateModified="2026-08-18"
-        image={["https://ccmapractice.com/images/blog/ame-license-canada.jpg"]}
+        image={["https://ccmapractice.com/images/og/theory.jpg"]}
       />
       <BreadcrumbListJsonLd
         items={[

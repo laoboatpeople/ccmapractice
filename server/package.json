@@ -1,5 +1,5 @@
 {
-  "name": "inspectpractice-server",
+  "name": "ccmapractice-server",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "tsc",
     "start": "node dist/src/index.js",
     "db:push": "prisma db push",
-    "db:seed": "tsx prisma/seed.ts",
+    "db:seed": "tsx prisma/seed-ccma.ts",
     "db:studio": "prisma studio"
   },
   "dependencies": {

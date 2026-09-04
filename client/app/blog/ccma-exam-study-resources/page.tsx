@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://ccmapractice.com/images/blog/ame-license-canada.jpg',
+        url: 'https://ccmapractice.com/images/og/theory.jpg',
         width: 1200,
         height: 630,
         alt: 'CCMA Exam Study Resources',
@@ -45,7 +45,7 @@ export default function CcmaExamStudyResourcesPage() {
         description="Comprehensive list of the best study resources for the NHA CCMA exam — official NHA materials, the 13-chapter blueprint, guideline references, textbooks, practice tests, and CCMAPractice's AI-powered study platform."
         datePublished="2026-05-22"
         dateModified="2026-08-18"
-        image={["https://ccmapractice.com/images/blog/ame-license-canada.jpg"]}
+        image={["https://ccmapractice.com/images/og/theory.jpg"]}
       />
       <BreadcrumbListJsonLd
         items={[

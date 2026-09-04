@@ -15,7 +15,7 @@ export async function GET(
   const filePath = path.join(DOWNLOADS_DIR, sanitized);
 
   // Only serve known PDF files
-  const allowed = ['icc-sample-questions.pdf', 'icc-sample-questions-fr.pdf', 'study-checklist-30-day.pdf', 'study-checklist-30-day-fr.pdf'];
+  const allowed = ['study-checklist-30-day.pdf', 'study-checklist-30-day-fr.pdf'];
   if (!allowed.includes(sanitized)) {
     return new NextResponse('Not Found', { status: 404 });
   }

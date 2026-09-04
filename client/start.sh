@@ -6,4 +6,4 @@ if lsof -ti:3002 &>/dev/null; then
   sleep 1
 fi
 
-exec /home/chuck/projects/inspectpractice/client/node_modules/next/dist/bin/next start -p 3002
+exec /home/chuck/projects/ccmapractice/client/node_modules/next/dist/bin/next start -p 3002

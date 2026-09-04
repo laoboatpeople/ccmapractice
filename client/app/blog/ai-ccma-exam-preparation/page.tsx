@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://ccmapractice.com/images/blog/ame-license-canada.jpg',
+        url: 'https://ccmapractice.com/images/og/theory.jpg',
         width: 1200,
         height: 630,
         alt: 'AI and CCMA Exam Preparation',
@@ -45,7 +45,7 @@ export default function AiCcmaExamPreparationPage() {
         description="Discover how artificial intelligence is transforming NHA CCMA exam preparation. Adaptive learning, personalized study paths, instant feedback, and AI-powered tutoring for medical assistant certification."
         datePublished="2026-05-16"
         dateModified="2026-08-18"
-        image={["https://ccmapractice.com/images/blog/ame-license-canada.jpg"]}
+        image={["https://ccmapractice.com/images/og/theory.jpg"]}
       />
       <BreadcrumbListJsonLd
         items={[

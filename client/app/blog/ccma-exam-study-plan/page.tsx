@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://ccmapractice.com/images/blog/ame-license-canada.jpg',
+        url: 'https://ccmapractice.com/images/og/theory.jpg',
         width: 1200,
         height: 630,
         alt: '12-Week CCMA Exam Study Plan',
@@ -45,7 +45,7 @@ export default function CcmaExamStudyPlanPage() {
         description="A proven 12-week study plan for the NHA CCMA exam. Week-by-week schedule covering the blueprint map, clinical drills, and timed simulations for the Certified Clinical Medical Assistant certification."
         datePublished="2026-05-22"
         dateModified="2026-08-18"
-        image={["https://ccmapractice.com/images/blog/ame-license-canada.jpg"]}
+        image={["https://ccmapractice.com/images/og/theory.jpg"]}
       />
       <BreadcrumbListJsonLd
         items={[

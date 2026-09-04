@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://ccmapractice.com/images/blog/ame-license-canada.jpg',
+        url: 'https://ccmapractice.com/images/og/theory.jpg',
         width: 1200,
         height: 630,
         alt: 'CCMA Exam Structure',
@@ -45,7 +45,7 @@ export default function CcmaExamStructurePage() {
         description="Complete breakdown of the NHA CCMA exam: 150 scored questions plus 30 pretest questions, 3 hours, the 390/500 passing score, and how the 13 blueprint chapters map to the test."
         datePublished="2026-05-20"
         dateModified="2026-08-18"
-        image={["https://ccmapractice.com/images/blog/ame-license-canada.jpg"]}
+        image={["https://ccmapractice.com/images/og/theory.jpg"]}
       />
       <BreadcrumbListJsonLd
         items={[
